@@ -11,8 +11,8 @@ function TimerProblem() {
 
   const convertToMilliSeconds = () => {
     if (milliseconds === 0) {
-      let milliseconds = minutes * 60 * 1000 + seconds * 1000;
-      setMilliseconds(milliseconds);
+      // let milliseconds = minutes * 60 * 1000 + seconds * 1000;
+      setMilliseconds(minutes * 60 * 1000 + seconds * 1000);
     }
   };
 
@@ -21,7 +21,8 @@ function TimerProblem() {
     convertToMilliSeconds();
     intervalID.current = setInterval(() => {
       setMilliseconds((prevState) => {
-        if (prevState === 0) {
+        console.log(prevState);
+        if (prevState === 1000) {
           clearInterval(intervalID.current);
           resetTimer();
           return;

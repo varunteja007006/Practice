@@ -34,12 +34,10 @@ const ChildComponent = ({ data }) => {
     return (
       <ul>
         {data.map((item) => (
-          <>
-            <li key={item.id}>Name: {item.name}</li>
-            <li className="mb-5" key={item.id}>
-              Email: {item.email}
-            </li>
-          </>
+          <span key={item.id}>
+            <li>Name: {item.name}</li>
+            <li className="mb-5">Email: {item.email}</li>
+          </span>
         ))}
       </ul>
     );
