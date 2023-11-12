@@ -67,7 +67,6 @@ const ChildComponent = ({ data }) => {
       }
     }, 2000);
   }
-  console.log(dataStr);
 
   useEffect(() => {
     if (data) {

@@ -4,6 +4,7 @@ import {
   PureComponent,
   DelayedChild,
   CustomCollapse,
+  FetchAgain,
 } from "../components/problems";
 
 function Problems() {
@@ -19,6 +20,10 @@ function Problems() {
     {
       label: `Delayed Child`,
       component: DelayedChild,
+    },
+    {
+      label: `Fetch Again`,
+      component: FetchAgain,
     },
   ];
   return (
