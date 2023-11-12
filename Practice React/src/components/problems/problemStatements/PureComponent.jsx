@@ -18,6 +18,10 @@ function PureComponent() {
     <CodeBlock>
       <div>
         <h1 className="text-bold text-2xl">Parent Component</h1>
+        <p>
+          Problem Statement: Create a parent and child component. Avoid
+          re-rendering the child component unless the data has changed.{" "}
+        </p>
         <ChildComponent data={data} />
       </div>
     </CodeBlock>

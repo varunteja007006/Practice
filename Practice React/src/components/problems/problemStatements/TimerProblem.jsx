@@ -7,8 +7,9 @@ function TimerProblem() {
   const [seconds, setSeconds] = useState(0);
   const [milliseconds, setMilliseconds] = useState(0);
   const [runningTimer, setRunningTimer] = useState(false);
-  const intervalID = useRef(null);
+  const intervalID = useRef(null); // to persist the state of the interval because change in state values trigger re-render
 
+  // convert the time to milliseconds
   const convertToMilliSeconds = () => {
     if (milliseconds === 0) {
       // let milliseconds = minutes * 60 * 1000 + seconds * 1000;
@@ -16,13 +17,16 @@ function TimerProblem() {
     }
   };
 
+  // start timer function
   const startTimer = () => {
-    setRunningTimer(true);
-    convertToMilliSeconds();
+    setRunningTimer(true); // flag that timer is running
+    convertToMilliSeconds(); // convert the input to milliseconds
+    // create a setInterval that runs every 1sec or 1000 milliseconds
     intervalID.current = setInterval(() => {
+      // set the output by decreasing 1000 milliseconds
       setMilliseconds((prevState) => {
-        console.log(prevState);
         if (prevState === 1000) {
+          // when the prevState is 1000 end the interval
           clearInterval(intervalID.current);
           resetTimer();
           return;
@@ -32,6 +36,7 @@ function TimerProblem() {
     }, 1000);
   };
 
+  // reset the timer
   const resetTimer = () => {
     setMilliseconds(0);
     setMinutes(0);
@@ -40,6 +45,7 @@ function TimerProblem() {
     clearInterval(intervalID.current);
   };
 
+  // pause the timer
   const pauseTimer = () => {
     if (runningTimer) {
       clearInterval(intervalID.current);
@@ -49,6 +55,7 @@ function TimerProblem() {
     startTimer();
   };
 
+  // convert time to string
   const timeAsString = (mins = minutes, secs = seconds) => {
     if (mins === "") {
       mins = 0;
@@ -63,6 +70,7 @@ function TimerProblem() {
     }`;
   };
 
+  // convert the milliseconds to actual time for displaying
   const getTime = (milliseconds) => {
     if (milliseconds !== 0) {
       let mins = Math.floor(milliseconds / (60 * 1000));
@@ -73,6 +81,7 @@ function TimerProblem() {
     }
   };
 
+  // render the time
   const timerElement = () => {
     return (
       <h3 className="text-xl font-semibold">
@@ -84,6 +93,10 @@ function TimerProblem() {
   return (
     <CodeBlock>
       <h2 className="text-xl mt-3">Create Timer</h2>
+      <p>
+        Problem statement: Create a timer. Add functionality to start, stop &
+        reset the timer.
+      </p>
       <span className="flex flex-row gap-3 py-3 items-center">
         <input
           type="text"
