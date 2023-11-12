@@ -13,7 +13,7 @@ function App() {
       <ToastContainer></ToastContainer>
       <main className={`${theme}`}>
         <Nav />
-        <div className={`app p-5 bg-emerald-100 dark:bg-slate-300`}>
+        <div className={`app p-5 dark:bg-gray-700`}>
           <Routes>
             {/* react concepts like hooks */}
             <Route path="/" index element={<Home></Home>}></Route>

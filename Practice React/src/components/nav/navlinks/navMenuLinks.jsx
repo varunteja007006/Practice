@@ -1,7 +1,7 @@
 export const navMenuLinks = [
   {
     path: "/tabs-project",
-    pathName: "Tabs",
+    pathName: "Tabs Project",
   },
   {
     path: "/problems",

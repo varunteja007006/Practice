@@ -1,65 +1,96 @@
-import React, { useState } from "react";
 import { navlinks } from "./navlinks/navlinks";
-import NavButton from "./NavButton";
-import NavMenuButton from "./NavMenuButton";
 import { UseThemeContext } from "../../context/ThemeContext";
 import { navMenuLinks } from "./navlinks/navMenuLinks";
-import { AiFillCaretDown, AiFillCaretUp } from "react-icons/ai";
 
 function Nav() {
   const { theme, setTheme } = UseThemeContext();
-  const [menubtnState, setMenubtnState] = useState(false);
+  const handleTheme = () => {
+    localStorage.setItem("theme", theme === "light" ? "dark" : "light");
+    setTheme(theme === "light" ? "dark" : "light");
+  };
+
   return (
-    <nav className="flex flex-wrap flex-row bg-orange-200 items-center dark:bg-slate-500">
-      {/* nav buttons */}
-      <ul className="flex flex-row gap-5 text-2xl p-5 ">
-        {navlinks.map((item, index) => {
-          return (
-            <NavButton
-              key={index}
-              path={item.path}
-              pathName={item.pathName}
-            ></NavButton>
-          );
-        })}
-        <li>
-          {/* theme button */}
-          <button
-            onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-            className={`btn text-black hover:bg-yellow-400 bg-yellow-300 dark:hover:bg-gray-400 dark:bg-gray-300`}
+    <div className="navbar border-b-2 shadow-md dark:bg-gray-300 ">
+      <div className="navbar-start">
+        <div className="dropdown">
+          <label tabIndex={0} className="btn btn-ghost lg:hidden">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h8m-8 6h16"
+              />
+            </svg>
+          </label>
+          <ul
+            tabIndex={0}
+            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
           >
-            {theme === "light" ? "Light Mode" : "Dark Mode"}
-          </button>
-        </li>
-      </ul>
-      <div>
-        {/* dropdown menu for more projects */}
-        <details className="dropdown">
-          <summary
-            onClick={() => setMenubtnState(!menubtnState)}
-            className="m-1 btn font-bold bg-orange-400 text-black hover:bg-orange-500 dark:hover:bg-gray-400 dark:bg-gray-300"
-          >
-            More{" "}
-            {menubtnState ? (
-              <AiFillCaretUp></AiFillCaretUp>
-            ) : (
-              <AiFillCaretDown></AiFillCaretDown>
-            )}
-          </summary>
-          <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
-            {navMenuLinks.map((item, index) => {
+            {navlinks.map((item, index) => {
               return (
-                <NavMenuButton
-                  key={index}
-                  path={item.path}
-                  pathName={item.pathName}
-                ></NavMenuButton>
+                <li key={index}>
+                  <a href={item.path}>{item.pathName}</a>
+                </li>
               );
             })}
+            <li>
+              <a>Parent</a>
+              <ul className="p-2">
+                {navMenuLinks.map((item, index) => {
+                  return (
+                    <li key={index}>
+                      <a href={item.path}>{item.pathName}</a>
+                    </li>
+                  );
+                })}
+              </ul>
+            </li>
           </ul>
-        </details>
+        </div>
+        <a className="btn btn-ghost normal-case text-2xl">React 💙</a>
       </div>
-    </nav>
+      <div className="navbar-center hidden lg:flex">
+        <ul className="menu menu-horizontal px-1">
+          {navlinks.map((item, index) => {
+            return (
+              <li key={index} className="hover:bg-slate-300 ">
+                <a href={item.path}>{item.pathName}</a>
+              </li>
+            );
+          })}
+          <li tabIndex={0} className="hover:bg-slate-300">
+            <details>
+              <summary className="">More Project</summary>
+              <ul className="p-2 dark:bg-gray-300">
+                {navMenuLinks.map((item, index) => {
+                  return (
+                    <li key={index} className="hover:bg-slate-300 rounded-lg">
+                      <a href={item.path}>{item.pathName}</a>
+                    </li>
+                  );
+                })}
+              </ul>
+            </details>
+          </li>
+        </ul>
+      </div>
+      <div className="navbar-end">
+        {/* theme button */}
+        <button
+          onClick={handleTheme}
+          className={`btn-sm btn text-black hover:bg-yellow-400 bg-yellow-300 dark:hover:bg-gray-700 dark:bg-black dark:text-white`}
+        >
+          {theme === "light" ? "Light Mode" : "Dark Mode"}
+        </button>
+      </div>
+    </div>
   );
 }
 
