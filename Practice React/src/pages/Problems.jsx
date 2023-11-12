@@ -1,10 +1,10 @@
 import React from "react";
-import { TimerProblem, SampleProblem } from "../components";
+import { TimerProblem, PureComponent } from "../components/problems";
 
 function Problems() {
   return (
     <>
-    <p className="mb-3">Click to Open the problem statements</p>
+      <p className="mb-3">Click to Open the problem statements</p>
       <details className="collapse bg-base-200">
         <summary className="collapse-title text-xl font-medium">
           Timer Problem
@@ -15,10 +15,11 @@ function Problems() {
       </details>
       <details className="collapse bg-base-200 mt-3">
         <summary className="collapse-title text-xl font-medium">
-          Click to open/close
+          Concept of Pure Component - Check in code directory at
+          src/components/problems/
         </summary>
         <div className="collapse-content">
-          <SampleProblem />
+          <PureComponent />
         </div>
       </details>
     </>

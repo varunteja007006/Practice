@@ -1,15 +1,28 @@
 # Practice React
 
+```sh
+npm install
+
+npm run server
+
+npm run dev
+
+```
 
 # Practice projects to be added:
-Menu ✅
-Tabs ✅
-Slider
-Dynamic Navbar
 
+- ✅ Menu
+- ✅ Tabs
+- 🔳 Slider
+- 🔳 Dynamic Navbar
+
+###
+
+###
 
 # Axios Tutorial
-https://www.udemy.com/course/react-tutorial-and-projects-course/
+
+Course url : https://www.udemy.com/course/react-tutorial-and-projects-course/
 
 #### Docs
 
@@ -21,8 +34,10 @@ https://www.udemy.com/course/react-tutorial-and-projects-course/
 npm install axios
 ```
 
+or
+
 ```js
-<script src='https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js'></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 ```
 
 #### First Request
@@ -41,7 +56,7 @@ npm install axios
 - error in error.response
 
 ```js
-import axios from 'axios';
+import axios from "axios";
 
 const fetchData = async () => {
   try {
@@ -68,7 +83,7 @@ const fetchDadJoke = async () => {
   try {
     const { data } = await axios(url, {
       headers: {
-        Accept: 'application/json',
+        Accept: "application/json",
       },
     });
     // console.log(data);
@@ -98,25 +113,25 @@ try {
 ```js
 // In latest axios version common property returns "undefined"
 // axios.defaults.headers.common['Accept'] = 'application/json';
-axios.defaults.headers['Accept'] = 'application/json';
+axios.defaults.headers["Accept"] = "application/json";
 
-axios.defaults.baseURL = 'https://api.example.com';
+axios.defaults.baseURL = "https://api.example.com";
 
 // In latest axios version common property returns "undefined"
 // axios.defaults.headers.common['Authorization'] = AUTH_TOKEN;
-axios.defaults.headers['Authorization'] = AUTH_TOKEN;
+axios.defaults.headers["Authorization"] = AUTH_TOKEN;
 
-axios.defaults.headers.post['Content-Type'] =
-  'application/x-www-form-urlencoded';
+axios.defaults.headers.post["Content-Type"] =
+  "application/x-www-form-urlencoded";
 ```
 
 #### Custom Instance
 
 ```js
 const authFetch = axios.create({
-  baseURL: 'https://course-api.com',
+  baseURL: "https://course-api.com",
   headers: {
-    Accept: 'application/json',
+    Accept: "application/json",
   },
 });
 ```
@@ -129,9 +144,9 @@ const authFetch = axios.create({
 authFetch.interceptors.request.use(
   (request) => {
     // request.headers.common['Accept'] = `application/json`;
-    request.headers['Accept'] = `application/json`;
+    request.headers["Accept"] = `application/json`;
 
-    console.log('request sent');
+    console.log("request sent");
     // must return request
     return request;
   },
@@ -142,14 +157,14 @@ authFetch.interceptors.request.use(
 
 authFetch.interceptors.response.use(
   (response) => {
-    console.log('got response');
+    console.log("got response");
     return response;
   },
   (error) => {
     console.log(error.response);
     if (error.response.status === 404) {
       // do something
-      console.log('NOT FOUND');
+      console.log("NOT FOUND");
     }
     return Promise.reject(error);
   }
@@ -163,18 +178,17 @@ In the latest version there is no common property
 ```js
 // In latest axios version common property returns "undefined"
 // axios.defaults.headers.common['Accept'] = 'application/json';
-axios.defaults.headers['Accept'] = 'application/json';
+axios.defaults.headers["Accept"] = "application/json";
 
 // In latest axios version common property returns "undefined"
 // axios.defaults.headers.common['Authorization'] = AUTH_TOKEN;
-axios.defaults.headers['Authorization'] = AUTH_TOKEN;
+axios.defaults.headers["Authorization"] = AUTH_TOKEN;
 ```
 
 ```js
 // request.headers.common['Accept'] = `application/json`;
-request.headers['Accept'] = `application/json`;
+request.headers["Accept"] = `application/json`;
 ```
-
 
 #### HTTP Methods
 
@@ -187,7 +201,7 @@ GET: This HTTP method is used to retrieve data from a server. When a client send
 ```js
 // HTTP GET example
 try {
-  const response = await axios.get('/api/data');
+  const response = await axios.get("/api/data");
   console.log(response.data);
 } catch (error) {
   console.error(error);
@@ -197,7 +211,7 @@ try {
 ```js
 // HTTP GET example
 axios
-  .get('/api/data')
+  .get("/api/data")
   .then((response) => {
     console.log(response.data);
   })
@@ -211,7 +225,7 @@ POST: The POST method is used to send data to a server to create or update a res
 ```js
 // HTTP POST example
 try {
-  const response = await axios.post('/api/data', { name: 'John', age: 30 });
+  const response = await axios.post("/api/data", { name: "John", age: 30 });
   console.log(response.data);
 } catch (error) {
   console.error(error);
@@ -223,7 +237,7 @@ PATCH: This method is similar to the POST method, but it is used to update only 
 ```js
 // HTTP PATCH example
 try {
-  const response = await axios.patch('/api/data/1', { age: 31 });
+  const response = await axios.patch("/api/data/1", { age: 31 });
   console.log(response.data);
 } catch (error) {
   console.error(error);
@@ -235,7 +249,7 @@ DELETE: The DELETE method is used to remove a resource from a server. When a cli
 ```js
 // HTTP DELETE example
 try {
-  const response = await axios.delete('/api/data/1');
+  const response = await axios.delete("/api/data/1");
   console.log(response.data);
 } catch (error) {
   console.error(error);
