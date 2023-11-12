@@ -27,9 +27,9 @@ function Problems() {
       {problems.map((item, index) => {
         const component = <item.component />;
         return (
-          <>
-            <CustomCollapse label={item.label}>{component}</CustomCollapse>
-          </>
+          <CustomCollapse key={index} label={item.label}>
+            {component}
+          </CustomCollapse>
         );
       })}
     </>
