@@ -20,13 +20,13 @@ class Employee:
     def fullname(self):
         return f'Fullname: {self.first} {self.last}'
 
-    @fullname.setter #to set the attribute fullname we use setter on the property fullname
+    @fullname.setter # To set the attribute fullname we use setter on the property fullname
     def fullname(self,name):
         first,last = name.split(' ')
         self.first = first
         self.last = last        
 
-    @fullname.deleter #to delete the attribute fullname we use deleter on the property fullname
+    @fullname.deleter # To delete the attribute fullname we use deleter on the property fullname
     def fullname(self):
         print('deleted fullname')
         self.first = None

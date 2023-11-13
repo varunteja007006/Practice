@@ -1,12 +1,14 @@
 # TOPIC FOUR - Inheritance
 
 '''
-Inheritance allows us to inherit the attributes and methods from the parent class. We can create subclasses and get all the functionality of parent class and then we can override and add new functionality without overriding the parent class.
+Inheritance allows us to inherit the attributes and methods from the parent class. 
+We can create subclasses and get all the functionality of parent class and then 
+we can override and add new functionality without overriding the parent class.
 '''
 
-class Employee: #parent class
+class Employee: # Parent class
 
-    raise_amount = 1.04 #class variable
+    raise_amount = 1.04 # class variable
 
     def __init__(self, first, last, pay):
         self.first = first
@@ -21,27 +23,25 @@ class Employee: #parent class
         self.pay = int(self.pay*self.raise_amount)
 
 
-class Developer(Employee): #child class to the parent class 'Employee'
+class Developer(Employee): # Child class to the parent class 'Employee'
 
     raise_amount = 1.10  # This class variable is only used when Developer class is instantiated
 
     def __init__(self, first, last, pay, prog_lang):
-        super().__init__(first, last, pay)
-
         # # Alternative syntax
         # Employee.__init__(self, first,last,pay)
+        super().__init__(first, last, pay)
 
         self.prog_lang = prog_lang
 
 
-class Manager(Employee): #child class to the parent class 'Employee'
+class Manager(Employee): # Child class to the parent class 'Employee'
 
     def __init__(self, first, last, pay, employees=None):
         '''
         why not pass list directly as 'employees=[]' instead of 'employees=None' ?? 
         Mutable data types should not be passed as default arguments. Hence employee=None
         '''
-
         super().__init__(first, last, pay)
         if employees is None:
             employees = []

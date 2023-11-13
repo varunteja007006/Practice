@@ -11,7 +11,7 @@ class Employee:
         self.last = last
         self.pay = pay
 
-    def fullname(self):
+    def fullname(self): # Regular Method
         print(f'{self.first} {self.last}')
 
     def apply_raise(self):
@@ -24,13 +24,13 @@ class Employee:
 
     # using class methods as alternative constructors
     @classmethod
-    def from_string(cls, emp_str):
+    def from_string(cls, emp_str): # Class method 
         first, last, pay = emp_str.split("-")
         pay = int(pay)
         return cls(first, last, pay)
 
     @staticmethod
-    def is_workday(day):
+    def is_workday(day): # Static Method
         if day.weekday() == 5 or day.weekday() == 6:
             return True
         return False

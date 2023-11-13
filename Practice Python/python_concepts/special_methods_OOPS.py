@@ -70,12 +70,12 @@ print(emp_1.__repr__())
 # Arithmetic special methods
 print(1+2)
 
-#same as 
+# Same as 
 print(int.__add__(1,2))
 print(str.__add__('a','b'))
 
 
-# add two employees together to get combined salary of the users
+# Add two employees together to get combined salary of the employees
 print(emp_1 + emp_2)
 
 print(len(emp_1))

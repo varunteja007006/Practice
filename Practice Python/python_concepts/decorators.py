@@ -10,11 +10,10 @@ def decorator_func(original_func):  # decorator_func receives another func as ar
     return wrapper_func
 
 
-
 def display_func():
     print("display_func ran......",'\n')
 
-print('-'*10,'Example 1.1', '-'*10,'\n')
+print('\n',' Example 1.1 '.center(40,'-'),'\n')
 decorated_display = decorator_func(display_func) #Assign the decorator_func and pass another func as argument
 decorated_display() #call the decorator_func function assigned to decorated_display variable.
 
