@@ -1,4 +1,7 @@
-// Example of Armstrong 153 , no of digits is 3, therefore sum of 1^3 + 5^3 + 3^3 should be equal ot 153
+/*
+  Example of Armstrong 153 , no of digits is 3, therefore sum of 1^3 + 5^3 + 3^3 should be equal to 
+  153
+*/
 
 const number = "1634"; //input as string
 const numberOfDigits = number.length;

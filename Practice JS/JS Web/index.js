@@ -7,7 +7,7 @@
 // document.body.appendChild(element);
 // };
 
-// Event delegation
+// Event delegation - example one
 document.querySelector("#categories").addEventListener("click", (e) => {
   console.log("Categories clicked");
   //Just to make sure only the list items trigger the below functionality since any child item can trigger it.
@@ -16,9 +16,12 @@ document.querySelector("#categories").addEventListener("click", (e) => {
   }
 });
 
+// Event delegation - example two
 document.querySelector("#form").addEventListener("keyup", (e) => {
+  // the event bubbles up to the form
   e.preventDefault();
   if (e.target.dataset.uppercase != undefined) {
+    // we target the element that triggered the event
     e.target.value = e.target.value.toUpperCase();
   }
 });

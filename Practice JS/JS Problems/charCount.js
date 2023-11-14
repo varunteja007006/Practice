@@ -15,5 +15,5 @@ function charCount(str) {
   return charcountObj;
 }
 
-str = "banana";
+let str = "banana";
 console.log(charCount(str));
