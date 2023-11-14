@@ -4,7 +4,47 @@ const Sample = require("../models/sampleModel");
 
 //get all samples
 const getSamples = async (req, res) => {
-  const samples = await Sample.find({});
+  const query = req.query;
+
+  let filter = {};
+
+  // if startDate and endDate query exists
+  if (query.startDate || query.endDate) {
+    const today = new Date();
+    let fromDate = new Date(query.startDate);
+    let toDate = new Date(query.endDate);
+
+    // toDate time is only modified to current time
+    toDate.setHours(today.getHours(), today.getMinutes(), today.getSeconds());
+
+    if (query.startDate == query.endDate) {
+      toDate.setHours(toDate.getHours() + 24);
+    }
+
+    if (!query.startDate) {
+      fromDate.setFullYear(1900, 1, 1); // (year, month[0-11], day[1-31])
+    }
+
+    if (!query.endDate) {
+      toDate = new Date(); // (year, month[0-11], day[1-31])
+    }
+
+    filter = {
+      ...filter,
+      createdAt: {
+        $gte: fromDate,
+        $lt: toDate,
+      },
+    };
+  }
+
+  /* mongoDB query: db.collection.find().sort({someSort:-1, someSort2: 1}) */
+  let sort = { someSort: query.sort };
+
+  const samples = await Sample.find(filter)
+    .skip(query.skip)
+    .limit(query.limit)
+    .sort(sort);
   if (samples) {
     return res.status(200).json(samples);
   } else {
@@ -29,7 +69,7 @@ const getSample = async (req, res) => {
 
 //create a new sample
 const createSample = async (req, res) => {
-  const { name,dob } = req.body;
+  const { name, dob } = req.body;
   //add doc to DB
   try {
     const sample = await Sample.create({ name, dob: new Date(dob) });

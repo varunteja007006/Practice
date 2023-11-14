@@ -27,7 +27,6 @@ app.use(cors());
 
 //Add routes
 app.use("/api/samples", sampleRoutes);
-app.use("/api/events", eventRoutes);
 
 //connect to Mongo DB
 mongoose
