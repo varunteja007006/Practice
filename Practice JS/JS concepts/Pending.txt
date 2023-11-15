@@ -1,3 +1,10 @@
 Queues in JS
 Stacks in JS
 Linked List in JS
+
+Promise chaining vs Async Await
+
+Promise.all()
+Promise.allSettle()
+Promise.race()
+Promise.any()

@@ -1,4 +1,18 @@
-// promise Demonstration
+/*
+  What is a promise? 
+  A promise is an object representing an eventual completion or rejection of an asynchronous operation.
+
+  Promise objects are immutable.
+  Promise states are:
+  Pending 
+  Fulfilled
+  Rejected
+
+  Promises are a powerful tool for managing asynchronous operations in JavaScript. 
+  They allow you to chain together multiple asynchronous operations, handle errors gracefully, 
+  and make your code more readable and maintainable.
+*/
+
 // We are waiting for the createOrder func to send back a promise.
 const promise = createOrder(cart);
 
@@ -8,6 +22,7 @@ promise.then(function (orderID) {
 });
 
 //--------------------------------------------------------------------
+
 // Promise Chaining
 createOrder(cart)
   .then((orderID) => {

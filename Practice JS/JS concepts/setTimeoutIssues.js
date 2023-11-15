@@ -19,6 +19,8 @@ first();
 
 console.log("after init first()");
 
-// Why setTimeout function not logging with 0ms passed?
-// The setTimeout function stores it in the callback queue which is executed only after call stack is empty, even if setTimeout is set to 0ms.
-// setTimeout ensures that minimum it will take the time mentioned because it may be paused due to call stack not empty.
+/*
+  Why setTimeout function not logging with 0ms passed?
+  The setTimeout function stores it in the callback queue which is executed only after call stack is empty, even if setTimeout is set to 0ms.
+  setTimeout ensures that minimum it will take the time mentioned because it may be paused due to call stack not empty.
+*/

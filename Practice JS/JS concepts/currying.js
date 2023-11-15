@@ -1,5 +1,10 @@
-// What is function currying?
-// Currying in JavaScript transforms a function with multiple arguments into a nested series of functions, each taking a single argument. Currying helps you avoid passing the same variable multiple times, and it helps you create a higher order function
+/*
+  What is function currying?
+  Currying in JavaScript transforms a function with multiple arguments into a nested series of 
+  functions, each taking a single argument. 
+  Currying helps you avoid passing the same variable multiple times, and it helps you create 
+  a higher order function
+*/
 
 // Method One with bind()
 const multiply = function (param1, param2, param3) {
