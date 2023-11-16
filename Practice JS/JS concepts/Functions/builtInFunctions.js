@@ -26,8 +26,8 @@ console.log(reduce_output);
 // create a function similar to reduce
 function sumArray(elements) {
   let sum = 0;
-  for (let index = 0; index < elements.length; index++) {
-    sum = sum + elements[index];
+  for (const element of elements) {
+    sum = sum + element;
   }
   return sum;
 }

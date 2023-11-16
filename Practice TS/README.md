@@ -654,7 +654,7 @@ user.superID; // this throws an error because superID is private only accessible
 
 - 'private' properties cannot be accessed outside class.
 
-- When property does not have a access modifier ( i.e private ) it means 'public' by default.
+- When property does not have a access modifier ( i.e private, protected ) it means 'public' by default.
 
 ###
 
@@ -688,7 +688,7 @@ user.deleteToken();
 
 ###
 
-**getter and setter methods in class**
+## 'getter' and 'setter' methods in class
 
 ```ts
 class User {
@@ -732,6 +732,10 @@ class User {
 }
 
 const user = new User("test@test.com", 1001);
+
+user.setCourseCount = 1000; // use the setter method
+
+console.log(user.getCourseCount); // use the getter method
 ```
 
 ###
@@ -787,7 +791,7 @@ const user = new User("test@test.com", 1001);
 
 ###
 
-**Interface for class**
+## Interface for class
 
 ```ts
 interface TakePhoto {
@@ -823,8 +827,9 @@ class Youtube implements TakePhoto, Story {
     public cameraMode: string,
     public filter: string,
     public burstMode: number,
-    public short: string /* You can have additional properties but it must have all properties 
-    defined in interface 'TakePhoto' & 'Story'
+    public short: string /* 
+      You can have additional properties but it MUST have all properties defined in 
+      interface 'TakePhoto' & 'Story'
     */
   ) {}
 
@@ -834,7 +839,7 @@ class Youtube implements TakePhoto, Story {
 }
 ```
 
-**Abstract class**
+## Abstract class
 
 An abstract class is a template definition of methods and variables in a specific class or category of objects. Abstract classes are classes that contain one or more abstracted behaviors or methods.
 
@@ -849,16 +854,28 @@ abstract class TakePhoto {
   // lets create a method
   abstract getSepia(): void;
   // this 'getSepia' method should be implemented.
+
+  getReelTime(): number {
+    return 100;
+  }
+
+  getLikes(): number {
+    return 1;
+  }
 }
 
-const a = new TakePhoto("demo", "demo");
+const a = new TakePhoto("demo", "demo"); // This throws an error
 /*
   You cannot create an object for abstract. It acts like a blueprint. 
 
-  You can only create an object from class extending the abstract class.
-
-  Abstract classes help to define the class that is inheriting. it makes sure the methods and properties 
-  that are used in abstract classes are implemented. Methods can be overridden as well.
+  Abstract classes help to define the class that is inheriting. 
+  It makes sure the methods and properties that are used in abstract classes are implemented. 
+  
+  Methods can be overridden as well.
+  
+  You can only create an object from class extending the abstract class. 
+  Example is given below, 'Instagram' class extends the abstract class TakePhoto and the object   
+  'obj' is created.
 */
 
 class Instagram extends TakePhoto {
@@ -873,12 +890,67 @@ class Instagram extends TakePhoto {
   getSepia(): void {
     console.log("Sepia");
   }
+
+  // Over-riding the 'getLikes' method in 'TakePhoto' class
+  getLikes(): number {
+    return 1000;
+  }
 }
 
-const b = new Instagram("demo", "demo", 5);
+const obj = new Instagram("demo", "demo", 5);
 /*   
   this is valid since we are implementing 'Instagram' which extends the abstract class 'TakePhoto'.
 */
+
+console.log(obj.getReelTime()); // returns 100 ; this is valid because 'Instagram' class inherits it from 'TakePhoto' class.
+
+console.log(obj.getLikes()); // returns 1000; 'Instagram' over-rides this method that is also available in 'TakePhoto' .
+```
+
+## Generics
+
+- What are generics?
+
+###
+
+- Why do we need generics?
+
+###
+
+```ts
+// problem one: Need to use union of types and validate them inside if we have multiple types,
+function funcOne(params: number | string | boolean): number | string | boolean {
+  return params;
+}
+
+// problem two: To avoid the above we can use 'any' but it defeats the purpose of using TypeScript
+function funcTwo(params: any): any {
+  return params;
+}
+
+// To solve the above problem, lets use simple 'generics'
+function funcThree<Type>(params: Type): Type {
+  /*
+The usage of 'Type' will accept anything, and also it makes sure to log the params type and
+return the type
+*/
+  return params;
+}
+funcThree(3);
+funcThree("hello");
+funcThree(true);
+
+// Most Common way of writing the generics
+function funcFour<T>(params: T): T {
+  return params;
+}
+// Now lets describe a Type
+interface Powers {
+  type: string;
+  strength: number;
+}
+// Now lets the described Type for the previously created generics function
+funcFour<Powers>({ type: "Water", strength: 500 });
 ```
 
 ## Difference between Interface & Type

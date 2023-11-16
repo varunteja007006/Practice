@@ -5,14 +5,14 @@ Rather, it only depends on its input arguments.
 
 */
 
-function calculateGST(productPrice) {
+function pureCalc(productPrice) {
   return productPrice * 0.05;
 }
-console.log(calculateGST(15));
+console.log(pureCalc(15));
 
 // Not a pure function because it depends on ext variable tax
 let tax = 20;
-function calculateGST(productPrice) {
+function notPureCalc(productPrice) {
   return productPrice * (tax / 100) + productPrice;
 }
-console.log(calculateGST(15));
+console.log(notPureCalc(15));
