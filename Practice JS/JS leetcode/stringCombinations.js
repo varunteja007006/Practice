@@ -40,7 +40,7 @@ function letterCombinations(digits) {
     // console.log(current, index); // uncomment this line for better understanding of recursion
     if (index === digits.length) {
       combinations.push(current.join(""));
-      console.log("\ncombo: ", combinations);
+      // console.log("\ncombo: ", combinations); // uncomment this line for better understanding of recursion
       return;
     }
 
