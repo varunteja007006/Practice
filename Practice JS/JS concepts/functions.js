@@ -1,15 +1,24 @@
-// This is a function statement (or) function declaration
+/*
+Function Declaration: It declares a function with a function keyword. The function declaration 
+  must have a function name.
+  This is a function statement (or) function declaration
+*/
 function a() {
   console.log("This is a function statement");
 }
 
-// This is a function expression
-// This function is assigned to variable 'b'
+/*
+  It is similar to a function declaration without the function name. Function expressions 
+  can be stored in a variable assignment. 
+  This is a function expression
+  This function is assigned to variable 'b'
+  */
+
 let b = function () {
   console.log("This is a function expression");
 };
 
-// This is a anonymous function assigned to variable 'c'
+// This is a anonymous function assigned to variable 'c' without name
 let c = function () {
   console.log("This is a Anonymous function");
 };
