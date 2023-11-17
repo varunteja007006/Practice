@@ -1,0 +1,58 @@
+<!-- Generate random text when you hover on the div with id 'textGen'. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text Gen on Mouse Movement</title>
+    <style>
+      body {
+        display: block;
+        padding: 0;
+        margin: 0;
+      }
+      main {
+        padding: 0 4rem;
+      }
+      .textGen-Block {
+        background-color: #000;
+        height: fit-content;
+        width: 100%;
+        text-align: center;
+      }
+      .textGen-Block p {
+        font-size: 1.2rem;
+        color: rgb(85, 255, 47);
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+        text-wrap: wrap;
+        text-overflow: clip;
+        word-wrap: break-word;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="textGen-Block"><p id="textGen"></p></div>
+    </main>
+    <script type="text/javascript">
+      let textGen = document.getElementById("textGen");
+
+      const az = ["test", "dev", "DBMS", "CSS", "HTML", "JavaScript"];
+
+      function generateRandomText(length) {
+        let randomText = "";
+        for (let i = 0; i < length; i++) {
+          const randomIndex = Math.floor(Math.random() * az.length);
+          randomText += `--${az[randomIndex]}--`;
+        }
+        return randomText;
+      }
+
+      onmousemove = function (e) {
+        const hugeText = generateRandomText(530);
+        textGen.innerHTML = hugeText;
+      };
+    </script>
+  </body>
+</html>

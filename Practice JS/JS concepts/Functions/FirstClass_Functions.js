@@ -31,6 +31,11 @@ let d = function xyz() {
 
 // If you call xyz() it will give an error
 
+// This is an arrow function
+let e = () => {
+  console.log("Hello");
+};
+
 /*
   What are First class functions?
   The ability to use functions as values.
