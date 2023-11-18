@@ -3,5 +3,7 @@ practice_git
 node_modules
 
 .env
-Practice TS/sample.ts
+
 Practice TS/sample.js
+Practice JS/rough.js
+Practice TS/sample.ts

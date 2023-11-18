@@ -1,27 +1,27 @@
 /*
-Primitive data types: Primitive values are immutable
-string
-number
-boolean
-null
-undefined
-symbol
-bigint
+  Primitive vs Not Primitive
+  Primitive data types: Primitive values are immutable
+  1. string
+  2. number
+  3. boolean
+  4. null
+  5. undefined
+  6. symbol
+  7. bigint
 
-Rest all objects
-Booleans can be objects (if defined with the new keyword)
-Numbers can be objects (if defined with the new keyword)
-Strings can be objects (if defined with the new keyword)
-Dates are always objects
-Maths are always objects
-Regular expressions are always objects
-Arrays are always objects
-Functions are always objects
-Objects are always objects
-
+  Rest all are objects
+  -> Booleans can be objects (if defined with the new keyword)
+  -> Numbers can be objects (if defined with the new keyword)
+  -> Strings can be objects (if defined with the new keyword)
+  -> Dates are always objects
+  -> Maths are always objects
+  -> Regular expressions are always objects
+  -> Arrays are always objects
+  -> Functions are always objects
+  -> Objects are always objects
 */
 
-// A JavaScript object is a collection of named values, which are properties
+// A JavaScript object is a collection of named values, which are properties(kind of like key-value pair)
 const person = {
   firstName: "John",
   lastName: "Doe",
@@ -29,9 +29,8 @@ const person = {
   eyeColor: "blue",
 };
 
-// Methods are actions that can be performed on objects.
-
 // Object properties can be both primitive values, other objects, and functions.
+// Methods are actions that can be performed on objects.
 const person1 = {
   firstName: "John",
   lastName: "Doe",
@@ -43,14 +42,13 @@ const person1 = {
 };
 
 /*
-Creating a JavaScript Object
+  Creating a JavaScript Object
 
-There are different ways to create new objects:
-
-Create a single object, using an object literal.
-Create a single object, with the keyword new.
-Define an object constructor, and then create objects of the constructed type.
-Create an object using Object.create().
+  There are different ways to create new objects:
+  -> Create a single object, using an object literal.
+  -> Create a single object, with the keyword new.
+  -> Define an object constructor, and then create objects of the constructed type.
+  -> Create an object using Object.create().
 */
 
 // Object literal way
@@ -116,3 +114,25 @@ for (let prop in student1) {
     console.log(prop + " -> " + student1[prop]);
   }
 }
+
+// Creating objects from the class
+class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  greet() {
+    console.log(
+      `Hello, my name is ${this.name} and I am ${this.age} years old.`
+    );
+  }
+}
+
+// Creating objects from the above class
+
+const person3 = new Person("John", 30);
+person1.greet();
+
+const person2 = new Person("Mary", 25);
+person2.greet();

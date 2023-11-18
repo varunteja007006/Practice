@@ -848,6 +848,8 @@ An abstract class is a template definition of methods and variables in a specifi
 Abstract classes are designed to be specifically used as a base class. They can be considered a blueprint for other classes.
 
 ```ts
+// Abstract Classes & TypeScript
+
 abstract class TakePhoto {
   constructor(public cameraMode: string, public filter: string) {}
 
@@ -918,6 +920,8 @@ console.log(obj.getLikes()); // returns 1000; 'Instagram' over-rides this method
 ###
 
 ```ts
+// Generics in TypeScript
+
 // problem one: Need to use union of types and validate them inside if we have multiple types,
 function funcOne(params: number | string | boolean): number | string | boolean {
   return params;
@@ -958,6 +962,8 @@ funcFour<Powers>({ type: "Water", strength: 500 });
 More generics
 
 ```ts
+// function declaration and arrow functions with generics
+
 // function declaration
 function getItem<T>(params: T[]): T {
   const index = 3;
@@ -981,6 +987,8 @@ ensure that we’re not accidentally grabbing a property that does not exist on 
 so we’ll place a constraint between the two types:
 
 ```ts
+//Using Type Parameters in Generic Constraints
+
 // Type T is object and U is keys of the object of type T
 // We also receive two arguments one is Object and another is Key that is supposed to be inside Object
 function sampleFunc<T, U extends keyof T>(obj: T, key: U) {
@@ -993,6 +1001,32 @@ let obj = { a: 1, b: 2, c: 3, d: 4 };
 sampleFunc(obj, "a"); // We are passing the object 'obj' and one of its key 'a'
 sampleFunc(obj, "m"); //This throws an error because,
 // We are passing the object 'obj' and a key 'm' which does not exist in it
+```
+
+**Using Class Types in Generics**
+
+```ts
+// Using Class Types in Generics
+
+interface Quiz {
+  name: string;
+  type: string;
+}
+interface Course {
+  name: string;
+  author: string;
+  subject: string;
+}
+
+class sellable<T> {
+  // this is a property in sellable class
+  cart: T[] = [];
+
+  // this is a method in sellable class
+  addToCart(product: T) {
+    this.cart.push(product);
+  }
+}
 ```
 
 ## Difference between Interface & Type
