@@ -1066,4 +1066,39 @@ class sellable<T> {
 }
 ```
 
+###
+
+### Narrowing in TypeScript
+
+Times when you have to be extra cautious about types.
+
+Check the TypeSCript Documentation
+https://www.typescriptlang.org/docs/handbook/2/narrowing.html
+
+```ts
+// Discriminated unions
+
+interface Circle {
+  kind: "circle";
+  radius: number;
+}
+
+interface Square {
+  kind: "square";
+  sideLength: number;
+}
+
+type Shape = Circle | Square;
+
+function getArea(shape: Shape) {
+  switch (shape.kind) {
+    case "circle":
+      return Math.PI * shape.radius ** 2;
+
+    case "square":
+      return shape.sideLength ** 2;
+  }
+}
+```
+
 ## Difference between Interface & Type
