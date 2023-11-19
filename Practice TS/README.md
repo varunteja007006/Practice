@@ -59,9 +59,11 @@ Learn TypeScript using documentation https://www.typescriptlang.org/docs/handboo
 
 ## TypeScript Basics
 
-**Simple use of typescript**
+**Simple TypeScript Code**
 
 ````ts
+// Simple TypeScript code
+
 const a: number = 10;
 console.log(a);
 
@@ -69,34 +71,41 @@ const str: string = "hello";
 console.log(str);```
 ````
 
-**Literal Types**
+**Literal Types in TypeScript**
 
 ```ts
+// Literal Types in TypeScript
+
 let verticalAlignment: "top" | "middle" | "bottom";
 
 verticalAlignment = "top";
 
 verticalAlignment = "left";
 /* 
-this throws an error Type '"left"' is not assignable to type '"top" | "middle" | "bottom"'
+  the above line throws an error Type '"left"' is not assignable type ' "top" | "middle" | 
+  "bottom" ' 
 */
 ```
 
 another example,
 
 ```ts
+// Literal Types in TypeScript
+
 let pi: 3.14 = 3.14;
 
 pi = 5; // this throws an error - Type '5' is not assignable to type '3.14'.
 ```
 
-### Functions in TypeScript
+### Functions using TypeScript
 
-**Creating a simple function**
+**Creating a simple function using TypeScript**
 
 Here the function 'addTwo' returns number and it takes a parameter 'num' of number type.
 
 ```ts
+// Functions using TypeScript
+
 // create a function that accepts number and returns number
 function addTwo(num: number): number {
   // num.toUpperCase(); // This is not allowed
@@ -105,9 +114,11 @@ function addTwo(num: number): number {
 addTwo(2);
 ```
 
-One more example on creating a function in TypeScript
+One more example on creating a function using TypeScript
 
 ```ts
+// Functions using TypeScript
+
 // By default signUp(email: any, name: any, password: any, age: any): string
 function signUp(email, name, password, age) {
   return ``;
@@ -119,9 +130,11 @@ function signUpTS(email: string, name: string, password: string, age: number) {
 }
 ```
 
-**Providing Default values to parameters of a function**
+**Providing Default values to parameters of a function using TypeScript**
 
 ```ts
+// Functions with parameters and its default values using TypeScript
+
 function signUpTS(
   email: string,
   name: string,
@@ -134,21 +147,25 @@ function signUpTS(
 signUpTS("dummy@test.com", "Carl", "S&orIwe!sda");
 ```
 
-**Arrow functions in TypeScript**
+**Arrow functions using TypeScript**
 
 Here we are passing a 'param' of string type and the function returns number.
 
 ```ts
+// Arrow functions using TypeScript
+
 const func = (param: string): number => {
   return 0;
 };
 ```
 
-**Map function**
+**Map function using TypeScript**
 
 Always a good idea to specify the return type while using a Map function.
 
 ```ts
+// Map function using TypeScript
+
 const data = ["charlie", "harry", "bard", "sammy"];
 
 data.map((item): string => {
@@ -159,32 +176,44 @@ data.map((item): string => {
 
 Few other function examples,
 
-**Return void**
+###
+
+###
+
+**Return void in TypeScript**
 
 This function returns a void, because it is only console logging an error message.
 
 ```ts
+// Function returns void in TypeScript
+
 function consoleData(errorMsg: string): void {
   console.log(errorMsg);
   // return 'Error happened!!' // This will throw an error
 }
 ```
 
-**Return never**
+**Return never in TypeScript**
 
 Why use never instead of void? Void means it is returning nothing, whereas never means that the function
 throws an exception or terminates execution of the program. The never type represents values which are
 never observed.
 
 ```ts
+// Function returns never in TypeScript
+
 function handleError(errorMessage: string): never {
   throw new Error(errorMessage); // This throws an error
 }
 ```
 
-A function that takes in parameters and returns an object can be written as follows
+###
+
+A function whose parameter and return value is an object can be written in TypeScript as follows
 
 ```ts
+// Function whose parameter and return value is an object in TypeScript
+
 function createCourse(
   courseName: string,
   coursePrice: number
@@ -198,6 +227,8 @@ function createCourse(
 Dealing with object data as parameters in function.
 
 ```ts
+// Object Parameters in Function
+
 function processUser({ username: string, paymentID: number }): string {
   return "Success";
 }
@@ -207,8 +238,8 @@ processUser({
   paymentID: 435343,
   email: "test_user@dummy.com",
   /* 
-    This throws an error because we are passing an extra argument 'email' which is not accepted as parameter
-    in function 'processUser'.
+    This throws an error because we are passing an extra argument 'email' which is not accepted
+    as parameter in function 'processUser'. 
   */
 });
 
@@ -220,8 +251,8 @@ const userData = {
 
 processUser(userData);
 /* 
-  This does not throw an error even though we are passing the email which is absent as a parameter 
-  in the function 'processUser'.
+  This does not throw an error even though we are passing the email which is absent as a
+  parameter in the function 'processUser'. 
 
   This can be resolved. Check topic - "Type Alias in TypeScript"
 */
@@ -232,6 +263,8 @@ processUser(userData);
 Using 'type' alias
 
 ```ts
+// Type Alias in TypeScript
+
 type User = {
   username: string;
   paymentID: number;
@@ -239,10 +272,10 @@ type User = {
 };
 
 /*  
-This function 'processUser' should take 'User' type objects as parameters.
-It should also return the type 'User' object
+  This function 'processUser' should take 'User' type objects as parameters.
+  It should also return the type 'User' object
 
-This way we can avoid the issue we faced in the topic - "Object Parameters in Function"
+  This way we can avoid the issue we faced in the topic - "Object Parameters in Function"
 */
 
 function processUser(user: User): User {
@@ -257,11 +290,13 @@ processUser({
 });
 ```
 
-**Using readonly**
+**Using TypeScript readonly**
 
 This readonly type will not allow to modify the property.
 
 ```ts
+// Using TypeScript readonly
+
 type User = {
   readonly _id: string;
   username: string;
@@ -270,28 +305,30 @@ type User = {
 };
 
 let userOne: User = {
-  _id: "ersse554823fsd",
+  _id: "123ADFG321",
   username: "testDummy",
   paymentID: 5161331,
   email: "testDummy@test.com",
 };
 
 userOne.email = "dummyTest@dummy.com";
-userOne._id = "596sfasf"; // This throws an error because '_id' is readonly,
+userOne._id = "56SFAFS65"; // This throws an error because '_id' is readonly,
 ```
 
-**Optional properties**
+**Optional properties in TypeScript**
 
 If we have some properties that are optional, then we have to mention '?' before colon. Check the below
 code snippet.
 
 ```ts
+// Optional properties in TypeScript
+
 type User = {
   readonly _id: string;
   username: string;
   paymentID: number;
   email: string;
-  creditCardNumber?: number; // This is an optional property. We use '?' before colon to mention it has optional
+  creditCardNumber?: number; // We use '?' before colon to mention it has optional property
 };
 
 let userOne: User = {
@@ -304,7 +341,7 @@ let userOne: User = {
 
 **Appending the types to a new type**
 
-Here if we have more than one types and want to combine them to create a new type then we can use '&'.
+We can use '&' to combine multiple 'type' to a new type.
 
 ```ts
 type CredCardNumber = {
