@@ -25,6 +25,9 @@
   It is invoked when a promise is either rejected or some error has occurred in execution. 
   It is used as an Error Handler whenever at any step there is a chance of getting an error.
 
+  Promise Chaining: Promise Chaining is a simple concept by which we may initialize another 
+  promise inside our .then() method and accordingly we may execute our results. The function 
+  inside then captures the value returned by the previous promise. 
 */
 
 // Create own promise method
