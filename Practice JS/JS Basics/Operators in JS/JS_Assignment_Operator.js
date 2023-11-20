@@ -8,16 +8,16 @@
     single value to multiple variables.
 */
 /*
-    OPERATOR NAME               SHORTHAND       EVALUATES TO
-    Addition Assignment	        a+=b	        a=a+b
-    Subtraction Assignment	    a-=b	        a=a-b
-    Multiplication Assignment	a*=b	        a=a*b
-    Division Assignment	        a/=b	        a=a/b
-    Remainder Assignment	    a%=b	        a=a%b
-    Exponentiation Assignment	a**=b	        a=a**b
-    Left Shift Assignment	    a<<=b	        a=a<<b
-    Right Shift Assignment	    a>>=b	        a=a>>b
-    Bitwise AND Assignment	    a&=b	        a=a&b
-    Bitwise OR Assignment	    a|=b	        a=a | b
-    Bitwise XOR Assignment	    a^=b	        a=a^b
+    OPERATOR NAME_______________SHORTHAND________EVALUATES TO
+    Addition Assignment__________a += b__________a = a+b
+    Subtraction Assignment_______a -= b__________a = a-b
+    Multiplication Assignment____a *= b__________a = a*b
+    Division Assignment__________a /= b__________a = a/b
+    Remainder Assignment_________a %= b__________a = a%b
+    Exponentiation Assignment____a **= b_________a = a**b
+    Left Shift Assignment________a <<= b_________a = a<<b
+    Right Shift Assignment_______a >>= b_________a = a>>b
+    Bitwise AND Assignment_______a &= b__________a = a&b
+    Bitwise OR Assignment________a |= b__________a = a | b
+    Bitwise XOR Assignment_______a ^= b__________a = a^b
 */
