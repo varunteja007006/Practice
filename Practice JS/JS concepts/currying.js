@@ -28,3 +28,19 @@ const multiplyByClosure = function (param1) {
 
 const multiplyByFour = multiplyByClosure(4);
 multiplyByFour(5);
+
+// Another example of currying
+
+function currying(fn, ...args) {
+  return (..._args) => {
+    return fn(...args, ..._args);
+  };
+}
+
+function sum(a, b, c) {
+  return a + b + c;
+}
+
+const curry = currying(sum, 1);
+
+console.log(curry(2, 3));

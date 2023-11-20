@@ -1,11 +1,11 @@
 /* 
-String Operators
-JavaScript String Operators are used to manipulate and perform operations on strings.
-These operators help us to join one string to another string.
-
-Type of JavaScript String Operators
-1. Concatenate Operator
-2. Concatenate Assignment Operator
+  String Operators
+  JavaScript String Operators are used to manipulate and perform operations on strings.
+  These operators help us to join one string to another string.
+  
+  Type of JavaScript String Operators
+  1. Concatenate Operator
+  2. Concatenate Assignment Operator
 */
 
 // Concatenate Operator
