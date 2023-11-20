@@ -1100,6 +1100,35 @@ function getArea(shape: Shape) {
 }
 ```
 
+###
+
+**'in' operator Narrowing**
+
+```ts
+//'in' operator Narrowing
+
+interface User {
+  email: string;
+  name: string;
+}
+
+interface Admin {
+  email: string;
+  name: string;
+  isAdmin: boolean;
+}
+
+function verifyAdmin(account: User | Admin) {
+  if ("isAdmin" in account) {
+    return account.isAdmin;
+  }
+}
+```
+
+###
+
+**instanceof Narrowing**
+**Using type predicates**
 Check the TypeSCript Documentation for more information on Narrowing in TypeScript
 https://www.typescriptlang.org/docs/handbook/2/narrowing.html
 
