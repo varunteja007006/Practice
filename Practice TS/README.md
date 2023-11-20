@@ -1070,10 +1070,9 @@ class sellable<T> {
 
 ### Narrowing in TypeScript
 
-Times when you have to be extra cautious about types.
-
-Check the TypeSCript Documentation
-https://www.typescriptlang.org/docs/handbook/2/narrowing.html
+Times when you have to be extra cautious about types. You have to use Relationship operators in
+order to make sure of the types you are receiving. This is for union types is used because the
+variable could be of type 1 or type 2.
 
 ```ts
 // Discriminated unions
@@ -1100,5 +1099,8 @@ function getArea(shape: Shape) {
   }
 }
 ```
+
+Check the TypeSCript Documentation for more information on Narrowing in TypeScript
+https://www.typescriptlang.org/docs/handbook/2/narrowing.html
 
 ## Difference between Interface & Type
