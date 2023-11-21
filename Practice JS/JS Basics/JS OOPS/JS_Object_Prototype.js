@@ -9,9 +9,8 @@
         Object.constructor
 */
 
-
 function Gfg(name) {
-    this.name = name
+  this.name = name;
 }
-let GeeksforGeeks = new Gfg('Geeks');
+let GeeksforGeeks = new Gfg("Geeks");
 console.log(GeeksforGeeks.constructor);
