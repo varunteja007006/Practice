@@ -15,6 +15,7 @@ import {
   LearnUseTransition,
   LearnUseContext,
   LearnSuspenseAPI,
+  LearnMultiPageForms,
 } from "../components/home";
 //Above we are importing all the components from one file - index.jsx in home folder inside src/components.
 
@@ -25,8 +26,8 @@ import React from "react";
 function Home() {
   return (
     <>
-      {/* <LearnFramer></LearnFramer> */}
-
+      <LearnMultiPageForms></LearnMultiPageForms>
+      
       <LearnCallback></LearnCallback>
 
       <LearnCheckboxes></LearnCheckboxes>

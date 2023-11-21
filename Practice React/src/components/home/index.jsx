@@ -14,6 +14,7 @@ import LearnUseMemo from "./LearnUseMemo";
 import LearnUseTransition from "./LearnUseTransition";
 import LearnUseContext from "./LearnUseContext";
 import LearnSuspenseAPI from "./LearnSuspenseAPI";
+import LearnMultiPageForms from "./LearnMultiPageForms";
 // all the Home page components imported in one file.
 
 export {
@@ -33,4 +34,5 @@ export {
   LearnUseTransition,
   LearnUseContext,
   LearnSuspenseAPI,
+  LearnMultiPageForms
 };
