@@ -43,19 +43,26 @@ Learn TypeScript using documentation https://www.typescriptlang.org/docs/handboo
 
 ### TypeScript Types:
 
+TypeScript has corresponding primitive types for the built-in types:
+
 - number
 - string
+- bigint
 - boolean
+- symbol
 - null
 - undefined
-- void
 - object
-- array
-- tuples
-- any
-- never
+
+Other important TypeScript types
+
 - unknown
-- and much more.....
+- never
+- object literal - eg { property: Type }
+- void - for functions with no documented return value
+- T[] - mutable arrays, also written Array<T>
+- [T, T] tuples, which are fixed-length but mutable
+- (t: T) => U functions
 
 ## TypeScript Basics
 
@@ -206,6 +213,8 @@ function handleError(errorMessage: string): never {
   throw new Error(errorMessage); // This throws an error
 }
 ```
+
+###
 
 ###
 
@@ -1128,8 +1137,103 @@ function verifyAdmin(account: User | Admin) {
 ###
 
 **instanceof Narrowing**
+
+```ts
+// instanceof Narrowing
+
+function logValue(x: Date | string) {
+  if (x instanceof Date) {
+    console.log(x.toUTCString());
+  } else {
+    console.log(x.toUpperCase());
+  }
+}
+```
+
+###
+
 **Using type predicates**
+
+```ts
+// Using type predicates
+
+type Fish = { swim: () => void };
+type Bird = { fly: () => void };
+
+// function isFish(pet: Fish | Bird) {
+//   return (pet as Fish).swim !== undefined;
+// }
+
+// modified isFish function so it will return pet is fish for sure
+function isFish(pet: Fish | Bird): pet is Fish {
+  return (pet as Fish).swim !== undefined;
+}
+
+function getFood(pet: Fish | Bird) {
+  // this if block should verify if the pet is fish and will only return true if it fish.
+  if (isFish(pet)) {
+    pet; /*
+    when we hover on pet it shows as Fish | Bird even though this block is executed only if pet is
+    fish.
+
+    After isFish is modified you will get the pet as fish for sure.
+    */
+    return "fish food";
+  } else {
+    pet;
+    return "bird food";
+  }
+}
+```
+
+###
+
+**Exhaustiveness checking**
+The never type is assignable to every type; however, no type is assignable to never (except never
+itself). This means you can use narrowing and rely on 'never' turning up to do exhaustive checking
+in a switch statement.
+
+```ts
+interface Circle {
+  kind: "circle";
+  radius: number;
+}
+
+interface Square {
+  kind: "square";
+  sideLength: number;
+}
+
+interface Rectangle {
+  kind: "rectangle";
+  length: number;
+  width: number;
+}
+
+type Shape = Circle | Square | Rectangle;
+
+function getArea(shape: Shape) {
+  switch (shape.kind) {
+    case "circle":
+      return Math.PI * shape.radius ** 2;
+    case "square":
+      return shape.sideLength ** 2;
+    // case "rectangle":
+    //   return shape.length * shape.width;
+    default:
+      const _exhaustiveCheck: never =
+        shape; /* This will throw an error because we are not handling the case of rectangle, 
+        this is the exact reason to have this exhaustive checking and assigning never type to it*/
+      return _exhaustiveCheck;
+  }
+}
+```
+
+###
+
 Check the TypeSCript Documentation for more information on Narrowing in TypeScript
 https://www.typescriptlang.org/docs/handbook/2/narrowing.html
+
+###
 
 ## Difference between Interface & Type
