@@ -13,9 +13,10 @@
 const form = document.getElementById("handleForm");
 form.onsubmit = (e) => {
   e.preventDefault();
-  const data = new FormData(e.target);
+  const data = new FormData(e.target); // use FormData API and pass the form to it
+  data.append("location", "Las Vegas"); // You can also append properties
   console.log(data.get("name"));
-  const dataObj = Object.fromEntries(data.entries());
+  const dataObj = Object.fromEntries(data.entries()); // get the javascript object
   console.log(dataObj);
 };
 */
