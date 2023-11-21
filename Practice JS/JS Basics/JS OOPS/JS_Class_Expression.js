@@ -9,9 +9,8 @@
     class expression:  The class expression is another way of creating classes in JavaScript 
     and they can be named or unnamed. If named, the class name is used internally, but not 
     outside of the class.
-
-
 */
+
 // Syntax
 // Using named class expression
 const sampleClass = class Class_name {
