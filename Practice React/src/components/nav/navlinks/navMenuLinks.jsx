@@ -7,4 +7,8 @@ export const navMenuLinks = [
     path: "/problems",
     pathName: "Problems",
   },
+  {
+    path: "/materialUI",
+    pathName: "Material UI",
+  },
 ];

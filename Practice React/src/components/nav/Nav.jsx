@@ -10,7 +10,7 @@ function Nav() {
   };
 
   return (
-    <div className="navbar border-b-2 shadow-md dark:bg-gray-300 ">
+    <div className="navbar border-b-2 shadow-md dark:bg-gray-300">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -60,12 +60,12 @@ function Nav() {
         <ul className="menu menu-horizontal px-1">
           {navlinks.map((item, index) => {
             return (
-              <li key={index} className="hover:bg-slate-300 ">
+              <li key={index} className="hover:bg-slate-300">
                 <a href={item.path}>{item.pathName}</a>
               </li>
             );
           })}
-          <li tabIndex={0} className="hover:bg-slate-300">
+          <li tabIndex={0} className="hover:bg-slate-300 z-50">
             <details>
               <summary className="">More Project</summary>
               <ul className="p-2 dark:bg-gray-300">

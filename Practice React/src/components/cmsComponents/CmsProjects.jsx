@@ -2,15 +2,25 @@ import { createClient } from "contentful";
 import { useEffect, useState } from "react";
 
 // setup the contentful client
+const SPACEID = "xxxxxxxxxxxxxxx";
+const ACCESS_KEY = "xxxxxxxxxxxxxxx";
+
+/*
+setup these keys in .env file. Place file along with index.html
+const SPACEID = import.meta.env.VITE_CONTENTFUL_SPACEID ;
+const ACCESS_KEY = import.meta.env.VITE_CONTENTFUL_ACCESS_KEY ;
+*/
+
 const client = createClient({
-  space: import.meta.env.VITE_CONTENTFUL_SPACEID,
+  space: SPACEID,
   environment: "master",
-  accessToken: import.meta.env.VITE_CONTENTFUL_ACCESS_KEY,
+  accessToken: ACCESS_KEY,
 });
 
-export const useFetchProjects = () => {
+export const FetchProjects = () => {
   const [loading, setLoading] = useState(true);
   const [projects, setProjects] = useState([]);
+  const [error, setError] = useState(null);
 
   const getData = async () => {
     try {
@@ -24,7 +34,9 @@ export const useFetchProjects = () => {
       setProjects(projects);
       setLoading(false);
     } catch (error) {
-      console.log(error);
+      const { message } = { ...error };
+      const errorMessage = JSON.parse(message).message;
+      setError(errorMessage);
       setLoading(false);
     }
   };
@@ -34,5 +46,5 @@ export const useFetchProjects = () => {
     getData();
   }, []);
 
-  return { loading, projects };
+  return { loading, projects, error };
 };

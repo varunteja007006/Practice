@@ -6,6 +6,7 @@ import {
   CustomCollapse,
   FetchAgain,
 } from "../components/problems";
+import CodeBlock from "../components/CodeBlock";
 
 function Problems() {
   const problems = [
@@ -27,7 +28,7 @@ function Problems() {
     },
   ];
   return (
-    <>
+    <CodeBlock>
       <p className="mb-3">Click to Open the problem statements</p>
       {problems.map((item, index) => {
         const component = <item.component />;
@@ -37,7 +38,7 @@ function Problems() {
           </CustomCollapse>
         );
       })}
-    </>
+    </CodeBlock>
   );
 }
 

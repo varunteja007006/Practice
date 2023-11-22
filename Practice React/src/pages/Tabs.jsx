@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import BtnContainer from "../components/tabs/BtnContainer";
 import JobInfo from "../components/tabs/JobInfo";
+import { CodeBlock } from "../components";
 
 function Tabs() {
   const url = "https://course-api.com/react-tabs-project";
@@ -29,22 +30,18 @@ function Tabs() {
   }, []);
 
   if (loading) {
-    return (
-      <>
-        <progress className="progress w-56"></progress>
-      </>
-    );
+    return <progress className="progress w-56"></progress>;
   }
 
   return (
-    <div>
+    <CodeBlock>
       <BtnContainer
         data={data}
         currentData={currentData}
         setCurrentData={setCurrentData}
       ></BtnContainer>
       <JobInfo data={data} currentData={currentData}></JobInfo>
-    </div>
+    </CodeBlock>
   );
 }
 
