@@ -48,7 +48,7 @@ function MultiPageForm() {
     setFields({ ...fields, [name]: { ...newItem, value: value } });
   };
 
-  const handleSubmit = () => {};
+  const handleSubmit = () => {};                  
   switch (page) {
     case 0:
       return (
