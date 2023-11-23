@@ -10,7 +10,7 @@ function InputField({ fieldData, handleOnChange }) {
       label={label}
       placeholder={label}
       variant="filled"
-      color="warning"
+      color="secondary"
       value={value}
       name={name}
       onChange={handleOnChange}
