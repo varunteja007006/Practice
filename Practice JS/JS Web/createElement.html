@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Element</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <h1>This page is to test JavaScript...</h1>
+
+    <!-- demonstrate to create a element with JS -->
+    <button type="button" id="createElement">Click to create a element</button>
+
+    <script src="index.js"></script>
+    <script>
+      // create a element
+      const buttonCreateElement = document.getElementById("createElement");
+      buttonCreateElement.onclick = (e) => {
+        e.preventDefault();
+        const element =
+          document.createElement("div"); /*create a obj 'element' that holds 
+        the created div element*/
+        element.textContent = "new element"; // add content to that obj 'element'
+        document.body.appendChild(element); // appending the obj 'element' to body
+      };
+    </script>
+  </body>
+</html>

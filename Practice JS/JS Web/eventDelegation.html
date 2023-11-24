@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Delegation</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <h1>This page is to test JavaScript...</h1>
+
+    <!-- Event delegation -->
+    <div>
+      <ul id="categories">
+        <li id="laptops">Laptops</li>
+        <li id="cameras">Cameras</li>
+        <li id="shoes">Shoes</li>
+      </ul>
+      <!-- one more example -->
+      <form id="form">
+        <input
+          type="text"
+          placeholder="name"
+          name="name"
+          id="name"
+          data-uppercase
+        />
+        <input
+          type="text"
+          placeholder="othername"
+          name="othername"
+          id="othername"
+        />
+      </form>
+    </div>
+
+    <script>
+      // Event delegation - example one
+      document.querySelector("#categories").addEventListener("click", (e) => {
+        console.log("Categories clicked");
+        //Just to make sure only the list items trigger the below functionality since any child item can trigger it.
+        if (e.target.tagName == "LI") {
+          console.log(e.target.id); //event bubbling to parent
+        }
+      });
+
+      // Event delegation - example two
+      document.querySelector("#form").addEventListener("keyup", (e) => {
+        // the event bubbles up to the form
+        e.preventDefault();
+        if (e.target.dataset.uppercase != undefined) {
+          // we target the element that triggered the event
+          e.target.value = e.target.value.toUpperCase();
+        }
+      });
+    </script>
+  </body>
+</html>

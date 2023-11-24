@@ -1,6 +1,7 @@
 import React, { Suspense, lazy, useState } from "react";
 import CodeBlock from "../CodeBlock";
 import YellowBtn from "../subcomponents/YellowBtn";
+
 const SlowFunctionTwo = lazy(() => import("../subcomponents/SlowFunctionTwo"));
 
 function LearnSuspenseAPI() {
