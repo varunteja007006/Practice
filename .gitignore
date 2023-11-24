@@ -1,9 +1,6 @@
 practice_git
-
 node_modules
-
 .env
-
-Practice TS/sample.js
-Practice TS/sample.ts
+venv
+env
 Practice JS/rough.js
