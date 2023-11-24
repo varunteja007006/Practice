@@ -32,8 +32,8 @@ let rabbit = {
 
 // Sets rabbit.[[Prototype]] = animal
 rabbit.__proto__ = animal;
-console.log(rabbit.animalEats);
-console.log(rabbit.rabbitJumps);
+console.log(rabbit.animalEats); // output: true
+console.log(rabbit.rabbitJumps); // output: true
 
 /*
 Approach 2: Using Object.setPrototypeOf() method
@@ -43,12 +43,7 @@ to have its prototype set and the second one is the object’s new prototype. Th
 we have declared two objects and using those two objects, we will set one of the objects 
 as the prototype object for another object.
 */
-let rabbit1 = {
-  rabbitJumps: true,
-};
-let animal1 = {
-  animalEats: true,
-};
-Object.setPrototypeOf(rabbit1, animal1);
-console.log(rabbit1.animalEats);
-console.log(rabbit1.rabbitJumps);
+
+Object.setPrototypeOf(rabbit, animal);
+console.log(rabbit.animalEats); // output: true
+console.log(rabbit.rabbitJumps); // output: true

@@ -1,5 +1,5 @@
 /*
-Functions, there are named functions and anonymous functions, and then there are Functions that 
+In functions, there are named functions and anonymous functions, and then there are Functions that 
 are executed as soon as they are mounted, these functions are known as Immediately Invoked Function 
 Expressions or IIFEs. 
 

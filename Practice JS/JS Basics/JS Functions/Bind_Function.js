@@ -18,25 +18,12 @@ geeks.printFunc();
 // output: ABC
 
 // but if we assign the last statement to a object
-let geeksOne = {
-  name: "ABC",
-  printFunc: function () {
-    console.log(this.name);
-  },
-};
-let printFunc2 = geeksOne.printFunc;
+let printFunc2 = geeks.printFunc;
 printFunc2();
 //no output is produced by this code//
 
 // To fix this we need to use bind
-let geeksTwo = {
-  name: "ABC",
-  printFunc: function () {
-    console.log(this.name);
-  },
-};
-
-let printFunc3 = geeksTwo.printFunc.bind(geeksTwo);
+let printFunc3 = geeks.printFunc.bind(geeks);
 //using bind()
 // bind() takes the object "geeks" as parameter//
 printFunc3();
@@ -70,7 +57,6 @@ function printVal() {
 
 let printFunc4 = printVal.bind(geeks1);
 //using bind()
-
 // bind() takes the object "geeks1" as parameter//
 printFunc4();
 

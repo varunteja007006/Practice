@@ -29,7 +29,8 @@ const multiplyByClosure = function (param1) {
 const multiplyByFour = multiplyByClosure(4);
 multiplyByFour(5);
 
-// Another example of currying
+console.log("\n");
+// Another example of creating a curry function
 
 function currying(fn, ...args) {
   return (..._args) => {
@@ -42,5 +43,9 @@ function sum(a, b, c) {
 }
 
 const curry = currying(sum, 1);
+console.log("Curry function: ", curry(2, 3)); // output: Curry function:  6
 
-console.log(curry(2, 3));
+const curry2 = currying(sum, 5, 5);
+console.log("Curry function: ", curry2(5)); // output: Curry function:  15
+
+console.log("Curry function: ", currying(sum, 10)(20, 30)); // output: Curry function:  60
