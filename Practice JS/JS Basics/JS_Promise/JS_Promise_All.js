@@ -7,8 +7,6 @@
     from the first promise that rejected.
 */
 
-// CASE 1: All promises only resolve
-
 const promise_1 = new Promise((resolve, reject) => {
   try {
     // fetch some data by an asynchronous operation and then resolve it
@@ -48,15 +46,22 @@ const promise_3 = new Promise((resolve, reject) => {
 const promise_error = new Promise((resolve, reject) => {
   // fetch some data by an asynchronous operation and then resolve it
   // let us reject the promise after 5 seconds
-  setTimeout(() => {
-    reject("Promise failed !!😧");
-  }, 2000);
+  try {
+    setTimeout(() => {
+      reject("Promise failed !!😧");
+    }, 2000);
+  } catch (error) {
+    console.log(error);
+  }
 });
+
+// CASE 1: All promises only resolve
 
 const promise_all_resolve = Promise.all([promise_1, promise_2, promise_3]);
 console.time("promise_all_resolve");
 promise_all_resolve
   .then((data) => {
+    console.log("\nCASE 1: All promises only resolve\n");
     console.log(data);
   })
   .then(() => {
@@ -75,8 +80,24 @@ promise_all_error
     console.log(data);
   })
   .catch((error) => {
+    console.log("\nCASE 2: One promise rejects\n");
     console.error(error);
   })
   .finally(() => {
     console.timeEnd("promise_all_error");
   });
+
+/*
+  Conclusion:
+  
+  Promise.all() –> will return only after 3 promises are resolved. 3 promises will be 
+  resolved concurrently. Out of 3 promises whichever takes longer to resolve is the maximum 
+  time for the Promise.all() promise to be resolved.
+  
+  Similarly if out of 3 promises one fails the whole Promise.all() will fail. The return 
+  will be the error of the rejected promise. The Promise.all() is rejected immediately; a 
+  promise is rejected before other promises are resolved. Promise.all() does not wait for 
+  other promises to be resolved/rejected. Fail Fast condition
+  
+  It's an 'ALL' or 'NONE' situation.
+*/
