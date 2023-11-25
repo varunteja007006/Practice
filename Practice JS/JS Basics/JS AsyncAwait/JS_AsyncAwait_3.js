@@ -16,6 +16,7 @@ async function getDataAsync() {
   //JS engine waits for the promise to be resolved.
   console.log("getDataAsync started. Code before 1st promise.....");
   const val1 = await promise;
+
   console.log("Code after 1st promise.....\n");
   console.log(val1);
 

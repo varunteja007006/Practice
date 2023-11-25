@@ -12,7 +12,7 @@ function x(params) {
   params();
 }
 
-// Here function y is callback function.
+// Here function y is callback function passed to function x.
 x(function y(params) {
   console.log("This is function y");
 });
