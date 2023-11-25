@@ -45,7 +45,7 @@ const promise_3 = new Promise((resolve, reject) => {
 
 const promise_error = new Promise((resolve, reject) => {
   // fetch some data by an asynchronous operation and then resolve it
-  // let us reject the promise after 5 seconds
+  // let us reject the promise after 2 seconds
   try {
     setTimeout(() => {
       reject("Promise failed !!😧");
@@ -59,24 +59,39 @@ const promise_error = new Promise((resolve, reject) => {
 
 const promise_all_resolve = Promise.all([promise_1, promise_2, promise_3]);
 console.time("promise_all_resolve");
+
 promise_all_resolve
   .then((data) => {
     console.log("\nCASE 1: All promises only resolve\n");
     console.log(data);
   })
-  .then(() => {
-    console.timeEnd("promise_all_resolve");
-  })
+
   .catch((error) => {
+    console.log("\nCASE 1: All promises only resolve\n");
     console.log(error);
+  })
+  .finally(() => {
+    console.timeEnd("promise_all_resolve");
   });
+
+/*
+  Output:
+  [
+    'Promise one resolved 🌟',
+    'Promise two resolved 💕',
+    'Promise three resolved 🙂'
+  ]
+  promise_all_resolve: 10.006s
+  */
 
 // CASE 2: One promise rejects
 
 const promise_all_error = Promise.all([promise_1, promise_2, promise_error]);
 console.time("promise_all_error");
+
 promise_all_error
   .then((data) => {
+    console.log("\nCASE 2: One promise rejects\n");
     console.log(data);
   })
   .catch((error) => {
@@ -86,6 +101,12 @@ promise_all_error
   .finally(() => {
     console.timeEnd("promise_all_error");
   });
+
+/*
+  Output:
+  Promise failed !!😧
+  promise_all_error: 2.011s
+  */
 
 /*
   Conclusion:

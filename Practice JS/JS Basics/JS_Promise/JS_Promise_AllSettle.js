@@ -21,13 +21,6 @@ the promise was rejected, the object will also have a property called reason tha
 the reason for the rejection.
 */
 
-// const {
-//   promise_1,
-//   promise_2,
-//   promise_3,
-//   promise_error,
-// } = require("./promiseAll");
-
 const promise_1 = new Promise((resolve, reject) => {
   try {
     // fetch some data by an asynchronous operation and then resolve it
@@ -66,7 +59,7 @@ const promise_3 = new Promise((resolve, reject) => {
 
 const promise_error = new Promise((resolve, reject) => {
   // fetch some data by an asynchronous operation and then resolve it
-  // let us reject the promise after 5 seconds
+  // let us reject the promise after 2 seconds
   try {
     setTimeout(() => {
       reject("Promise failed !!😧");
@@ -89,11 +82,13 @@ promise_allSettled_resolve
     console.log("\nCASE 1: All promises only resolve\n");
     console.log(data);
   })
-  .then(() => {
-    console.timeEnd("promise_allSettled_resolve");
-  })
+
   .catch((error) => {
+    console.log("\nCASE 1: All promises only resolve\n");
     console.log(error);
+  })
+  .finally(() => {
+    console.timeEnd("promise_allSettled_resolve");
   });
 
 /*
@@ -107,18 +102,20 @@ promise_allSettled_resolve
 
 // CASE 2: One promise rejects
 
-const promise_all_error = Promise.allSettled([
+const promise_allSettled_error = Promise.allSettled([
   promise_1,
   promise_2,
   promise_error,
 ]);
 console.time("promise_allSettled_error");
-promise_all_error
+
+promise_allSettled_error
   .then((data) => {
     console.log("\nCASE 2: One promise rejects\n");
     console.log(data);
   })
   .catch((error) => {
+    console.log("\nCASE 1: All promises only resolve\n");
     console.error(error);
   })
   .finally(() => {
