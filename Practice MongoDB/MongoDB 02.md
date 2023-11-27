@@ -48,7 +48,7 @@ db.users.insertMany([ {....}, {....}, {.....} ])
 
 Pass an array of documents. Each document is a object.
 
-**NOTE: Sample data can be found at the end of this file.**
+**NOTE: Sample data can be found in MongoDB 01.md file.**
 
 ### R for Read
 
