@@ -1,381 +1,278 @@
-# UPDATE in C R U D
+# MongoDB 02
 
-### Referred from - https://github.com/karankumarshreds/MongodbQueries
+This is a continuation for the MongoDB 01.md
 
-```JS
-{
-        "_id" : ObjectId("602d83bdda2d64cb53265b7c"),
-        "name" : "Max",
-        "hobbies" : [
-                {
-                        "title" : "Sports",
-                        "frequency" : 3
-                },
-                {
-                        "title" : "Cooking",
-                        "frequency" : 6
-                }
-        ],
-        "phone" : 131782734
-}
-```
+We discuss CRUD operations in mongodb
 
-## updateOne
+## C R U D Operations:
+
+    - C means Create
+
+    - R means Read
+
+    - U means update
+
+    - D means Delete
+
+    The operations done on a database.
+
+### C for Create
+
+Insert a single document into collections 'users'
 
 ```js
-db.persons.updateOne(
-  {
-    name: "Max", // filter
+db.users.insertOne({
+  personid: 25,
+  firstname: "Tommy",
+  lastname: "Ja",
+  dob: new Date("2004-12-25"),
+  age: 19,
+  debt: 400,
+  balance: 34,
+  email: "tommy@dummy.com",
+  phone: 11111111,
+  address: {
+    street: "434 main road",
+    ity: "Alps",
+    pincode: "423423",
   },
-  {
-    $set: {
-      hobbies: [
-        {
-          title: "SportsUpdated",
-          frequency: 3,
-        },
-        {
-          title: "CookingUpdated",
-          frequency: 6,
-        },
-      ],
-    },
-  }
-);
+  alive: true,
+});
 ```
 
-## updateMany
-
-Find all the documents who's name is Max and add a new attribute `isSporty: true`.
+Insert Many documents into collections
 
 ```js
-db.persons.updateMany(
-  {
-    name: "Max",
-  },
-  {
-    $set: {
-      isSporty: true,
-    },
-  }
-);
+db.users.insertMany([ {....}, {....}, {.....} ])
 ```
 
-## $inc
+Pass an array of documents. Each document is a object.
 
-Find the document by the name Max, increment the age by 1 and set the name to Maxwell
+**NOTE: Sample data can be found at the end of this file.**
+
+### R for Read
+
+Show all documents in the collection
 
 ```js
-db.persons.updateOne(
-  {
-    name: "Max",
-  },
-  {
-    $inc: { age: 1 },
-    $set: { name: "Maxwell" },
-  }
-);
+db.users.find();
 ```
 
-**NOTE**: Use `$inc : { age: -1 }` to decrement.
+To Show only required keys of a document. Pass two arguments in find().
 
-## $min $max and $mul
+**First argument** is 'query to fetch' condition and **Second argument** is the condition to specify which keys have to be shown by mentioning '1', rest of the keys will not be shown.  
+Similarly, to specify which keys should not to be shown mention '0', rest of the keys will be shown.
 
-Find the document by the name of Max and set the age to 40 _if existing age is LESS THAN 40_ otherwise do nothing.
-
-`db.users.updateOne({ name: "Max" }, { $min: { age: 40 } })` // this means keep the lower value
-
-Find the document by the name of Max and set the age to 40 _if existing age is MORE THAN 40_ otherwise do nothing.
-
-`db.users.findOne({ name: "Max", { $max: : { age: 40 } } })` // this means keep the higher value
-
-Find the document by the name of Max and set the age to _DOUBLE_
-
-`db.users.findOne({ name: "Max", { $mul: : { age: 2 } } })`
-
-## Drop or delete a specific field from a document ( $unset )
-
-`db.users.findOne({ name: "Max", { $unset: { age: "" } } })`
-
-# COMPLEX QUERIES
-
-Dataset:
+Below is the command:
 
 ```js
-{
-        "_id" : ObjectId("602d83bdda2d64cb53265b7c"),
-        "name" : "Max",
-        "hobbies" : [
-                {
-                        "title" : "Sports",
-                        "frequency" : 3
-                },
-                {
-                        "title" : "Cooking",
-                        "frequency" : 6
-                }
-        ],
-        "phone" : 131782734
-},
-{
-        "_id" : ObjectId("602d83bdda2d64cb53265b7c"),
-        "name" : "Max",
-        "hobbies" : [
-                {
-                        "title" : "Sports",
-                        "frequency" : 2
-                },
-                {
-                        "title" : "Cooking",
-                        "frequency" : 6
-                }
-        ],
-        "phone" : 131782734
-},
-{
-        "_id" : ObjectId("602d83bdda2d64cb53265b7c"),
-        "name" : "Max",
-        "hobbies" : [
-                {
-                        "title" : "Sports",
-                        "frequency" : 6
-                },
-                {
-                        "title" : "Cooking",
-                        "frequency" : 6
-                }
-        ],
-        "phone" : 131782734
-}
+db.users.find({ age: { $lt: 20 } }, { personid: 1, firstname: 1, lastname: 1 });
 ```
 
-## Update single element(FIRST MATCH) in an array using ==> $ <==
+Here inside find(),
 
-Find the users who's hobbies have title "Sports" _and_ that same field has frequency: _gte 3_ **AND SET THEIR FREQUENCY TO 10**
+- **first argument** is {age: { $lt: 20}} condition to fetch query, i.e age less than 20.
 
-**NOTE** : _You can use $and BUT that will not query on the same field_
+- **second argument** is { personid:1, firstname:1, lastname:1 } condition to specify required keys,
+  i.e show documents with keys personid, firstname, lastname since they are mentioned with '1'.
+
+More Commands that can used along with find()
+
+- sort by ascending
+
+  ```js
+  db.users.find().sort({ personid: 1 });
+  ```
+
+- sort by descending
+
+  ```js
+  db.users.find().sort({ personid: -1 });
+  ```
+
+- limit the documents to show
+
+  ```js
+  db.users.find().limit(5);
+  ```
+
+- Skip the documents and show the rest
+
+  ```js
+  db.users.find().skip(5);
+  ```
+
+  **NOTE: Make sure to always use skip() before limit()**
+
+- Available comparison operators
+
+  - $gt = 'greater than'
+
+    ```js
+    db.users.find({ age: { $gt: 58 } });
+    ```
+
+  - $gte = 'greater than equal to'
+
+    ```js
+    db.users.find({ age: { $gte: 58 } });
+    ```
+
+  - $lt = 'less than'
+
+    ```js
+    db.users.find({ age: { $lt: 20 } });
+    ```
+
+  - $gte = 'less than equal to'
+
+    ```js
+    db.users.find({ age: { $lt: 53 } });
+    ```
+
+  Using multiple comparison operators
+
+  ```js
+  db.users.find({ age: { $gt: 50, $lt: 60 } });
+  ```
+
+AND Operator
 
 ```js
-db.users.updateMany(
-  { hobbies: { $elemMatch: { title: "Sports", frequency: { $gte: 3 } } } }, // elemMatch refers to the exact field on the document
-  {
-    $set: {
-      "hobbies.$.frequency": 10, // $ refers to the exact(FIRST MATCHED ELEMENT) array element of the filtered document
-    },
-  }
-);
+db.users.find({ age: { $lt: 40 }, debt: { $lt: 1000 } });
 ```
-
-In the same query condition above, find all the documents and change the frequency for SPORTS field to +1
 
 ```js
-db.users.updateMany(
-  { hobbies: { $elemMatch: { title: "Sports", frequency: { $gte: 3 } } } },
-  { $inc: { "hobbies.$.frequency": 1 } }
-);
+db.users.find({ $and: [{ age: { $lt: 40 } }, { debt: { $lt: 1000 } }] });
 ```
 
-## Update all elements in an array using ==> $[] <==
+OR Operator
 
 ```js
-{
-        "_id" : ObjectId("602d83bdda2d64cb53265b7c"), "name" : "Max",
-        "hobbies" : [ { "title" : "Sports", "frequency" : 10 }, { "title" : "Cooking", "frequency" : 6 } ],
-        "phone" : 131782734
-}
-{
-        "_id" : ObjectId("602d83bdda2d64cb53265b7d"), "name" : "Anna",
-        "hobbies" : [ { "title" : "Sports", "frequency" : 2 }, { "title" : "Yoga", "frequency" : 3 } ],
-        "phone" : "80811987291",
-        "age" : null
-}
-{
-        "_id" : ObjectId("602d83bdda2d64cb53265b7e"), "name" : "Manuel",
-        "hobbies" : [ { "title" : "Cooking", "frequency" : 5 }, { "title" : "Cars", "frequency" : 2 } ],
-        "phone" : "012177972",
-        "age" : 35
-}
+db.users.find({ $or: [{ age: { $lte: 3 } }, { firstname: "Peter" }] });
 ```
 
-Find all the people who's hobbies is Sports and frequency is $gte 2 and update their frequency to +20 for all their hobbies (_for all the elements in their hobbies array_)
+NOT Operator
 
 ```js
-db.users.updateMany(
-  {
-    "hobbies.title": "Sports",
-    "hobbies.frequency": { $gte: 2 },
-  },
-  {
-    $inc: { "hobbies.$[].frequency": +20 }, // $[] targets all the elements in the array
-  }
-);
+db.users.find({ age: { $not: { $lt: 50 } } });
 ```
 
-## Update multiple elements in an array using ==> $[el] <==
+**NOTE: It will also return documents which has no key; something greater than or less
+than will not do**
 
-Find all the people who's hobbies frequency are greater than 2 (NOTE: it may also return docs/people who have some hobbies who's frequency is less than 2 ). Now update all their hobbies frequencies who's frequency is greater than 3 to +10.
-
-**Note**: The idea is to find docs with frequencies > 2 and update only those elements. You cannot use $ because it only updates first matched element and neither $[] as it updates all.
-
-**dataset**
+Use $in in find
 
 ```js
-{
-        "_id" : ObjectId("6036953aec9d2a3612452bae"), "name" : "Max",
-        "hobbies" : [{ "title" : "Sports", "frequency" : 10 }, { "title" : "Cooking", "frequency" : 6 }],
-        "phone" : 131782734
-}
-{
-        "_id" : ObjectId("6036953aec9d2a3612452baf"), "name" : "Manuel",
-        "hobbies" : [{ "title" : "Cooking", "frequency" : 5 }, { "title" : "Cars", "frequency" : 2 }],
-        "phone" : "012177972",
-}
-{
-        "_id" : ObjectId("6036953aec9d2a3612452bb0"), "name" : "Anna",
-        "hobbies" : [{ "title" : "Sports", "frequency" : 10 }, { "title" : "Yoga", "frequency" : 12 }],
-        "phone" : "80811987291",
-}
+db.users.find({ age: { $in: [53, 100] } });
 ```
 
-**This will take 3 arguments**
+Fetch only the documents if the key exist (NOTE: key with 'null' value, its documents will appear)
 
 ```js
-db.updateMany(
-  { "hobbies.frequency": { $gt: 2 } }, // filter
-  { $inc: { "hobbies.$[el].frequency": +10 } }, // setting the values (not saving yet)
-  { arrayFilters: [{ "el.frequency": { $gt: 2 } }] } // setting it(condition) on particular elements inside the array
-);
+db.users.find({ hobbies: { $exists: true } });
 ```
 
-**updated to**
+Fetch the documents which has key by mentioning 'true'
 
 ```js
-{
-        "_id" : ObjectId("6036953aec9d2a3612452bae"), "name" : "Max",
-        "hobbies" : [{ "title" : "Sports", "frequency" : 20 }, { "title" : "Cooking", "frequency" : 16 }],
-        "phone" : 131782734
-}
-{
-        "_id" : ObjectId("6036953aec9d2a3612452baf"), "name" : "Manuel",
-        "hobbies" : [{ "title" : "Cooking", "frequency" : 15 }, { "title" : "Cars", "frequency" : 2 }],
-        "phone" : "012177972",
-}
-{
-        "_id" : ObjectId("6036953aec9d2a3612452bb0"), "name" : "Anna",
-        "hobbies" : [{ "title" : "Sports", "frequency" : 20 }, { "title" : "Yoga", "frequency" : 22 }],
-        "phone" : "80811987291",
-}
+db.users.find({ hobbies: { $exists: false } });
 ```
 
-## Add element to an array field inside the document using ==> $push <==
+Fetch the documents which has no 'hobbies' in the 'users' collection documents by mentioning 'false'
 
-Find the person with name Max and add another hobby to its hobby array field
+NESTED queries
 
 ```js
-db.users.updateOne(
-  { name: "Max" },
-  { $push: { hobbies: { title: "Swimming", frequency: 3 } } }
-);
+db.users.find({ "address.city": "New York City" });
 ```
 
-## Add multiple elements to array field inside the document using => $push w/ $each <==
+EXPRESSION - $expr
 
-Find the person with name Max and add two hobbies to the hobbies array field
+The below expression compares two columns where 'ColName' is greater than 'AnotherColName'. We use '$'
+before ColName for columns. Without '$' it indicates just a value.
 
 ```js
-db.users.updateOne(
-  { name: "Max" },
-  {
-    $push: {
-      hobbies: {
-        $each: [
-          { title: "Swimming", frequency: 3 },
-          { title: "Hiking", frequency: 5 },
-        ],
-      },
-    },
-  }
-);
+db.users.find({ $expr: { $gt: ["$debt", "$balance"] } });
 ```
 
-You can add **$sort** to sort the entire array whilst pushing an element to it:
+This query basically fetches the data of the users whose debt is more than their balance.
+
+### U for Update
+
+Update a document in a collection
 
 ```js
-db.users.updateOne(
-  { name: "Max" },
-  {
-    $push: {
-      hobbies: {
-        $each: [
-          { title: "Swimming", frequency: 3 },
-          { title: "Hiking", frequency: 5 },
-        ],
-        $sort: { frequency: -1 },
-      },
-    },
-  }
-);
+db.users.updateOne({ firstname: "Peter" }, { $set: { age: 27 } });
 ```
 
-## Remove element from the array field inside the document using ==> $pull <==
+This will update only one document who's firstname is 'Peter', it will update the key age to 27.
 
-Remove the Hiking hobby from the array field
+Update all documents in a collection
 
 ```js
-db.users.updateOne(
-  { name: "Max" },
-  {
-    $pull: { hobbies: { title: "Hiking" } },
-  }
-);
+db.users.updateMany({}, { $set: { dummy: null } });
 ```
 
-**NOTE** : You cannot use `$pull: { "hobbies.title": 'Hiking' } }` to traverse the element.
+This will update all the documents since we passed '{}', it will update new key 'dummy'
 
-## Remove multiple elements from the array field inside the document using ==> $pull <==
+**Other update operations**
 
-Dataset:
+- $rename - The $rename command renames a field in a document.
+
+  ```js
+  db.users.updateMany(
+    { email: { $exists: true } },
+    { $rename: { email: "mail" } }
+  );
+  ```
+
+  This will rename the 'email' keys to 'mail' in all the document since we mentioned '{email: {$exists:true}}'
+
+- $unset
+
+  ```js
+  db.users.updateMany({}, { $unset: { dummy: "" } });
+  ```
+
+  This will remove the key 'dummy' from all the documents since we mentioned '{}'.
+
+- $push
+
+  ```js
+  db.users.updateOne({ personid: 18 }, { $push: { hobbies: "eating" } });
+  ```
+
+  This will add the 'eating' to the array hobbies in the document with the personid 18.
+
+- $pull
+
+  ```js
+  db.users.updateOne({ personid: 18 }, { $pull: { hobbies: "eating" } });
+  ```
+
+  This will add the 'eating' to the array hobbies in the document with the personid 18.
+
+To replace the complete document
 
 ```js
-{
-    "_id" : ObjectId("6036953aec9d2a3612452bae"), "name" : "Chris",
-    "friends" : [
-                  { "name" : "xyz", "age" : 23 }, // delete
-                  { "name" : "xyz", "age" : 34 }, // delete
-                  { "name" : "abc", "age" : 18 },
-                  { "name" : "pqr", "age" : 27 }  // delete
-                ],
-}
+db.users.replaceOne({ firstname: "Susan" }, { firstname: "Demon" });
 ```
 
-Solution:
+This replaces the whole document who's firstname is 'Susan', with whatever is passed as second argument.
+
+### D for Delete
+
+Delete a single document
 
 ```js
-db.users.updateOne(
-  { name: "Chris" },
-  { $pull: { friends: { name: { $in: ["xyz", "pqr"] } } } }
-);
+db.users.deleteOne({ firstname: "Peter" });
 ```
 
-## Remove multiple elements from the array field inside the document using ==> $pullAll <==
-
-#### NOTE: This won't work well with array of documents (use above example for that)
-
-Dataset:
+Delete multiple documents
 
 ```js
-{ _id: 1, scores: [ 0, 2, 5, 5, 1, 0 ] }
+db.users.deleteMany({});
 ```
 
-Solution:
-
-```js
-db.survey.update({ _id: 1 }, { $pullAll: { scores: [0, 5] } });
-```
-
-Updated dataset:
-
-```js
-{ "_id" : 1, "scores" : [ 2, 1 ] }
-
-```
+This deletes all the documents in a collection
