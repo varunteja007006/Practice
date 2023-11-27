@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Data API</title>
+  </head>
+  <body>
+    <div>
+      <a href="https://www.google.com">Google here</a>
+      <form action="" id="handleForm">
+        <input type="text" name="name" id="name" />
+        <input type="email" name="email" id="email" />
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    <script>
+      //   FormData API
+      const form = document.getElementById("handleForm");
+      form.onsubmit = (e) => {
+        e.preventDefault();
+        const data = new FormData(e.target); // use FormData API and pass the form to it
+        data.append("location", "Las Vegas"); // You can also append properties
+        console.log(data.get("name"));
+        const dataObj = Object.fromEntries(data.entries()); // get the javascript object
+        console.log(dataObj);
+      };
+    </script>
+  </body>
+</html>

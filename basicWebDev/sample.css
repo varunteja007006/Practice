@@ -24,25 +24,35 @@ main {
   min-height: 100vh;
 }
 
-.clickButton {
-  margin: 2em 0em;
-  padding: 1em;
-  border: 0.2em solid orange;
-  border-radius: 1em;
-  background-color: yellow;
-  color: black;
-  font-size: 1.2em;
-}
-.clickButton:hover {
-  background-color: rgba(255, 255, 0, 0.85);
-  box-shadow: 2em;
+.trail {
+  display: block;
+  position: relative;
+  background-color: red;
+  width: 100px;
+  height: 100px;
+  /* rotate: 50deg; */
 }
 
-a {
-  position: relative;
-  margin: 4em;
-  font-weight: bold;
+/* Psuedo classes */
+.trail::before {
+  content: "";
+  top: 0;
+  left: 0;
+  translate: -45px;
 }
-a:visited {
-  color: yellow;
+
+.trail::after {
+  content: "";
+  top: 0;
+  right: 0;
+  translate: 45px;
+}
+
+.trail::before,
+.trail::after {
+  position: absolute;
+  background-color: yellow;
+  height: 80px;
+  width: 80px;
+  border-radius: 100px;
 }

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trigger an Alert</title>
+  </head>
+  <body>
+    <div>
+      <h1>Hello Web Dev</h1>
+      <button onclick="alertMe()" class="clickButton">Click me</button>
+      <button id="sampleClick">Click me</button>
+    </div>
+    <script>
+      //   Function to trigger an alert
+      function alertMe() {
+        alert("You clicked me !!!");
+      }
+      const btn = document.getElementById("sampleClick");
+      btn.onclick = () => {
+        alert("this is weird!!");
+      };
+    </script>
+  </body>
+</html>
