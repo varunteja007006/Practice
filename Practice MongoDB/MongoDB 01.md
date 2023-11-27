@@ -13,25 +13,25 @@ https://www.mongodb.com/docs/manual/installation/
 
 To start the mongodb:
 
-```
+```sh
 sudo systemctl start mongod
 ```
 
 To check if mongodb started / status:
 
-```
+```sh
 sudo systemctl status mongod
 ```
 
 Stop mongodb:
 
-```
+```sh
 sudo systemctl stop mongod
 ```
 
 Restart mongodb:
 
-```
+```sh
 sudo systemctl restart mongod
 ```
 
@@ -47,19 +47,19 @@ https://www.mongodb.com/docs/manual/reference/method/
 
 Start the mongodb shell:
 
-```
+```sh
 mongosh
 ```
 
 Help in mongodb shell:
 
-```
+```sh
 help
 ```
 
 Clear the mongodb shell:
 
-```
+```sh
 cls
 ```
 
@@ -71,19 +71,19 @@ Terminate the running command or query:
 
 Current Database - To print current database
 
-```
+```sh
 db
 ```
 
 Show all databases
 
-```
+```sh
 show dbs
 ```
 
-Use or switch to different database
+Use or switch to a different database
 
-```
+```sh
 use accounts
 ```
 
@@ -91,11 +91,11 @@ This creates a database named accounts or switches to existing database.
 
 Create new db & collection ( Insert a document into collection to create collection )
 
-```
+```sh
 use accounts
 ```
 
-```
+```js
 db.employees.insertOne({ name:"John" })
 ```
 
@@ -345,7 +345,7 @@ This will update all the documents since we passed '{}', it will update new key 
 
 To replace the complete document
 
-```
+```js
 db.users.replaceOne( { firstname: 'Susan' }, { firstname : 'Demon'  } )
 ```
 
@@ -355,13 +355,13 @@ This replaces the whole document who's firstname is 'Susan', with whatever is pa
 
 Delete a single document
 
-```
+```js
 db.users.deleteOne( { firstname:"Peter" } )
 ```
 
 Delete multiple documents
 
-```
+```js
 db.users.deleteMany({})
 ```
 
@@ -375,9 +375,11 @@ When the db. collection. find () function is used to search for documents in the
 
 src: https://docs.mongodb.com/manual/reference/method/js-cursor/
 
-Sample Data
+## Sample Data
 
-```
+    NOTE: Just type insert.users.insertMany() in the terminal, now paste the below data and then close it with ).
+
+```js
 [
   {
     personid: 1,
@@ -670,4 +672,3 @@ Sample Data
   },
 ]
 ```
-
