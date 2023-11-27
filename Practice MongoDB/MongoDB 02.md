@@ -78,25 +78,25 @@ Here inside find(),
 
 More Commands that can used along with find()
 
-- sort by ascending
+- **sort by ascending**
 
   ```js
   db.users.find().sort({ personid: 1 });
   ```
 
-- sort by descending
+- **sort by descending**
 
   ```js
   db.users.find().sort({ personid: -1 });
   ```
 
-- limit the documents to show
+- l**imit the documents to show**
 
   ```js
   db.users.find().limit(5);
   ```
 
-- Skip the documents and show the rest
+- **Skip the documents and show the rest**
 
   ```js
   db.users.find().skip(5);
@@ -106,25 +106,25 @@ More Commands that can used along with find()
 
 - Available comparison operators
 
-  - $gt = 'greater than'
+  - **$gt = 'greater than'**
 
     ```js
     db.users.find({ age: { $gt: 58 } });
     ```
 
-  - $gte = 'greater than equal to'
+  - **$gte = 'greater than equal to'**
 
     ```js
     db.users.find({ age: { $gte: 58 } });
     ```
 
-  - $lt = 'less than'
+  - **$lt = 'less than'**
 
     ```js
     db.users.find({ age: { $lt: 20 } });
     ```
 
-  - $gte = 'less than equal to'
+  - **$gte = 'less than equal to'**
 
     ```js
     db.users.find({ age: { $lt: 53 } });
@@ -136,7 +136,7 @@ More Commands that can used along with find()
   db.users.find({ age: { $gt: 50, $lt: 60 } });
   ```
 
-AND Operator
+**AND Operator**
 
 ```js
 db.users.find({ age: { $lt: 40 }, debt: { $lt: 1000 } });
@@ -146,28 +146,35 @@ db.users.find({ age: { $lt: 40 }, debt: { $lt: 1000 } });
 db.users.find({ $and: [{ age: { $lt: 40 } }, { debt: { $lt: 1000 } }] });
 ```
 
-OR Operator
+**OR Operator**
 
 ```js
 db.users.find({ $or: [{ age: { $lte: 3 } }, { firstname: "Peter" }] });
 ```
 
-NOT Operator
+**NOT Operator**
 
 ```js
 db.users.find({ age: { $not: { $lt: 50 } } });
 ```
 
-**NOTE: It will also return documents which has no key; something greater than or less
-than will not do**
+**NOTE: It will also return documents which has no key; something greater than or less than will not do**
 
-Use $in in find
+**$in Operator**
+
+Use $in in find to get the documents in between the range, here 53 & 100.
 
 ```js
 db.users.find({ age: { $in: [53, 100] } });
 ```
 
-Fetch only the documents if the key exist (NOTE: key with 'null' value, its documents will appear)
+###
+
+**$exists Operator**
+
+Fetch only the documents if the key exist using $exists
+
+**NOTE: key with 'null' value, its documents will appear**
 
 ```js
 db.users.find({ hobbies: { $exists: true } });
@@ -181,13 +188,13 @@ db.users.find({ hobbies: { $exists: false } });
 
 Fetch the documents which has no 'hobbies' in the 'users' collection documents by mentioning 'false'
 
-NESTED queries
+**NESTED queries**
 
 ```js
 db.users.find({ "address.city": "New York City" });
 ```
 
-EXPRESSION - $expr
+**EXPRESSION - $expr operator**
 
 The below expression compares two columns where 'ColName' is greater than 'AnotherColName'. We use '$'
 before ColName for columns. Without '$' it indicates just a value.
@@ -218,7 +225,7 @@ This will update all the documents since we passed '{}', it will update new key 
 
 **Other update operations**
 
-- $rename - The $rename command renames a field in a document.
+- **OPERATOR $rename**
 
   ```js
   db.users.updateMany(
@@ -227,9 +234,9 @@ This will update all the documents since we passed '{}', it will update new key 
   );
   ```
 
-  This will rename the 'email' keys to 'mail' in all the document since we mentioned '{email: {$exists:true}}'
+  The $rename command renames a field in a document. This will rename the 'email' keys to 'mail' in all the document since we mentioned '{email: {$exists:true}}'
 
-- $unset
+- **OPERATOR $unset**
 
   ```js
   db.users.updateMany({}, { $unset: { dummy: "" } });
@@ -237,7 +244,7 @@ This will update all the documents since we passed '{}', it will update new key 
 
   This will remove the key 'dummy' from all the documents since we mentioned '{}'.
 
-- $push
+- **OPERATOR $push**
 
   ```js
   db.users.updateOne({ personid: 18 }, { $push: { hobbies: "eating" } });
@@ -245,13 +252,27 @@ This will update all the documents since we passed '{}', it will update new key 
 
   This will add the 'eating' to the array hobbies in the document with the personid 18.
 
-- $pull
+- **OPERATOR $pull**
 
   ```js
   db.users.updateOne({ personid: 18 }, { $pull: { hobbies: "eating" } });
   ```
 
   This will add the 'eating' to the array hobbies in the document with the personid 18.
+
+- **OPERATOR $inc**
+
+  ```js
+  db.users.updateOne({ personid: 21 }, { $inc: { age: 1 } });
+  ```
+
+  The $inc will increment the age by 1.
+
+  Similarly, if you want to decrement then
+
+  ```js
+  db.users.updateOne({ personid: 21 }, { $inc: { age: -1 } });
+  ```
 
 To replace the complete document
 
@@ -260,6 +281,27 @@ db.users.replaceOne({ firstname: "Susan" }, { firstname: "Demon" });
 ```
 
 This replaces the whole document who's firstname is 'Susan', with whatever is passed as second argument.
+
+**OPERATOR $mul, $max, $min**
+
+Find the document by the name of Peter and set the age to 40 if existing age is LESS THAN 40 otherwise do nothing.
+
+```js
+db.users.updateOne({ name: "Peter" }, { $min: { age: 40 } });
+```
+
+Find the document by the name of Peter and set the age to 40 if existing age is MORE THAN 40 otherwise do nothing.
+
+```js
+db.users.findOne({ name: "Peter", { $max: : { age: 40 } } })
+```
+
+
+Find the document by the name of Peter and set the age to DOUBLE
+
+```js
+db.users.findOne({ name: "Peter", { $mul: : { age: 2 } } })
+```
 
 ### D for Delete
 
