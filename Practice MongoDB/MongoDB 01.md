@@ -199,71 +199,87 @@ Here inside find(),
 
 - **second argument** is { personid:1, firstname:1, lastname:1 } condition to specify required keys,
   i.e show documents with keys personid, firstname, lastname since they are mentioned with '1'.
-    
+
 More Commands that can used along with find()
 
 - sort by ascending
+
+  ```js
+  db.users.find().sort({ personid: 1 });
   ```
-  .users.find().sort({ personid:1 })
-  ```
+
 - sort by descending
+
+  ```js
+  db.users.find().sort({ personid: -1 });
   ```
-  db.users.find().sort({ personid:-1 })
-  ```
+
 - limit the documents to show
+
+  ```js
+  db.users.find().limit(5);
   ```
-  db.users.find().limit(5)
-  ```
+
 - Skip the documents and show the rest
+
+  ```js
+  db.users.find().skip(5);
   ```
-  db.users.find().skip(5)
-  ```
+
   **NOTE: Make sure to always use skip() before limit()**
+
 - Available comparison operators
 
   - $gt = 'greater than'
+
+    ```js
+    db.users.find({ age: { $gt: 58 } });
     ```
-    db.users.find({age: { $gt:58 } })
-    ```
+
   - $gte = 'greater than equal to'
+
+    ```js
+    db.users.find({ age: { $gte: 58 } });
     ```
-    db.users.find({age: { $gte:58 } })
-    ```
+
   - $lt = 'less than'
+
+    ```js
+    db.users.find({ age: { $lt: 20 } });
     ```
-    db.users.find({age: { $lt:20 } })
-    ```
+
   - $gte = 'less than equal to'
-    ```
-    db.users.find({age: { $lt:53 } })
+
+    ```js
+    db.users.find({ age: { $lt: 53 } });
     ```
 
   Using multiple comparison operators
 
-  ```
-   db.users.find({age: { $gt:50, $lt:60  } })
+  ```js
+  db.users.find({ age: { $gt: 50, $lt: 60 } });
   ```
 
 AND Operator
 
-```
-db.users.find({ age:{ $lt:40 }, debt:{ $lt:1000 } })
+```js
+db.users.find({ age: { $lt: 40 }, debt: { $lt: 1000 } });
 ```
 
-```
-db.users.find({ $and: [ { age:{ $lt:40 }} , { debt:{ $lt:1000 }} ] })
+```js
+db.users.find({ $and: [{ age: { $lt: 40 } }, { debt: { $lt: 1000 } }] });
 ```
 
 OR Operator
 
-```
-db.users.find({ $or: [ { age: {$lte:3} }, { firstname:'Peter' }  ] })
+```js
+db.users.find({ $or: [{ age: { $lte: 3 } }, { firstname: "Peter" }] });
 ```
 
 NOT Operator
 
-```
-db.users.find({ age: { $not: {$lt:50} } })
+```js
+db.users.find({ age: { $not: { $lt: 50 } } });
 ```
 
 **NOTE: It will also return documents which has no key; something greater than or less
@@ -271,28 +287,28 @@ than will not do**
 
 Use $in in find
 
-```
-db.users.find({ age: { $in:[53, 100 ] } })
+```js
+db.users.find({ age: { $in: [53, 100] } });
 ```
 
 Fetch only the documents if the key exist (NOTE: key with 'null' value, its documents will appear)
 
-```
-db.users.find({ hobbies:{ $exists: true }})
+```js
+db.users.find({ hobbies: { $exists: true } });
 ```
 
 Fetch the documents which has key by mentioning 'true'
 
-```
-db.users.find({ hobbies:{ $exists: false }})
+```js
+db.users.find({ hobbies: { $exists: false } });
 ```
 
 Fetch the documents which has no 'hobbies' in the 'users' collection documents by mentioning 'false'
 
 NESTED queries
 
-```
-db.users.find({ 'address.city': 'New York City' })
+```js
+db.users.find({ "address.city": "New York City" });
 ```
 
 EXPRESSION - $expr
@@ -300,24 +316,26 @@ EXPRESSION - $expr
 The below expression compares two columns where 'ColName' is greater than 'AnotherColName'. We use '$'
 before ColName for columns. Without '$' it indicates just a value.
 
+```js
+db.users.find({ $expr: { $gt: ["$debt", "$balance"] } });
 ```
-db.users.find({ $expr: { $gt: [ '$debt','$balance' ] } })
-```
+
+This query basically fetches the data of the users whose debt is more than their balance.
 
 ### U for Update
 
 Update a document in a collection
 
-```
-db.users.updateOne( { firstname: "Peter" }, { $set: { age : 27  } } )
+```js
+db.users.updateOne({ firstname: "Peter" }, { $set: { age: 27 } });
 ```
 
 This will update only one document who's firstname is 'Peter', it will update the key age to 27.
 
-Update documents in a collection
+Update all documents in a collection
 
-```
-db.users.updateMany({}, { $set: { dummy:null } })
+```js
+db.users.updateMany({}, { $set: { dummy: null } });
 ```
 
 This will update all the documents since we passed '{}', it will update new key 'dummy'
@@ -325,24 +343,38 @@ This will update all the documents since we passed '{}', it will update new key 
 **Other update operations**
 
 - $rename - The $rename command renames a field in a document.
+
+  ```js
+  db.users.updateMany(
+    { email: { $exists: true } },
+    { $rename: { email: "mail" } }
+  );
   ```
-  db.users.updateMany({ email: {$exists:true}}, {$rename:{"email":"mail"}})
-  ```
+
   This will rename the 'email' keys to 'mail' in all the document since we mentioned '{email: {$exists:true}}'
+
 - $unset
+
+  ```js
+  db.users.updateMany({}, { $unset: { dummy: "" } });
   ```
-  db.users.updateMany({}, {$unset:{dummy:''}})
-  ```
+
   This will remove the key 'dummy' from all the documents since we mentioned '{}'.
+
 - $push
+
+  ```js
+  db.users.updateOne({ personid: 18 }, { $push: { hobbies: "eating" } });
   ```
-  db.users.updateOne({personid:18},{$push:{hobbies:'eating'}})
-  ```
+
   This will add the 'eating' to the array hobbies in the document with the personid 18.
+
 - $pull
+
+  ```js
+  db.users.updateOne({ personid: 18 }, { $pull: { hobbies: "eating" } });
   ```
-  db.users.updateOne({personid:18},{$pull:{hobbies:'eating'}})
-  ```
+
   This will add the 'eating' to the array hobbies in the document with the personid 18.
 
 To replace the complete document
