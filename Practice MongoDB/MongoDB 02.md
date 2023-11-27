@@ -48,7 +48,7 @@ db.users.insertMany([ {....}, {....}, {.....} ])
 
 Pass an array of documents. Each document is a object.
 
-**NOTE: Sample data can be found in MongoDB 01.md file.**
+**NOTE: Sample data can be found in 'MongoDB 01.md' file.**
 
 ### R for Read
 
@@ -58,12 +58,12 @@ Show all documents in the collection
 db.users.find();
 ```
 
-To Show only required keys of a document. Pass two arguments in find().
+To show only required keys of a document. Pass two arguments in find().
 
-**First argument** is 'query to fetch' condition and **Second argument** is the condition to specify which keys have to be shown by mentioning '1', rest of the keys will not be shown.  
+**First argument** is 'query to fetch' condition. <br />
+<br />
+**Second argument** is the condition to specify which keys have to be shown by mentioning '1', rest of the keys will not be shown.  
 Similarly, to specify which keys should not to be shown mention '0', rest of the keys will be shown.
-
-Below is the command:
 
 ```js
 db.users.find({ age: { $lt: 20 } }, { personid: 1, firstname: 1, lastname: 1 });
@@ -160,21 +160,21 @@ db.users.find({ age: { $not: { $lt: 50 } } });
 
 **NOTE: It will also return documents which has no key; something greater than or less than will not do**
 
-**$in Operator**
+**OPERATOR $in**
 
-Use $in in find to get the documents in between the range, here 53 & 100.
+Use $in to get the documents in between the range.
 
 ```js
-db.users.find({ age: { $in: [53, 100] } });
+db.users.find({ age: { $in: [53, 100] } }); // get documents between the range 53 & 100
 ```
 
 ###
 
-**$exists Operator**
+**OPERATOR $exists**
 
 Fetch only the documents if the key exist using $exists
 
-**NOTE: key with 'null' value, its documents will appear**
+**NOTE: key with 'null' value, its documents will also appear**
 
 ```js
 db.users.find({ hobbies: { $exists: true } });
@@ -191,7 +191,7 @@ Fetch the documents which has no 'hobbies' in the 'users' collection documents b
 **NESTED queries**
 
 ```js
-db.users.find({ "address.city": "New York City" });
+db.users.find({ "address.city": "New York City" }); // gets the ocuments of 'users' whos 'address' obj and the property 'city' and its value is 'New York City'
 ```
 
 **EXPRESSION - $expr operator**
