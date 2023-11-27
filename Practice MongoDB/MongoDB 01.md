@@ -96,44 +96,44 @@ use accounts
 ```
 
 ```js
-db.employees.insertOne({ name:"John" })
+db.employees.insertOne({ name: "John" });
 ```
 
 Show all collections
 
-```
+```sh
 show collections
 ```
 
 Rename the collection
 
-```
-db.employees.renameCollection('users')
+```js
+db.employees.renameCollection("users");
 ```
 
 Delete a document from collection who's name is Tommy
 
-```
-db.users.remove({ name: "Tommy" })
+```js
+db.users.remove({ name: "Tommy" });
 ```
 
 Drop the collection
 
-```
-db.collection.drop()
+```js
+db.collection.drop();
 ```
 
 Drop the database
 
-```
-db.dropDatabase()
+```js
+db.dropDatabase();
 ```
 
 ## C R U D Operations:
 
 Lets set up the database once again since we dropped it in the before section.about-image
 
-```
+```sh
 use accounts
 ```
 
@@ -144,7 +144,7 @@ in the collection.
 
 Insert a single document into collections 'users'
 
-```
+```sh
 db.users.insertOne({
   personid:25,
   firstname:"Tommy",
@@ -166,7 +166,7 @@ db.users.insertOne({
 
 Insert Many documents into collections
 
-```
+```sh
 db.users.insertMany([ {....}, {....}, {.....} ])
 ```
 
@@ -178,8 +178,8 @@ Pass an array of documents. Each document is a object.
 
 Show all documents in the collection
 
-```
-db.users.find()
+```js
+db.users.find();
 ```
 
 To Show only required keys of a document. Pass two arguments in find().
@@ -189,15 +189,17 @@ Similarly, to specify which keys should not to be shown mention '0', rest of the
 
 Below is the command:
 
-```
-db.users.find( {age: { $lt:20 }}, { personid:1, firstname:1, lastname:1 })
+```js
+db.users.find({ age: { $lt: 20 } }, { personid: 1, firstname: 1, lastname: 1 });
 ```
 
-Here inside find(),  
-**first argument** is {age: { $lt: 20}} condition to fetch query, i.e age less than 20.  
-**second argument** is { personid:1, firstname:1, lastname:1 } condition to specify required keys,
-i.e show documents with keys personid, firstname, lastname since they are mentioned with '1'.
+Here inside find(),
 
+- **first argument** is {age: { $lt: 20}} condition to fetch query, i.e age less than 20.
+
+- **second argument** is { personid:1, firstname:1, lastname:1 } condition to specify required keys,
+  i.e show documents with keys personid, firstname, lastname since they are mentioned with '1'.
+    
 More Commands that can used along with find()
 
 - sort by ascending
@@ -346,7 +348,7 @@ This will update all the documents since we passed '{}', it will update new key 
 To replace the complete document
 
 ```js
-db.users.replaceOne( { firstname: 'Susan' }, { firstname : 'Demon'  } )
+db.users.replaceOne({ firstname: "Susan" }, { firstname: "Demon" });
 ```
 
 This replaces the whole document who's firstname is 'Susan', with whatever is passed as second argument.
@@ -356,13 +358,13 @@ This replaces the whole document who's firstname is 'Susan', with whatever is pa
 Delete a single document
 
 ```js
-db.users.deleteOne( { firstname:"Peter" } )
+db.users.deleteOne({ firstname: "Peter" });
 ```
 
 Delete multiple documents
 
 ```js
-db.users.deleteMany({})
+db.users.deleteMany({});
 ```
 
 This deletes all the documents in a collection
@@ -394,10 +396,10 @@ src: https://docs.mongodb.com/manual/reference/method/js-cursor/
     address: {
       street: "123 main street",
       city: "LA",
-      pincode: "46732"
+      pincode: "46732",
     },
     hobbies: ["spider-manning", "photography", "spending time with MJ"],
-    alive: true
+    alive: true,
   },
   {
     personid: 2,
@@ -412,10 +414,10 @@ src: https://docs.mongodb.com/manual/reference/method/js-cursor/
     address: {
       street: "1007 Mountain Drive",
       city: "Gotham City",
-      pincode: "45678"
+      pincode: "45678",
     },
     hobbies: ["being Batman", "philanthropy", "collecting cars"],
-    alive: true
+    alive: true,
   },
   {
     personid: 3,
@@ -430,10 +432,14 @@ src: https://docs.mongodb.com/manual/reference/method/js-cursor/
     address: {
       street: "3400 North Clark Street",
       city: "Metropolis",
-      pincode: "12345"
+      pincode: "12345",
     },
-    hobbies: ["being Superman", "reporting for the Daily Planet", "saving the world"],
-    alive: true
+    hobbies: [
+      "being Superman",
+      "reporting for the Daily Planet",
+      "saving the world",
+    ],
+    alive: true,
   },
   {
     personid: 4,
@@ -448,10 +454,14 @@ src: https://docs.mongodb.com/manual/reference/method/js-cursor/
     address: {
       street: "Themyscira Island",
       city: "Themyscira",
-      pincode: "12345"
+      pincode: "12345",
     },
-    hobbies: ["being Wonder Woman", "fighting crime", "protecting the innocent"],
-    alive: true
+    hobbies: [
+      "being Wonder Woman",
+      "fighting crime",
+      "protecting the innocent",
+    ],
+    alive: true,
   },
   {
     personid: 5,
@@ -466,10 +476,14 @@ src: https://docs.mongodb.com/manual/reference/method/js-cursor/
     address: {
       street: "135 West 50th Street",
       city: "New York City",
-      pincode: "10020"
+      pincode: "10020",
     },
-    hobbies: ["being Captain America", "leading the Avengers", "protecting the United States"],
-    alive: true
+    hobbies: [
+      "being Captain America",
+      "leading the Avengers",
+      "protecting the United States",
+    ],
+    alive: true,
   },
 
   {
@@ -485,10 +499,14 @@ src: https://docs.mongodb.com/manual/reference/method/js-cursor/
     address: {
       street: "125 West 72nd Street",
       city: "New York City",
-      pincode: "10023"
+      pincode: "10023",
     },
-    hobbies: ["being Iron Man", "building gadgets and armor", "running Stark Industries"],
-    alive: true
+    hobbies: [
+      "being Iron Man",
+      "building gadgets and armor",
+      "running Stark Industries",
+    ],
+    alive: true,
   },
   {
     personid: 7,
@@ -503,10 +521,13 @@ src: https://docs.mongodb.com/manual/reference/method/js-cursor/
     address: {
       street: "135 West 50th Street",
       city: "New York City",
-      pincode: "10020"
+      pincode: "10020",
     },
-    hobbies: ["being Black Widow", "spying, fighting, and assassinating bad guys"],
-    alive: true
+    hobbies: [
+      "being Black Widow",
+      "spying, fighting, and assassinating bad guys",
+    ],
+    alive: true,
   },
   {
     personid: 8,
@@ -521,10 +542,10 @@ src: https://docs.mongodb.com/manual/reference/method/js-cursor/
     address: {
       street: "135 West 50th Street",
       city: "New York City",
-      pincode: "10020"
+      pincode: "10020",
     },
     hobbies: ["being Hawkeye", "being a dad, and shooting arrows"],
-    alive: true
+    alive: true,
   },
   {
     personid: 9,
@@ -539,10 +560,13 @@ src: https://docs.mongodb.com/manual/reference/method/js-cursor/
     address: {
       street: "135 West 50th Street",
       city: "New York City",
-      pincode: "10020"
+      pincode: "10020",
     },
-    hobbies: ["being the Scarlet Witch", "using her powers to protect the people she loves"],
-    alive: true
+    hobbies: [
+      "being the Scarlet Witch",
+      "using her powers to protect the people she loves",
+    ],
+    alive: true,
   },
   {
     personid: 10,
@@ -557,10 +581,10 @@ src: https://docs.mongodb.com/manual/reference/method/js-cursor/
     address: {
       street: "135 West 50th Street",
       city: "New York City",
-      pincode: "10020"
+      pincode: "10020",
     },
     hobbies: ["being the Vision", "using his powers to help people"],
-    alive: true
+    alive: true,
   },
 
   {
@@ -576,10 +600,10 @@ src: https://docs.mongodb.com/manual/reference/method/js-cursor/
     address: {
       street: "123 Main Street",
       city: "Anytown",
-      pincode: "12345"
+      pincode: "12345",
     },
     hobbies: ["reading", "writing", "coding"],
-    alive: true
+    alive: true,
   },
   {
     personid: 12,
@@ -594,10 +618,10 @@ src: https://docs.mongodb.com/manual/reference/method/js-cursor/
     address: {
       street: "456 Elm Street",
       city: "Everytown",
-      pincode: "56789"
+      pincode: "56789",
     },
     hobbies: ["sports", "travel", "photography"],
-    alive: true
+    alive: true,
   },
   {
     personid: 13,
@@ -612,10 +636,10 @@ src: https://docs.mongodb.com/manual/reference/method/js-cursor/
     address: {
       street: "789 Oak Street",
       city: "Sometown",
-      pincode: "90123"
+      pincode: "90123",
     },
     hobbies: ["cooking", "gardening", "hiking"],
-    alive: true
+    alive: true,
   },
   {
     personid: 14,
@@ -630,10 +654,10 @@ src: https://docs.mongodb.com/manual/reference/method/js-cursor/
     address: {
       street: "1011 Pine Street",
       city: "Nowheresville",
-      pincode: "00000"
+      pincode: "00000",
     },
     hobbies: ["music", "art", "movies"],
-    alive: true
+    alive: true,
   },
   {
     personid: 15,
@@ -648,27 +672,27 @@ src: https://docs.mongodb.com/manual/reference/method/js-cursor/
     address: {
       street: "1112 Maple Street",
       city: "Anywhere",
-      pincode: "12345"
+      pincode: "12345",
     },
     hobbies: ["volunteering", "reading", "spending time with family"],
-    alive: true
+    alive: true,
   },
   {
     personid: 21,
-    firstname:'Harry',
-    lastname:'Bhai',
-    dob: new Date('1995-05-20'),
+    firstname: "Harry",
+    lastname: "Bhai",
+    dob: new Date("1995-05-20"),
     age: 29,
-    debt:34000,
+    debt: 34000,
     balance: 33000,
-    email:'hbrry@test.com',
+    email: "hbrry@test.com",
     phone: 747474747747,
     address: {
-      street: '344 street subway',
-      city:'Heidi',
-      pincode:'35353'
+      street: "344 street subway",
+      city: "Heidi",
+      pincode: "35353",
     },
-    alive:true
+    alive: true,
   },
-]
+];
 ```
