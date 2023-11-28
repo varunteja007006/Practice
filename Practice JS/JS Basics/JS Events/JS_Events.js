@@ -10,6 +10,15 @@ children to parent. We can bind events either as inline or in an external script
 /*
 Some JavaScript Events
 
-1. JavaScript onclick events
+1. onclick event
+2. onkeyup event
+3. onmouseover event
+4. onmouseout event
+5. onchange event
+6. onload event
+7. onfocus event
+8. onblur event
 
+JavaScript onmouseup event listens to left and middle mouse clicks, but onmousedown event 
+listens to left, middle, and right mouse clicks whereas onclick only handles left clicks.
 */
