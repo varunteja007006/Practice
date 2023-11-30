@@ -90,7 +90,7 @@ More Commands that can used along with find()
   db.users.find().sort({ personid: -1 });
   ```
 
-- l**imit the documents to show**
+- **limit the documents to show**
 
   ```js
   db.users.find().limit(5);
@@ -162,11 +162,13 @@ db.users.find({ age: { $not: { $lt: 50 } } });
 
 **OPERATOR $in**
 
-Use $in to get the documents in between the range.
+Use $in to get the documents that match the given values
 
 ```js
 db.users.find({ age: { $in: [53, 100] } }); // get documents between the range 53 & 100
 ```
+
+In MongoDB is used to select documents where the value of a field equals any value in the specified array. It is a versatile operator that can be used to match documents based on a variety of criteria, including matching against multiple values, matching against arrays of values, and matching against regular expressions.
 
 ###
 
@@ -295,7 +297,6 @@ Find the document by the name of Peter and set the age to 40 if existing age is 
 ```js
 db.users.findOne({ name: "Peter", { $max: : { age: 40 } } })
 ```
-
 
 Find the document by the name of Peter and set the age to DOUBLE
 
