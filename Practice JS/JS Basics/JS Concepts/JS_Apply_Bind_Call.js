@@ -1,11 +1,11 @@
 /* 
-  The call() method explicitly sets the this value of the function to be called and allows passing 
-  arguments individually. The syntax is:
-  Apply is very similar to the call function. The only difference is that in apply you can pass an 
-  array as an argument list. 
-  
-  Bind is a function that helps you create another function that you can execute later with the new
-  context of this that is provided
+The call() method explicitly sets the this value of the function to be called and allows passing 
+arguments individually. The syntax is:
+Apply is very similar to the call function. The only difference is that in apply you can pass an 
+array as an argument list. 
+
+Bind is a function that helps you create another function that you can execute later with the new
+context of this that is provided
 */
 
 let nameObj = {

@@ -16,10 +16,10 @@ while (temp > 0) {
   sum += remainder ** numberOfDigits;
 
   // removing last digit from the number
-  temp = parseInt(temp / 10); // convert float into integer
+  temp = parseInt((temp / 10).toString()); // convert float into integer
 }
 
-if (sum == number) {
+if (sum.toString() == number) {
   console.log(`${number} is an Armstrong number`);
 } else {
   console.log(`${number} is not an Armstrong number.`);
