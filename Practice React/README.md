@@ -22,6 +22,6 @@ npm run dev
 
 - ✅ Menu
 - ✅ Tabs
-- 🔳 Slider
+- ✅ Slider
 - 🔳 Dynamic Navbar
 - 🔳 Multi-page form (using Material UI)

@@ -1,3 +1,5 @@
+import { memo } from "react";
+
 function PageBody({
   PageTitle,
   children,
@@ -5,6 +7,8 @@ function PageBody({
   PageTitle: string;
   children: React.ReactNode;
 }) {
+  console.log("child");
+
   return (
     <div>
       <h2 className="p-5 text-2xl font-bold">{PageTitle}</h2>
@@ -13,4 +17,4 @@ function PageBody({
   );
 }
 
-export default PageBody;
+export default memo(PageBody);

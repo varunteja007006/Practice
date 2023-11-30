@@ -1,4 +1,4 @@
-import { PageBody } from "../components/custom";
+import { PageBody, WelcomeToast } from "../components/custom";
 
 function Home() {
   return (
@@ -7,8 +7,9 @@ function Home() {
         <h2 className="text-lg font-bold">
           Welcome Everyone! This is the place to learn React , TypeScript, and
           other cool concepts
-        </h2>{" "}
+        </h2>
       </div>
+      <WelcomeToast></WelcomeToast>
     </PageBody>
   );
 }

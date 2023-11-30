@@ -17,10 +17,14 @@ function Navbar() {
       name: "Image Slider",
       url: "/image-slider",
     },
+    {
+      name: "Tabs",
+      url: "/tabs",
+    },
   ];
 
   return (
-    <div className="navbar bg-base-100 min-w-[400px] dark:bg-gray-700  dark:text-white ">
+    <div className="navbar min-w-[400px] bg-base-100 dark:bg-gray-700  dark:text-white ">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -39,7 +43,7 @@ function Navbar() {
               />
             </svg>
           </div>
-          <ul className="menu menu-sm dropdown-content rounded-box z-[1] mt-3 w-52 bg-gray-300 p-2 text-black shadow dark:bg-gray-300 dark:text-black">
+          <ul className="menu dropdown-content menu-sm z-[1] mt-3 w-52 rounded-box bg-gray-300 p-2 text-black shadow dark:bg-gray-300 dark:text-black">
             {navlinks.map((item) => {
               return (
                 <li key={item.name}>
@@ -99,7 +103,7 @@ function Navbar() {
           >
             Click to check all Projects
           </div>
-          <ul className="dropdown-content menu rounded-box z-[1] w-52 bg-blue-100 p-2 shadow dark:bg-gray-300">
+          <ul className="menu dropdown-content z-[1] w-52 rounded-box bg-blue-100 p-2 shadow dark:bg-gray-300">
             {navlinksMenu.map((item) => {
               return (
                 <li

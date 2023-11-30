@@ -1,4 +1,4 @@
-import ImageSlider from "../components/image_slider/ImageSlider";
+import ImageSlider from "../../components/projects/image_slider/ImageSlider";
 
 function ImageSliderPage() {
   return <ImageSlider></ImageSlider>;

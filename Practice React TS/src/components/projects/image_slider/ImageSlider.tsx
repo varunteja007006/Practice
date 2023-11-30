@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { PageBody } from "../custom";
+import { PageBody } from "../../custom";
 
 const imageURLs = [
   "https://images.unsplash.com/photo-1619293195798-07fc2dec8323?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
