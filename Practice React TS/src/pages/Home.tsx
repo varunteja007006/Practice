@@ -1,4 +1,4 @@
-import { PageBody, WelcomeToast } from "../components/custom";
+import { PageBody } from "../components/custom";
 
 function Home() {
   return (
@@ -9,7 +9,6 @@ function Home() {
           other cool concepts
         </h2>
       </div>
-      <WelcomeToast></WelcomeToast>
     </PageBody>
   );
 }

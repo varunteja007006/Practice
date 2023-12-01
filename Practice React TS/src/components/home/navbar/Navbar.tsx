@@ -26,6 +26,7 @@ function Navbar() {
   return (
     <div className="navbar min-w-[400px] bg-base-100 dark:bg-gray-700  dark:text-white ">
       <div className="navbar-start">
+        {/* small screen */}
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
             <svg
@@ -82,7 +83,7 @@ function Navbar() {
                     isPending
                       ? "pending"
                       : isActive
-                        ? "active  "
+                        ? "active"
                         : "bg-gray-300 text-black dark:bg-gray-300 dark:text-black"
                   }
                 >
