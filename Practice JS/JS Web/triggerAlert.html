@@ -3,13 +3,38 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style.css" />
     <title>Trigger an Alert</title>
   </head>
   <body>
     <div>
       <h1>Hello Web Dev</h1>
-      <button onclick="alertMe()" class="clickButton">Click me</button>
-      <button id="sampleClick">Click me</button>
+      <div>
+        <p>Trigger direct function using onclick</p>
+        <button onclick="alertMe()" class="clickButton">Click me</button>
+        <p class="syntax">
+          // on html element <br />
+          onclick="alertMe()"
+          <br />
+          <br />
+          // Function to trigger an alert <br />
+          function alertMe() { alert("You clicked me !!!"); }
+        </p>
+      </div>
+
+      <div>
+        <p>Trigger direct function using id of the button element</p>
+        <button id="sampleClick">Click me</button>
+        <p class="syntax">
+          // on html element <br />
+          id="sampleClick"
+          <br />
+          <br />
+          // target the id <br />
+          const btn = document.getElementById("sampleClick"); <br />
+          btn.onclick = () => { alert("this is weird!!"); };
+        </p>
+      </div>
     </div>
     <script>
       //   Function to trigger an alert

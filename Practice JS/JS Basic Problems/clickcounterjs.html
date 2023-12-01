@@ -1,11 +1,22 @@
 <html>
   <head>
+    <link rel="stylesheet" href="../style.css" />
     <title>Test</title>
   </head>
   <body>
+    <h1>Counter</h1>
     <button id="counter">Click me</button>
     <p id="result">0</p>
-
+    <p class="syntax">
+      let count = 0; <br />
+      let counter = document.getElementById("counter");<br />
+      let result = document.getElementById("result");<br />
+      <br /><br />
+      counter.onclick = () => {<br />
+      count += 1;<br />
+      result.innerHTML = count;<br />
+      };
+    </p>
     <script type="text/javascript">
       let count = 0;
       let counter = document.getElementById("counter");

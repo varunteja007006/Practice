@@ -39,6 +39,12 @@ p {
   text-align: justify;
 }
 
+div {
+  border: 0.1rem solid black;
+  padding: 1rem;
+}
+
+
 button {
   margin: 1rem;
   margin-left: 0;
@@ -52,6 +58,12 @@ button:hover {
 }
 button:active {
   transform: scale(0.9);
+}
+
+input {
+  display: block;
+  padding: 1rem;
+  margin: 1rem 0;
 }
 
 .note {

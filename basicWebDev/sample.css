@@ -24,7 +24,7 @@ main {
   min-height: 100vh;
 }
 
-.trail {
+.box {
   display: block;
   position: relative;
   background-color: red;
@@ -34,22 +34,22 @@ main {
 }
 
 /* Psuedo classes */
-.trail::before {
+.box::before {
   content: "";
   top: 0;
   left: 0;
   translate: -45px;
 }
 
-.trail::after {
+.box::after {
   content: "";
   top: 0;
   right: 0;
   translate: 45px;
 }
 
-.trail::before,
-.trail::after {
+.box::before,
+.box::after {
   position: absolute;
   background-color: yellow;
   height: 80px;
