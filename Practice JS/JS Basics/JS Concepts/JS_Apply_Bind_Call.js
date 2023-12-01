@@ -1,6 +1,7 @@
 /* 
 The call() method explicitly sets the this value of the function to be called and allows passing 
-arguments individually. The syntax is:
+arguments individually. 
+
 Apply is very similar to the call function. The only difference is that in apply you can pass an 
 array as an argument list. 
 
@@ -29,13 +30,18 @@ fullname.apply(nameObj, ["Mumbai", "24523"]); // Pass the object and other argum
 let fullnameMethod = fullname.bind(nameObj, "Delhi", "09890");
 fullnameMethod();
 
+//or
+
+let fullnameMethod_2 = fullname.bind(nameObj);
+fullnameMethod_2("Dubai", "998877");
+
 /*
 Common Use Cases:
 
-Setting this Value: All three methods can be used to explicitly set the this value of the function 
+Setting 'this' Value: All three methods can be used to explicitly set the 'this' value of the function 
 being called.
 
-Handling Events: Event handlers often need to bind specific this values for proper context.
+Handling Events: Event handlers often need to bind specific 'this' values for proper context.
 
 Creating Constructor Functions: Constructor functions use call() or apply() to create new instances 
 of objects.
@@ -45,4 +51,5 @@ that takes the remaining arguments.
 
 Generic Functions: Generic functions can be written to work with different types of data by using 
 bind() to set the this value appropriately.
+
 */

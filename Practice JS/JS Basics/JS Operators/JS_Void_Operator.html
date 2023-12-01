@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../style.css" />
+    <title>Void operator</title>
+  </head>
+  <body>
+    <h1>Void Operator</h1>
+    <div>
+      <h3>Active JS Link</h3>
+      <p>
+        The void operator is most commonly used in managing the javascript: URL
+        (s) because it allows the browser to show the end result of the
+        evaluation of the expression rather than the returned value of the
+        evaluated expression on the client side.
+      </p>
+      <a href="javascript:void(document.body.style.backgroundColor='#32CD32');"
+        >Click here to change the background color</a
+      >
+      <p class="syntax">
+        href="javascript:void(document.body.style.backgroundColor='#32CD32');"
+      </p>
+      <button onclick="window.location.reload()">Click to reload page</button>
+    </div>
+
+    <div>
+      <h3>Inactive JS Link</h3>
+      <p>
+        In some cases, it is not required by a link to navigate anywhere or do
+        anything. To achieve it, we combine the pseudo URL (javascript:) with
+        void(0) as a value of an href, it tells the browser to return/do nothing
+        when that link is clicked.
+      </p>
+      <a href="javascript:void(0)">Click here it will do nothing</a>
+      <p class="syntax">href="javascript:void(0)"</p>
+    </div>
+    <script></script>
+  </body>
+</html>
