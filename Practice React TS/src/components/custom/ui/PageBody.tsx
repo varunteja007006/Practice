@@ -7,8 +7,6 @@ function PageBody({
   PageTitle: string;
   children: React.ReactNode;
 }) {
-  console.log("child");
-
   return (
     <div>
       <h2 className="p-5 text-2xl font-bold">{PageTitle}</h2>
