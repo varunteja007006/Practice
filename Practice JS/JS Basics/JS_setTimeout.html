@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style.css" />
+    <title>setTimeout</title>
+  </head>
+  <body>
+    <h1>setTimeout</h1>
+    <button onclick="timer = setTimeout(demo, 3000)">Start setTimeout</button>
+    <button onclick="clearTimeout(timer)">Stop</button>
+    <p class="note">Don't click start many times</p>
+    <p>
+      JavaScript SetTimeout and SetInterval are the only native function in
+      JavaScript that is used to run code asynchronously, it means allowing the
+      function to be executed immediately, there is no need to wait for the
+      current execution completion.
+    </p>
+    <p>
+      JavaScript setTimeout() Method: This method executes a function, after
+      waiting a specified number of milliseconds.
+    </p>
+    <p class="syntax">Syntax: setTimeout(function, milliseconds)</p>
+    <p>
+      After the user presses the button 'Click me' then after a pause of 3
+      seconds it logs the message.
+    </p>
+    <script>
+      /*
+      JavaScript setTimeout() & setInterval() Method
+
+      JavaScript SetTimeout and SetInterval are the only native function in JavaScript that is used
+      to run code asynchronously, it means allowing the function to be executed immediately, there
+      is no need to wait for the current execution completion
+      */
+
+      /*
+      JavaScript setTimeout() Method: This method executes a function, after waiting a specified
+      number of milliseconds.
+
+      Syntax:
+      setTimeout(function, milliseconds)
+      */
+      function demo() {
+        alert("setTimeout function");
+      }
+
+      /* After the user presses the button 'Click me' then after a pause of 3 seconds it logs
+        the message*/
+    </script>
+  </body>
+</html>

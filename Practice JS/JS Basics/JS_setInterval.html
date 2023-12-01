@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style.css" />
+    <title>setInterval</title>
+  </head>
+  <body>
+    <h1>setInterval</h1>
+    <button onclick="timer = setInterval(demo, 3000)">Start setInterval</button>
+    <button onclick="clearInterval(timer)">Stop</button>
+    <p class="note">Don't click the start multiple times</p>
+    <p>
+      JavaScript SetTimeout and SetInterval are the only native function in
+      JavaScript that is used to run code asynchronously, it means allowing the
+      function to be executed immediately, there is no need to wait for the
+      current execution completion.
+    </p>
+    <p>
+      JavaScript setInterval() Method: The setInterval() method repeats a given
+      function at every given time interval.
+    </p>
+    <p class="syntax">Syntax: setInterval(function,milliseconds)</p>
+    <p>
+      Since the setInterval() method executes the function infinitely hence
+      there is a method called as clearInterval() to stop the execution of the
+      setInterval().
+    </p>
+    <script>
+      /*
+      JavaScript setTimeout() & setInterval() Method
+
+      JavaScript SetTimeout and SetInterval are the only native function in JavaScript that is used
+      to run code asynchronously, it means allowing the function to be executed immediately, there
+      is no need to wait for the current execution completion
+      */
+
+      /*
+      JavaScript setInterval() Method: The setInterval() method repeats a given function at every 
+      given time interval. 
+
+      Syntax:
+      setInterval(function, milliseconds)
+      */
+      function demo() {
+        alert("setInterval function");
+      }
+
+      /* Since the setInterval() method executes the function infinitely hence there is a method 
+      called as clearInterval() to stop the execution of the setInterval().*/
+    </script>
+  </body>
+</html>
