@@ -1,6 +1,12 @@
 import Navbar from "./components/home/navbar/Navbar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Home, ImageSliderPage, SocialLinks, Tabs } from "./pages";
+import {
+  Home,
+  ImageSliderPage,
+  MultiPageFormPage,
+  SocialLinks,
+  Tabs,
+} from "./pages";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -20,6 +26,11 @@ function App() {
               element={<ImageSliderPage />}
             ></Route>
             <Route index path="/tabs" element={<Tabs />}></Route>
+            <Route
+              index
+              path="/multipageform"
+              element={<MultiPageFormPage />}
+            ></Route>
           </Routes>
         </main>
       </div>

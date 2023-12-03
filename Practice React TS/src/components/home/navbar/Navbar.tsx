@@ -21,6 +21,10 @@ function Navbar() {
       name: "Tabs",
       url: "/tabs",
     },
+    {
+      name: "MultiPage Form",
+      url: "/multipageform",
+    },
   ];
 
   return (
@@ -75,9 +79,8 @@ function Navbar() {
         <ul className="menu menu-horizontal px-1">
           {navlinks.map((item) => {
             return (
-              <li className="me-2">
+              <li className="me-2" key={item.name}>
                 <NavLink
-                  key={item.name}
                   to={item.url}
                   className={({ isActive, isPending }) =>
                     isPending

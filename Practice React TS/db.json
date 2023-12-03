@@ -16,7 +16,6 @@
   "profile": {
     "name": "typicode"
   },
-
   "users": [
     {
       "id": 1,
@@ -39,7 +38,6 @@
       "email": "peter@example.com"
     }
   ],
-
   "tasks": [
     {
       "id": 1,
@@ -63,6 +61,6 @@
     }
   ],
   "noTasks": [],
-
-  "sampleArrayData": ["Item1", "Item2", "Item3", "Item4"]
+  "sampleArrayData": ["Item1", "Item2", "Item3", "Item4"],
+  "multiformData": []
 }
