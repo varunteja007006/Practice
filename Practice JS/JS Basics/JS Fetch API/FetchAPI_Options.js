@@ -1,7 +1,6 @@
 /*
 The fetch() method can optionally accept a second parameter, an init object that 
 allows you to control a number of different settings:
-
 */
 
 // Example POST method implementation:

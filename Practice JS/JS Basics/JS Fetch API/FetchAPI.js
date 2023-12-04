@@ -6,11 +6,11 @@ protocol, such as requests and responses. It also provides a global fetch() meth
 an easy, logical way to fetch resources asynchronously across the network.
 */
 
-// simple fetch api
+// GET method via Fetch API
 async function logMovies() {
   const response = await fetch("http://example.com/movies.json");
   const movies = await response.json();
-  console.log(movies);
+  return movies;
 }
 
 /*
@@ -25,9 +25,9 @@ body content from the Response object, we use the json() method, which returns a
 promise that resolves with the result of parsing the response body text as JSON.
 */
 
-// simple fetch api POST method
+// POST method via Fetch API
 
-async function postJSON(data) {
+async function postData(data) {
   try {
     const response = await fetch("https://example.com/profile", {
       method: "POST", // or 'PUT'
@@ -38,14 +38,11 @@ async function postJSON(data) {
     });
 
     const result = await response.json();
-    console.log("Success:", result);
+    return result;
   } catch (error) {
     console.error("Error:", error);
   }
 }
-
-const data = { username: "example" };
-postJSON(data);
 
 // uploading a file
 
