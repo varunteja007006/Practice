@@ -4,7 +4,7 @@ const arr = [2, 6, 3, 9, 11, 1];
 const mapped = arr.map(function doubleShot(element) {
   return element * 2;
 });
-console.log(mapped);
+console.log("Map: ", mapped);
 
 // filter function
 const filtered = arr.filter((element) => {
@@ -12,16 +12,16 @@ const filtered = arr.filter((element) => {
     return element;
   }
 });
-console.log(filtered);
+console.log("Filter: ", filtered);
 
 // reduce function
 const reduce_output = arr.reduce(function (acc, curr) {
   acc = acc + curr;
   return acc;
 }, 0);
-console.log(reduce_output);
+console.log("Reduce: ", reduce_output);
 // reduce function takes two arguments a callback func & initial value
-// inside the callback func we have two parameters acc(Accumulator like sum in before code snippet, curr is elements[index] or single element from array)
+// inside the callback func we have two parameters acc(Accumulator like sum value in before code snippet, curr is elements[index] or single element from array)
 
 // create a function similar to reduce
 function sumArray(elements) {
