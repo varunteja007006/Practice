@@ -10,6 +10,10 @@ function Navbar() {
       name: "Social",
       url: "/social-links",
     },
+    {
+      name: "Tests",
+      url: "/tests",
+    },
   ];
 
   const navlinksMenu = [
@@ -58,7 +62,7 @@ function Navbar() {
             })}
 
             <li>
-              <a>Parent</a>
+              <a>Projects</a>
               <ul className="p-2">
                 {navlinksMenu.map((item) => {
                   return (
@@ -105,7 +109,7 @@ function Navbar() {
             role="button"
             className="btn m-1 bg-blue-100 hover:bg-blue-200 dark:bg-gray-300 dark:hover:bg-gray-400"
           >
-            Click to check all Projects
+            Explore Projects
           </div>
           <ul className="menu dropdown-content z-[1] w-52 rounded-box bg-blue-100 p-2 shadow dark:bg-gray-300">
             {navlinksMenu.map((item) => {

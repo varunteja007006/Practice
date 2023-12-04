@@ -202,7 +202,7 @@ function MultiPageForm() {
 
             <CustomButton handleFunction={prevPage}>Previous</CustomButton>
 
-            <CustomButton className=" bg-yellow-400 hover:border-2 hover:border-yellow-500 hover:bg-yellow-300 hover:shadow-md" type="submit">Submit</CustomButton>
+            <CustomButton className="bg-yellow-400 hover:border-2 hover:border-yellow-500 hover:bg-yellow-300 hover:shadow-md" type="submit">Submit</CustomButton>
           </form>
         </FormBody>
       );

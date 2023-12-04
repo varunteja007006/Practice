@@ -6,9 +6,11 @@ import {
   MultiPageFormPage,
   SocialLinks,
   Tabs,
+  Tests,
 } from "./pages";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Application from "./components/tests/test getByRole/Application";
 
 function App() {
   return (
@@ -19,15 +21,14 @@ function App() {
         <main className=" min-h-screen min-w-[400px] max-w-full bg-gray-300">
           <Routes>
             <Route index path="/" element={<Home />}></Route>
-            <Route index path="/social-links" element={<SocialLinks />}></Route>
+            <Route path="/social-links" element={<SocialLinks />}></Route>
+            <Route path="/tests/" element={<Tests />}>
+              <Route path="getByRole" element={<Application />}></Route>
+            </Route>
+            {/* create projects */}
+            <Route path="/image-slider" element={<ImageSliderPage />}></Route>
+            <Route path="/tabs" element={<Tabs />}></Route>
             <Route
-              index
-              path="/image-slider"
-              element={<ImageSliderPage />}
-            ></Route>
-            <Route index path="/tabs" element={<Tabs />}></Route>
-            <Route
-              index
               path="/multipageform"
               element={<MultiPageFormPage />}
             ></Route>
