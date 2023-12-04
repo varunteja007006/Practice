@@ -9,12 +9,9 @@ function Tests() {
 
   return (
     <div className="flex flex-col">
-      <div className="dropdown flex flex-row items-center gap-3 bg-gray-500 p-2">
-        <div tabIndex={0} role="button" className="yellow-btn btn btn-sm m-1">
+      <div className="dropdown dropdown-bottom p-2 pb-0 bg-gray-600">
+        <div tabIndex={0} role="button" className="btn btn-sm m-1">
           Check all Tests
-        </div>
-        <div>
-          <p className="text-white">{`<-- Click here to check all testing projects`}</p>
         </div>
         <ul
           tabIndex={0}
