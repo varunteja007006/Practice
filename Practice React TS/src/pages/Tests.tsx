@@ -5,11 +5,15 @@ function Tests() {
       name: "getByRole",
       url: "getByRole",
     },
+    {
+      name: "Accordian",
+      url: "accordian",
+    },
   ];
 
   return (
     <div className="flex flex-col">
-      <div className="dropdown dropdown-bottom p-2 pb-0 bg-gray-600">
+      <div className="dropdown dropdown-bottom bg-gray-600 p-2 pb-0">
         <div tabIndex={0} role="button" className="btn btn-sm m-1">
           Check all Tests
         </div>

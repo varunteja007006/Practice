@@ -10,7 +10,7 @@ import {
 } from "./pages";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Application from "./components/tests/test getByRole/Application";
+import { Application, Accordian } from "./components/tests";
 
 function App() {
   return (
@@ -24,6 +24,14 @@ function App() {
             <Route path="/social-links" element={<SocialLinks />}></Route>
             <Route path="/tests/" element={<Tests />}>
               <Route path="getByRole" element={<Application />}></Route>
+              <Route
+                path="accordian"
+                element={
+                  <Accordian>
+                    <p>Hello</p>
+                  </Accordian>
+                }
+              ></Route>
             </Route>
             {/* create projects */}
             <Route path="/image-slider" element={<ImageSliderPage />}></Route>

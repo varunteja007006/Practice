@@ -17,3 +17,5 @@ Finally run the react project
 ```sh
 npm run dev
 ```
+
+## Testing in Vite -- React Project
