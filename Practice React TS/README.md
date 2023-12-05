@@ -18,4 +18,3 @@ Finally run the react project
 npm run dev
 ```
 
-## Testing in Vite -- React Project
