@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../style.css" />
+    <title>JS Events</title>
+  </head>
+  <body>
+    <main>
+      <h1>JS Events</h1>
+      <div>
+        <h3></h3>
+        <img onload="alert('Image completely loaded')"
+         alt="GFG-Logo"
+         src=
+"https://media.geeksforgeeks.org/wp-content/cdn-uploads/GeeksforGeeksLogoHeader.png">
+      </div>
+        <div>
+            <h3>JavaScript onfocus event: An element listing to this event executes instructions whenever it receives focus. </h3>
+                <p >
+                    Take the focus into the input box below:
+                </p>
+                <input id="inp"
+                       onfocus="focused()"
+                        />
+        </div>
+      <div>
+        <h3>
+          JavaScript onblur event: This event is evoked when an element loses
+          focus.
+        </h2>
+        <p>
+          Write something in the input box and then click elsewhere in the
+          document body.
+        </p>
+        <input onblur="alert(this.value)" />
+        <p class="syntax">onblur="alert(this.value)"</p>
+      </div>
+    </main>
+    <script>
+        function focused() {
+            var e=document.getElementById('inp');
+            if(confirm('Got it?')) {
+                e.blur();
+            }
+        }
+    </script>
+  </body>
+</html>
