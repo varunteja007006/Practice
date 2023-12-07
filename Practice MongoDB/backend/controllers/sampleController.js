@@ -69,10 +69,10 @@ const getSample = async (req, res) => {
 
 //create a new sample
 const createSample = async (req, res) => {
-  const { name, dob } = req.body;
+  const data = req.body;
   //add doc to DB
   try {
-    const sample = await Sample.create({ name, dob: new Date(dob) });
+    const sample = await Sample.create(data);
     res.status(200).json(sample);
   } catch (error) {
     res.status(400).json({ error: error.message });

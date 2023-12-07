@@ -8,7 +8,6 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 //Import routes
 const sampleRoutes = require("./routes/sampleRoutes");
-const eventRoutes = require("./routes/eventRoutes");
 //Express app
 const app = express();
 
@@ -17,10 +16,10 @@ app.use(express.json());
 
 // Middleware to console log the req path, method
 // Useful for troubleshooting
-// app.use((req, res, next) => {
-//   console.log(req.path, req.method);
-//   next();
-// });
+app.use((req, res, next) => {
+  console.log(req.path, req.method);
+  next();
+});
 
 //To avoid CORS error
 app.use(cors());
