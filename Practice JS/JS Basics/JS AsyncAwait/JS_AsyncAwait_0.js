@@ -37,5 +37,3 @@ const data = getData(); // promise resolved, you get a promise object
 console.log(data); // promise object is logged
 data.then((res) => console.log(res)); // unpack the promise for data
 
-// 8. Promise chaining vs Async Await
-// Async Await is a syntactical sugar over promise chaining. Therefore better to use Async Await.
