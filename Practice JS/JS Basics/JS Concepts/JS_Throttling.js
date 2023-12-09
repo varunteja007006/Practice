@@ -21,6 +21,7 @@ const throttleFunction = function (expensiveFunc, limit) {
 };
 
 const handleExpensiveAPICall = throttleFunction(expensiveAPICall, 3000);
+
 handleExpensiveAPICall();
 setTimeout(() => {
   handleExpensiveAPICall();
