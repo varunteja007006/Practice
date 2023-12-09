@@ -6,12 +6,4 @@
 
 Other Topics
 
-🔳 object accessor
-
-###
-
-Advanced Topics
-
-🔳 Queues in JS
-🔳 Stacks in JS
-🔳 Linked List in JS
+🔳 object accessor [https://www.w3schools.com/js/js_object_accessors.asp]
