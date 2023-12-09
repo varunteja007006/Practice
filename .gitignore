@@ -3,6 +3,7 @@ node_modules
 .env
 venv
 env
+.env.local
 Practice JS/rough.js
 Practice.code-workspace
 Practice JS/rough.js

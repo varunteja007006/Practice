@@ -3,6 +3,7 @@ import express from "express";
 import { router as sampleRouter } from "./routes/sampleRoutes";
 import morgan from "morgan";
 import createHttpError from "http-errors";
+import cors from "cors"
 
 const app = express();
 
@@ -12,7 +13,7 @@ app.use(morgan("dev"));
 app.use(express.json());
 
 //To avoid CORS error
-// app.use(cors());
+app.use(cors());
 
 app.use("/api/sample", sampleRouter);
 
