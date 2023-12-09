@@ -146,6 +146,34 @@ for (const iterator of arrThreeItr) {
 // console.log("Can also do this");
 // console.log(arrThreeItr.next().value); // tom
 
+// instance method pop() = Remove the last element of the array and also returns the removed element.
+const poppedElem = arrThree.pop();
+console.log(`\nUsing pop(): ${poppedElem}`);
+
+// instance method push() = Push one or more values into the array.
+arrThree.push("Added new", "added another new");
+console.log(`\nusing push: ${arrThree}`);
+
+const arrNumFour = [1, 2, 3, 4];
+// instance method reduce() = Reduce the array to a single value and executes a provided function
+// for each value of the array.
+const reduceResult = arrNumFour.reduce((acc, elem) => (acc += elem), 0);
+// acc - holds the value, elem - is every single element of array, 0 - is the initial value
+console.log(reduceResult);
+
+// instance method reduceRight() = Convert elements of the given array from right to left to a single value.
+const reduceRightResult = arrNumFour.reduceRight(
+  (acc, elem) => (acc -= elem),
+  100
+);
+console.log(reduceRightResult);
+
+// instance method reverse() = This is used for the in-place reversal of the array.
+// Mutates the same array
+const newArrThree = arrThree.reverse();
+console.log(arrThree);
+console.log(newArrThree);
+
 /*
 
 WHAT DO YOU MEAN BY ITERATOR GETTING EXHAUSTED
