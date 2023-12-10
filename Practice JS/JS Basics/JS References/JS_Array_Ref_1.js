@@ -159,20 +159,57 @@ const arrNumFour = [1, 2, 3, 4];
 // for each value of the array.
 const reduceResult = arrNumFour.reduce((acc, elem) => (acc += elem), 0);
 // acc - holds the value, elem - is every single element of array, 0 - is the initial value
-console.log(reduceResult);
+console.log(`\nUsing reduce: ${reduceResult}`);
 
 // instance method reduceRight() = Convert elements of the given array from right to left to a single value.
 const reduceRightResult = arrNumFour.reduceRight(
   (acc, elem) => (acc -= elem),
   100
 );
-console.log(reduceRightResult);
+console.log(`\nUsing reduceRight: ${reduceRightResult}`);
 
 // instance method reverse() = This is used for the in-place reversal of the array.
-// Mutates the same array
+// Mutates the original array as well
 const newArrThree = arrThree.reverse();
-console.log(arrThree);
-console.log(newArrThree);
+console.log(`\nUsing reverse() original array: ${arrThree}`);
+console.log(`Using reverse() revered array: ${newArrThree}`);
+
+// instance method shift() = Removes the first element of the array thus reducing the size of the original array by 1.
+// returns the removed value
+const arrDemo = [10, 2, 3, 4];
+const shiftResult = arrDemo.shift();
+console.log(`\nUsing shift() array: ${arrDemo}`);
+console.log(`Using shift() return value: ${shiftResult}`);
+
+//instance method slice()
+const arrDemo_3 = ["aa", "bb", "cc", "dd", "ee", "ff"];
+const arrDemo_4 = ["aa", "bb", "cc", "dd", "ee", "ff"];
+const sliceResult = arrDemo_3.slice(3);
+const sliceResult_1 = arrDemo_4.slice(2, 4);
+console.log(`\nUsing slice(): ${sliceResult}`);
+console.log(`Using slice(): ${sliceResult_1}`);
+
+//instance method some()
+const arrNumFive = [1, 2, 3, 4];
+const emptyArray = [];
+function funcSome(element, index, array) {
+  emptyArray.push(element * 10);
+}
+arrNumFive.some(funcSome);
+console.log(`\nOriginal array: `, arrNumFive);
+console.log(`Using some(): `, emptyArray);
+
+//instance method sort()
+
+// instance method splice() =	Modify the contents of an array by removing the existing elements.
+const arrDemo_1 = ["a", "b", "c", "d", "e", "f"];
+const arrDemo_2 = ["a", "b", "c", "d", "e", "f"];
+const spliceResult = arrDemo_1.splice(3); // start at index 3
+const spliceResult_2 = arrDemo_2.splice(2, 2); // start at index 2, count 2
+console.log(arrDemo_1);
+console.log(spliceResult);
+console.log(arrDemo_2);
+console.log(spliceResult_2);
 
 /*
 
@@ -205,30 +242,3 @@ and retrieve the last element.
 If you need to access the elements again, you need to create a new iterator object from the original array.
 
 */
-
-/*
-pop()	Remove the last element of the array and also returns the removed element.	
-Try
-push()	Push one or more values into the array.	
-Try
-reduce()	Reduce the array to a single value and executes a provided function for each value of the array.	
-Try
-reduceRight()	Convert elements of the given array from right to left to a single value.	
-Try
-reverse()	This is used for the in-place reversal of the array.	
-Try
-shift()	Removes the first element of the array thus reducing the size of the original array by 1.	
-Try
-slice()	Returns a new array containing a portion of the array on which it is implemented.	
-Try
-some()	Each array element’s callback function is run once.	
-Try
-sort()	Sort an array in place in a given order according to the compare() function.	
-Try
-splice()	Modify the contents of an array by removing the existing elements.	
-Try
-toLocaleString()	Convert the elements of the given array to string.	
-Try
-toString()	Return the string representation of the array elements.	
-Try
-unshift()	Add one or more elements to the beginning of the given array.*/

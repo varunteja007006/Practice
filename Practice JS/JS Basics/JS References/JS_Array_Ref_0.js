@@ -4,13 +4,13 @@ JavaScript Array Reference
 
 // copying one array items to another
 const arrOne = ["item1", "item2", "item3", "item4", "item5", "item6", "item7"];
-console.log(`first array: ${arrOne}\n`);
+console.log(`first array: `, arrOne);
 
 let newArrOne = [];
 arrOne.forEach((elem) => {
   newArrOne.push(elem);
 });
-console.log(`second array: ${arrOne}\n`);
+console.log(`copied array: `, newArrOne);
 
 // JavaScript Array constructor - Array()
 
@@ -23,7 +23,8 @@ new instance of the class.
 */
 
 const arr = new Array("dummy1", "dummy2", "dummy3");
-console.log(`Array length is: ${arr.length} || array: ${arr}\n`);
+console.log(`\nThe array: `, arr);
+console.log(`Array .length property is: `, arr.length);
 
 // JavaScript Array Methods
 
@@ -32,11 +33,12 @@ Static Methods - Method is called using the array class itself then it is static
 */
 
 // static method of() = Creates a new array instance with variables present as the argument of the function.
-console.log(`Using static method of(): ${Array.of("Hell", "Heaven")}`);
+console.log(`\nUsing static method of(): `, Array.of("Hell", "Heaven"));
 
 // static method isArray() = Returns true if the argument passed is an array else it returns false.
-console.log(`\nUsing static method isArray(): ${Array.isArray(arr)}`);
+console.log(`\nUsing static method isArray(): `, Array.isArray(arr));
 
 // static method from()  = Returns an array object from any object with a length property or an iterable object.
 const str = "IronMan";
-console.log(`\nUsing static method from(): ${Array.from(str)}`);
+console.log(`\nThe string is: ${str}`);
+console.log(`Using static method from(): `, Array.from(str));
