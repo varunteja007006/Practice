@@ -8,7 +8,7 @@ instance method.
 const arr = new Array("dummy1", "dummy2", "dummy3");
 
 // instance method at() = returns an element of that index
-console.log(`\nUsing at(): ${arr.at(2)}`); // array in JS are 0 index
+console.log(`\nUsing at(): `, arr.at(2)); // array in JS are 0 index
 
 const tempArr = ["dummy99", "dummy100"];
 const tempArrTwo = ["dummy77", "dummy78"];
@@ -189,7 +189,7 @@ const sliceResult_1 = arrDemo_4.slice(2, 4);
 console.log(`\nUsing slice(): ${sliceResult}`);
 console.log(`Using slice(): ${sliceResult_1}`);
 
-//instance method some()
+//instance method some() = Each array element’s callback function is run once.
 const arrNumFive = [1, 2, 3, 4];
 const emptyArray = [];
 function funcSome(element, index, array) {
@@ -199,17 +199,43 @@ arrNumFive.some(funcSome);
 console.log(`\nOriginal array: `, arrNumFive);
 console.log(`Using some(): `, emptyArray);
 
-//instance method sort()
+//instance method sort() = Sort an array in place in a given order according to the function passed.
+let numbers = [20, 5.2, -120, 100, 30, 0];
+console.log(`\nBefore sort`, numbers);
+function forSort(a, b) {
+  // ascending order
+  return a - b;
+}
+numbers.sort(forSort);
+console.log(`Using sort(): `, numbers);
 
 // instance method splice() =	Modify the contents of an array by removing the existing elements.
 const arrDemo_1 = ["a", "b", "c", "d", "e", "f"];
 const arrDemo_2 = ["a", "b", "c", "d", "e", "f"];
 const spliceResult = arrDemo_1.splice(3); // start at index 3
 const spliceResult_2 = arrDemo_2.splice(2, 2); // start at index 2, count 2
-console.log(arrDemo_1);
-console.log(spliceResult);
-console.log(arrDemo_2);
-console.log(spliceResult_2);
+console.log(`\nUsing splice(), original array: `, arrDemo_1);
+console.log(`Using splice(), spliced array: `, spliceResult);
+console.log(`\nUsing splice(), original array: `, arrDemo_2);
+console.log(`Using splice(), spliced array: `, spliceResult_2);
+
+// instance method toLocaleString() = Convert the elements of the given array to string.
+
+let text = "sample text";
+let number = 567;
+let date = new Date();
+let newArr = [text, number, date];
+console.log(`\nUsing the toLocalString(), original array: `, newArr);
+let stringArr = newArr.toLocaleString();
+console.log(`Modified array: `, stringArr, ` || typeof ${typeof stringArr}`);
+
+// instance method toString() = Return the string representation of the array elements.
+
+// instance method unshift() = Add one or more elements to the beginning of the given array.
+const arrTwo = ["apple", "ball", "cat", "dog", "elephant", "fish"];
+console.log(`\nUsing unshift() original array: `, arrTwo);
+arrTwo.unshift("zebra", "Yak");
+console.log(`Modified array: `, arrTwo);
 
 /*
 
