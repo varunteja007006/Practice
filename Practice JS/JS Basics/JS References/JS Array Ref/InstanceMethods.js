@@ -15,231 +15,46 @@ const tempArrTwo = ["dummy77", "dummy78"];
 
 // instance method concat() = Merge two or more arrays together
 const arrBig = arr.concat(tempArr).concat(tempArrTwo);
-console.log(`\nUsing concat(): ${arrBig} `); // dummy1,dummy2,dummy3,dummy99,dummy100,dummy77,dummy78
+console.log(`\nUsing concat() original array: `, arr);
+console.log(`\nUsing concat() temp arrays: `, tempArr, `,`, tempArrTwo);
+console.log(`Using concat(): `, arrBig); // dummy1,dummy2,dummy3,dummy99,dummy100,dummy77,dummy78
 
 // instance method copyWithin() = Copies part of an array to the same array itself and returns.
-console.log(`\nUsing copyWithin(): ${arrBig.copyWithin(4, 1, 3)}`); // dummy1,dummy2,dummy3,dummy99,dummy2,dummy3,dummy78
+console.log(`\nUsing copyWithin() original array: `, arrBig);
+arrBig.copyWithin(4, 1, 3);
 // 4 - paste the copied elements here
 // 1,3 - the elements between this range are to be copied
+console.log(`Using copyWithin() modified array: `, arrBig); // dummy1,dummy2,dummy3,dummy99,dummy2,dummy3,dummy78
 
 // instance method entries() = Fetch all the entries of the same data structure.
 const seqArr = arrBig.entries(); // We get an [object Array Iterator]
-console.log(`\nUsing entries(): `);
+console.log(`\nUsing entries(): `, seqArr);
 for (const iterator of seqArr) {
+  // iterate through the [Object Array Iterator]
   console.log(iterator);
 }
 
-// instance method keys() = Return a new array iterator which contains the keys for each index in the given input array.
-const arrKeys = arr.keys();
-console.log(`\nusing keys(): ${arrKeys}`); //[object Array Iterator]
+// instance method keys() = Return a new array iterator which contains the keys for each
+// index in the given input array.
+const arrKeys = arrBig.keys();
+console.log(`\nusing keys(): `, arrKeys); //[object Array Iterator]
 for (const iterator of arrKeys) {
+  // iterate through the [Object Array Iterator]
   console.log(iterator);
 }
 
-/**/
-/**/
-
-// instance method lastIndexOf() = Return the last index at which a given element may be found, or -1 if it does not exist.
-const arrNumThree = [1, 2, 3, 4, 5, 7, 8, 9, 5];
-console.log(`\nUsing lastIndexOf: ${arrNumThree.lastIndexOf(5)}`);
-
-// instance method map() = Calls the argument function once for each element of the given array in order.
-console.log(`\nUsing map(): `);
-function funcForMap(element, index, array) {
-  console.log(element * 10);
-}
-arrNumThree.map(funcForMap);
-
-/**/
-/**/
-
-const arrNum = [1, 2, 4, 5, 7443, 213, 221, 12, 34];
-const arrNumTwo = [2, 4, 6, 8, 10];
-
-// instance method every() = checks that whether all the elements of the array satisfy the given condition.
-console.log(`\nUsing every(): ${arrNum.every((elem) => elem > 12)}`);
-
-console.log(
-  `\nUsing every(): ${arrNumTwo.every((elem) =>
-    elem % 2 === 0 ? true : false
-  )}`
-);
-
-/**/
-/**/
-
-const sampleArr = [1, 2, 3, 4, 5, 6];
-// instance method fill() = Fill the array with a given static value.
-console.log(`\nusing fill(): ${sampleArr.fill(0, 2, 4)}`);
-// 0 - filler value
-// 2, 4 - range in between where filler value will be used
-
-// instance method filter() = Builds a new array containing elements that satisfy a function’s test.
-console.log(`\nUsing filter(): ${sampleArr.filter((elem) => elem !== 0)}`);
-
-// instance method find() = Get the value of the --> first element <-- in the array that satisfies the provided condition.
-console.log(`\nUsing find(): ${sampleArr.find((elem) => elem !== 0)}`);
-
-// instance method findIndex() = Get the value of the --> first element index <-- in the array that satisfies the provided condition.
-console.log(
-  `\nUsing findIndex(): ${sampleArr.findIndex((elem) => elem !== 0)}`
-);
-
-/**/
-/**/
-
-const nestArr = [
-  "dummy",
-  ["test1", "test", "test2", "test3", ["dummyTest", "dummyTest2"]],
-  "dummy2",
-  "dummy3",
-];
-
-// instance method flat() = Flatten an array, to reduce the nesting of an array.
-console.log(`\nUsing flat(): ${nestArr.flat(Infinity)}`);
-
-/**/
-/**/
-
-// instance method flatMap() = This is used to flatten the input array element into a new array.
-const nestArrNum = [[1], [11], [2], [3]];
-const flatMapSol = nestArrNum.flatMap((elem) => [elem * 7]);
-console.log(`\nUsing flatMap(): ${flatMapSol}`);
-
-/**/
-/**/
-
-// instance method forEach() = It is provided a function once for each element of the array.
-console.log(`\nUsing forEach():`);
-sampleArr.forEach((element) => {
-  console.log(element);
-});
-
-/**/
-/**/
-
-const sampleArrTwo = [1, 2, 3, 4, 5, 6];
-// instance method indexOf() = Return the first index at which a given element may be found, or -1 if it does not exist.
-const indexOfValue = sampleArrTwo.indexOf(3);
-console.log(`\nUsing indexOf(): ${indexOfValue}`);
-
-const strArr = ["a", "p", "p", "l", "e"];
-console.log(`\nUsing join(): ${strArr.join("")}`);
-
-/**/
-/**/
-
-const arrThree = ["tom", "Jerry", "cat", "mouse"];
-
-// instance method included() = If an array contains the certain value, it returns true.
-console.log(`\nUsing includes(): ${arrThree.includes("tom")}`);
-
-// instance method values() = Return a new array Iterator object that contains the values for each index in the array.
-const arrThreeItr = arrThree.values();
-
-console.log(`\nUsing values(): ${arrThreeItr}`); // this is [object Array Iterator]
-for (const iterator of arrThreeItr) {
+// instance method values() = Return a new array Iterator object that contains the values
+// for each index in the array.
+const arrValues = arrBig.values();
+console.log(`\nUsing values(): `, arrValues); // this is [object Array Iterator]
+for (const iterator of arrValues) {
+  // iterate through the [Object Array Iterator]
   console.log(iterator);
 }
-
-// you can also do the following BUT NOT BOTH BECAUSE ITERATOR GETS EXHAUSTED
-// console.log("Can also do this");
-// console.log(arrThreeItr.next().value); // tom
-
-// instance method pop() = Remove the last element of the array and also returns the removed element.
-const poppedElem = arrThree.pop();
-console.log(`\nUsing pop(): ${poppedElem}`);
-
-// instance method push() = Push one or more values into the array.
-arrThree.push("Added new", "added another new");
-console.log(`\nusing push: ${arrThree}`);
-
-const arrNumFour = [1, 2, 3, 4];
-// instance method reduce() = Reduce the array to a single value and executes a provided function
-// for each value of the array.
-const reduceResult = arrNumFour.reduce((acc, elem) => (acc += elem), 0);
-// acc - holds the value, elem - is every single element of array, 0 - is the initial value
-console.log(`\nUsing reduce: ${reduceResult}`);
-
-// instance method reduceRight() = Convert elements of the given array from right to left to a single value.
-const reduceRightResult = arrNumFour.reduceRight(
-  (acc, elem) => (acc -= elem),
-  100
-);
-console.log(`\nUsing reduceRight: ${reduceRightResult}`);
-
-// instance method reverse() = This is used for the in-place reversal of the array.
-// Mutates the original array as well
-const newArrThree = arrThree.reverse();
-console.log(`\nUsing reverse() original array: ${arrThree}`);
-console.log(`Using reverse() revered array: ${newArrThree}`);
-
-// instance method shift() = Removes the first element of the array thus reducing the size of the original array by 1.
-// returns the removed value
-const arrDemo = [10, 2, 3, 4];
-const shiftResult = arrDemo.shift();
-console.log(`\nUsing shift() array: ${arrDemo}`);
-console.log(`Using shift() return value: ${shiftResult}`);
-
-//instance method slice()
-const arrDemo_3 = ["aa", "bb", "cc", "dd", "ee", "ff"];
-const arrDemo_4 = ["aa", "bb", "cc", "dd", "ee", "ff"];
-const sliceResult = arrDemo_3.slice(3);
-const sliceResult_1 = arrDemo_4.slice(2, 4);
-console.log(`\nUsing slice(): ${sliceResult}`);
-console.log(`Using slice(): ${sliceResult_1}`);
-
-//instance method some() = Each array element’s callback function is run once.
-const arrNumFive = [1, 2, 3, 4];
-const emptyArray = [];
-function funcSome(element, index, array) {
-  emptyArray.push(element * 10);
-}
-arrNumFive.some(funcSome);
-console.log(`\nOriginal array: `, arrNumFive);
-console.log(`Using some(): `, emptyArray);
-
-//instance method sort() = Sort an array in place in a given order according to the function passed.
-let numbers = [20, 5.2, -120, 100, 30, 0];
-console.log(`\nBefore sort`, numbers);
-function forSort(a, b) {
-  // ascending order
-  return a - b;
-}
-numbers.sort(forSort);
-console.log(`Using sort(): `, numbers);
-
-// instance method splice() =	Modify the contents of an array by removing the existing elements.
-const arrDemo_1 = ["a", "b", "c", "d", "e", "f"];
-const arrDemo_2 = ["a", "b", "c", "d", "e", "f"];
-const spliceResult = arrDemo_1.splice(3); // start at index 3
-const spliceResult_2 = arrDemo_2.splice(2, 2); // start at index 2, count 2
-console.log(`\nUsing splice(), original array: `, arrDemo_1);
-console.log(`Using splice(), spliced array: `, spliceResult);
-console.log(`\nUsing splice(), original array: `, arrDemo_2);
-console.log(`Using splice(), spliced array: `, spliceResult_2);
-
-// instance method toLocaleString() = Convert the elements of the given array to string.
-
-let text = "sample text";
-let number = 567;
-let date = new Date();
-let newArr = [text, number, date];
-console.log(`\nUsing the toLocalString(), original array: `, newArr);
-let stringArr = newArr.toLocaleString();
-console.log(`Modified array: `, stringArr, ` || typeof ${typeof stringArr}`);
-
-// instance method toString() = Return the string representation of the array elements.
-
-// instance method unshift() = Add one or more elements to the beginning of the given array.
-const arrTwo = ["apple", "ball", "cat", "dog", "elephant", "fish"];
-console.log(`\nUsing unshift() original array: `, arrTwo);
-arrTwo.unshift("zebra", "Yak");
-console.log(`Modified array: `, arrTwo);
 
 /*
 
-WHAT DO YOU MEAN BY ITERATOR GETTING EXHAUSTED
+WHAT DO YOU MEAN BY ITERATOR GETTING EXHAUSTED ?????
 
 The last console.log giving "undefined" as output is because you already exhausted the iterator 
 using the for-of loop. Here's the breakdown:
