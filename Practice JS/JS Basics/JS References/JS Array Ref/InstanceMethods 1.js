@@ -1,6 +1,8 @@
 /* Instance methods - If the method is called on an instance of a array then it is called an 
 instance method.
 
+- reverse()
+- shift()
 - slice()
 - some()
 - sort()

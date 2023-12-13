@@ -1,13 +1,20 @@
 /* Instance methods - If the method is called on an instance of a array then it is called an 
 instance method.
 
-- ...()
-- ...()
-- ...()
-- ...()
-- ...()
-- ...()
-- ...()
+- every()
+- lastIndexOf()
+- map()
+- fill()
+- filter()
+- find()
+- findIndex()
+- flat()
+- flatMap()
+- forEach()
+- indexOf()
+- join()
+- includes()
+- pop()
 
 */
 
@@ -24,7 +31,8 @@ console.log(
   )}`
 );
 
-// instance method lastIndexOf() = Return the last index at which a given element may be found, or -1 if it does not exist.
+// instance method lastIndexOf() = Return the last index at which a given element may be found, or -1
+// if it does not exist.
 const arrNumThree = [1, 2, 3, 4, 5, 7, 8, 9, 5];
 console.log(`\nUsing lastIndexOf original array: `, arrNumThree);
 console.log(`Using lastIndexOf of element 5: `, arrNumThree.lastIndexOf(5));
@@ -56,9 +64,6 @@ console.log(
   `\nUsing findIndex(): ${sampleArr.findIndex((elem) => elem !== 0)}`
 );
 
-/**/
-/**/
-
 const nestArr = [
   "dummy",
   ["test1", "test", "test2", "test3", ["dummyTest", "dummyTest2"]],
@@ -69,45 +74,29 @@ const nestArr = [
 // instance method flat() = Flatten an array, to reduce the nesting of an array.
 console.log(`\nUsing flat(): ${nestArr.flat(Infinity)}`);
 
-/**/
-/**/
-
 // instance method flatMap() = This is used to flatten the input array element into a new array.
 const nestArrNum = [[1], [11], [2], [3]];
 const flatMapSol = nestArrNum.flatMap((elem) => [elem * 7]);
 console.log(`\nUsing flatMap(): ${flatMapSol}`);
 
-/**/
-/**/
-
-// instance method forEach() = It is provided a function once for each element of the array.
+// instance method forEach() = It runs the provided function once for each element of the array.
 console.log(`\nUsing forEach():`);
 sampleArr.forEach((element) => {
   console.log(element);
 });
-
-/**/
-/**/
 
 const sampleArrTwo = [1, 2, 3, 4, 5, 6];
 // instance method indexOf() = Return the first index at which a given element may be found, or -1 if it does not exist.
 const indexOfValue = sampleArrTwo.indexOf(3);
 console.log(`\nUsing indexOf(): ${indexOfValue}`);
 
+// instance method join() = To stitch all the elements in an Array into a string.
 const strArr = ["a", "p", "p", "l", "e"];
 console.log(`\nUsing join(): ${strArr.join("")}`);
 
-/**/
-/**/
-
 const arrThree = ["tom", "Jerry", "cat", "mouse"];
-
 // instance method included() = If an array contains the certain value, it returns true.
 console.log(`\nUsing includes(): ${arrThree.includes("tom")}`);
-
-// you can also do the following BUT NOT BOTH BECAUSE ITERATOR GETS EXHAUSTED
-// console.log("Can also do this");
-// console.log(arrThreeItr.next().value); // tom
 
 // instance method pop() = Remove the last element of the array and also returns the removed element.
 const poppedElem = arrThree.pop();

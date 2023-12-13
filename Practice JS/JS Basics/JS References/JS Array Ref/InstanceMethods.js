@@ -42,6 +42,9 @@ for (const iterator of arrKeys) {
   // iterate through the [Object Array Iterator]
   console.log(iterator);
 }
+// you can also do the following BUT NOT BOTH BECAUSE ITERATOR GETS EXHAUSTED
+// console.log("Can also do this");
+// console.log(arrThreeItr.next().value); // tom
 
 // instance method values() = Return a new array Iterator object that contains the values
 // for each index in the array.
