@@ -7,6 +7,8 @@ import {
   SocialLinks,
   Tabs,
   Tests,
+  Projects,
+  ZodReactHookForms,
 } from "./pages";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -18,7 +20,7 @@ function App() {
       <ToastContainer />
       <div className="dark">
         <Navbar></Navbar>
-        <main className=" min-h-screen min-w-[400px] max-w-full bg-gray-300">
+        <main className=" min-h-screen min-w-[400px] max-w-full bg-gray-300 dark:text-black">
           <Routes>
             <Route index path="/" element={<Home />}></Route>
             <Route path="/social-links" element={<SocialLinks />}></Route>
@@ -34,12 +36,22 @@ function App() {
               ></Route>
             </Route>
             {/* create projects */}
-            <Route path="/image-slider" element={<ImageSliderPage />}></Route>
-            <Route path="/tabs" element={<Tabs />}></Route>
-            <Route
-              path="/multipageform"
-              element={<MultiPageFormPage />}
-            ></Route>
+            <Route path="/projects/" element={<Projects />}>
+              {/* zod + react form hooks */}
+              <Route
+                path="zodreacthookforms"
+                element={<ZodReactHookForms />}
+              ></Route>
+              {/* image slider page */}
+              <Route path="image-slider" element={<ImageSliderPage />}></Route>
+              {/* tabs page */}
+              <Route path="tabs" element={<Tabs />}></Route>
+              {/* multipage form */}
+              <Route
+                path="multipageform"
+                element={<MultiPageFormPage />}
+              ></Route>
+            </Route>
           </Routes>
         </main>
       </div>

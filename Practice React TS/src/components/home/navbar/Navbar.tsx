@@ -19,15 +19,19 @@ function Navbar() {
   const navlinksMenu = [
     {
       name: "Image Slider",
-      url: "/image-slider",
+      url: "projects/image-slider",
     },
     {
       name: "Tabs",
-      url: "/tabs",
+      url: "projects/tabs",
     },
     {
       name: "MultiPage Form",
-      url: "/multipageform",
+      url: "projects/multipageform",
+    },
+    {
+      name: "Zod+ReactHookForms",
+      url: "projects/zodreacthookforms",
     },
   ];
 
@@ -76,7 +80,7 @@ function Navbar() {
           </ul>
         </div>
         {/* brand name */}
-        <a className="btn btn-ghost text-2xl">React TS 💙</a>
+        <a className="text-2xl">React TS 💙</a>
       </div>
       {/* large screen nav bar */}
       <div className="navbar-center hidden lg:flex">
@@ -107,7 +111,7 @@ function Navbar() {
           <div
             tabIndex={0}
             role="button"
-            className="btn m-1 bg-blue-100 hover:bg-blue-200 dark:bg-gray-300 dark:hover:bg-gray-400"
+            className="btn m-1 bg-blue-100 hover:bg-blue-200 dark:bg-gray-300 dark:text-black dark:hover:bg-gray-400"
           >
             Explore Projects
           </div>

@@ -13,13 +13,13 @@ function Tests() {
 
   return (
     <div className="flex flex-col">
-      <div className="dropdown dropdown-bottom bg-gray-600 p-2 pb-0">
+      <div className="dropdown dropdown-bottom bg-gray-500 p-2">
         <div tabIndex={0} role="button" className="btn btn-sm m-1">
           Check all Tests
         </div>
         <ul
           tabIndex={0}
-          className="menu dropdown-content z-[1] w-52 rounded-box bg-base-100 p-2 shadow"
+          className="menu dropdown-content z-[1] w-52 rounded-box bg-base-100 p-2 shadow dark:text-white"
         >
           {navLinks.map((item) => {
             return (

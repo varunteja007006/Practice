@@ -61,6 +61,21 @@
     }
   ],
   "noTasks": [],
-  "sampleArrayData": ["Item1", "Item2", "Item3", "Item4"],
-  "multiformData": []
+  "sampleArrayData": [
+    "Item1",
+    "Item2",
+    "Item3",
+    "Item4"
+  ],
+  "multiformData": [
+    {
+      "firstname": "",
+      "lastname": "",
+      "age": "",
+      "doorNo": "",
+      "street": "",
+      "city": "",
+      "id": 1
+    }
+  ]
 }
