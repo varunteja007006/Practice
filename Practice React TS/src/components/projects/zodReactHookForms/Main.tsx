@@ -64,7 +64,7 @@ function Main() {
       >
         <label className="form-control">
           <div className="label">
-            <span className="label-text dark:text-gray-800">Username</span>
+            <span className="label-text text-black dark:text-white">Username</span>
           </div>
           <input
             className="input text-white"
@@ -79,7 +79,7 @@ function Main() {
 
         <label className="form-control">
           <div className="label">
-            <span className="label-text dark:text-gray-800">Password</span>
+            <span className="label-text text-black dark:text-white">Password</span>
           </div>
           <input
             className="input text-white"
@@ -99,7 +99,7 @@ function Main() {
         </label>
         <label className="form-control">
           <div className="label">
-            <span className="label-text dark:text-gray-800">
+            <span className="label-text text-black dark:text-white">
               Confirm Password
             </span>
           </div>

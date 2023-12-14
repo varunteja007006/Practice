@@ -18,8 +18,8 @@ function BtnContainer({
             type="button"
             className={`btn ${
               currentData === index
-                ? `bg-green-400 underline hover:bg-green-400`
-                : `bg-slate-300`
+                ? `bg-green-400 underline hover:bg-green-400 text-black dark:text-black`
+                : `bg-slate-300 hover:bg-slate-400 text-black dark:text-black`
             }`}
             onClick={() => setCurrentData(index)}
           >

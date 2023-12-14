@@ -145,7 +145,7 @@ function MultiPageForm() {
               );
             })}
           </form>
-          <CustomButton className="mt-5  bg-yellow-400 hover:border-2 hover:border-yellow-500 hover:bg-yellow-300 hover:shadow-md" handleFunction={nextPage}>
+          <CustomButton className="yellow-btn mt-5" handleFunction={nextPage}>
             Next
           </CustomButton>
         </FormBody>
@@ -167,11 +167,14 @@ function MultiPageForm() {
               );
             })}
           </form>
-          <CustomButton className="mt-5" handleFunction={prevPage}>
+          <CustomButton className="yellow-btn mt-5" handleFunction={prevPage}>
             Previous
           </CustomButton>
 
-          <CustomButton className="ms-5 mt-5  bg-yellow-400 hover:border-2 hover:border-yellow-500 hover:bg-yellow-300 hover:shadow-md" handleFunction={nextPage}>
+          <CustomButton
+            className="yellow-btn ms-5 mt-5"
+            handleFunction={nextPage}
+          >
             Next
           </CustomButton>
         </FormBody>
@@ -202,7 +205,7 @@ function MultiPageForm() {
 
             <CustomButton handleFunction={prevPage}>Previous</CustomButton>
 
-            <CustomButton className="bg-yellow-400 hover:border-2 hover:border-yellow-500 hover:bg-yellow-300 hover:shadow-md" type="submit">Submit</CustomButton>
+            <CustomButton type="submit">Submit</CustomButton>
           </form>
         </FormBody>
       );
@@ -211,7 +214,7 @@ function MultiPageForm() {
         <FormBody>
           <p>Submitted successfully...</p>
           <CustomButton
-            className="mt-5 bg-yellow-400 hover:border-2 hover:border-yellow-500 hover:bg-yellow-300 hover:shadow-md"
+            className="yellow-btn mt-5"
             handleFunction={() => setPage(0)}
           >
             Restart Form

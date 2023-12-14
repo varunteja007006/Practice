@@ -1,4 +1,6 @@
 import { NavLink } from "react-router-dom";
+import { GoSun, GoMoon } from "react-icons/go";
+import { useThemeContext } from "../../../context/ThemeContext";
 
 function Navbar() {
   const navlinks = [
@@ -9,10 +11,6 @@ function Navbar() {
     {
       name: "Social",
       url: "/social-links",
-    },
-    {
-      name: "Tests",
-      url: "/tests",
     },
   ];
 
@@ -35,8 +33,19 @@ function Navbar() {
     },
   ];
 
+  // light = true, dark = false
+
+  const { theme, setTheme } = useThemeContext();
+  const handleTheme = () => {
+    function setThemeInLocal(theme: "light" | "dark") {
+      localStorage.setItem("theme", JSON.stringify(theme));
+    }
+    setTheme(theme === "light" ? "dark" : "light");
+    setThemeInLocal(theme === "light" ? "dark" : "light");
+  };
+
   return (
-    <div className="navbar min-w-[400px] bg-base-100 dark:bg-gray-700  dark:text-white ">
+    <div className="navbar min-w-[400px] bg-white dark:bg-gray-700  dark:text-white">
       <div className="navbar-start">
         {/* small screen */}
         <div className="dropdown">
@@ -80,7 +89,7 @@ function Navbar() {
           </ul>
         </div>
         {/* brand name */}
-        <a className="text-2xl">React TS 💙</a>
+        <a className="text-2xl text-black dark:text-white">React TS 💙</a>
       </div>
       {/* large screen nav bar */}
       <div className="navbar-center hidden lg:flex">
@@ -111,7 +120,7 @@ function Navbar() {
           <div
             tabIndex={0}
             role="button"
-            className="btn m-1 bg-blue-100 hover:bg-blue-200 dark:bg-gray-300 dark:text-black dark:hover:bg-gray-400"
+            className="btn m-1 bg-blue-100 text-black shadow-md hover:bg-blue-200 hover:shadow-lg dark:bg-gray-300 dark:text-black dark:hover:bg-gray-400"
           >
             Explore Projects
           </div>
@@ -128,7 +137,29 @@ function Navbar() {
             })}
           </ul>
         </div>
-        <a className="btn">Theme</a>
+        <button
+          onClick={handleTheme}
+          className="flex flex-row rounded-full border border-black bg-white text-lg font-bold text-black shadow-md"
+        >
+          <span
+            className={
+              theme === "light"
+                ? "rounded-l-full border-r border-black bg-yellow-400 p-3 text-black shadow-xl"
+                : "rounded-l-full rounded-tl-lg p-3 "
+            }
+          >
+            <GoSun />
+          </span>
+          <span
+            className={
+              theme === "dark"
+                ? "rounded-r-full bg-black p-3 text-yellow-400 shadow-lg"
+                : "rounded-r-full p-3"
+            }
+          >
+            <GoMoon />
+          </span>
+        </button>
       </div>
     </div>
   );

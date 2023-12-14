@@ -19,12 +19,12 @@ function CustomInputText({
   value,
   label,
   handleFunction,
-  disabled,
+  disabled = false,
 }: PropsType) {
   return (
     <label className="form-control w-full max-w-xs">
       <div className="label">
-        <span className="label-text">{label}</span>
+        <span className="label-text text-black dark:text-white">{label}</span>
       </div>
       <input
         type={type}

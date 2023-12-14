@@ -6,35 +6,24 @@ import {
   MultiPageFormPage,
   SocialLinks,
   Tabs,
-  Tests,
   Projects,
   ZodReactHookForms,
 } from "./pages";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { Application, Accordian } from "./components/tests";
+import { useThemeContext } from "./context/ThemeContext";
 
 function App() {
+  const { theme } = useThemeContext();
   return (
     <BrowserRouter>
       <ToastContainer />
-      <div className="dark">
+      <div className={theme}>
         <Navbar></Navbar>
-        <main className=" min-h-screen min-w-[400px] max-w-full bg-gray-300 dark:text-black">
+        <main className="min-h-screen min-w-[400px] max-w-full bg-gray-300 text-black dark:bg-gray-600 dark:text-white">
           <Routes>
             <Route index path="/" element={<Home />}></Route>
             <Route path="/social-links" element={<SocialLinks />}></Route>
-            <Route path="/tests/" element={<Tests />}>
-              <Route path="getByRole" element={<Application />}></Route>
-              <Route
-                path="accordian"
-                element={
-                  <Accordian>
-                    <p>Hello</p>
-                  </Accordian>
-                }
-              ></Route>
-            </Route>
             {/* create projects */}
             <Route path="/projects/" element={<Projects />}>
               {/* zod + react form hooks */}

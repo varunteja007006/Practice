@@ -32,7 +32,7 @@ function ImageSlider() {
                   ? setImage(imageURLs.length - 1)
                   : setImage(image - 1);
               }}
-              className="btn bg-yellow-400 hover:bg-yellow-500"
+              className="yellow-btn"
             >
               Previous
             </button>
@@ -47,7 +47,7 @@ function ImageSlider() {
                   ? setImage(0)
                   : setImage(image + 1)
               }
-              className="btn bg-yellow-400 hover:bg-yellow-500"
+              className="yellow-btn"
             >
               Next
             </button>
@@ -68,7 +68,7 @@ function ImageSlider() {
                   ? setImage(imageURLs.length - 1)
                   : setImage(image - 1);
               }}
-              className="btn bg-yellow-400 hover:bg-yellow-500"
+              className="yellow-btn"
             >
               Previous
             </button>
@@ -91,7 +91,7 @@ function ImageSlider() {
                   ? setImage(0)
                   : setImage(image + 1)
               }
-              className="btn bg-yellow-400 hover:bg-yellow-500"
+              className="yellow-btn"
             >
               Next
             </button>

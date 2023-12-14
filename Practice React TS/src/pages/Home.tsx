@@ -4,9 +4,9 @@ function Home() {
   return (
     <PageBody PageTitle="Home">
       <div className="mx-6">
-        <h2 className="text-lg font-bold">
+        <h2 className="text-lg">
           Welcome Everyone! This is the place to learn React , TypeScript, and
-          other cool concepts
+          other cool concepts.
         </h2>
       </div>
     </PageBody>

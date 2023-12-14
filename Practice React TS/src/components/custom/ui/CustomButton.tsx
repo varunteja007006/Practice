@@ -14,7 +14,9 @@ function CustomButton({
   return (
     <button
       type={type ?? "button"}
-      className={`btn btn-xs w-fit sm:btn-sm md:btn-md ${className ?? ""}`}
+      className={`btn btn-xs w-fit sm:btn-sm md:btn-md ${
+        className ?? "yellow-btn"
+      }`}
       onClick={handleFunction}
     >
       {children}

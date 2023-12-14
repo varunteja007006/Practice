@@ -14,7 +14,7 @@ function JobInfo({
   }
 
   return item ? (
-    <article className="card mt-3 border-2 border-green-400 bg-green-200 p-5">
+    <article className="card mt-3 border-2 border-green-400 bg-green-200 p-5 dark:text-black">
       <h3 className="p-2 text-lg font-semibold">{item.title}</h3>
       <span className="p-2 text-sm">{item.company}</span>
       <p className="p-2 text-sm">{item.dates}</p>
