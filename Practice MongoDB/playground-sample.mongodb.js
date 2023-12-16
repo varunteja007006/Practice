@@ -12,7 +12,7 @@
 // Select the database to use.
 use("accounts");
 
-db.getCollection("users").find({ personid: 21 });
+db.getCollection("users").find({ personID: 21 });
 // Insert a few documents into the sales collection.
 // db.getCollection('sales').insertMany([]);
 

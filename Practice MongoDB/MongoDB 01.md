@@ -163,10 +163,14 @@ Install the MongoDB for VS Code extension. To proceed further.
 
 ![MongoDB Extension for VS Code](https://github.com/varunteja007006/Practice/blob/main/Practice%20MongoDB/assets/mongodb_extensionForVSCode.png?raw=true)
 
+<br>
+
 #### Access MongoDB extension in VS Code.
 
 Access the extension from the VS Code side menu.
 ![Access MongoDB Extension for VS Code](https://github.com/varunteja007006/Practice/blob/main/Practice%20MongoDB/assets/mongodb_accessExtension.png?raw=true)
+
+<br>
 
 Click `Add Connection` button in the `connections`
 ![Add Connection in MongoDB](https://github.com/varunteja007006/Practice/blob/main/Practice%20MongoDB/assets/mongodb_addConnection.png?raw=true)
@@ -174,11 +178,17 @@ Click `Add Connection` button in the `connections`
 Now you can see that it shows `🔴 Not connected` and a `Connect` button below with text - "Connect with
 Connection String"
 
+<br>
+
 Click on the `Connect` button and it will ask you for the url (the one generated when we run the mongodb shell). Paste it and press enter.
 ![Add url in MongoDB](https://github.com/varunteja007006/Practice/blob/main/Practice%20MongoDB/assets/mongodb_connectionURL.png?raw=true)
 
+<br>
+
 Once successful you can see that you are connected to MongoDB on local server.
 ![Connection successful](https://github.com/varunteja007006/Practice/blob/main/Practice%20MongoDB/assets/mongodb_connectionSuccess.png?raw=true)
+
+<br>
 
 #### MongoDB playground
 
@@ -194,11 +204,13 @@ How does the code inside these files look?? Well not much different here is the 
 use("accounts");
 
 // Select the collection to use and query.
-db.getCollection("users").find({ personid: 1 }); // this queries document who's personid is 1
+db.getCollection("users").find({ personID: 1 }); // this queries document who's personID is 1
 ```
 
 <br>
-There you go now you can create as many playground files as needed to test and learn MongoDB. 😁
+There you go, now you can create as many playground files as needed to test and learn MongoDB. 😁
+<br>
+
 <br>
 
 ### More Concepts in MongoDB
@@ -216,7 +228,7 @@ src: https://docs.mongodb.com/manual/reference/method/js-cursor/
 ```js
 [
   {
-    personid: 1,
+    personID: 1,
     firstname: "Peter",
     lastname: "Parker",
     dob: new Date("1998-06-05"),
@@ -234,7 +246,7 @@ src: https://docs.mongodb.com/manual/reference/method/js-cursor/
     alive: true,
   },
   {
-    personid: 2,
+    personID: 2,
     firstname: "Bruce",
     lastname: "Wayne",
     dob: new Date("1983-02-19"),
@@ -252,7 +264,7 @@ src: https://docs.mongodb.com/manual/reference/method/js-cursor/
     alive: true,
   },
   {
-    personid: 3,
+    personID: 3,
     firstname: "Clark",
     lastname: "Kent",
     dob: new Date("1988-07-18"),
@@ -274,7 +286,7 @@ src: https://docs.mongodb.com/manual/reference/method/js-cursor/
     alive: true,
   },
   {
-    personid: 4,
+    personID: 4,
     firstname: "Diana",
     lastname: "Prince",
     dob: new Date("4000-01-01"),
@@ -296,7 +308,7 @@ src: https://docs.mongodb.com/manual/reference/method/js-cursor/
     alive: true,
   },
   {
-    personid: 5,
+    personID: 5,
     firstname: "Steve",
     lastname: "Rogers",
     dob: new Date("1922-07-04"),
@@ -319,7 +331,7 @@ src: https://docs.mongodb.com/manual/reference/method/js-cursor/
   },
 
   {
-    personid: 6,
+    personID: 6,
     firstname: "Tony",
     lastname: "Stark",
     dob: new Date("1978-05-29"),
@@ -341,7 +353,7 @@ src: https://docs.mongodb.com/manual/reference/method/js-cursor/
     alive: true,
   },
   {
-    personid: 7,
+    personID: 7,
     firstname: "Natasha",
     lastname: "Romanoff",
     dob: new Date("1988-01-25"),
@@ -362,7 +374,7 @@ src: https://docs.mongodb.com/manual/reference/method/js-cursor/
     alive: true,
   },
   {
-    personid: 8,
+    personID: 8,
     firstname: "Clint",
     lastname: "Barton",
     dob: new Date("1983-01-07"),
@@ -380,7 +392,7 @@ src: https://docs.mongodb.com/manual/reference/method/js-cursor/
     alive: true,
   },
   {
-    personid: 9,
+    personID: 9,
     firstname: "Wanda",
     lastname: "Maximoff",
     dob: new Date("1993-02-16"),
@@ -401,7 +413,7 @@ src: https://docs.mongodb.com/manual/reference/method/js-cursor/
     alive: true,
   },
   {
-    personid: 10,
+    personID: 10,
     firstname: "Vision",
     lastname: "Synthezoid",
     dob: new Date("2020-08-07"),
@@ -420,7 +432,7 @@ src: https://docs.mongodb.com/manual/reference/method/js-cursor/
   },
 
   {
-    personid: 11,
+    personID: 11,
     firstname: "John",
     lastname: "Doe",
     dob: new Date("1998-03-12"),
@@ -438,7 +450,7 @@ src: https://docs.mongodb.com/manual/reference/method/js-cursor/
     alive: true,
   },
   {
-    personid: 12,
+    personID: 12,
     firstname: "Jane",
     lastname: "Smith",
     dob: new Date("1978-05-08"),
@@ -456,7 +468,7 @@ src: https://docs.mongodb.com/manual/reference/method/js-cursor/
     alive: true,
   },
   {
-    personid: 13,
+    personID: 13,
     firstname: "Mary",
     lastname: "Jones",
     dob: new Date("1993-01-25"),
@@ -474,7 +486,7 @@ src: https://docs.mongodb.com/manual/reference/method/js-cursor/
     alive: true,
   },
   {
-    personid: 14,
+    personID: 14,
     firstname: "David",
     lastname: "Williams",
     dob: new Date("1963-07-14"),
@@ -492,7 +504,7 @@ src: https://docs.mongodb.com/manual/reference/method/js-cursor/
     alive: true,
   },
   {
-    personid: 15,
+    personID: 15,
     firstname: "Susan",
     lastname: "Miller",
     dob: new Date("1968-09-22"),
@@ -510,7 +522,7 @@ src: https://docs.mongodb.com/manual/reference/method/js-cursor/
     alive: true,
   },
   {
-    personid: 21,
+    personID: 21,
     firstname: "Harry",
     lastname: "Bhai",
     dob: new Date("1995-05-20"),

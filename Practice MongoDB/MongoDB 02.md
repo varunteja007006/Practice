@@ -22,7 +22,7 @@ Insert a single document into collections 'users'
 
 ```js
 db.users.insertOne({
-  personid: 25,
+  personID: 25,
   firstname: "Tommy",
   lastname: "Ja",
   dob: new Date("2004-12-25"),
@@ -66,28 +66,28 @@ To show only required keys of a document. Pass two arguments in find().
 Similarly, to specify which keys should not to be shown mention '0', rest of the keys will be shown.
 
 ```js
-db.users.find({ age: { $lt: 20 } }, { personid: 1, firstname: 1, lastname: 1 });
+db.users.find({ age: { $lt: 20 } }, { personID: 1, firstname: 1, lastname: 1 });
 ```
 
 Here inside find(),
 
 - **first argument** is {age: { $lt: 20}} condition to fetch query, i.e age less than 20.
 
-- **second argument** is { personid:1, firstname:1, lastname:1 } condition to specify required keys,
-  i.e show documents with keys personid, firstname, lastname since they are mentioned with '1'.
+- **second argument** is { personID:1, firstname:1, lastname:1 } condition to specify required keys,
+  i.e show documents with keys personID, firstname, lastname since they are mentioned with '1'.
 
 More Commands that can used along with find()
 
 - **sort by ascending**
 
   ```js
-  db.users.find().sort({ personid: 1 });
+  db.users.find().sort({ personID: 1 });
   ```
 
 - **sort by descending**
 
   ```js
-  db.users.find().sort({ personid: -1 });
+  db.users.find().sort({ personID: -1 });
   ```
 
 - **limit the documents to show**
@@ -249,23 +249,23 @@ This will update all the documents since we passed '{}', it will update new key 
 - **OPERATOR $push**
 
   ```js
-  db.users.updateOne({ personid: 18 }, { $push: { hobbies: "eating" } });
+  db.users.updateOne({ personID: 18 }, { $push: { hobbies: "eating" } });
   ```
 
-  This will add the 'eating' to the array hobbies in the document with the personid 18.
+  This will add the 'eating' to the array hobbies in the document with the personID 18.
 
 - **OPERATOR $pull**
 
   ```js
-  db.users.updateOne({ personid: 18 }, { $pull: { hobbies: "eating" } });
+  db.users.updateOne({ personID: 18 }, { $pull: { hobbies: "eating" } });
   ```
 
-  This will add the 'eating' to the array hobbies in the document with the personid 18.
+  This will add the 'eating' to the array hobbies in the document with the personID 18.
 
 - **OPERATOR $inc**
 
   ```js
-  db.users.updateOne({ personid: 21 }, { $inc: { age: 1 } });
+  db.users.updateOne({ personID: 21 }, { $inc: { age: 1 } });
   ```
 
   The $inc will increment the age by 1.
@@ -273,7 +273,7 @@ This will update all the documents since we passed '{}', it will update new key 
   Similarly, if you want to decrement then
 
   ```js
-  db.users.updateOne({ personid: 21 }, { $inc: { age: -1 } });
+  db.users.updateOne({ personID: 21 }, { $inc: { age: -1 } });
   ```
 
 To replace the complete document
