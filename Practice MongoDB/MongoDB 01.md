@@ -2,14 +2,16 @@
 
 ### Lingo
 
-document - It means same as record in MySQL
-collections - It means same as table in MySQL
+Let us first understand the MongoDB language.
+
+- document - It means same as record in MySQL
+- collections - It means same as table in MySQL
 
 ### Documentation
 
 https://www.mongodb.com/docs/manual/installation/
 
-# Run Mongodb (Linux)
+# Run Mongodb (Linux Terminal)
 
 To start the mongodb:
 
@@ -36,6 +38,9 @@ sudo systemctl restart mongod
 ```
 
 # MongoDB Shell
+
+You can run the MongoDB shell in the linux terminal after starting the MongoD service as shown the
+above section `Run MongoDB (Linux Terminal)`.
 
 ### Documentation
 
@@ -69,7 +74,7 @@ Terminate the running command or query:
 
 ### Simple Queries
 
-Current Database - To print current database
+Current Database - To print current database type the following command
 
 ```sh
 db
@@ -111,7 +116,7 @@ Rename the collection
 db.employees.renameCollection("users");
 ```
 
-Delete a document from collection who's name is Tommy
+Delete a document from collection who's name is `Tommy`
 
 ```js
 db.users.remove({ name: "Tommy" });
@@ -135,8 +140,18 @@ Lets set up the database once again since we dropped it in the before section.ab
 use accounts
 ```
 
-Now proceed with following insertOne or insertMany operation to create a collection as well a document
+Now proceed with following `insertOne` or `insertMany` operation to create a collection as well a document
 in the collection.
+
+# MongoDB VSCode Extension
+
+You can also use your VSCode extension to learn MongoDB.
+
+After starting the MongoDB shell using `mongosh`
+
+You can find a url `Connection to: mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.1.1` or something similar. Keep a copy of that string
+
+![mongodb_shell_url.png](https://github.com/varunteja007006/Practice/blob/main/Practice%20MongoDB/assets/mongodb_shell_url.png?raw=true)
 
 ### More Concepts in MongoDB
 
