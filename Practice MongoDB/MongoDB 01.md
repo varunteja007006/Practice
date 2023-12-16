@@ -149,9 +149,57 @@ You can also use your VSCode extension to learn MongoDB.
 
 After starting the MongoDB shell using `mongosh`
 
-You can find a url `Connection to: mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.1.1` or something similar. Keep a copy of that string
+You can find a url as shown below,<br />
+`Connection to: mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.1.1` <br />
+or something similar. Keep a copy of this string which is a url that will be used later.
 
-![mongodb_shell_url.png](https://github.com/varunteja007006/Practice/blob/main/Practice%20MongoDB/assets/mongodb_shell_url.png?raw=true)
+![MongoDB Shell URL](https://github.com/varunteja007006/Practice/blob/main/Practice%20MongoDB/assets/mongodb_shell_url.png?raw=true)
+
+<br>
+
+#### Install the MongoDB for VS Code extension.
+
+Install the MongoDB for VS Code extension. To proceed further.
+
+![MongoDB Extension for VS Code](https://github.com/varunteja007006/Practice/blob/main/Practice%20MongoDB/assets/mongodb_extensionForVSCode.png?raw=true)
+
+#### Access MongoDB extension in VS Code.
+
+Access the extension from the VS Code side menu.
+![Access MongoDB Extension for VS Code](https://github.com/varunteja007006/Practice/blob/main/Practice%20MongoDB/assets/mongodb_accessExtension.png?raw=true)
+
+Click `Add Connection` button in the `connections`
+![Add Connection in MongoDB](https://github.com/varunteja007006/Practice/blob/main/Practice%20MongoDB/assets/mongodb_addConnection.png?raw=true)
+
+Now you can see that it shows `🔴 Not connected` and a `Connect` button below with text - "Connect with
+Connection String"
+
+Click on the `Connect` button and it will ask you for the url (the one generated when we run the mongodb shell). Paste it and press enter.
+![Add url in MongoDB](https://github.com/varunteja007006/Practice/blob/main/Practice%20MongoDB/assets/mongodb_connectionURL.png?raw=true)
+
+Once successful you can see that you are connected to MongoDB on local server.
+![Connection successful](https://github.com/varunteja007006/Practice/blob/main/Practice%20MongoDB/assets/mongodb_connectionSuccess.png?raw=true)
+
+#### MongoDB playground
+
+To run the mongodb commands we need to create a file with the following file-naming convention `<filename>.mongodb.js`
+
+For example: playground-01.mongodb.js, sample.mongodb.js, etc....
+
+How does the code inside these files look?? Well not much different here is the sample code for
+`playground-01.mongodb.js` file:
+
+```js
+// Select the database to use.
+use("accounts");
+
+// Select the collection to use and query.
+db.getCollection("users").find({ personid: 1 }); // this queries document who's personid is 1
+```
+
+<br>
+There you go now you can create as many playground files as needed to test and learn MongoDB. 😁
+<br>
 
 ### More Concepts in MongoDB
 
