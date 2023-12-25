@@ -31,6 +31,10 @@ function Navbar() {
       name: "Zod+ReactHookForms",
       url: "projects/zodreacthookforms",
     },
+    {
+      name: "Framer Motion",
+      url: "projects/framerMotion",
+    },
   ];
 
   // light = true, dark = false

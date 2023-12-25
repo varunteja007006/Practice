@@ -12,6 +12,7 @@ import {
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useThemeContext } from "./context/ThemeContext";
+import FramerMotionPage from "./pages/project pages/FramerMotionPage";
 
 function App() {
   const { theme } = useThemeContext();
@@ -40,6 +41,7 @@ function App() {
                 path="multipageform"
                 element={<MultiPageFormPage />}
               ></Route>
+              <Route path='framerMotion' element={<FramerMotionPage />} />
             </Route>
           </Routes>
         </main>
