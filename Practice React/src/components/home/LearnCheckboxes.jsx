@@ -14,6 +14,8 @@ function LearnCheckboxes() {
   // console.log(checkedItems); // checkedItems is array of arrays { 1:{}, 2:{}, ...}
 
   const handleCheckedItems = (e) => {
+    // e.preventDefault() // AVOID USING THIS. This will cause some issues where user has to click the checkbox twice.
+
     const id = e.target.name - 1; // e.target.name starts from 1 but the javascript arrays are accessible from 0 [zero indexed]
     const updateRecord = {
       ...checkedItems[id],
