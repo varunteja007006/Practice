@@ -93,3 +93,9 @@ let myObj1 = {
 
 myObj1.greet();
 myObj1.byWhom();
+
+// using Object.create({}) to create a new object
+objC = Object.create({});
+objC.name = "test";
+
+console.log(objC);

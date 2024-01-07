@@ -97,3 +97,52 @@ console.log("Arrow function of 'this': ", person.greet()); // Hello , you are un
 - 'this' in strict mode : in strict mode, 'this' is undefined.
 - 'this' in event handlers: Refers to the current element that it has received.
 */
+
+// 'this' in global space
+console.log(this); // refers to window object
+
+// 'this' inside a function space
+function x() {
+  console.log(this); // in strict mode 'this' is undefined.
+  // in non strict mode 'this' is global window object.
+}
+x();
+
+/*
+  'this' keyword in non strict mode is replaced with global object if 'this' keyword is undefined or null
+*/
+
+// 'this' keyword inside a method
+const testObj = {
+  x: 10,
+  y: function () {
+    console.log(this);
+  },
+};
+testObj.y(); // Here 'this' keyword refers to the 'obj'
+
+// call, apply, bind methods
+
+const testObj2 = {
+  x: 20,
+};
+
+testObj.y.call(testObj2);
+
+// 'this' keyword inside a arrow function -> it behaves like it is in enclosing lexical context
+const testObj3 = {
+  x: 30,
+  y: () => {
+    console.log(this);
+  },
+  z: function () {
+    const b = () => {
+      console.log(this);
+    };
+    b();
+  },
+};
+testObj3.y();
+testObj3.z();
+
+// this inside HTMl DOM - it refers to HTML Element

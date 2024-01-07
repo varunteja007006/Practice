@@ -10,23 +10,22 @@
     <main>
       <h1>JS Events</h1>
       <div>
-        <h3></h3>
-        <img onload="alert('Image completely loaded')"
-         alt="GFG-Logo"
-         src=
-"https://media.geeksforgeeks.org/wp-content/cdn-uploads/GeeksforGeeksLogoHeader.png">
+        <img
+          onload="alert('Image completely loaded')"
+          alt="GFG-Logo"
+          src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/GeeksforGeeksLogoHeader.png"
+        />
       </div>
-        <div>
-            <h3>JavaScript onfocus event: An element listing to this event executes instructions whenever it receives focus. </h3>
-                <p >
-                    Take the focus into the input box below:
-                </p>
-                <input id="inp"
-                       onfocus="focused()"
-                        />
-        </div>
       <div>
         <h3>
+          JavaScript onfocus event: An element listing to this event executes
+          instructions whenever it receives focus.
+        </h3>
+        <p>Take the focus into the input box below:</p>
+        <input id="inp" onfocus="focused()" />
+      </div>
+      <div>
+        <h2>
           JavaScript onblur event: This event is evoked when an element loses
           focus.
         </h2>
@@ -39,12 +38,12 @@
       </div>
     </main>
     <script>
-        function focused() {
-            var e=document.getElementById('inp');
-            if(confirm('Got it?')) {
-                e.blur();
-            }
+      function focused() {
+        var e = document.getElementById("inp");
+        if (confirm("Got it?")) {
+          e.blur();
         }
+      }
     </script>
   </body>
 </html>
