@@ -47,7 +47,6 @@ db.users.explain("executionStats").find({ age: { $lte: 60 } });
 
 ```js
 // output
-
 {
   explainVersion: '2',
   queryPlanner: {
@@ -223,3 +222,52 @@ db.users.find({ alive: true });
 ```
 
 You always have to start indexing the properties from left to right and you cannot index from any other order.
+
+### Sorting using Indexes
+
+In case you need large amount of data to be sorted using a specific field in the document on a regular basis, you should use indexing for that particular field because it helps the response time by a lot as the db wouldn't have to sort the returned data for you. This is because indexes are already sorted.
+
+### Partial Filters
+
+Let us say you create indexes on age but you use the age query only for the gender male in the users collection.
+So, there is no point of making index on the whole collection. This is what you would do:
+
+```js
+db.users.createIndex(
+  { "age.dob": 1 },
+  { partialFilterExpression: { gender: "male" } }
+);
+```
+
+You would also do something like,
+
+```js
+db.users.createIndex(
+  { "age.dob": 1 },
+  { partialFilterExpression: { "hobbies.frequency": { $gt: 6 } } } // where hobbies frequency is greater than 6
+);
+```
+
+**NOTE: To use this index, you will have to include exact indexes while querying. This won't work like compound indexes(left -> right). This is because, if MongoDB does that, since the indexes are partial, you might end up skipping returned data. What if the the query satisfies the documents on which there is no indexing?**
+
+###
+
+Further Explanation:
+
+Let us consider the partial indexing:
+
+```js
+db.users.createIndex(
+  { "dob.age": 1 },
+  { partialFilterExpression: { gender: "male" } }
+);
+```
+
+This create indexes ONLY FOR MALES:
+Now if you query for people older than 60:
+```js
+db.users.find({ 'dob.age': 60 });
+```
+This will not run the IndexScan, because what if we have users who are women and are > 60 age? And if we were to use index for scanning, it would have skipped those documents.
+
+Therefore, mongo will run a collection scan.
