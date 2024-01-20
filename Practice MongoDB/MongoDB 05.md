@@ -191,6 +191,9 @@ Mongo has `_id` as default index since it is unique. Let us say we have collecti
 db.users.createIndex({ email: 1 }, { unique: true });
 ```
 
+<br />
+<br />
+
 ### Creating COMPOUND INDEXES
 
 This is used to create indexes using two fields in your collection:
@@ -222,10 +225,14 @@ db.users.find({ alive: true });
 ```
 
 You always have to start indexing the properties from left to right and you cannot index from any other order.
+<br />
+<br />
 
 ### Sorting using Indexes
 
 In case you need large amount of data to be sorted using a specific field in the document on a regular basis, you should use indexing for that particular field because it helps the response time by a lot as the db wouldn't have to sort the returned data for you. This is because indexes are already sorted.
+<br />
+<br />
 
 ### Partial Filters
 
@@ -265,9 +272,100 @@ db.users.createIndex(
 
 This create indexes ONLY FOR MALES:
 Now if you query for people older than 60:
+
 ```js
-db.users.find({ 'dob.age': 60 });
+db.users.find({ "dob.age": 60 });
 ```
+
 This will not run the IndexScan, because what if we have users who are women and are > 60 age? And if we were to use index for scanning, it would have skipped those documents.
 
 Therefore, mongo will run a collection scan.
+
+The best way to use the index would be:
+
+```js
+db.users.find({ "db.age": 60, gender: "male" });
+```
+
+<br />
+<br />
+
+### Text Indexes (Used for search functionality)
+
+Example document:
+
+```js
+{
+        title: "Book1",
+        description: "This is an awesome book and is a must buy"
+}
+```
+
+Create a 'Text' index in MongoDB collection by running the following command.
+
+```js
+// use the word 'text' instead of 1/-1
+db.products.createIndex({ description: "text" });
+```
+
+This will create an array of index with words such as 'awesome', 'book', 'must' etc... ignoring the most
+generic words.
+
+**A collection must have only one 'Text' index because it is very expensive**
+
+#### Search documents using 'Text' index
+
+```js
+db.products.find({ $text: { $search: "awesome" } });
+```
+
+```js
+// this will return all the documents with the words 'awesome' and 'book'
+db.products.find({ $text: { $search: "awesome book" } });
+```
+
+Let us say we want documents with specifically `awesome book` as a single word:
+
+```js
+db.products.find({ $text: { $search: '"awesome book"' } });
+```
+
+This will only return if the description has "awesome book" as a phrase.
+
+#### Sort 'Text' index results based on exact match (score)
+
+Example document:
+
+```js
+[
+  {
+    title: "Red T-Shirt",
+    description: "This T-shirt is read and is awesome",
+  },
+  {
+    title: "A Book",
+    description: "This is an awesome book about a young artist",
+  },
+];
+```
+
+Let us search for "awesome t-shirt" (which will return both the docs as they both have either of the words).
+But now I want to sort it based on the **MOST ACCURATE MATCH**.
+
+```js
+db.products.find(
+  { $text: { $search: " awesome book " } },
+  { score: { $meta: "textScore" } } // this sorts it
+);
+```
+
+We can further change the order of sorting:
+
+```js
+db.products
+  .find(
+    { $text: { $search: "awesome book" } },
+    { score: { $meta: "textScore" } }
+  )
+  .sort({ score: -1 }); // here
+```
