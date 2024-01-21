@@ -268,12 +268,10 @@ docker push username/repo_name:tagname
 docker pull username/repo_name:tagname
 ```
 
-[https://www.youtube.com/watch?v=YS35VHsbS-0&list=PL4cUxeGkcC9hxjeEtdHFNYMtCpjNBm3h7&index=13]
+https://www.youtube.com/watch?v=YS35VHsbS-0&list=PL4cUxeGkcC9hxjeEtdHFNYMtCpjNBm3h7&index=13
 
 ## References
 
-Docker documentation
-[https://docs.docker.com/]
+[Docker documentation](https://docs.docker.com/)
 
-The net ninja docker playlist
-[https://www.youtube.com/playlist?list=PL4cUxeGkcC9hxjeEtdHFNYMtCpjNBm3h7]
+[The net ninja docker playlist](https://www.youtube.com/playlist?list=PL4cUxeGkcC9hxjeEtdHFNYMtCpjNBm3h7)
