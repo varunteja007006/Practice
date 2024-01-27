@@ -7,12 +7,6 @@ have settled (either fulfilled or rejected). Unlike Promise.all(), which only re
 all of the input promises have fulfilled, Promise.allSettled() resolves even if some of the 
 input promises have rejected.
 
-The Promise.allSettled() method is a Promise-returning method that takes an iterable of promises 
-as input and returns a single Promise that resolves when all of the input promises have settled 
-(either fulfilled or rejected). Unlike Promise.all(), which only resolves when all of the input 
-promises have fulfilled, Promise.allSettled() resolves even if some of the input promises have 
-rejected.
-
 The returned Promise resolves with an array of objects, one for each input promise. Each 
 object has a property called status that indicates whether the corresponding promise was 
 fulfilled ("fulfilled") or rejected ("rejected"). If the promise was fulfilled, the object 
