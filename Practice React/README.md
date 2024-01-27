@@ -25,3 +25,9 @@ npm run dev
 - ✅ Slider
 - 🔳 Dynamic Navbar
 - 🔳 Multi-page form 
+
+##
+
+### Some Good Blogs
+
+- [React Custom Hooks](https://dev.to/arafat4693/15-useful-react-custom-hooks-that-you-can-use-in-any-project-2ll8)
