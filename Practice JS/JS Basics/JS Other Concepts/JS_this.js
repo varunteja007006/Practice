@@ -103,8 +103,9 @@ console.log(this); // refers to window object
 
 // 'this' inside a function space
 /* 
+'this' inside non script mode:
 'this' substitution  - if the value of 'this' keyword is undefined or NULL,
-'this' will be replaced with globalObject only in non-strict mode
+'this' will be replaced with globalObject only in non strict mode
 */
 
 function x() {
