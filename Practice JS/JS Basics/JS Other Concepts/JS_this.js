@@ -102,6 +102,12 @@ console.log("Arrow function of 'this': ", person.greet()); // Hello , you are un
 console.log(this); // refers to window object
 
 // 'this' inside a function space
+/* 
+'this' inside non script mode:
+'this' substitution  - if the value of 'this' keyword is undefined or NULL,
+'this' will be replaced with globalObject only in non strict mode
+*/
+
 function x() {
   console.log(this); // in strict mode 'this' is undefined.
   // in non strict mode 'this' is global window object.
