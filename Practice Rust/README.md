@@ -26,3 +26,34 @@ needs dependencies.)
 ```rs
 cargo new hello_cargo
 ```
+
+The project contains one file `Cargo.toml` and one directory, in the directory there is a `main.rs` file.
+
+###
+
+__.toml - Tom’s Obvious, Minimal Language__
+
+
+###
+Build the project using bellow command 
+```rs
+cargo build
+```
+
+### 
+Build the project and also run the executable using the below command
+```rs
+cargo run
+```
+
+### 
+Check if the project compiles but does not produce executable
+```rs
+cargo check
+``` 
+
+###
+Building for the release
+```rs
+cargo build --release
+```
