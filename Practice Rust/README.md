@@ -57,3 +57,6 @@ Building for the release
 ```rs
 cargo build --release
 ```
+
+### Community crates (dependency libs)
+check crates.io ---> https://crates.io/
