@@ -10,7 +10,8 @@ use rand::Rng;
 fn main() {
     println!("Guess the number!");
     let secret_number = rand::thread_rng().gen_range(1..=100);
-    
+    // gen_range method takes a range expression as an argument, start..=end
+    println!("The secret number is: {secret_number}");
     println!("Plz input your guess!");
 
     let mut guess = String::new(); // we use let in Rust to create a variable. By default they are 
