@@ -12,6 +12,7 @@ use std::cmp::Ordering;
 
 
 fn main() {
+    println!("Welcome to GUESS THE NUMBER Program....");
     println!("Guess the number!");
     let secret_number = rand::thread_rng().gen_range(1..=100);
     // gen_range method takes a range expression as an argument, start..=end

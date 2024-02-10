@@ -1,4 +1,6 @@
 fn main() {
+    println!("Welcome to Rust variables");
+    
     // let x = 5; // This is the reason for error x is immutable
     let mut x = 5;
     println!("The value of x is: {x}");
