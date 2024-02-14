@@ -66,6 +66,16 @@ fn main() {
     // You can also initialize an array to contain the same value for each element by specifying 
     // the initial value, followed by a semicolon, and then the length of the array in square brackets
     let a = [3; 5]; // let a = [3, 3, 3, 3, 3]
+
+    // Rust has a second string type, String. This type manages data allocated on the heap and 
+    // as such is able to store an amount of text that is unknown to us at compile time. 
+    // You can create a String from a string literal using the from function
+    let s = String::from("hello");
+
+    let mut s = String::from("hello");
+    s.push_str(", world!"); // push_str() appends a literal to a String
+    println!("{}", s); // This will print `hello, world!`
+
 }
 
 
@@ -141,3 +151,5 @@ fn main() {
 
 // Rust protects you against this kind of error by immediately exiting instead of allowing 
 // the memory access and continuing.
+
+// STRING TYPES

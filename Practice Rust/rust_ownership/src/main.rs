@@ -35,3 +35,16 @@ fn main() {
 // * Each value in rust has a owner.
 // * There can be only 1 owner at a time.
 // * When an owner goes out of scope, the value is dropped.
+
+// Memory and Allocation
+// Shallow copying in rust is referred to as Move.
+// let x = String::from("Hello")
+// let y = x // y makes a shallow copy of x. Now both x and y point to Hello pointing to same mem pointer.
+
+// As per Rust if variable goes out of scope it will free the memory. So in the above x,y case if 
+// either of the variable goes out of scope then it will cause error since they both point  to the same 
+// memory. Freeing memory twice will lead to corruption.
+
+// In the case of RUST only x will be freed. y will be the owner.
+
+// RUST never makes deep copies.
