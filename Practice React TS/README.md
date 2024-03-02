@@ -18,3 +18,8 @@ Finally run the react project
 npm run dev
 ```
 
+### List of helpful Packages
+
+1. React Slick
+2. Scroll - lock
+3. React Just Parallax
