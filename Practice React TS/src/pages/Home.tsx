@@ -5,8 +5,8 @@ function Home() {
     <PageBody PageTitle="Home">
       <div className="mx-6">
         <h2 className="text-lg">
-          Welcome Everyone! This is the place to learn React , TypeScript, and
-          other cool concepts.
+          Welcome! This is the place where I learn React , TypeScript, and other
+          cool concepts.
         </h2>
       </div>
     </PageBody>

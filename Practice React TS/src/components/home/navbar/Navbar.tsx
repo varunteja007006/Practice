@@ -1,6 +1,9 @@
 import { NavLink } from "react-router-dom";
 import { GoSun, GoMoon } from "react-icons/go";
 import { useThemeContext } from "../../../context/ThemeContext";
+import { FaChevronDown } from "react-icons/fa";
+import { useState } from "react";
+import { FaChevronUp } from "react-icons/fa";
 
 function Navbar() {
   const navlinks = [
@@ -52,6 +55,10 @@ function Navbar() {
     setThemeInLocal(theme === "light" ? "dark" : "light");
   };
 
+  const [chevronDirection, setChevronDirection] = useState(false);
+  const toggleChevronDirection = () => {
+    setChevronDirection(!chevronDirection);
+  };
   return (
     <div className="navbar min-w-[400px] bg-white dark:bg-gray-700  dark:text-white">
       <div className="navbar-start">
@@ -128,9 +135,11 @@ function Navbar() {
           <div
             tabIndex={0}
             role="button"
+            // onClick={toggleChevronDirection}
             className="btn m-1 bg-blue-100 text-black shadow-md hover:bg-blue-200 hover:shadow-lg dark:bg-gray-300 dark:text-black dark:hover:bg-gray-400"
           >
-            Explore Projects
+            Explore Projects{" "}
+            {!chevronDirection ? <FaChevronDown /> : <FaChevronUp />}
           </div>
           <ul className="menu dropdown-content z-[1] w-52 rounded-box bg-blue-100 p-2 shadow dark:bg-gray-300">
             {navlinksMenu.map((item) => {
@@ -147,7 +156,7 @@ function Navbar() {
         </div>
         <button
           onClick={handleTheme}
-          className="flex flex-row rounded-full border border-black bg-white text-lg font-bold text-black shadow-md"
+          className="mx-5 flex flex-row rounded-full border border-black bg-white text-lg font-bold text-black shadow-md"
         >
           <span
             className={
