@@ -10,6 +10,8 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
 
 type OptionsType = {
   label: string;
@@ -28,7 +30,7 @@ function Main() {
       localStorage.setItem(localStorageKey, JSON.stringify(selectedOptions));
     }
   }, [selectedOptions]);
-  
+
   useEffect(() => {
     if (initialRender.current) {
       const data = localStorage.getItem(localStorageKey);
@@ -43,8 +45,21 @@ function Main() {
     <PageBody PageTitle="Material UI">
       <div className="px-5">
         <h6 className="text-lg">Multi Select</h6>
-        <div className="mt-5 flex flex-row gap-5">
-          <div>
+        <div className="mt-5 flex flex-col gap-5 md:flex-row">
+          <Box
+            sx={{
+              background: "#fff",
+              padding: "1.5rem 1rem",
+              borderRadius: "0.3rem",
+            }}
+          >
+            <Typography
+              variant="h6"
+              component="h3"
+              sx={{ marginBottom: "0.5rem" }}
+            >
+              Select your fav movies.
+            </Typography>
             <Autocomplete
               multiple
               disablePortal
@@ -65,9 +80,9 @@ function Main() {
               onChange={(event: any, newValue: any | null) => {
                 setSelectedOptions(newValue);
               }}
-              renderInput={(params) => <TextField {...params} label="Movie" />}
+              renderInput={(params) => <TextField {...params} />}
             />
-          </div>
+          </Box>
           <div>
             <TableContainer component={Paper} sx={{ width: 300 }}>
               <Table
