@@ -3,7 +3,7 @@ import { PageBody } from "../../custom";
 function Main() {
   return (
     <PageBody PageTitle="Framer Motion">
-      Welcome to framer motion project
+      <div className="px-5">Welcome to framer motion project</div>
     </PageBody>
   );
 }

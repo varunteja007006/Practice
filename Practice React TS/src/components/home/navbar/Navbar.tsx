@@ -35,6 +35,10 @@ function Navbar() {
       name: "Framer Motion",
       url: "projects/framerMotion",
     },
+    {
+      name: "Material UI",
+      url: "projects/materialUI",
+    },
   ];
 
   // light = true, dark = false
