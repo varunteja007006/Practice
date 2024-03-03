@@ -6,6 +6,7 @@ import MultiPageFormPage from "./project pages/MultiPageFormPage";
 import Tabs from "./project pages/Tabs";
 import ZodReactHookForms from "./project pages/ZodReactHookForms";
 import MaterialUIPage from "./project pages/MaterialUIPage";
+import FormBuilderPage from "./project pages/FormBuilderPage";
 
 export {
   Home,
@@ -16,4 +17,5 @@ export {
   Projects,
   ZodReactHookForms,
   MaterialUIPage,
+  FormBuilderPage,
 };

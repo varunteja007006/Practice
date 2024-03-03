@@ -42,6 +42,10 @@ function Navbar() {
       name: "Material UI",
       url: "projects/materialUI",
     },
+    {
+      name: "Form Builder",
+      url: "projects/form-builder",
+    },
   ];
 
   // light = true, dark = false

@@ -9,6 +9,7 @@ import {
   Projects,
   ZodReactHookForms,
   MaterialUIPage,
+  FormBuilderPage,
 } from "./pages";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -42,8 +43,9 @@ function App() {
                 path="multipageform"
                 element={<MultiPageFormPage />}
               ></Route>
-              <Route path='framerMotion' element={<FramerMotionPage />} />
-              <Route path='materialUI' element={<MaterialUIPage />} />
+              <Route path="framerMotion" element={<FramerMotionPage />} />
+              <Route path="materialUI" element={<MaterialUIPage />} />
+              <Route path="form-builder" element={<FormBuilderPage />} />
             </Route>
           </Routes>
         </main>
