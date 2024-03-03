@@ -19,7 +19,6 @@ const localStorageKey = "materialUI_multiSelect";
 function Main() {
   const [selectedOptions, setSelectedOptions] = useState<OptionsType[]>([]);
   const initialRender = useRef(true);
-
   useEffect(() => {
     if (!initialRender.current) {
       // check the selectedOptions in browser console
@@ -27,7 +26,6 @@ function Main() {
       localStorage.setItem(localStorageKey, JSON.stringify(selectedOptions));
     }
   }, [selectedOptions]);
-
   useEffect(() => {
     if (initialRender.current) {
       const data = localStorage.getItem(localStorageKey);
@@ -54,6 +52,7 @@ function Main() {
               disableCloseOnSelect
               value={selectedOptions}
               isOptionEqualToValue={(option, value) => {
+<<<<<<< HEAD
                 if (option.label === value.label) {
                   return true;
                 }
@@ -61,6 +60,28 @@ function Main() {
               }}
               getOptionLabel={(option) => option.label}
               // Don't remove event -> Massive error
+=======
+                // const uniqueNames = selectedOptions.map((item) => item.label);
+                // const res = top100Films.filter((item) =>
+                //   uniqueNames.includes(item.label),
+                // );
+                // console.log(res);
+                // console.log(option);
+                // const res = top100Films.find(
+                //   (item) => item.label === option.label,
+                // );
+                // if (res) {
+                //   return true;
+                // }
+                if (option.label === value.label) {
+                  return true;
+                }
+                // console.log("value", value);
+                // console.log("option", option);
+                return false;
+              }}
+              getOptionLabel={(option) => option.label}
+>>>>>>> a2bfc52ae949b3e21f26460416ada0d039e54281
               onChange={(event: any, newValue: any | null) => {
                 setSelectedOptions(newValue);
               }}
