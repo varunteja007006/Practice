@@ -18,6 +18,7 @@ export type TypeInputBuild = {
     | "select"
     | "toggle";
   label: string;
+  name: string;
   checked?: boolean;
   required: boolean;
   disabled: boolean;
@@ -28,7 +29,7 @@ export type TypeInputBuild = {
 };
 
 function CustomInputs({ data }: { data: TypeInputBuild }) {
-  const { type, label, checked, options } = { ...data };
+  const { type, label, name, checked, options, placeholder } = { ...data };
   switch (type) {
     case "select":
       return (
@@ -37,18 +38,20 @@ function CustomInputs({ data }: { data: TypeInputBuild }) {
             <div className="label">
               <span className="label-text">{label}</span>
             </div>
-            <select className="select select-bordered bg-gray-200">
-              <option disabled selected className="p-2">
+            <select name={name} className="select select-bordered bg-gray-200">
+              <option disabled className="p-2">
                 Pick one
               </option>
               {options &&
                 options.map((item: OptionType) => {
                   return (
-                    <>
-                      <option className="text-lg" value={item.value}>
-                        {item.label}
-                      </option>
-                    </>
+                    <option
+                      key={item.value}
+                      className="text-lg"
+                      value={item.value}
+                    >
+                      {item.label}
+                    </option>
                   );
                 })}
             </select>
@@ -169,8 +172,9 @@ function CustomInputs({ data }: { data: TypeInputBuild }) {
             </div>
             <input
               type="text"
-              placeholder="Type here"
-              className="input input-bordered w-full max-w-xs bg-gray-200"
+              name={name}
+              placeholder={placeholder}
+              className="input input-bordered w-full max-w-xs bg-gray-200 text-black"
             />
             {/* <div className="label">
                   <span className="label-text-alt">Bottom Left label</span>
