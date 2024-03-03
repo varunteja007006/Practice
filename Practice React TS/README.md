@@ -18,6 +18,13 @@ Finally run the react project
 npm run dev
 ```
 
+### How to add new Projects
+
+1. Create a page in src > pages > project pages dir.
+2. Create a folder in components > projects dir
+3. Create a route in App.tsx add the page created in `Step 1`.
+4. Add the path created in `Step 3` to navlinksMenu in Navbar.tsx component.
+
 ### List of helpful Packages
 
 1. React Slick
