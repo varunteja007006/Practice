@@ -2,8 +2,10 @@
   Implement a function that flattens a nested array in JavaScript by converting it into a 
   single-level array.
 */
-function flatten(array) {
-  const result = [];
+type NestedArray = (number | NestedArray)[];
+
+function flatten(array: NestedArray): number[] {
+  const result: number[] = [];
   for (const element of array) {
     // iterate over each element in an array it can be a nested array
     if (Array.isArray(element)) {
@@ -21,16 +23,17 @@ function flatten(array) {
 }
 
 // Sample nested array
-const nestedArray = [[1, 2], 4, 6, [3, 4], [5, 6]];
+const nestedArray: NestedArray = [[1, 2], 4, 6, [3, 4], [5, 6]];
 
 // Solution One
-const flattenedArray = flatten(nestedArray);
+const flattenedArray: number[] = flatten(nestedArray);
 
 // Copy the nested array
-const nestedArray2 = [...nestedArray];
+const nestedArray2: NestedArray = [...nestedArray];
 
 // Solution Two
 let depth = Infinity;
 console.log("Own flatten function", flattenedArray); // [1, 2, 3, 4, 5, 6]
 console.log("");
+// @ts-ignore
 console.log("Using flat() function", nestedArray2.flat(depth)); // [1, 2, 3, 4, 5, 6]

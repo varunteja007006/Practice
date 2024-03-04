@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "outDir": "compile", // Specify the output directory for generated JavaScript files
+    // "watch": true, // Enable watch mode for TypeScript compilation
+    "target": "es5", // Set the target JavaScript version for generated files
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext", // Specify the module system for generated files
+    "strict": true, // Enable strict TypeScript type checking
+    "noImplicitAny": true, // Disallow implicit any type assignments
+    "noImplicitThis": true, // Disallow implicit this type assignments
+    "noImplicitReturns": true, // Disallow implicit returns in functions
+    "noUnusedLocals": true, // Disallow unused local variables
+    "noUnusedParameters": true // Disallow unused parameters
+  },
+  // "files": [
+  //   // Specify the TypeScript files to watch and compile
+  //   "src/**/*.ts"
+  // ],
+  // "include": ["*.ts"],
+  "exclude": ["*.json"]
+}

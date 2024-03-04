@@ -2,7 +2,7 @@
   Write a function that takes an array of integers as input and returns a new array with only the 
   unique elements.
 */
-function getUniqueElements(arr) {
+function getUniqueElements(arr: number[]) {
   return Array.from(new Set(arr));
   /*
     Another method

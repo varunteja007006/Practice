@@ -23,7 +23,7 @@ const initialFormState = {
 };
 
 // Form to take the basic details name
-const initialInputForm: TypeInputBuild[] = [
+const initialInputForm: any[] = [
   {
     type: "text",
     name: "nameOfTheForm",
@@ -51,7 +51,7 @@ const initialInputForm: TypeInputBuild[] = [
   },
 ];
 // Form to iterate over and get the fields
-const initialFieldsInputForm: TypeInputBuild[] = [
+const initialFieldsInputForm: any[] = [
   {
     type: "text",
     name: "labelOfTheField",
@@ -69,9 +69,12 @@ function Main() {
   const [newItem, setNewItem] = useState(true);
   const initialRender = useRef(true);
   const [inputForm, setInputForm] = useState([...initialInputForm]);
+  const [inputFormTwo, setInputFormTwo] = useState([...initialFieldsInputForm]);
   const [createdForms, setCreatedForms] = useState<any>([]);
   const [stepCount, setStepCount] = useState(1);
+  const [activeFieldCount, setActiveFieldCount] = useState(0);
   const [currentFormID, setCurrentFormID] = useState(nanoid());
+
   const toggleNewItem = () => {
     setNewItem(!newItem);
   };
@@ -123,13 +126,20 @@ function Main() {
         const newState = [...oldState, myform];
         return newState;
       });
+      setActiveFieldCount(fieldCount);
+      setInputForm([...initialInputForm]);
       setStepCount(stepCount + 1);
-      setInputForm(initialFieldsInputForm);
     }
     if (stepCount === 2) {
       const myCurrentForm = createdForms.find(
         (item) => item.id === currentFormID,
       );
+      const fieldCount = myCurrentForm.noOfFields;
+      if (activeFieldCount < fieldCount) {
+        setActiveFieldCount(activeFieldCount);
+      } else {
+        // Proceed with submitting the form
+      }
       console.log(myCurrentForm);
     }
   };
@@ -139,10 +149,17 @@ function Main() {
       case 1:
         return (
           <>
+            <h2 className="card-title">Basic Form Details:</h2>
+            <p className="mb-3 text-sm text-gray-700">
+              Fill out basic details required for before creating the form.
+            </p>
             {inputForm.map((item) => {
-              return <CustomInputs key={nanoid()} data={item} />;
+              return <CustomInputs key={item.name} data={item} />;
             })}
-            <button type="submit" className="btn mt-5">
+            <button
+              type="submit"
+              className="btn mt-5 w-1/3 bg-yellow-400 text-black hover:bg-yellow-400/80 hover:shadow-md"
+            >
               Next
             </button>
           </>
@@ -150,12 +167,34 @@ function Main() {
       case 2:
         return (
           <>
-            {inputForm.map((item) => {
-              return <CustomInputs key={nanoid()} data={item} />;
-            })}
-            <button type="submit" className="btn mt-5">
-              Next
-            </button>
+            <h2 className="card-title">Form Fields:</h2>
+            <p className="mb-3 text-sm text-gray-700">
+              Fill out the details related to the fields required in the form.
+            </p>
+            <div className="flex flex-col gap-3">
+              {inputFormTwo.map((item, index) => {
+                return (
+                  <div
+                    key={index}
+                    className={`flex flex-col gap-3 ${
+                      ""
+                      // index === activeFieldCount ? "inline-block" : "hidden"
+                    }`}
+                  >
+                    <p className="mb-1 text-sm text-gray-400">
+                      Field No: {index}
+                    </p>
+                    <CustomInputs data={item} />
+                  </div>
+                );
+              })}
+              <button
+                type="submit"
+                className="btn mt-5 w-1/3 bg-yellow-400 text-black hover:bg-yellow-400/80 hover:shadow-md"
+              >
+                Next
+              </button>
+            </div>
           </>
         );
       default:
@@ -171,27 +210,40 @@ function Main() {
 
   return (
     <PageBody PageTitle="Form Builder">
-      <div className="grid grid-cols-2">
-        <div className="flex flex-col gap-3 px-5">
-          <button className="btn w-1/3" onClick={toggleNewItem}>
+      <div className="m-3 grid grid-cols-2 gap-3 bg-slate-100 p-3">
+        <div className="flex flex-col gap-3 p-5 ">
+          <h2 className="text-xl underline decoration-solid">
+            Create New Form
+          </h2>
+          <button
+            className="btn w-1/3 bg-yellow-400 text-black hover:bg-yellow-400/80 hover:shadow-md"
+            onClick={toggleNewItem}
+          >
             {newItem ? "New" : "Close"}
           </button>
           {!newItem && (
             <div className="card w-full bg-white text-primary-content">
               <div className="card-body">
                 <p className="text-sm text-gray-500">Step: {stepCount}</p>
-                <h2 className="card-title">What do you want in the form?</h2>
-                <p>Select the appropriate options</p>
-                <div>
-                  <form onSubmit={handleOnSubmit}>
-                    <DynamicForm stepCount={stepCount} />
-                  </form>
-                </div>
+                <form onSubmit={handleOnSubmit}>
+                  <DynamicForm stepCount={stepCount} />
+                </form>
               </div>
             </div>
           )}
         </div>
-        <div>Hello</div>
+        {/* Not important */}
+        <div className="p-5">
+          {!newItem ? (
+            <>
+              <h2 className="text-xl underline decoration-solid">Preview</h2>
+            </>
+          ) : (
+            <>
+              <h2 className="text-xl underline decoration-solid">My Forms</h2>
+            </>
+          )}
+        </div>
       </div>
     </PageBody>
   );

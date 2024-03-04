@@ -3,43 +3,93 @@ export type OptionType = {
   value: string | number;
 };
 
+export type RadioOptionType = {
+  label: string;
+  value: string | number;
+  checked: boolean;
+};
+
+export interface CommonInputProps {
+  id: string;
+  name: string;
+  label: string;
+  placeholder: string;
+  defaultValue?: string;
+  value: string;
+  className: string;
+  errorMsg: string;
+  readOnly?: boolean;
+  required?: boolean;
+  disabled?: boolean;
+  handleOnChange: () => void;
+}
+export interface InputCheckboxProps extends CommonInputProps {
+  type: "checkbox";
+  checked?: boolean;
+}
+export interface InputRadioProps extends CommonInputProps {
+  type: "radio";
+  radioOptions?: RadioOptionType[];
+}
+
 export type TypeInputBuild = {
   type:
     | "checkbox"
+    | "radio"
+    | "rating"
+    | "range"
+    | "file"
+    | "select"
     | "text"
     | "textArea"
     | "number"
     | "email"
     | "password"
-    | "rating"
-    | "radio"
-    | "file"
-    | "range"
-    | "select"
     | "toggle";
-  label: string;
+  id: string;
   name: string;
-  checked?: boolean;
-  required: boolean;
-  disabled: boolean;
+  label: string;
   placeholder: string;
   defaultValue?: string;
   value: string;
+  className: string;
+  errorMsg: string;
+  rating: number;
+  minRange: number;
   options?: OptionType[];
+  radioOptions?: RadioOptionType[];
+  checked?: boolean;
+  showPassword?: boolean;
+  readOnly?: boolean;
+  required?: boolean;
+  disabled?: boolean;
+  handleOnBlur?: () => void;
+  handleOnChange?: () => void;
 };
 
 function CustomInputs({ data }: { data: TypeInputBuild }) {
-  const { type, label, name, checked, options, placeholder } = { ...data };
+  const {
+    type,
+    label,
+    name,
+    checked,
+    options,
+    placeholder,
+    showPassword,
+    className,
+  } = {
+    ...data,
+  };
   switch (type) {
     case "select":
       return (
         <>
-          <label className="form-control w-full max-w-xs">
+          <label className={`form-control w-full max-w-xs ${className}`}>
             <div className="label">
               <span className="label-text">{label}</span>
             </div>
             <select name={name} className="select select-bordered bg-gray-200">
-              <option disabled className="p-2">
+              <option disabled className="p-2 text-lg">
                 Pick one
               </option>
               {options &&
@@ -64,7 +114,7 @@ function CustomInputs({ data }: { data: TypeInputBuild }) {
     case "range":
       return (
         <>
-          <label className="form-control w-full max-w-xs">
+          <label className={`form-control w-full max-w-xs ${className}`}>
             <div className="label">
               <span className="label-text">{label}</span>
             </div>
@@ -81,7 +131,7 @@ function CustomInputs({ data }: { data: TypeInputBuild }) {
     case "file":
       return (
         <>
-          <label className="form-control w-full max-w-xs">
+          <label className={`form-control w-full max-w-xs ${className}`}>
             <div className="label">
               <span className="label-text">{label}</span>
             </div>
@@ -98,19 +148,18 @@ function CustomInputs({ data }: { data: TypeInputBuild }) {
     case "radio":
       return (
         <>
-          <label className="form-control w-full max-w-xs">
+          <label className={`form-control w-full max-w-xs ${className}`}>
             <div className="label">
               <span className="label-text">{label}</span>
+              <input type="radio" name="radio-1" className="radio" checked />
             </div>
-            <input type="radio" name="radio-1" className="radio" checked />
-            <input type="radio" name="radio-1" className="radio" />
           </label>
         </>
       );
     case "rating":
       return (
         <>
-          <label className="form-control w-full max-w-xs">
+          <label className={`form-control w-full max-w-xs ${className}`}>
             <div className="label">
               <span className="label-text">{label}</span>
             </div>
@@ -127,7 +176,7 @@ function CustomInputs({ data }: { data: TypeInputBuild }) {
     case "toggle":
       return (
         <>
-          <div className="form-control">
+          <div className={`form-control ${className}`}>
             <label className="label cursor-pointer">
               <span className="label-text">{label}</span>
               <input type="checkbox" className="toggle" checked />
@@ -138,7 +187,7 @@ function CustomInputs({ data }: { data: TypeInputBuild }) {
     case "textArea":
       return (
         <>
-          <label className="form-control">
+          <label className={`form-control ${className}`}>
             <div className="label">
               <span className="label-text">{label}</span>
             </div>
@@ -155,7 +204,7 @@ function CustomInputs({ data }: { data: TypeInputBuild }) {
     case "checkbox":
       return (
         <>
-          <div className="form-control">
+          <div className={`form-control ${className}`}>
             <label className="label cursor-pointer">
               <span className="label-text">{label}</span>
               <input type="checkbox" checked={checked} className="checkbox" />
@@ -166,7 +215,7 @@ function CustomInputs({ data }: { data: TypeInputBuild }) {
     case "text":
       return (
         <>
-          <label className="form-control w-full max-w-xs">
+          <label className={`form-control w-full max-w-xs ${className}`}>
             <div className="label">
               <span className="label-text">{label}</span>
             </div>
@@ -185,7 +234,7 @@ function CustomInputs({ data }: { data: TypeInputBuild }) {
     case "number":
       return (
         <>
-          <label className="form-control w-full max-w-xs">
+          <label className={`form-control w-full max-w-xs ${className}`}>
             <div className="label">
               <span className="label-text">{label}</span>
             </div>
@@ -203,7 +252,9 @@ function CustomInputs({ data }: { data: TypeInputBuild }) {
     case "email":
       return (
         <>
-          <label className="input input-bordered flex items-center gap-2">
+          <label
+            className={`input input-bordered flex items-center gap-2 ${className}`}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 16 16"
@@ -220,7 +271,9 @@ function CustomInputs({ data }: { data: TypeInputBuild }) {
     case "password":
       return (
         <>
-          <label className="input input-bordered flex items-center gap-2">
+          <label
+            className={`input input-bordered flex items-center gap-2 ${className}`}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 16 16"
@@ -233,7 +286,11 @@ function CustomInputs({ data }: { data: TypeInputBuild }) {
                 clipRule="evenodd"
               />
             </svg>
-            <input type="password" className="grow" value="password" />
+            <input
+              type={showPassword ? "text" : "password"}
+              className="grow"
+              value="password"
+            />
           </label>
         </>
       );

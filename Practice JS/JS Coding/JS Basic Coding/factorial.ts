@@ -1,5 +1,5 @@
 // factorial of 5 = 1*2*3*4*5
-const num = 5;
+export const num: number = 5;
 if (num < 0) {
   console.log("Not valid number");
 } else if (num === 0) {
