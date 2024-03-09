@@ -9,7 +9,13 @@ db.users.find();
 //   { $count: "user_count" },
 // ]);
 
+// db.users.aggregate([
+//     { $match: { "address.city": "New York City" } },
+//     { $group: { _id: "$address.city", total: { $sum: 1 } } }
+//   ]);
+
 db.users.aggregate([
-    { $match: { "address.city": "New York City" } },
-    { $group: { _id: "$address.city", total: { $sum: 1 } } }
-  ]);
+  { $match: { alive: true } },
+  { $group: { _id: "$address.city", total: { $sum: 1 } } },
+  { $sort: { total: -1 } },
+]);

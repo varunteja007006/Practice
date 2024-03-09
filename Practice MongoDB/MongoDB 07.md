@@ -12,8 +12,9 @@ It works with STAGES:
 
 `STAGE1` ==(altered_data)==> `STAGE2` ==(altered_data)==> `STAGE3`
 
-Query:
 If you are still having the users collection created in `MongoDB 01.md` or `MongoDB 02.md`
+
+Query 1:
 
 ```js
 // Run the code in MongoDB vscode
@@ -22,6 +23,16 @@ use("accounts"); // Select the DB
 db.users.aggregate([
   { $match: { "address.city": "New York City" } }, // stage 1 , Matching the address, city to 'New York City' with $match
   { $group: { _id: "$address.city", total: { $sum: 1 } } }, // stage 2, Group them to output as needed
+]);
+```
+
+Query 2:
+
+```js
+db.users.aggregate([
+  { $match: { alive: true } }, // match criteria
+  { $group: { _id: "$address.city", total: { $sum: 1 } } }, // count based on address.city which we mention in _id
+  { $sort: { total: -1 } }, // We are sorting based onn the total count in desc by mentioning -1
 ]);
 ```
 
