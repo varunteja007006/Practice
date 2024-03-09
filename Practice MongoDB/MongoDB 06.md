@@ -1,6 +1,6 @@
-# MongoDB 05
+# MongoDB 06
 
-## Concept of AGGREGATIONS in MongoDB
+## Concept of AGGREGATIONS in MongoDB (Theory)
 
 In MongoDB, aggregation refers to the process of combining data from multiple documents and performing calculations or transformations on it to generate summarized results. It's like crunching numbers from your documents to extract insights and understand your data better.
 
