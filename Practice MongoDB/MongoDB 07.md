@@ -26,14 +26,46 @@ db.users.aggregate([
 ]);
 ```
 
-Query 2:
+Query 2: Find all the alive users and group them based on the city and keep a count of them.
 
 ```js
+// Run the code in MongoDB vscode
+use("accounts"); // Select the DB
+// Select the collection and the aggregation
 db.users.aggregate([
   { $match: { alive: true } }, // match criteria
   { $group: { _id: "$address.city", total: { $sum: 1 } } }, // count based on address.city which we mention in _id
   { $sort: { total: -1 } }, // We are sorting based onn the total count in desc by mentioning -1
 ]);
 ```
+
+Query 3: Count the hobbies that all the users have.
+
+```js
+// Run the code in MongoDB vscode
+use("accounts"); // Select the DB
+// Select the collection and the aggregation
+db.users.aggregate([
+  {
+    $unwind: {
+      path: "$hobbies",
+    },
+  },
+  { $group: { _id: "$_id", numberOfHobbies: { $sum: 1 } } },
+  { $group: { _id: null, totalHobbies: { $sum: "$numberOfHobbies" } } },
+]);
+```
+
+Explanation:
+
+$unwind: This stage deconstructs an array field from the input documents to output a document for each element. Each output document contains the original document and the element as a separate field. In this case, the hobbies array field of each user document is deconstructed.
+
+After this stage, the documents in the users collection are transformed into multiple documents with each hobby being a separate document.
+
+$group: This stage groups input documents by some specified expression and outputs a document for each distinct grouping. In this case, the stage groups documents by the `_id` field, which ensures that all hobbies of a user are grouped together. The $sum accumulator is used to count the number of hobbies per user, resulting in a numberOfHobbies field for each group.
+
+After this stage, the documents are transformed into documents with the `_id` field representing the user and the numberOfHobbies field representing the count of hobbies for that user.
+
+$group: This stage is similar to the previous one, but in this case, the documents are grouped regardless of the user. The $sum accumulator is used to add up the numberOfHobbies field value to get the total number of hobbies across all users.
 
 **NOTE:** The $count stage must be the last stage in the aggregation pipeline, as it always returns a single document.

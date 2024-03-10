@@ -14,8 +14,32 @@ db.users.find();
 //     { $group: { _id: "$address.city", total: { $sum: 1 } } }
 //   ]);
 
+// db.users.aggregate([
+//   { $match: { alive: true } },
+//   { $group: { _id: "$address.city", total: { $sum: 1 } } },
+//   { $sort: { total: -1 } },
+// ]);
+
+// db.users.aggregate([
+//   {
+//     $unwind: {
+//       path: "$hobbies",
+//     },
+//   },
+//   { $group: { _id: "$_id", numberOfHobbies: { $sum: 1 } } },
+//   { $group: { _id: null, totalHobbies: { $sum: "$numberOfHobbies" } } },
+// ]);
+
 db.users.aggregate([
-  { $match: { alive: true } },
-  { $group: { _id: "$address.city", total: { $sum: 1 } } },
-  { $sort: { total: -1 } },
+  {
+    $addFields: {
+      numberOfHobbies: { $size: { $ifNull: ["$hobbies", []] } },
+    },
+  },
+  {
+    $group: {
+      _id: null,
+      totalHobbies: { $sum: "$numberOfHobbies" },
+    },
+  },
 ]);
