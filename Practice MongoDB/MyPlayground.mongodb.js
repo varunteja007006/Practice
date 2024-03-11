@@ -30,16 +30,27 @@ db.users.find();
 //   { $group: { _id: null, totalHobbies: { $sum: "$numberOfHobbies" } } },
 // ]);
 
+// db.users.aggregate([
+//   {
+//     $addFields: {
+//       numberOfHobbies: { $size: { $ifNull: ["$hobbies", []] } },
+//     },
+//   },
+//   {
+//     $group: {
+//       _id: null,
+//       totalHobbies: { $sum: "$numberOfHobbies" },
+//     },
+//   },
+// ]);
+
 db.users.aggregate([
   {
-    $addFields: {
-      numberOfHobbies: { $size: { $ifNull: ["$hobbies", []] } },
+    $match: {
+      hobbies: "photography",
     },
   },
   {
-    $group: {
-      _id: null,
-      totalHobbies: { $sum: "$numberOfHobbies" },
-    },
+    $count: "CountOfHobbiesAsPhotography",
   },
 ]);

@@ -14,7 +14,7 @@ It works with STAGES:
 
 If you are still having the users collection created in `MongoDB 01.md` or `MongoDB 02.md`
 
-Query 1:
+### Query 1:
 
 ```js
 // Run the code in MongoDB vscode
@@ -26,7 +26,7 @@ db.users.aggregate([
 ]);
 ```
 
-Query 2: Find all the alive users and group them based on the city and keep a count of them.
+### Query 2: Find all the alive users and group them based on the city and keep a count of them.
 
 ```js
 // Run the code in MongoDB vscode
@@ -39,7 +39,7 @@ db.users.aggregate([
 ]);
 ```
 
-Query 3: Count the hobbies that all the users have.
+### Query 3: Count the hobbies that all the users have.
 
 ```js
 // Run the code in MongoDB vscode
@@ -67,5 +67,38 @@ $group: This stage groups input documents by some specified expression and outpu
 After this stage, the documents are transformed into documents with the `_id` field representing the user and the numberOfHobbies field representing the count of hobbies for that user.
 
 $group: This stage is similar to the previous one, but in this case, the documents are grouped regardless of the user. The $sum accumulator is used to add up the numberOfHobbies field value to get the total number of hobbies across all users.
+
+#### Another solution for the same query (Query 3)
+
+```js
+db.users.aggregate([
+  {
+    $addFields: {
+      numberOfHobbies: { $size: { $ifNull: ["$hobbies", []] } },
+    },
+  },
+  {
+    $group: {
+      _id: null,
+      totalHobbies: { $sum: "$numberOfHobbies" },
+    },
+  },
+]);
+```
+
+### Query 4: Get the count of number of users who's hobby is 'photography'
+
+```js
+db.users.aggregate([
+  {
+    $match: {
+      hobbies: "photography",
+    },
+  },
+  {
+    $count: "CountOfHobbiesAsPhotography",
+  },
+]);
+```
 
 **NOTE:** The $count stage must be the last stage in the aggregation pipeline, as it always returns a single document.
