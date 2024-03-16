@@ -31,3 +31,8 @@ nano /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf
   - 1: Enable Wi-Fi power saving.
   - 2: Enable Wi-Fi power saving, but allow the Wi-Fi card to wake up at longer intervals.
   - 3: Enable Wi-Fi power saving with a more aggressive power-saving mode.
+
+- After saving the file. Restart the network.
+  ```sh
+  systemctl restart NetworkManager
+  ```
