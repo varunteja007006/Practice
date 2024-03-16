@@ -12,17 +12,6 @@ type myFormStruct = {
   formObj: TypeInputBuild[];
 };
 
-const initialFormState = {
-  type: "",
-  label: "",
-  required: "",
-  disabled: "",
-  placeholder: "",
-  defaultValue: "",
-  value: "",
-  options: [],
-};
-
 // Form to take the basic details name
 const initialInputForm = [
   {
@@ -64,6 +53,7 @@ const initialFieldsInputForm = [
     value: "",
   },
 ];
+
 const myForms = "MyForms";
 
 const FormCards = ({ data }: { data: myFormStruct }) => {
@@ -101,9 +91,9 @@ function Main() {
 
   const toggleNewItem = () => {
     setNewItem(!newItem);
+    // New = true; Close = false
     if (!newItem) {
-      // New = true; Close = false
-      // reset the form
+      // if user closed the form reset the form
       resetForm();
     }
   };
@@ -149,7 +139,7 @@ function Main() {
           [k: string]: FormDataEntryValue;
         }
       | myFormStruct = Object.fromEntries(formData);
-    // In step 1 we just take form name, date , fields it needs to have
+    // In step 1 we just take form name, date , fields
     if (stepCount === 1) {
       let fieldCount = 1;
       if (typeof form.selectNoOfFields === "string") {
@@ -170,6 +160,7 @@ function Main() {
       setInputForm([...initialInputForm]);
       setStepCount(stepCount + 1);
     }
+    // In step 2 we fill the fields the form needs to have
     if (stepCount === 2) {
       const myCurrentForm = createdForms.find(
         (item) => item.id === currentFormIDRef.current,
@@ -197,6 +188,7 @@ function Main() {
         setStepCount(stepCount + 1);
       }
     }
+    // in step 3 reset the form if the user wants to create a new form
     if (stepCount === 3) {
       resetForm();
     }
@@ -256,9 +248,22 @@ function Main() {
               Form has been submitted successfully. Do you want to create
               another form?
             </p>
-            <button type="submit" value="finish" className="btn mt-5">
-              Create New Form
-            </button>
+            <div className="flex flex-col gap-3 md:flex-row">
+              <button
+                type="submit"
+                value="finish"
+                className="btn mt-5 w-1/3 bg-yellow-400 text-black hover:bg-yellow-400/80 hover:shadow-md"
+              >
+                Create New Form
+              </button>
+              <button
+                type="button"
+                onClick={toggleNewItem}
+                className="btn mt-5 w-1/3 bg-blue-400 text-black hover:bg-blue-400/80 hover:shadow-md"
+              >
+                View all Forms
+              </button>
+            </div>
           </>
         );
     }

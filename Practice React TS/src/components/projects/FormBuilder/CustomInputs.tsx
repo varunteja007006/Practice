@@ -54,6 +54,7 @@ export type TypeInputBuild = {
   value: string;
   className: string;
   errorMsg: string;
+  helperText: string;
   rating: number;
   minRange: number;
   options?: OptionType[];
@@ -77,6 +78,7 @@ function CustomInputs({ data }: { data: TypeInputBuild }) {
     placeholder,
     showPassword,
     className,
+    helperText,
   } = {
     ...data,
   };
@@ -105,9 +107,11 @@ function CustomInputs({ data }: { data: TypeInputBuild }) {
                   );
                 })}
             </select>
-            {/* <div className="label">
-              <span className="label-text-alt">Alt label</span>
-            </div> */}
+            {helperText && (
+              <div className="label">
+                <span className="label-text-alt">{helperText}</span>
+              </div>
+            )}
           </label>
         </>
       );
@@ -139,9 +143,9 @@ function CustomInputs({ data }: { data: TypeInputBuild }) {
               type="file"
               className="file-input file-input-bordered w-full max-w-xs"
             />
-            {/* <div className="label">
-              <span className="label-text-alt">Alt label</span>
-            </div> */}
+            <div className="label">
+              <span className="label-text-alt">{helperText}</span>
+            </div>
           </label>
         </>
       );
