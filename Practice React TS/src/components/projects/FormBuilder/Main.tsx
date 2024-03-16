@@ -7,8 +7,9 @@ type myFormStruct = {
   id: string;
   name: string;
   createdOn: Date;
-  formObj: TypeInputBuild[];
   isDone: boolean;
+  noOfFields: number;
+  formObj: TypeInputBuild[];
 };
 
 const initialFormState = {
@@ -23,7 +24,7 @@ const initialFormState = {
 };
 
 // Form to take the basic details name
-const initialInputForm: any[] = [
+const initialInputForm = [
   {
     type: "text",
     name: "nameOfTheForm",
@@ -51,7 +52,7 @@ const initialInputForm: any[] = [
   },
 ];
 // Form to iterate over and get the fields
-const initialFieldsInputForm: any[] = [
+const initialFieldsInputForm = [
   {
     type: "text",
     name: "labelOfTheField",
@@ -65,18 +66,54 @@ const initialFieldsInputForm: any[] = [
 ];
 const myForms = "MyForms";
 
+const FormCards = ({ data }: { data: myFormStruct }) => {
+  const { name, createdOn, isDone, noOfFields } = data;
+  return (
+    <>
+      <div
+        className={`card w-fit shadow-xl   ${
+          isDone
+            ? "border border-green-600 bg-green-200"
+            : "border border-red-600 bg-red-200"
+        }`}
+      >
+        <div className="card-body px-2 py-3">
+          <h2 className="text-large card-title">{name}</h2>
+          <p className=" text-sm">No.of.Fields: {noOfFields}</p>
+          <div className="card-actions justify-end">
+            <p className=" text-sm">{createdOn.getDate()}</p>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
 function Main() {
   const [newItem, setNewItem] = useState(true);
   const initialRender = useRef(true);
   const [inputForm, setInputForm] = useState([...initialInputForm]);
   const [inputFormTwo, setInputFormTwo] = useState([...initialFieldsInputForm]);
-  const [createdForms, setCreatedForms] = useState<any>([]);
+  const [createdForms, setCreatedForms] = useState([]);
   const [stepCount, setStepCount] = useState(1);
-  const [activeFieldCount, setActiveFieldCount] = useState(0);
-  const [currentFormID, setCurrentFormID] = useState(nanoid());
+  const [activeFieldCount, setActiveFieldCount] = useState(1);
+  const currentFormIDRef = useRef(nanoid());
 
   const toggleNewItem = () => {
     setNewItem(!newItem);
+    if (!newItem) {
+      // New = true; Close = false
+      // reset the form
+      resetForm();
+    }
+  };
+
+  const resetForm = () => {
+    setInputForm([...initialInputForm]);
+    setInputFormTwo([...initialFieldsInputForm]);
+    setStepCount(1);
+    setActiveFieldCount(1);
+    currentFormIDRef.current = nanoid();
   };
 
   useEffect(() => {
@@ -107,7 +144,11 @@ function Main() {
   const handleOnSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
-    const form = Object.fromEntries(formData);
+    const form:
+      | {
+          [k: string]: FormDataEntryValue;
+        }
+      | myFormStruct = Object.fromEntries(formData);
     // In step 1 we just take form name, date , fields it needs to have
     if (stepCount === 1) {
       let fieldCount = 1;
@@ -115,9 +156,9 @@ function Main() {
         fieldCount = parseInt(form.selectNoOfFields);
       }
       const myform = {
-        id: currentFormID,
+        id: currentFormIDRef.current,
         name: form.nameOfTheForm,
-        date: new Date(),
+        createdOn: new Date(),
         noOfFields: fieldCount,
         formObj: [],
         isDone: false,
@@ -126,21 +167,38 @@ function Main() {
         const newState = [...oldState, myform];
         return newState;
       });
-      setActiveFieldCount(fieldCount);
       setInputForm([...initialInputForm]);
       setStepCount(stepCount + 1);
     }
     if (stepCount === 2) {
       const myCurrentForm = createdForms.find(
-        (item) => item.id === currentFormID,
+        (item) => item.id === currentFormIDRef.current,
       );
       const fieldCount = myCurrentForm.noOfFields;
+      setCreatedForms((oldState) => {
+        const newState = oldState.map((item) => {
+          if (item.id === currentFormIDRef.current) {
+            item.formObj.push(form);
+            if (!(activeFieldCount < fieldCount)) {
+              item.isDone = true;
+            }
+          }
+          return item;
+        });
+        return newState;
+      });
       if (activeFieldCount < fieldCount) {
-        setActiveFieldCount(activeFieldCount);
+        setActiveFieldCount((oldState) => {
+          return oldState + 1;
+        });
+        setInputFormTwo([...initialFieldsInputForm]);
       } else {
-        // Proceed with submitting the form
+        // Submit form and move the user to finished step
+        setStepCount(stepCount + 1);
       }
-      console.log(myCurrentForm);
+    }
+    if (stepCount === 3) {
+      resetForm();
     }
   };
 
@@ -171,19 +229,13 @@ function Main() {
             <p className="mb-3 text-sm text-gray-700">
               Fill out the details related to the fields required in the form.
             </p>
-            <div className="flex flex-col gap-3">
+            <div key={activeFieldCount} className="flex flex-col gap-3">
+              <p className="mb-1 text-sm text-gray-400">
+                Field No: {activeFieldCount}
+              </p>
               {inputFormTwo.map((item, index) => {
                 return (
-                  <div
-                    key={index}
-                    className={`flex flex-col gap-3 ${
-                      ""
-                      // index === activeFieldCount ? "inline-block" : "hidden"
-                    }`}
-                  >
-                    <p className="mb-1 text-sm text-gray-400">
-                      Field No: {index}
-                    </p>
+                  <div key={index} className={`flex flex-col gap-3`}>
                     <CustomInputs data={item} />
                   </div>
                 );
@@ -200,8 +252,12 @@ function Main() {
       default:
         return (
           <>
+            <p>
+              Form has been submitted successfully. Do you want to create
+              another form?
+            </p>
             <button type="submit" value="finish" className="btn mt-5">
-              Finish
+              Create New Form
             </button>
           </>
         );
@@ -226,7 +282,7 @@ function Main() {
               <div className="card-body">
                 <p className="text-sm text-gray-500">Step: {stepCount}</p>
                 <form onSubmit={handleOnSubmit}>
-                  <DynamicForm stepCount={stepCount} />
+                  <DynamicForm key={stepCount} stepCount={stepCount} />
                 </form>
               </div>
             </div>
@@ -241,6 +297,11 @@ function Main() {
           ) : (
             <>
               <h2 className="text-xl underline decoration-solid">My Forms</h2>
+              <div className="flex flex-row flex-wrap gap-3">
+                {createdForms.map((item: myFormStruct) => (
+                  <FormCards key={item.id} data={item} />
+                ))}
+              </div>
             </>
           )}
         </div>
