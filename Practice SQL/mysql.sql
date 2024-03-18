@@ -3,6 +3,7 @@
 /*
 	This gives understanding of some basic SQL commands
 	Tutorial followed https://youtu.be/HXV3zeQKqGY?si=gU9AEQZnIy0FL9T8
+	Tutorial Notes https://www.giraffeacademy.com/databases/sql/creating-company-database/
 */
 
 -- Select the database to switch to
@@ -28,3 +29,8 @@ SELECT * FROM dummy
 
 -- Insert null values
 INSERT INTO dummy VALUES (2, 'Teja', 10, NULL)
+
+
+-- Create Table using another table
+
+-- Topics of Constraints

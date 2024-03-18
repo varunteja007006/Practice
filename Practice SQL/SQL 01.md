@@ -1,6 +1,6 @@
 # SQL
 
-Setup a postgresql on your linux machine. Also install DB Beaver to visualize and run sql queries.
+Setup a postgresql or mysql on your linux machine. Also install DB Beaver to visualize and run sql queries.
 
 ### Database types:
 
