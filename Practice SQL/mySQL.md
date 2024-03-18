@@ -1,3 +1,5 @@
+# mySQL setup on linux
+
 ```sh
 sudo systemctl start mysql
 ```
