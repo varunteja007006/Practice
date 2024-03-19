@@ -4,6 +4,9 @@
 	This gives understanding of some basic SQL commands
 	Tutorial followed https://youtu.be/HXV3zeQKqGY?si=gU9AEQZnIy0FL9T8
 	Tutorial Notes https://www.giraffeacademy.com/databases/sql/creating-company-database/
+
+    TODO - Topics of Constraints -> NOT NULL, UNIQUE, PRIMARY KEY, FOREIGN KEY, CHECK, DEFAULT, CREATE_INDEX
+
 */
 
 -- Select the database to switch to
@@ -30,7 +33,30 @@ SELECT * FROM dummy
 -- Insert null values
 INSERT INTO dummy VALUES (2, 'Teja', 10, NULL)
 
+-- Copy dummy table to dummyTwo
+CREATE TABLE dummy2 AS SELECT id, name FROM dummy WHERE age < 10
 
--- Create Table using another table
+-- To check the copied table
+DESCRIBE dummy2
 
--- Topics of Constraints
+-- Check all the data inside the table
+SELECT * from dummy2
+
+-- Modify the id col in dummy2 to auto-increment
+ALTER TABLE dummy2 MODIFY id INT AUTO_INCREMENT PRIMARY KEY;
+
+
+
+
+
+-- Drop the dummy2 table = Delete the table and its data.
+DROP TABLE dummy2
+
+-- Truncate the table =  This will just delete the data inside the table not the table.
+TRUNCATE TABLE dummy2
+
+-- Alter the table by adding a new column
+ALTER TABLE dummy2 ADD (gpa DECIMAL)
+
+-- Drop column from the table
+ALTER TABLE dummy2 DROP COLUMN name
