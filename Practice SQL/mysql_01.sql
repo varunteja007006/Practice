@@ -4,9 +4,6 @@
 	This gives understanding of some basic SQL commands
 	Tutorial followed https://youtu.be/HXV3zeQKqGY?si=gU9AEQZnIy0FL9T8
 	Tutorial Notes https://www.giraffeacademy.com/databases/sql/creating-company-database/
-
-    TODO - Topics of Constraints -> NOT NULL, UNIQUE, PRIMARY KEY, FOREIGN KEY, CHECK, DEFAULT, CREATE_INDEX
-
 */
 
 -- Select the database to switch to
@@ -32,6 +29,9 @@ SELECT * FROM dummy
 
 -- Insert null values
 INSERT INTO dummy VALUES (2, 'Teja', 10, NULL)
+
+
+-- SECTION 2
 
 -- Copy dummy table to dummyTwo
 CREATE TABLE dummy2 AS SELECT id, name FROM dummy WHERE age < 10
