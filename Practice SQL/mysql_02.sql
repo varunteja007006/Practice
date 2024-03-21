@@ -30,3 +30,16 @@ INSERT INTO new_table (name,age, college) VALUES ('Sam Jam', 19, 'Junior college
 
 INSERT INTO new_table (name,age, college) VALUES ('Altman', 30, 'Junior college Pro')
 
+
+-- Day 4
+-- Add an NOT NULL Column
+ALTER TABLE new_table ADD (account_active BOOLEAN NOT NULL)
+
+-- account_active is NOT NULL hence it throws an error that it does'nt have a default value
+INSERT INTO new_table (name,age, college) VALUES ('Bobby', 23, 'Jr college Pro')
+
+-- Alter the NOT NULL Column to have a default value
+ALTER TABLE new_table MODIFY account_active BOOLEAN NOT NULL DEFAULT false
+
+-- Now try to add the same insert statement
+INSERT INTO new_table (name,age, college) VALUES ('Bobby', 23, 'Jr college Pro')

@@ -31,7 +31,7 @@ SELECT * FROM dummy
 INSERT INTO dummy VALUES (2, 'Teja', 10, NULL)
 
 
--- SECTION 2
+-- Day 2
 
 -- Copy dummy table to dummyTwo
 CREATE TABLE dummy2 AS SELECT id, name FROM dummy WHERE age < 10
