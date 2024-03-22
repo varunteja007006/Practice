@@ -43,3 +43,25 @@ ALTER TABLE new_table MODIFY account_active BOOLEAN NOT NULL DEFAULT false
 
 -- Now try to add the same insert statement
 INSERT INTO new_table (name,age, college) VALUES ('Bobby', 23, 'Jr college Pro')
+
+
+-- Day 5
+-- Drop UNIQUE constraint
+ALTER TABLE new_table DROP INDEX college
+
+-- Add back the UNIQUE constraint
+ALTER TABLE new_table MODIFY college VARCHAR(200) UNIQUE
+
+-- Primary key on multiple columns
+CREATE TABLE myTable (
+	ID INT AUTO_INCREMENT,
+	name VARCHAR(200),
+	age INT,
+	CONSTRAINT pk_person PRIMARY KEY (ID, name)
+)
+
+DESCRIBE myTable
+
+-- In the example above there is only ONE PRIMARY KEY (PK_Person). However, the VALUE of the primary key is made up of TWO COLUMNS (ID + name).
+
+-- If you use ALTER TABLE to add a primary key, the primary key column(s) must have been declared to not contain NULL values (when the table was first created).
