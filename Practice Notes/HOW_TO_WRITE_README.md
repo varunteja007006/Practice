@@ -1,4 +1,4 @@
-# HOW README
+# README
 
 ## How to write your Readme
 
