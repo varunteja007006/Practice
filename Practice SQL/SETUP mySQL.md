@@ -1,10 +1,36 @@
 # mySQL setup on linux
 
+MySQL Documentation [👉 Link ](https://dev.mysql.com/doc/mysql-shell/8.0/en/mysql-shell-install-linux-quick.html)
+
+To start the mysql service
+
 ```sh
 sudo systemctl start mysql
 ```
 
-Alter the root user password
+To restart the mysql service
+
+```sh
+sudo systemctl restart mysql
+```
+
+To stop the mysql service
+
+```sh
+sudo systemctl stop mysql
+```
+
+### Change the root user & password
+
+Check for the user
+`Here root can be your system user login name - john therefore replace root with your username`  
+Still confused ?? open your terminal and type the below command to know the username
+
+```sh
+whoami
+```
+
+ <br />
 
 1. Access mysql shell
 
@@ -18,13 +44,13 @@ sudo mysql
 USE mysql;
 ```
 
-Check for the user
+Back to MySQL
 
 ```sh
 SELECT user FROM mysql.user WHERE user = 'root' AND Host = 'localhost';
 ```
 
-#### If the user does not exist
+#### _If the user does not exist_
 
 ```sh
 CREATE USER 'root'@'localhost' IDENTIFIED BY 'new_password';
@@ -42,7 +68,7 @@ GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost';
 FLUSH PRIVILEGES;
 ```
 
-#### If the user already exists
+#### _If the user already exists_
 
 ```sh
 ALTER USER 'root'@'localhost' IDENTIFIED BY 'new_password';
@@ -63,3 +89,33 @@ sudo systemctl restart mysql
 ```sh
 mysql -u root -p
 ```
+
+### Install the DBeaver
+
+Now its time to connect the mysql with a GUI for better experience. Before doing this make sure you
+started mysql and logged into the connection with your password
+
+```sh
+sudo systemctl start mysql
+```
+
+```sh
+mysql -u root -p
+```
+
+#### In the DBBeaver
+
+To make new connection, use the below keyboard shortcut
+
+```
+ctrl+shift+N
+```
+
+Now from all the options pick `MySQL`. Keep all the settings as default and now provide the user
+and password that you use to login into mysql connection.
+![Add New Connection](https://github.com/varunteja007006/Practice/blob/main/Practice%20SQL/assets/Add%20New%20Connection.png)
+
+Test the connection (You can find a button Test Connection ...)
+![Test Connection](https://github.com/varunteja007006/Practice/blob/main/Practice%20SQL/assets/Test%20Connection.png)
+
+If the Test connection is successful press Finish button in the bottom.s
