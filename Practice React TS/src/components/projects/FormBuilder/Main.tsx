@@ -2,6 +2,9 @@ import { FormEvent, useEffect, useRef, useState } from "react";
 import { PageBody } from "../../custom";
 import CustomInputs, { TypeInputBuild } from "./CustomInputs";
 import { nanoid } from "nanoid";
+import { format } from "date-fns";
+import { LuEye } from "react-icons/lu";
+import { IoClose } from "react-icons/io5";
 
 type myFormStruct = {
   id: string;
@@ -52,11 +55,27 @@ const initialFieldsInputForm = [
     defaultValue: "",
     value: "",
   },
+  {
+    type: "text",
+    name: "nameOfTheField",
+    label: "What should the Name of the field be?",
+    placeholder: `Eg: firstName, fullName, etc..`,
+    required: true,
+    disabled: false,
+    defaultValue: "",
+    value: "",
+  },
 ];
 
 const myForms = "MyForms";
 
-const FormCards = ({ data }: { data: myFormStruct }) => {
+const FormCards = ({
+  data,
+  handlePreviewClick,
+}: {
+  data: myFormStruct;
+  handlePreviewClick: () => void;
+}) => {
   const { name, createdOn, isDone, noOfFields } = data;
   return (
     <>
@@ -67,11 +86,22 @@ const FormCards = ({ data }: { data: myFormStruct }) => {
             : "border border-red-600 bg-red-200"
         }`}
       >
-        <div className="card-body px-2 py-3">
-          <h2 className="text-large card-title">{name}</h2>
-          <p className=" text-sm">No.of.Fields: {noOfFields}</p>
+        <div className="card-body px-3 py-3">
+          <div className="flex flex-row justify-between">
+            <h2 className="text-large card-title capitalize ">{name}</h2>
+            <button
+              onClick={handlePreviewClick}
+              className="btn rounded-full bg-white text-black hover:bg-slate-200"
+            >
+              <LuEye />
+            </button>
+          </div>
+          <p className=" text-sm normal-case">No.of.Fields: {noOfFields}</p>
           <div className="card-actions justify-end">
-            <p className=" text-sm">{createdOn.getDate()}</p>
+            {/* <p className=" text-sm">{createdOn.getDate()}</p> */}
+            <p className=" text-sm">
+              Created On: {format(new Date(createdOn), "dd/MM/yyyy")}
+            </p>
           </div>
         </div>
       </div>
@@ -88,6 +118,7 @@ function Main() {
   const [stepCount, setStepCount] = useState(1);
   const [activeFieldCount, setActiveFieldCount] = useState(1);
   const currentFormIDRef = useRef(nanoid());
+  const [togglePreview, setTogglePreview] = useState(false);
 
   const toggleNewItem = () => {
     setNewItem(!newItem);
@@ -109,7 +140,7 @@ function Main() {
   useEffect(() => {
     if (initialRender.current) {
       const data = localStorage.getItem(myForms);
-      if (data) {
+      if (data && data.length > 0) {
         setCreatedForms(JSON.parse(data));
       }
       initialRender.current = false;
@@ -117,7 +148,7 @@ function Main() {
   }, []);
 
   useEffect(() => {
-    if (!initialRender.current) {
+    if (!initialRender.current && createdForms && createdForms.length > 0) {
       localStorage.setItem(myForms, JSON.stringify(createdForms));
       console.table(createdForms);
     }
@@ -269,9 +300,18 @@ function Main() {
     }
   };
 
+  const handlePreviewClick = (id: string | null) => {
+    console.log(id);
+    if (id) {
+      setTogglePreview(!togglePreview);
+    } else {
+      setTogglePreview(!togglePreview);
+    }
+  };
+
   return (
     <PageBody PageTitle="Form Builder">
-      <div className="m-3 grid grid-cols-2 gap-3 bg-slate-100 p-3">
+      <div className="m-3 grid grid-cols-2 gap-3 bg-slate-100 p-3 dark:bg-black">
         <div className="flex flex-col gap-3 p-5 ">
           <h2 className="text-xl underline decoration-solid">
             Create New Form
@@ -295,17 +335,33 @@ function Main() {
         </div>
         {/* Not important */}
         <div className="p-5">
-          {!newItem ? (
+          {!newItem || togglePreview ? (
             <>
-              <h2 className="text-xl underline decoration-solid">Preview</h2>
+              <div className="flex flex-row justify-between">
+                <h2 className="text-xl underline decoration-solid">Preview</h2>
+                <button
+                  className="btn rounded-full bg-white text-red-800 hover:bg-red-200"
+                  onClick={() => handlePreviewClick(null)}
+                >
+                  <IoClose />
+                </button>
+              </div>
             </>
           ) : (
             <>
-              <h2 className="text-xl underline decoration-solid">My Forms</h2>
+              <h2 className="mb-3 text-xl underline decoration-solid">
+                My Forms
+              </h2>
               <div className="flex flex-row flex-wrap gap-3">
-                {createdForms.map((item: myFormStruct) => (
-                  <FormCards key={item.id} data={item} />
-                ))}
+                {createdForms &&
+                  createdForms.length > 0 &&
+                  createdForms.map((item: myFormStruct) => (
+                    <FormCards
+                      key={item.id}
+                      data={item}
+                      handlePreviewClick={() => handlePreviewClick(item.id)}
+                    />
+                  ))}
               </div>
             </>
           )}

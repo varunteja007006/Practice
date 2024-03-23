@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 .menu li > *:not(ul):not(.menu-title):not(details):active,
 .menu li > *:not(ul):not(.menu-title):not(details).active,
 .menu li > details > summary:active {
