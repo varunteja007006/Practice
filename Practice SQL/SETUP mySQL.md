@@ -111,11 +111,12 @@ To make new connection, use the below keyboard shortcut
 ctrl+shift+N
 ```
 
-Now from all the options pick `MySQL`. Keep all the settings as default and now provide the user
-and password that you use to login into mysql connection.
+Now from all the available options pick `MySQL`. <br />
 ![Add New Connection](https://github.com/varunteja007006/Practice/blob/main/Practice%20SQL/assets/Add%20New%20Connection.png)
 
-Test the connection (You can find a button Test Connection ...)
+Keep all the settings as default and now provide the user and password that you use to login into mysql connection. <br/>
 ![Test Connection](https://github.com/varunteja007006/Practice/blob/main/Practice%20SQL/assets/Test%20Connection.png)
+
+Test the connection (You can find a button Test Connection ...)
 
 If the Test connection is successful press Finish button in the bottom.s
