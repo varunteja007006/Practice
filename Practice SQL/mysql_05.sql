@@ -9,8 +9,6 @@
  * < (less than), > (greater than) , <= (less than or equal to), >= (greater than or equal to), = (equal to), <> (not equal to)
 */
 
--- TODO use <> and IN operators
-
 ALTER TABLE Persons MODIFY COLUMN ID INT AUTO_INCREMENT PRIMARY KEY
 
 ALTER TABLE Persons DROP CHECK CHK_Person
@@ -62,3 +60,14 @@ SELECT * from Persons WHERE Country IS NOT NULL
 UPDATE Persons SET LastName = 'LALA L' WHERE ID = 5
 
 
+-- Using <> Operator
+
+SELECT * FROM Persons WHERE age > 30
+
+-- Now lets use <>
+SELECT * FROM Persons WHERE age > 30 AND City <> 'HYD'
+
+
+-- Using IN Operator
+
+SELECT * FROM Persons WHERE City IN ('JM', 'BNG', 'CHINA')

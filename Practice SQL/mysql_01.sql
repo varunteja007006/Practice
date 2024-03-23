@@ -45,10 +45,6 @@ SELECT * from dummy2
 -- Modify the id col in dummy2 to auto-increment
 ALTER TABLE dummy2 MODIFY id INT AUTO_INCREMENT PRIMARY KEY;
 
-
-
-
-
 -- Drop the dummy2 table = Delete the table and its data.
 DROP TABLE dummy2
 

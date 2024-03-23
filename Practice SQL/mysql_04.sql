@@ -11,6 +11,14 @@
  * Note: Two dates can easily be compared if there is no time component involved!
 */
 
+/*
+ * 
+ * 
+ *  ----------------------------------------------------------------------------------------------------
+ * 
+ * 
+*/
+
 -- MySQL Views
 /*
  * In SQL, a view is a virtual table based on the result-set of an SQL statement.

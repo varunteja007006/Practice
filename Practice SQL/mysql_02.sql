@@ -16,14 +16,11 @@ SELECT * FROM new_table
 
 INSERT INTO new_table (name,age, college) VALUES ('Sam', 90, 'Junior college')
 
-
 -- Check constraint violated
 INSERT INTO new_table (name,age, college) VALUES ('Sam Jam', 10, 'Junior college Pro')
 
-
 -- Duplicate entry for 'new_table.college'
 INSERT INTO new_table (name,age, college) VALUES ('Sam Jam', 19, 'Junior college')
-
 
 INSERT INTO new_table (name,age, college) VALUES ('Altman', 30, 'Junior college Pro')
 
@@ -48,6 +45,10 @@ ALTER TABLE new_table DROP INDEX college
 
 -- Add back the UNIQUE constraint
 ALTER TABLE new_table MODIFY college VARCHAR(200) UNIQUE
+
+/**/
+
+
 
 -- Primary key on multiple columns
 CREATE TABLE myTable (
