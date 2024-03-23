@@ -16,7 +16,7 @@ ALTER TABLE Persons ADD CONSTRAINT CHK_Person CHECK (Age>=18 AND City='Sandnes')
 
 INSERT INTO Persons VALUES (1, 'ABC', 'DEF', 19, 'Sandnes')
 
--- ERROR check contraint violated
+-- ERROR check constraint violated
 INSERT INTO Persons VALUES (1, 'ABC', 'DEF', 10, 'Sandnes')
 
 INSERT INTO Persons VALUES (1, 'ABC', 'DEF', 18, 'NOT Sandnes')

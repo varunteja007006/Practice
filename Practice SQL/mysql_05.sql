@@ -5,8 +5,11 @@
  * The AND operator displays a record if all the conditions separated by AND are TRUE.
  * The OR operator displays a record if any of the conditions separated by OR is TRUE.
  * 
- * 
+ * More operators
+ * < (less than), > (greater than) , <= (less than or equal to), >= (greater than or equal to), = (equal to), <> (not equal to)
 */
+
+-- TODO use <> and IN operators
 
 ALTER TABLE Persons MODIFY COLUMN ID INT AUTO_INCREMENT PRIMARY KEY
 
@@ -31,6 +34,9 @@ SELECT * from Persons WHERE NOT City = "BNG" ORDER BY City DESC
 
 -- First ORDER BY City and then LastName in descending order
 SELECT * from Persons ORDER BY City, LastName DESC
+
+-- First ORDER BY City and then LastName in descending order and then LIMIT the records to 2
+SELECT * from Persons ORDER BY City, LastName DESC LIMIT 2
 
 -- IS NULL , IS NOT NULL
 ALTER TABLE Persons ADD (Country VARCHAR(200))

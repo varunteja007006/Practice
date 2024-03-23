@@ -1,7 +1,4 @@
 -- DAY 3
-/*
-    TODO - Topics of Constraints ->  FOREIGN KEY, CHECK, DEFAULT, CREATE_INDEX
-*/
 
 CREATE TABLE new_table (
     id INT PRIMARY KEY AUTO_INCREMENT, -- PRIMARY KEY - it makes the column not null, unique at same time
@@ -20,7 +17,7 @@ SELECT * FROM new_table
 INSERT INTO new_table (name,age, college) VALUES ('Sam', 90, 'Junior college')
 
 
--- Check contraint violated
+-- Check constraint violated
 INSERT INTO new_table (name,age, college) VALUES ('Sam Jam', 10, 'Junior college Pro')
 
 
