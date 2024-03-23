@@ -112,9 +112,11 @@ ctrl+shift+N
 ```
 
 Now from all the available options pick `MySQL`. <br />
+<br />
 ![Add New Connection](https://github.com/varunteja007006/Practice/blob/main/Practice%20SQL/assets/Add%20New%20Connection.png)
 
 Keep all the settings as default and now provide the user and password that you use to login into mysql connection. <br/>
+<br />
 ![Test Connection](https://github.com/varunteja007006/Practice/blob/main/Practice%20SQL/assets/Test%20Connection.png)
 
 Test the connection (You can find a button Test Connection ...)
