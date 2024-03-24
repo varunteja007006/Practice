@@ -78,3 +78,63 @@ SELECT COUNT(ww.total_sales) AS 'No.of.Sales', SUM(ww.total_sales) AS 'Total Sal
  * 
 */
 
+-- Using WILD CARDS
+-- % = any # characters, _ = one character
+
+-- Find any client who are an LLC
+SELECT * FROM client c WHERE client_name LIKE '%LLC';
+
+-- Correction to the name 
+UPDATE branch_supplier SET supplier_name = "Stamford Labels" WHERE supplier_name LIKE '%Lables%'
+
+-- Find any branch suppliers who has 'Labels' in their name
+SELECT * FROM branch_supplier bs WHERE supplier_name LIKE '%Label%'
+
+
+-- Find any employee born in october
+SELECT * from employee e WHERE birth_day LIKE "____-10%"
+
+
+-- Find any clients who are schools
+SELECT * FROM client c WHERE client_name LIKE "%school%"
+
+
+/*
+ * 
+ * 
+ * 
+ * --------------------------------END OF SECTION-----------------------------------------------------
+ * 
+ * 
+ * 
+*/
+
+-- Using UNION
+
+-- When using UNIONS there are set of rules:
+-- 1. Same number of columns in the queries that are joined by UNION.
+-- 2. The columns that are being selected in the queries should also have the same datatype.
+
+
+-- Find a list of employee and branch names
+SELECT first_name AS Names FROM employee e UNION SELECT branch_name FROM branch b UNION SELECT client_name FROM client c 
+
+
+-- Find the list of all clients and branch suppliers names
+SELECT client_name AS Names FROM client c UNION SELECT supplier_name FROM branch_supplier bs 
+
+
+-- Find a list of all the money spent or earned by the company
+-- For context the company earned money from the sales and spent money on the employee salaries 
+SELECT (total_sales) AS 'Income/Expense' FROM works_with ww UNION SELECT (salary) FROM employee e 
+
+
+/*
+ * 
+ * 
+ * 
+ * --------------------------------END OF SECTION-----------------------------------------------------
+ * 
+ * 
+ * 
+*/
