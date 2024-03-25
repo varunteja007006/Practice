@@ -23,6 +23,13 @@
         </h3>
         <p>Take the focus into the input box below:</p>
         <input id="inp" onfocus="focused()" />
+        <p class="syntax">
+          function focused() { <br />
+          var e = document.getElementById("inp"); <br />
+          if (confirm("Got it?")) { <br />
+          e.blur();<br />
+          } }
+        </p>
       </div>
       <div>
         <h2>

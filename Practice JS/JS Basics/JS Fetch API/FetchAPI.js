@@ -51,6 +51,9 @@ async function upload(formData) {
     const response = await fetch("https://example.com/profile/avatar", {
       method: "PUT",
       body: formData,
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
     });
     const result = await response.json();
     console.log("Success:", result);
@@ -61,10 +64,8 @@ async function upload(formData) {
 
 const formData = new FormData();
 const fileField = document.querySelector('input[type="file"]');
-
 formData.append("username", "abc123");
 formData.append("avatar", fileField.files[0]);
-
 upload(formData);
 
 // uploading multiple files
@@ -77,6 +78,9 @@ async function uploadMultiple(formData) {
     const response = await fetch("https://example.com/posts", {
       method: "POST",
       body: formData,
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
     });
     const result = await response.json();
     console.log("Success:", result);
@@ -87,9 +91,7 @@ async function uploadMultiple(formData) {
 
 const photos = document.querySelector('input[type="file"][multiple]');
 const formData1 = new FormData();
-
 formData1.append("title", "My Vegas Vacation");
-
 for (const [i, photo] of Array.from(photos.files).entries()) {
   formData1.append(`photos_${i}`, photo);
 }
