@@ -1,5 +1,3 @@
--- TODO Learn Wildcards, UNIONS, JOINS
-
 -- MySQL AND, OR, and NOT Operators
 
 /*
