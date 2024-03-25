@@ -138,3 +138,144 @@ SELECT (total_sales) AS 'Income/Expense' FROM works_with ww UNION SELECT (salary
  * 
  * 
 */
+
+-- Using JOINS
+
+-- Insert another branch
+INSERT INTO branch VALUES (4,'Buffalo', null, null) 
+
+
+-- Find all branches and the names of their managers
+SELECT e.first_name AS 'FIRSTNAME', e.last_name AS 'LASTNAME', b.branch_name AS 'BRANCH' 
+FROM employee e 
+JOIN branch b 
+WHERE b.mgr_id = e.emp_id 
+
+
+-- OTHER JOINS - LEFT & RIGHT
+
+
+/*
+ * 
+ * 
+ * 
+ * --------------------------------END OF SECTION-----------------------------------------------------
+ * 
+ * 
+ * 
+*/
+
+-- Find names of all employees who have sold over USD 30,000 to a single client
+SELECT e.first_name AS 'Emp FirstName' ,ww.total_sales AS 'SALES REVENUE' FROM works_with ww 
+JOIN employee e WHERE e.emp_id = ww.emp_id 
+AND ww.total_sales > 30000;
+
+
+-- Find all clients who are handled by the branch that Michael Scott manages.
+-- Assume you know Micheal's ID
+
+SELECT c.client_name  FROM client c
+WHERE c.branch_id = (SELECT b2.branch_id  FROM branch b2 
+WHERE b2.mgr_id = (SELECT emp_id FROM employee e WHERE first_name ='Michael' ) ) 
+
+
+/*
+ * 
+ * 
+ * 
+ * --------------------------------END OF SECTION-----------------------------------------------------
+ * 
+ * 
+ * 
+*/
+
+/*
+ * In SQL, there are several referential actions that can be specified using foreign key constraints. 
+ * These actions define what should happen to the dependent rows in a child table when a referenced row in a parent table is updated or deleted. 
+ * Here are some commonly used referential actions:
+ * 
+ * 
+ * ON DELETE CASCADE: When a referenced row in the parent table is deleted, all corresponding rows in the child table are automatically deleted.
+ * ON DELETE SET NULL: When a referenced row in the parent table is deleted, the foreign key columns in the child table are set to NULL.
+ * ON DELETE SET DEFAULT: When a referenced row in the parent table is deleted, the foreign key columns in the child table are set to their default values, if specified.
+ * ON DELETE RESTRICT: Prevents deletion of a referenced row in the parent table if there are corresponding rows in the child table.
+ * ON DELETE NO ACTION: Similar to ON DELETE RESTRICT, it prevents deletion of a referenced row in the parent table if there are corresponding rows in the child table. This is the default behavior if no other action is specified.
+ * 
+ * 
+ * 
+ * ON UPDATE CASCADE: When a referenced column in the parent table is updated, all corresponding columns in the child table are automatically updated.
+ * ON UPDATE SET NULL: When a referenced column in the parent table is updated, the foreign key columns in the child table are set to NULL.
+ * ON UPDATE SET DEFAULT: When a referenced column in the parent table is updated, the foreign key columns in the child table are set to their default values, if specified.
+ * ON UPDATE RESTRICT: Prevents updating of a referenced column in the parent table if there are corresponding rows in the child table.
+ * ON UPDATE NO ACTION: Similar to ON UPDATE RESTRICT, it prevents updating of a referenced column in the parent table if there are corresponding rows in the child table.
+ * 
+ * 
+*/
+			
+
+/*
+ * 
+ * 
+ * 
+ * --------------------------------END OF SECTION-----------------------------------------------------
+ * 
+ * 
+ * 
+*/
+			
+-- CREATE
+--     TRIGGER `event_name` BEFORE/AFTER INSERT/UPDATE/DELETE
+--     ON `database`.`table`
+--     FOR EACH ROW BEGIN
+-- 		-- trigger body
+-- 		-- this code is applied to every
+-- 		-- inserted/updated/deleted row
+--     END;
+
+CREATE TABLE trigger_test (
+     message VARCHAR(100)
+);
+
+
+DELIMITER $$
+CREATE
+    TRIGGER my_trigger BEFORE INSERT
+    ON employee
+    FOR EACH ROW BEGIN
+        INSERT INTO trigger_test VALUES('added new employee');
+    END$$
+DELIMITER ;
+INSERT INTO employee
+VALUES(109, 'Oscar', 'Martinez', '1968-02-19', 'M', 69000, 106, 3);
+
+
+DELIMITER $$
+CREATE
+    TRIGGER my_trigger BEFORE INSERT
+    ON employee
+    FOR EACH ROW BEGIN
+        INSERT INTO trigger_test VALUES(NEW.first_name);
+    END$$
+DELIMITER ;
+INSERT INTO employee
+VALUES(110, 'Kevin', 'Malone', '1978-02-19', 'M', 69000, 106, 3);
+
+DELIMITER $$
+CREATE
+    TRIGGER my_trigger BEFORE INSERT
+    ON employee
+    FOR EACH ROW BEGIN
+         IF NEW.sex = 'M' THEN
+               INSERT INTO trigger_test VALUES('added male employee');
+         ELSEIF NEW.sex = 'F' THEN
+               INSERT INTO trigger_test VALUES('added female');
+         ELSE
+               INSERT INTO trigger_test VALUES('added other employee');
+         END IF;
+    END$$
+DELIMITER ;
+INSERT INTO employee
+VALUES(111, 'Pam', 'Beesly', '1988-02-19', 'F', 69000, 106, 3);
+
+
+DROP TRIGGER my_trigger;
