@@ -48,6 +48,10 @@ firebase, etc...
 Queries are requests made to the database management system for specific information. It acts as a
 set of instructions to relational database management system to help us query the required data.
 
+<br />
+<br />
+<br />
+
 ## SQL
 
 ### Keys - Primary, Foreign, Surrogate, Natural.
@@ -95,3 +99,13 @@ An alternate key can be a set of one or more attributes that uniquely identify a
 2. Data Definition Language(DDL) - Defining database schemas.
 3. Data Control Language(DCL) - Controlling access to data and permission management.
 4. Data Manipulation Language(DML) - Used for inserting, updating, deleting data from the database.
+
+<br />
+<br />
+<br />
+
+## ER Diagrams
+
+<br />
+
+![ER Diagrams](https://github.com/varunteja007006/Practice/blob/main/Practice%20SQL/assets/Basic%20of%20ER%20in%20SQL.svg)
