@@ -16,14 +16,14 @@ async function getDataAsync() {
   //JS engine waits for the promise to be resolved.
   console.log("getDataAsync started. Code before 1st promise.....");
   const val1 = await promise;
-
-  console.log("Code after 1st promise.....\n");
   console.log(val1);
+  console.log("Code after 1st promise.....\n");
 
   // what happens if we have another await???
+  console.log("Code before 2nd promise....");
   const val2 = await promise;
-  console.log("Code after 2nd promise....");
   console.log(val2);
+  console.log("Code after 2nd promise....");
 }
 
 getDataAsync(); // initiate the async function

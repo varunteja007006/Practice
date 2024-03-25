@@ -31,5 +31,5 @@ async function awaitGetData() {
   }
 }
 
-const dataOne = awaitGetData(); // promise object
-dataOne.then((res) => console.log("With Async Await: ", res)); // unpacking a promise
+const data = awaitGetData(); // promise object
+data.then((res) => console.log("With Async Await: ", res)); // unpacking a promise
