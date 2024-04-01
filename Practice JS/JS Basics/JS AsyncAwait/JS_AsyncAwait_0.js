@@ -1,15 +1,15 @@
-/*  
-What is Async ?
-
-Async is a keyword in JavaScript that lets you write asynchronous code in a more synchronous, 
-readable way.
-
-The keyword 'async' before a function makes the function always return a promise.
-
-The keyword await is used inside async functions, which makes the program wait until the Promise
-resolves.
-
-*/
+/*
+ * What is Async ?
+ *
+ * Async is a keyword in JavaScript that lets you write asynchronous code in a more synchronous,
+ * readable way.
+ *
+ * The keyword 'async' before a function makes the function always return a promise.
+ *
+ * The keyword await is used inside async functions, which makes the program wait until the Promise
+ * resolves.
+ *
+ */
 
 // promise -> resolve or rejects
 const promise = new Promise((resolve, reject) => {
@@ -36,4 +36,3 @@ async function getData() {
 const data = getData(); // promise resolved, you get a promise object
 console.log(data); // promise object is logged
 data.then((res) => console.log(res)); // unpack the promise for data
-
