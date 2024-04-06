@@ -2,7 +2,7 @@ import React from "react";
 import certificationData from "../../../data/certificationData";
 import CustomHeading from "@/components/ui/custom/CustomHeading";
 
-function CertificationSection() {
+function Certification() {
   return (
     <section className="w-full">
       <CustomHeading>Certifications</CustomHeading>
@@ -12,7 +12,7 @@ function CertificationSection() {
             item.toShow && (
               <li
                 key={index}
-                className="inline-flex items-center py-3 rounded-sm ps-2"
+                className="inline-flex items-start py-3 rounded-sm ps-2"
               >
                 {" "}
                 <span className="flex flex-col gap-2">
@@ -28,4 +28,4 @@ function CertificationSection() {
   );
 }
 
-export default CertificationSection;
+export default Certification;

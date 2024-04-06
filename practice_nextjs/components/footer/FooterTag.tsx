@@ -3,7 +3,7 @@ import React from "react";
 function FooterTag() {
   return (
     <div className="my-5 flex flex-col items-center">
-      <p>-- Made with React💙 --</p>
+      <p>-- Made with Next JS 💜--</p>
       <p>
         {"<"} Developer {"/>"}
       </p>

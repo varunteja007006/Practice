@@ -10,13 +10,12 @@ import {
 } from "@/components/ui/navigation-menu";
 import Link from "next/link";
 import { navlinks } from "./navlink";
-import { cn } from "@/lib/utils";
 
 function Navbar() {
   return (
     <>
       <div className="flex items-center justify-center md:justify-between w-full p-2">
-        <h1 className="hidden text-xl text-white  md:block">{`<Developer />`}</h1>
+        <h1 className="hidden text-xl text-white  md:block px-2">{`<Developer />`}</h1>
         <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>
@@ -42,7 +41,6 @@ function Navbar() {
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
-        <div className="hidden md:block"></div>
       </div>
       <div className="flex items-center justify-center p-2 text-xl text-white md:hidden w-full">
         <h1>{`<Developer />`}</h1>
