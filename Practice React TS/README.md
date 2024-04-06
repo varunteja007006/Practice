@@ -30,3 +30,6 @@ npm run dev
 1. React Slick
 2. Scroll - lock
 3. React Just Parallax
+4. React Spring - For making animations
+5. React Remotion - For making programmatic videos
+6. Anime js - Animations
