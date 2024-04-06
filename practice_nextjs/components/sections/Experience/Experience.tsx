@@ -31,7 +31,7 @@ function Experience() {
                       : item.workingTill
                   }`}
                 </p>
-                <p className="text-sm text-justify">
+                <p className="text-sm ">
                   {typeof item.jobDescription === "string" &&
                     item.jobDescription}
                 </p>
@@ -41,7 +41,7 @@ function Experience() {
                       return (
                         <li
                           key={index}
-                          className="text-sm mb-2 text-justify flex items-center justify-start gap-2"
+                          className="text-sm mb-2  flex items-center justify-start gap-2"
                         >
                           {`-> ${jobItem}`}
                         </li>

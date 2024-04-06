@@ -35,8 +35,7 @@ const projectData = [
     project_github: "https://github.com/varunteja007006/JobToday-ReactJS",
     project_link: "https://jobtoday.netlify.app/",
     project_images: [jobtoday, jobtoday1, jobtoday2, jobtoday3],
-    show: true,
-    hidden: false,
+    toShow: true,
   },
   {
     id: 2,
@@ -56,8 +55,7 @@ const projectData = [
     project_github: "https://github.com/varunteja007006/FitApp-ReactJS",
     project_link: "",
     project_images: [fit, fit1, fit2],
-    show: true,
-    hidden: false,
+    toShow: true,
   },
   {
     id: 3,
@@ -82,8 +80,7 @@ const projectData = [
       "https://github.com/varunteja007006/Twitter-Sentiment-analysis-on-politicians-using-Django",
     project_link: "",
     project_images: [sentiment, sentiment1, sentiment2, sentiment3, sentiment4],
-    show: true,
-    hidden: false,
+    toShow: true,
   },
   {
     id: 4,
@@ -108,8 +105,7 @@ const projectData = [
       sportsmanagement8,
       sportsmanagement9,
     ],
-    show: true,
-    hidden: false,
+    toShow: true,
   },
   {
     id: 5,
@@ -129,8 +125,7 @@ const projectData = [
     project_github: "https://github.com/varunteja007006/collabs_WebApp_Django",
     project_link: "#",
     project_images: [collabs, collabs1, collabs2, collabs3, collabs4],
-    show: false,
-    hidden: false,
+    toShow: false,
   },
   {
     id: 6,
@@ -152,8 +147,7 @@ const projectData = [
     project_github: "https://github.com/varunteja007006/Budget",
     project_link: "#",
     project_images: [budget, budget1, budget2, budget3, budget4],
-    show: false,
-    hidden: false,
+    toShow: false,
   },
 ];
 

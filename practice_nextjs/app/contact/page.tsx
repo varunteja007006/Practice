@@ -12,14 +12,14 @@ function ContactPage() {
             return (
               <a
                 key={item.id}
-                className={`tooltip capitalize
+                className={`tooltip
               }`}
                 href={item.contact_href}
                 data-tip={item.contact_type}
                 aria-label={item.contact_href}
               >
                 <span className="flex flex-col justify-center items-center">
-                  <span className="flex flex-row items-center gap-2">
+                  <span className="flex flex-row items-center gap-2 capitalize">
                     <span>{<item.contact_icon />}</span>
                     {item.contact_type}
                   </span>

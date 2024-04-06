@@ -23,14 +23,16 @@ function Navbar() {
                 <FiMenu className="me-2" /> Menu
               </NavigationMenuTrigger>
               <NavigationMenuContent>
-                <ul className="w-[200px] flex flex-col items-center justify-center p-2 text-sm gap-2">
+                <ul className="w-[200px] flex flex-col items-center justify-center text-sm gap-2">
                   {navlinks.map((item, index) => {
                     return (
-                      <li key={index + 1}>
-                        <Link
-                          href={item.path}
-                          className="border-b-2 border-gray-200"
-                        >
+                      <li
+                        key={index + 1}
+                        className={`hover:bg-slate-200 w-full inline-flex items-center justify-center ${
+                          navlinks.length === index + 1 && "pb-2"
+                        }`}
+                      >
+                        <Link href={item.path} className="p-2 border-b-[1px]">
                           {item.name}
                         </Link>
                       </li>
