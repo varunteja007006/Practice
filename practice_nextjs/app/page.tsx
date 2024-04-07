@@ -4,7 +4,6 @@ import { TfiDownload } from "react-icons/tfi";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Projects from "@/components/sections/projects/Projects";
-// import resume from "../public/Resume_VarunK.pdf";
 
 const Experience = dynamic(
   () => import("@/components/sections/Experience/Experience")
