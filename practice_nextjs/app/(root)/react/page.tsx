@@ -1,7 +1,7 @@
 import React from "react";
 
 /* 
-TODO create following:
+TODO create following components:
 * projects
 * projects/zodreacthookforms
 * projects/image-slider
@@ -10,6 +10,20 @@ TODO create following:
 * projects/framerMotion
 * projects/materialUI
 * projects/form-builder
+*/
+
+/*
+TODO create following paths:
+* projects/unsplash
+* projects/cms
+* projects/menu
+* projects/tabs
+
+TODO create following paths:
+* problems
+* one
+* two
+* three
 */
 
 function ReactPage() {
