@@ -21,9 +21,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn("bg-black scroll-smooth", inter.className)}>
-        <Navbar />
-        <main className="px-4 py-2 text-white">{children}</main>
+      <body className={cn("bg-black scroll-smooth", inter.className ?? "")}>
+        <main>
+          <Navbar />
+          <div className="px-4 py-2 text-white min-h-screen">{children}</div>
+        </main>
       </body>
     </html>
   );

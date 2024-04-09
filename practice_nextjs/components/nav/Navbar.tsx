@@ -32,7 +32,10 @@ function Navbar() {
                           navlinks.length === index + 1 && "pb-2"
                         }`}
                       >
-                        <Link href={item.path} className="p-2 border-b-[1px]">
+                        <Link
+                          href={item.path}
+                          className="p-2 w-full inline-flex items-center justify-center "
+                        >
                           {item.name}
                         </Link>
                       </li>
