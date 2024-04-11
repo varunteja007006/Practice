@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 // Import css files for react slick
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Provider from "./Provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,10 +23,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cn("bg-black scroll-smooth", inter.className ?? "")}>
-        <main>
-          <Navbar />
-          <div className="px-4 py-2 text-white min-h-screen">{children}</div>
-        </main>
+        <Provider>
+          <main>
+            <Navbar />
+            <div className="px-4 py-2 text-white min-h-screen">{children}</div>
+          </main>
+        </Provider>
       </body>
     </html>
   );

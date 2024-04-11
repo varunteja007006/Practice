@@ -57,6 +57,11 @@ const ProjectNavlinks = [
     name: "Zod + React Hook Form",
     isActive: true,
   },
+  {
+    path: "/react/projects/shopping-cart",
+    name: "Shopping Cart",
+    isActive: true,
+  },
 ];
 
 const ReactNavLinks = [
@@ -92,7 +97,6 @@ const SideBarLinks = {
     header: PROBLEMS_HEADER,
   },
 };
-console.log("💣 ~ file: SideNavbar.tsx:89 ~ SideBarLinks:", SideBarLinks);
 
 const CustomNavLink = ({ path, name }: { path: string; name: string }) => {
   return (

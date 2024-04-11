@@ -34,3 +34,32 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+### How to add new Projects
+
+1. Create a page in src > pages > project pages dir.
+2. Create a folder in components > projects dir
+3. Create a route in App.tsx add the page created in `Step 1`.
+4. Add the path created in `Step 3` to navlinksMenu in Navbar.tsx component.
+
+### List of helpful Packages
+
+1. React Slick
+2. Scroll - lock
+3. React Just Parallax
+4. React Spring - For making animations
+5. React Remotion - For making programmatic videos
+6. Anime js - Animations
+
+### Practice projects to be added:
+
+- 🔳 Dynamic Navbar
+- 🔳 Multi-page form
+
+### Some Good Blogs
+
+- [React Custom Hooks](https://dev.to/arafat4693/15-useful-react-custom-hooks-that-you-can-use-in-any-project-2ll8)
+
+## JSON SERVER Documentation
+
+https://github.com/typicode/json-server/tree/v0

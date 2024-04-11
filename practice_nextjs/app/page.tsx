@@ -18,6 +18,7 @@ const Certification = dynamic(
 const FooterMain = dynamic(() => import("@/components/footer/FooterMain"));
 
 export default function Home() {
+  
   return (
     <>
       <div className="w-full min-h-[70vh] flex flex-col gap-5 md:px-4 lg:px-16 mb-10">
