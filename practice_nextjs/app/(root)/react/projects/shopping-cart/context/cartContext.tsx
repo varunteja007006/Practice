@@ -1,8 +1,22 @@
-import { createContext, ReactNode, useContext, useState } from "react";
+import {
+  createContext,
+  Dispatch,
+  ReactNode,
+  SetStateAction,
+  useState,
+} from "react";
 
-export const cartContext = createContext("");
+export const cartContext = createContext<{
+  state: null;
+  setState: Dispatch<SetStateAction<null>>;
+} | null>(null);
 
 export const CartContextProvider = ({ children }: { children: ReactNode }) => {
-  const [state, setState] = useState("Hello");
-  return <cartContext.Provider value={state}>{children}</cartContext.Provider>;
+  const [state, setState] = useState(null);
+
+  return (
+    <cartContext.Provider value={{ state, setState }}>
+      {children}
+    </cartContext.Provider>
+  );
 };

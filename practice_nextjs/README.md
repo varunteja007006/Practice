@@ -63,3 +63,20 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 ## JSON SERVER Documentation
 
 https://github.com/typicode/json-server/tree/v0
+
+###
+
+## NEXT JS
+
+#### Topic to prepare
+
+https://www.youtube.com/watch?v=vwSlYG7hFk0
+
+1. Client vs Server Components (GET - Requests)
+2. Server actions (POST/PUT/DELETE)
+3. Suspense and Streaming
+4. Caching
+5. Static and Dynamic Rendering
+6. Middleware
+7. Folder/ File Structure
+8. Production Build and deploying
