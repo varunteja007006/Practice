@@ -10,7 +10,9 @@ export type TShoppingDataStruct = {
 };
 
 function useGetShoppingData() {
-  const [shoppingData, setShoppingData] = useState<TShoppingDataStruct[]>([]);
+  const [shoppingData, setShoppingData] = useState<
+    TShoppingDataStruct[] | null
+  >([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | unknown>("");
 

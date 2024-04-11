@@ -1,6 +1,6 @@
 "use client";
 import CustomPageHeader from "@/components/custom/CustomPageHeader";
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import {
   Card,
   CardContent,
@@ -19,7 +19,6 @@ import { RiDeleteBinLine } from "react-icons/ri";
 
 function ShoppingCartPage() {
   const { shoppingData, error, isLoading } = useGetShoppingData();
-  const state = useContext(cartContext);
 
   if (isLoading) {
     return <>Loading</>;
@@ -28,6 +27,28 @@ function ShoppingCartPage() {
   if (error) {
     return <>Oops something went wrong</>;
   }
+
+  if (!shoppingData) {
+    return;
+  }
+
+  const context = useContext(cartContext);
+
+  if (context) {
+    context.setState(shoppingData);
+  }
+
+  const handleIncrement = (id: number) => {
+    console.log("Increment");
+  };
+
+  const handleDecrement = (id: number) => {
+    console.log("Decrement");
+  };
+
+  const handleRemoveAll = () => {
+    console.log("remove all");
+  };
 
   return (
     <CustomPageHeader pageHeading="Shopping Cart">
@@ -41,6 +62,7 @@ function ShoppingCartPage() {
           </div>
           <div>
             <Button
+              onClick={handleRemoveAll}
               variant="outline"
               className="text-black hover:bg-black hover:text-white"
             >
@@ -50,7 +72,8 @@ function ShoppingCartPage() {
           </div>
         </CardHeader>
         <CardContent>
-          {shoppingData.length > 0 &&
+          {shoppingData &&
+            shoppingData.length > 0 &&
             shoppingData?.map((item) => {
               return (
                 <Card
@@ -68,6 +91,7 @@ function ShoppingCartPage() {
 
                     <div className="flex flex-col gap-1 items-center justify-center">
                       <Button
+                        onClick={() => handleIncrement(item.id)}
                         variant="outline"
                         size="icon"
                         className="text-black hover:bg-black hover:text-white"
@@ -76,6 +100,7 @@ function ShoppingCartPage() {
                       </Button>
                       <p>{item.quantity}</p>
                       <Button
+                        onClick={() => handleDecrement(item.id)}
                         variant="outline"
                         size="icon"
                         className="text-black hover:bg-black hover:text-white"
