@@ -5,7 +5,7 @@ import { formatDistance, format } from "date-fns";
 
 function Experience() {
   return (
-    <>
+    <section>
       <CustomHeading>Experience</CustomHeading>
       <ul className="grid grid-cols-1 lg:grid-cols-2 gap-10 px-6 pb-3">
         {experienceData.map((item, index) => {
@@ -54,7 +54,7 @@ function Experience() {
           );
         })}
       </ul>
-    </>
+    </section>
   );
 }
 

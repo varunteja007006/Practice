@@ -12,6 +12,8 @@ import sentiment1 from "./sentiment_analysis/sentiment_analysis_1.webp";
 import sentiment2 from "./sentiment_analysis/sentiment_analysis_2.webp";
 import sentiment3 from "./sentiment_analysis/sentiment_analysis_3.webp";
 import sentiment4 from "./sentiment_analysis/sentiment_analysis_4.webp";
+import sentiment5 from "./sentiment_analysis/sentiment_analysis_0.webp";
+import sentiment6 from "./sentiment_analysis/sentiment_analysis_5.webp";
 
 import sportsmanagement from "./sports_management/sports_management.webp";
 import sportsmanagement1 from "./sports_management/sports_management_1.webp";
@@ -38,7 +40,15 @@ import budget4 from "./budget/budget_4.webp";
 
 export { jobtoday, jobtoday1, jobtoday2, jobtoday3 };
 export { fit, fit1, fit2 };
-export { sentiment, sentiment1, sentiment2, sentiment3, sentiment4 };
+export {
+  sentiment,
+  sentiment1,
+  sentiment2,
+  sentiment3,
+  sentiment4,
+  sentiment5,
+  sentiment6,
+};
 export {
   sportsmanagement,
   sportsmanagement1,

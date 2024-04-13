@@ -18,13 +18,12 @@ const Certification = dynamic(
 const FooterMain = dynamic(() => import("@/components/footer/FooterMain"));
 
 export default function Home() {
-  
   return (
     <>
       <div className="w-full min-h-[70vh] flex flex-col gap-5 md:px-4 lg:px-16 mb-10">
         <div className="grid grid-cols-1 md:grid-cols-2 mt-5">
           <div></div>
-          <div className="flex flex-col items-center justify-center">
+          <div className="flex flex-col items-center justify-center text-center md:text-left">
             <p className="mb-2">
               I am a passionate developer who loves to work with different tech
               stacks, on both front-end and back-end. I have hands-on experience
@@ -50,7 +49,10 @@ export default function Home() {
             <div className="w-full inline-flex items-center justify-end">
               <p className="mb-3">- Varun Teja. K</p>
             </div>
-            <Button variant="outline" className="text-black hover:bg-slate-100">
+            <Button
+              variant="outline"
+              className="text-black hover:bg-slate-100 hover:ring-4 hover:ring-purple-800"
+            >
               <TfiDownload className="me-2" />
               <Link
                 href={"./Resume_VarunK.pdf"}
@@ -62,9 +64,9 @@ export default function Home() {
             </Button>
           </div>
         </div>
-        <Projects />
         <Experience />
         <Academics />
+        <Projects />
         <Certification />
         <Skills />
       </div>

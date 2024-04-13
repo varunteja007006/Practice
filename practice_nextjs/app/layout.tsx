@@ -24,7 +24,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          "bg-gradient-to-tl from-purple-950 from-5% via-black via-90% to-purple-950   scroll-smooth",
+          "bg-gradient-to-tl from-purple-950 from-5% via-black via-90% to-purple-950 scroll-smooth",
           inter.className
         )}
       >

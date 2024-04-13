@@ -1,12 +1,14 @@
-import { jobtoday, jobtoday1, jobtoday2, jobtoday3 } from "../assets";
-import { fit, fit1, fit2 } from "../assets";
+import { jobtoday, jobtoday1, jobtoday2, jobtoday3 } from "../public";
+import { fit, fit1, fit2 } from "../public";
 import {
   sentiment,
   sentiment1,
   sentiment2,
   sentiment3,
   sentiment4,
-} from "../assets";
+  sentiment5,
+  sentiment6,
+} from "../public";
 import {
   sportsmanagement,
   sportsmanagement1,
@@ -18,10 +20,10 @@ import {
   sportsmanagement7,
   sportsmanagement8,
   sportsmanagement9,
-} from "../assets";
-import { collabs, collabs1, collabs2, collabs3, collabs4 } from "../assets";
+} from "../public";
+import { collabs, collabs1, collabs2, collabs3, collabs4 } from "../public";
 
-import { budget, budget1, budget2, budget3, budget4 } from "../assets";
+import { budget, budget1, budget2, budget3, budget4 } from "../public";
 
 const projectData = [
   {
@@ -34,7 +36,8 @@ const projectData = [
     ],
     project_github: "https://github.com/varunteja007006/JobToday-ReactJS",
     project_link: "https://jobtoday.netlify.app/",
-    project_images: [jobtoday, jobtoday1, jobtoday2, jobtoday3],
+    // project_images: [jobtoday, jobtoday1, jobtoday2, jobtoday3],
+    project_images: [jobtoday, jobtoday1],
     toShow: true,
   },
   {
@@ -79,7 +82,13 @@ const projectData = [
     project_github:
       "https://github.com/varunteja007006/Twitter-Sentiment-analysis-on-politicians-using-Django",
     project_link: "",
-    project_images: [sentiment, sentiment1, sentiment2, sentiment3, sentiment4],
+    project_images: [
+      sentiment5,
+      sentiment6,
+      // sentiment2,
+      // sentiment3,
+      // sentiment4,
+    ],
     toShow: true,
   },
   {
@@ -95,16 +104,28 @@ const projectData = [
     project_link: "",
     project_images: [
       sportsmanagement,
-      sportsmanagement1,
-      sportsmanagement2,
-      sportsmanagement3,
-      sportsmanagement4,
-      sportsmanagement5,
-      sportsmanagement6,
-      sportsmanagement7,
-      sportsmanagement8,
-      sportsmanagement9,
+      // sportsmanagement1,
+      // sportsmanagement2,
+      // sportsmanagement3,
+      // sportsmanagement4,
+      // sportsmanagement5,
+      // sportsmanagement6,
+      // sportsmanagement7,
+      // sportsmanagement8,
+      // sportsmanagement9,
     ],
+    // project_images: [
+    //   sportsmanagement,
+    //   sportsmanagement1,
+    //   sportsmanagement2,
+    //   sportsmanagement3,
+    //   sportsmanagement4,
+    //   sportsmanagement5,
+    //   sportsmanagement6,
+    //   sportsmanagement7,
+    //   sportsmanagement8,
+    //   sportsmanagement9,
+    // ],
     toShow: true,
   },
   {
