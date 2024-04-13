@@ -30,7 +30,7 @@ function ContactPage() {
           })}
         </div>
       </div>
-      <FooterTag />
+      {/* <FooterTag /> */}
     </div>
   );
 }

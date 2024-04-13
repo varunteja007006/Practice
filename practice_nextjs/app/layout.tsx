@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn("bg-black scroll-smooth", inter.className ?? "")}>
+      <body className={cn("bg-black scroll-smooth", inter.className)}>
         <Provider>
           <main>
             <Navbar />
