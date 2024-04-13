@@ -14,7 +14,7 @@ import { navlinks } from "./navlink";
 function Navbar() {
   return (
     <>
-      <div className="flex items-center justify-center md:justify-between w-full p-2">
+      <div className="flex items-center justify-center md:justify-between w-full p-2 bg-transparent">
         <h1 className="hidden text-xl text-white  md:block px-2">{`<Developer />`}</h1>
         <NavigationMenu>
           <NavigationMenuList>

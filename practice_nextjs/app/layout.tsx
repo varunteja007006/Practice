@@ -22,11 +22,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn("bg-black scroll-smooth", inter.className)}>
+      <body
+        className={cn(
+          "bg-gradient-to-tl from-purple-950 from-5% via-black via-90% to-purple-950   scroll-smooth",
+          inter.className
+        )}
+      >
         <Provider>
           <main>
             <Navbar />
-            <div className="px-4 py-2 text-white min-h-screen">{children}</div>
+            <div className="px-4 py-2 text-white min-h-screen mt-2">
+              {children}
+            </div>
           </main>
         </Provider>
       </body>
