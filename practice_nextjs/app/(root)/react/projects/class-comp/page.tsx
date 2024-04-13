@@ -39,7 +39,7 @@ class MyClassComp extends Component<MyClassCompProps, { message: string }> {
   render() {
     const { message } = this.state;
     return (
-      <div className="px-3">
+      <div>
         <h3 className="text-lg mb-3">This is a class component in Next.js</h3>
         <div className="mb-3">
           Message: <p className="text-green-300">{message}</p>

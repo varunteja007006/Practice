@@ -6,9 +6,9 @@ export default function ReactLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <main className="flex gap-2 flex-col md:flex-row md:items-start md:justify-start items-center justify-start">
+    <div className="flex gap-2 flex-col md:flex-row md:items-start md:justify-start items-center justify-start">
       <SideNavbar />
-      {children}
-    </main>
+      <div className="md:px-3 w-full">{children}</div>
+    </div>
   );
 }

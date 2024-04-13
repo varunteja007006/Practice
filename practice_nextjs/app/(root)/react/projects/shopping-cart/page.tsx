@@ -1,5 +1,4 @@
 "use client";
-import CustomPageHeader from "@/components/custom/CustomPageHeader";
 import React, { useContext, useEffect } from "react";
 import {
   Card,
@@ -9,7 +8,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import useGetShoppingData from "./hooks/useGetShoppingData";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { MdOutlineKeyboardArrowUp } from "react-icons/md";
@@ -44,7 +42,8 @@ function ShoppingCartPage() {
   }
 
   return (
-    <CustomPageHeader pageHeading="Shopping Cart">
+    <>
+      <h1 className="mb-2 text-2xl">Shopping Cart</h1>
       <Card className="bg-black text-white">
         <CardHeader className="flex flex-row items-center justify-between">
           <div>
@@ -133,7 +132,7 @@ function ShoppingCartPage() {
         </CardContent>
         <CardFooter>All Payments accepted.</CardFooter>
       </Card>
-    </CustomPageHeader>
+    </>
   );
 }
 
