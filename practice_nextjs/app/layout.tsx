@@ -3,10 +3,11 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/nav/Navbar";
 import { cn } from "@/lib/utils";
+import Provider from "./Provider";
+import { Toaster } from "@/components/ui/toaster";
 // Import css files for react slick
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Provider from "./Provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -35,6 +36,7 @@ export default function RootLayout({
               {children}
             </div>
           </main>
+          <Toaster />
         </Provider>
       </body>
     </html>

@@ -62,6 +62,11 @@ const ProjectNavlinks = [
     name: "Shopping Cart",
     isActive: true,
   },
+  {
+    path: "/react/projects/class-comp",
+    name: "Class Component",
+    isActive: true,
+  },
 ];
 
 const ReactNavLinks = [
