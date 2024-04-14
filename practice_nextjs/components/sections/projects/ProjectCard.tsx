@@ -37,8 +37,8 @@ async function ProjectCard({ data }: { data: TProjectCardProps }) {
   };
   return (
     <>
-      <Card className="w-fit max-w-96 flex flex-col gap-2 justify-between text-white bg-transparent">
-        {/* <div className="p-3 pb-0 rounded-lg overflow-clip h-64">
+      <Card className="w-full flex flex-row gap-2 justify-start items-center text-white bg-transparent">
+        {/* <div className="p-3 pb-0 rounded-lg overflow-clip h-64 max-w-64">
           <Carousel>
             <CarouselContent>
               {images.map((item, index) => {
@@ -49,7 +49,7 @@ async function ProjectCard({ data }: { data: TProjectCardProps }) {
                       src={item}
                       width={150}
                       height={150}
-                      className="w-full h-10]"
+                      className="w-full h-auto"
                     />
                   </CarouselItem>
                 );
@@ -59,7 +59,7 @@ async function ProjectCard({ data }: { data: TProjectCardProps }) {
         </div> */}
         <div className="flex flex-col justify-between flex-1">
           <CardHeader>
-            <CardTitle className=" text-center">{title}</CardTitle>
+            <CardTitle className="text-lg text-center">{title}</CardTitle>
             <CardDescription className=" text-center">
               {subtitle}
             </CardDescription>
