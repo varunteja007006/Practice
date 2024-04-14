@@ -69,7 +69,12 @@ const ProjectNavlinks = [
   },
   {
     path: "/react/projects/zustand",
-    name: "Zustand",
+    name: "Zustand Demo",
+    isActive: true,
+  },
+  {
+    path: "/react/projects/tailwind",
+    name: "Tailwind Demo",
     isActive: true,
   },
 ];
