@@ -67,6 +67,11 @@ const ProjectNavlinks = [
     name: "Class Component",
     isActive: true,
   },
+  {
+    path: "/react/projects/zustand",
+    name: "Zustand",
+    isActive: true,
+  },
 ];
 
 const ReactNavLinks = [
