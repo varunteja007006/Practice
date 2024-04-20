@@ -2,9 +2,10 @@ import React from "react";
 
 function TailwindPage() {
   return (
-    <div className="px-6">
+    <div className="px-6 space-y-5">
       <h1 className="text-2xl mb-3">Tailwind Demo</h1>
       <div className="red-box"></div>
+      <div className=" custom-class">Hello</div>
       <article className="prose lg:prose-xl bg-white mt-3 p-3">
         <h1>Garlic bread with cheese: What the science tells us</h1>
         <p>

@@ -14,6 +14,7 @@ import { MdOutlineKeyboardArrowUp } from "react-icons/md";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { cartContext } from "./context/cartContext";
 import { RiDeleteBinLine } from "react-icons/ri";
+import CodeBlock from "@/components/custom/CodeBlock";
 
 function ShoppingCartPage() {
   const {
@@ -131,6 +132,10 @@ function ShoppingCartPage() {
           )}
         </CardContent>
         <CardFooter>All Payments accepted.</CardFooter>
+        <CardFooter>
+          Cart empty? Try to running the command{" "}
+          <CodeBlock>`npm run server`</CodeBlock>.
+        </CardFooter>
       </Card>
     </>
   );

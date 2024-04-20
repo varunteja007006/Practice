@@ -5,7 +5,7 @@ import JobInfo from "../components/tabs/JobInfo";
 import { CodeBlock } from "../components";
 
 function Tabs() {
-  const url = "https://course-api.com/react-tabs-project";
+
 
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);

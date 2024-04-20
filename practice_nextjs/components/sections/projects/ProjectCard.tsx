@@ -59,8 +59,8 @@ async function ProjectCard({ data }: { data: TProjectCardProps }) {
         </div> */}
         <div className="flex flex-col justify-between flex-1">
           <CardHeader>
-            <CardTitle className="text-lg text-center">{title}</CardTitle>
-            <CardDescription className=" text-center">
+            <CardTitle className="text-xl text-center">{title}</CardTitle>
+            <CardDescription className="text-white text-center">
               {subtitle}
             </CardDescription>
             <div className="flex flex-row items-center justify-center gap-2 flex-wrap">
@@ -71,7 +71,7 @@ async function ProjectCard({ data }: { data: TProjectCardProps }) {
                   return (
                     <Badge
                       key={index}
-                      className="bg-black border-b border-purple-800"
+                      className="bg-black border-b text-base border-purple-800 cursor-pointer hover:bg-purple-800 hover:text-white"
                     >
                       {item}
                     </Badge>
