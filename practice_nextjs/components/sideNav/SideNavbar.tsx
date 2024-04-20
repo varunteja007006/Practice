@@ -18,6 +18,7 @@ import {
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { IoMdArrowRoundBack } from "react-icons/io";
+import { Button } from "../ui/button";
 
 const REACT_HEADER = "React Stuff";
 const PROJECT_HEADER = "Projects";
@@ -150,15 +151,22 @@ function SideNavbar() {
       <ScrollArea className="min-h-[90vh] w-[250px] hidden md:block rounded-md border p-1">
         <NavigationMenu className="w-full max-w-full block">
           <NavigationMenuList className="p-1 flex flex-col gap-2 w-full">
-            <NavigationMenuItem className="px-2 py-1">
+            <NavigationMenuItem className="px-2 py-1 flex flex-row gap-3 justify-start items-center w-full mb-2">
               <span className="flex flex-row gap-2 items-center justify-center">
                 {isBackAllowed && (
-                  <Link href={backRoute}>
-                    <IoMdArrowRoundBack />
-                  </Link>
+                  <Button
+                    asChild
+                    variant={"outline"}
+                    className="text-white bg-transparent rounded-full"
+                    size={"icon"}
+                  >
+                    <Link href={backRoute}>
+                      <IoMdArrowRoundBack />
+                    </Link>
+                  </Button>
                 )}
-                {header}
               </span>
+              <span className="text-lg">{header}</span>
             </NavigationMenuItem>
             {header === REACT_HEADER &&
               ReactNavLinks?.map((item, index) => {

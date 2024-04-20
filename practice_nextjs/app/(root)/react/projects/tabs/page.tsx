@@ -23,7 +23,6 @@ async function getData() {
 
 async function TabsPage() {
   const data = await getData();
-  console.log(data);
 
   if (!data || data.length === 0) {
     return <>No Data</>;
