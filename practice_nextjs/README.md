@@ -80,3 +80,84 @@ https://www.youtube.com/watch?v=vwSlYG7hFk0
 6. Middleware
 7. Folder/ File Structure
 8. Production Build and deploying
+
+Server Side data fetching in Next JS
+With JWT Token in Headers
+
+```js
+export async function getServerSideProps(context) {
+  // Get the token from cookies or context.req.headers
+  const token = context.req.cookies.token || context.req.headers.authorization;
+
+  // Use the token in the fetch request to your API
+  const res = await fetch("https://your-api.com/data", {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  const data = await res.json();
+
+  return { props: { data } };
+}
+```
+
+Without JWT Token in Headers
+
+```js
+export async function getServerSideProps(context) {
+  // Cookies are automatically sent with the request
+  const res = await fetch("https://your-api.com/data");
+  const data = await res.json();
+
+  // No need to manually handle the token
+  return { props: { data } };
+}
+```
+
+header in next js
+
+```js
+import { Suspense } from "react";
+import { headers } from "next/headers";
+
+async function User() {
+  const authorization = headers().get("authorization");
+  const res = await fetch("...", {
+    headers: { authorization }, // Forward the authorization header
+  });
+  const user = await res.json();
+
+  return <h1>{user.name}</h1>;
+}
+
+export default function Page() {
+  return (
+    <Suspense fallback={null}>
+      <User />
+    </Suspense>
+  );
+}
+```
+
+```js
+import { Suspense } from "react";
+import { headers } from "next/headers";
+
+async function User() {
+  const authorization = headers().get("authorization");
+  const res = await fetch("...", {
+    headers: { authorization }, // Forward the authorization header
+  });
+  const user = await res.json();
+
+  return <h1>{user.name}</h1>;
+}
+
+export default function Page() {
+  return (
+    <Suspense fallback={null}>
+      <User />
+    </Suspense>
+  );
+}
+```
