@@ -81,7 +81,190 @@ https://www.youtube.com/watch?v=vwSlYG7hFk0
 7. Folder/ File Structure
 8. Production Build and deploying
 
-Server Side data fetching in Next JS
+---
+
+###
+
+1. A server component inside a client component will become a client only component. It also requires
+   you to check and make sure that server component is not imported in client.
+
+```js
+"use client";
+import ServerComp from "@serverComp/ServerComp";
+
+function ClientComp() {
+  // --- Some logic ---
+  return (
+    <>
+      <ServerComp /> {/*This is also a client component now*/}
+    </>
+  );
+}
+export default ClientComp;
+```
+
+This is not the case if the client only component wraps the server component(server component is children)
+or takes the server component as a props.
+
+#### Passing server only component as a props to client only component
+
+```js
+// file name - ClientComp
+"use client";
+
+function ClientComp({ ServerComp }) {
+  // --- Some logic ---
+  return (
+    <>
+      {ServerComp} {/*This is a server component now*/}
+    </>
+  );
+}
+export default clientComp;
+```
+
+```js
+// file name - ServerComp
+import ClientComp from "@/ClientComp/ClientComp";
+import ServerComp from "@/ServerComp/ServerComp";
+
+async function Main() {
+  // --- Some logic ---
+  return (
+    <>
+      <ClientComp ServerComp={<ServerComp />} />{" "}
+      {/* Pass the server component as props to client
+      
+      This will make sure Server Components will be server only component*/}
+    </>
+  );
+}
+export default Main;
+```
+
+<br />
+
+#### Passing server only component as a children to client only component
+
+```js
+// file name - ClientComp
+"use client";
+
+function ClientComp({ children }) {
+  // --- Some logic ---
+  return (
+    <>
+      <div>
+        {children} {/*This is a server component now*/}
+      </div>
+    </>
+  );
+}
+export default clientComp;
+```
+
+```js
+// file name - ServerComp
+import ClientComp from "@/ClientComp/ClientComp";
+import ServerComp from "@/ServerComp/ServerComp";
+
+async function Main() {
+  // --- Some logic ---
+  return (
+    <>
+      {/* Pass the server component as children to client only component      
+      This will make sure Server Components will be server only component*/}
+      <ClientComp>
+        <ServerComp />
+      </ClientComp>
+    </>
+  );
+}
+export default Main;
+```
+
+2. A client only component can become server component
+
+3. Server component is run once on server. A client component is run once on server and then hydrated
+   in the browser(run on the client again).
+   Therefore try not to access any window objects in client component assuming that it will run only
+   on the browser.
+   Best Practice:
+
+   ```js
+   if (typeof window !== "undefined") {
+     // access window objects
+     window.localStorage.setItem("Hello", "World");
+   }
+   ```
+
+   Another solution is to use dynamic import to import the client side component
+
+   ```js
+   const ClientComponent = dynamic(
+     () => import("@/ClientComponent/ClientComponent"),
+     {
+       ssr: false,
+     }
+   );
+   ```
+
+4. Hydration Errors - When the HTML rendered on the server does not match the HTML rendered on the
+   client we get hydration errors. You could suppress it by passing suppressHydrationWarning prop
+   to HTML tag.
+   Example:
+
+   ```js
+   // Imports here ...
+   function Example() {
+     let isMsg;
+     if (typeof window !== "undefined") {
+       isMsg = JSON.parse(localStorage.getItem("message")); // assuming we get 'true' from storage
+     }
+     return (
+       <>
+         <h1> {message ? "Client" : "Server"} </h1>
+         {/*On the server HTML will render "Server" but on the browser it will render "Client"
+          This will result in hydration error
+          */}
+         <h1 suppressHydrationWarning> {message ? "Client" : "Server"} </h1>
+         {/*This will not throw hydration error*/}
+       </>
+     );
+   }
+   ```
+
+5. Fetching data
+
+   - Server Components = You can directly call GET APIs in the server component itself.
+   - Server Actions = POST PUT DELETE
+   - Route Handlers = Webhooks (3rd Party libraries)
+
+6. Use 'use server' to make something a server action, but not to make a component server component.
+   To make component server component you can import "server-only" (NPM package).
+   NOTE: In Next JS by default a component in app dir is a server component.
+
+7. You can use server actions to post the data of the form by using the server action in the form action.
+   You can also use React hooks to do advance form handling. Use 'use server' to make an API as server action
+
+8. Data mutations do not reflect immediately in the server components because of caching. To make sure
+   latest data is served when server component loads we have to use revalidatePath.
+   You have to pass the path for which you want to revalidate the cache.
+   NOTE: If you pass path "/" then it will revalidate the cache for all the server components. Try to
+   specify particular paths.
+
+9.
+
+---
+
+###
+
+ <br />
+
+---
+
+### Server Side data fetching in Next JS
+
 With JWT Token in Headers
 
 ```js
