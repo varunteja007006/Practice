@@ -5,9 +5,9 @@ export const navlinks = [
     isActive: true,
   },
   {
-    path: "/contact",
-    name: "Contact",
-    isActive: true,
+    path: "#contact",
+    name: "Contact Me",
+    isActive: false,
   },
   {
     path: "/react",

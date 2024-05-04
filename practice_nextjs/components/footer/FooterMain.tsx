@@ -1,26 +1,38 @@
 import React from "react";
 import FooterTag from "./FooterTag";
 import contactData from "../../data/contactData";
+import { Button } from "../ui/button";
 
-function FooterMain() {
+export const ContactBtn = () => {
   return (
-    <footer>
-      <div className="flex flex-row gap-10 justify-center items-center">
-        {contactData.map((item, index) => {
-          return (
+    <div className="flex flex-row gap-10 justify-center items-center text-white">
+      {contactData.map((item, index) => {
+        return (
+          <Button
+            variant={"ghost"}
+            size="icon"
+            className=" rounded-full"
+            asChild
+          >
             <a
               key={index}
               href={item.contact_href}
               data-tip={item.contact_type}
               aria-label={item.contact_href}
-              className="text-2xl"
             >
-              {<item.contact_icon />}
+              {<item.contact_icon className="w-6 h-6" />}
             </a>
-          );
-        })}
-      </div>
+          </Button>
+        );
+      })}
+    </div>
+  );
+};
 
+function FooterMain() {
+  return (
+    <footer className="py-5">
+      <ContactBtn />
       <FooterTag />
     </footer>
   );

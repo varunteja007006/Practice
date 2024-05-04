@@ -4,10 +4,14 @@ import "./globals.css";
 import Navbar from "@/components/nav/Navbar";
 import { cn } from "@/lib/utils";
 import Provider from "./Provider";
+
 import { Toaster } from "@/components/ui/toaster";
 // Import css files for react slick
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import dynamic from "next/dynamic";
+
+const FooterMain = dynamic(() => import("@/components/footer/FooterMain"));
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -38,6 +42,7 @@ export default function RootLayout({
           </main>
           <Toaster />
         </Provider>
+        <FooterMain />
       </body>
     </html>
   );

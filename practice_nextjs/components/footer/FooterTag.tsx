@@ -3,7 +3,7 @@ import { FaHeart } from "react-icons/fa6";
 
 function FooterTag() {
   return (
-    <div className="my-5 flex flex-col items-center">
+    <div className="my-5 flex flex-col items-center gap-5 text-white">
       <p className="flex flex-row items-center gap-2">
         -- Made with Next JS <FaHeart className="text-white" />
         --

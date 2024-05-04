@@ -6,7 +6,7 @@ function Certification() {
   return (
     <section className="w-full">
       <CustomHeading>Certifications</CustomHeading>
-      <ul className="grid grid-cols-1 md:grid-cols-3 gap-5 px-6 pb-3">
+      <ul className="grid grid-cols-1 md:grid-cols-3 gap-5 px-6 pb-3 pt-2">
         {certificationData.map((item, index) => {
           return (
             item.toShow && (
