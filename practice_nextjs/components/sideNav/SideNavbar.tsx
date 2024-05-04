@@ -78,6 +78,11 @@ const ProjectNavlinks = [
     name: "Tailwind Demo",
     isActive: true,
   },
+  {
+    path: "/react/projects/image-dragdrop",
+    name: "Image Drag & Drop Component",
+    isActive: true,
+  },
 ];
 
 const ReactNavLinks = [

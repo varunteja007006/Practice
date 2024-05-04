@@ -253,7 +253,34 @@ export default Main;
    NOTE: If you pass path "/" then it will revalidate the cache for all the server components. Try to
    specify particular paths.
 
-9.
+9. Server Actions can be used for client side as well
+
+10. params & searchParams
+
+    - Params = like a specific product. Example URL: www.test.com/products/:id
+    - Search Params = like a query or filter params. Example URL: www.test.com/products?sortBy=${value}
+
+11. Forgetting about the loading state
+
+    - Using suspense use the file `loading.tsx`
+
+12. Using key in Suspense to trigger the loading whenever a component changes.
+
+13. Using cookies() , headers() will make a file dynamic rendering. Also using searchParams will make
+    a file dynamic rendering.
+
+    Always run a build to check which parts of the component are static and dynamic rendering for better
+    optimized build
+
+14. In env files. env variables should be named with prefix NEXT_PUBLIC if it has to be used on the
+    client side. If it has to be used on server side do not use it with that prefix NEXT_PUBLIC.
+
+15. Split the utility functions like server side fetch calls with API key should be kept in different
+    file when compared to Client API key that should run only on Client side.
+
+16. Try Catch - Redirect  
+    Use the redirection to navigate the user if some dynamic data is not available. Redirection logic
+    should be used after the try catch
 
 ---
 
@@ -344,3 +371,13 @@ export default function Page() {
   );
 }
 ```
+
+###
+
+---
+
+###
+
+#### ShadCN UI extensions
+
+https://jidefr.medium.com/shadcn-ui-add-components-and-resources-0846b0f57596
