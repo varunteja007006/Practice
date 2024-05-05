@@ -20,11 +20,12 @@ const Certification = dynamic(
 
 export default function Home() {
   return (
-    <div className="w-full min-h-[70vh] flex flex-col gap-5 md:px-4 lg:px-48 mb-10">
-      <div className="grid grid-cols-1 md:grid-cols-2 mt-5">
-        <div className="flex flex-col items-center gap-5">
+    <div className="w-full min-h-[70vh] flex flex-col gap-5 md:px-4 lg:px-20 mb-10">
+      <div className="flex flex-col md:flex-row items-start justify-center gap-10  mt-5">
+        {/* <div className="grid grid-cols-1 md:grid-cols-2 mt-5"> */}
+        <div className="flex flex-col items-center gap-5 max-w-[28rem]">
           <Image
-            src={"https://avatars.githubusercontent.com/u/68656749?v=4"}
+            src={"/profile.webp"}
             alt="profile"
             width={250}
             height={250}
@@ -32,12 +33,14 @@ export default function Home() {
           />
           <p className="text-center cursor-pointer">
             Full Stack Developer | JavaScript | Next JS | React JS | Node JS |
+          </p>
+          <p className="text-center cursor-pointer">
             Python | Python Developer
           </p>
           <ContactBtn />
         </div>
-        <div className="flex flex-col items-center justify-center text-center md:text-left">
-          <p className="mb-2">
+        <div className="flex flex-col items-center gap-3 justify-center text-center md:text-left max-w-[40rem]">
+          <p>
             I am a passionate developer who loves to work with different tech
             stacks, on both front-end and back-end. I have hands-on experience
             with various programming languages and frameworks. My core skills
@@ -47,12 +50,12 @@ export default function Home() {
             product delivery, for example GIT, VS Code,Postman, Tortoise SVN,
             SonarQube and Jenkins.
           </p>
-          <p className="mb-2">
+          <p>
             I love developing web apps and python scripting for automation of
             day-to-day tasks. I am always eager to explore new technologies and
             I keep myself relevant.
           </p>
-          <p className="mb-2">
+          <p>
             Currently, I work as System Engineer for HCM platform development,
             developing react based custom responsive interfaces tailored to meet
             client requirements. I have successfully developed dynamic
@@ -72,7 +75,7 @@ export default function Home() {
               target="_blank"
               download="resume_VARUN"
             >
-              Download now
+              Download Resume
             </Link>
           </Button>
         </div>
