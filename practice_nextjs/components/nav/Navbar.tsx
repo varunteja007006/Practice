@@ -15,7 +15,9 @@ function Navbar() {
   return (
     <>
       <div className="flex items-center justify-center md:justify-between w-full p-4 bg-transparent">
-        <h1 className="hidden text-xl text-white cursor-pointer md:block px-2">{`<Developer />`}</h1>
+        <h1 className="hidden text-xl text-white cursor-pointer md:block px-2">
+          <Link href="/">{`<Developer />`}</Link>
+        </h1>
         <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>
