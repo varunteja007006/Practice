@@ -67,6 +67,11 @@ const ProjectNavlinks = [
     name: "Image Drag & Drop Component",
     isActive: true,
   },
+  {
+    path: "/react/projects/progress-scroll",
+    name: "Progress on Scroll",
+    isActive: true,
+  },
 ];
 
 const ReactPageNavLinks = [
@@ -120,44 +125,6 @@ function SideNavbar() {
           </Sheet>
         );
       })}
-      {/* <Sheet>
-        <SheetTrigger
-          className="text-base border-[1px] border-violet-800  rounded w-fit p-2"
-          asChild
-        >
-          <Button variant="default">
-            <RiMenuUnfoldLine className="w-4 h-4 me-4" />
-            Projects
-          </Button>
-        </SheetTrigger>
-        <SheetContent side={"left"}>
-          <SheetHeader>
-            <SheetDescription className="mt-4">
-              This action cannot be undone. This will permanently delete your
-              account and remove your data from our servers.
-            </SheetDescription>
-          </SheetHeader>
-        </SheetContent>
-      </Sheet>
-      <Sheet>
-        <SheetTrigger
-          className="text-base border-[1px] border-violet-800  rounded w-fit p-2"
-          asChild
-        >
-          <Button variant="default">
-            <RiMenuUnfoldLine className="w-4 h-4 me-4" />
-            Problems
-          </Button>
-        </SheetTrigger>
-        <SheetContent side={"left"}>
-          <SheetHeader>
-            <SheetDescription className="mt-4">
-              This action cannot be undone. This will permanently delete your
-              account and remove your data from our servers.
-            </SheetDescription>
-          </SheetHeader>
-        </SheetContent>
-      </Sheet> */}
     </div>
   );
 }
