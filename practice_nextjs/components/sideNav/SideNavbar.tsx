@@ -2,6 +2,7 @@
 
 import {
   Sheet,
+  SheetClose,
   SheetContent,
   SheetDescription,
   SheetHeader,
@@ -10,6 +11,7 @@ import {
 import { RiMenuUnfoldLine } from "react-icons/ri";
 import { Button } from "../ui/button";
 import Link from "next/link";
+import { useRef } from "react";
 
 const ProjectNavlinks = [
   {
@@ -89,6 +91,14 @@ const ReactPageNavLinks = [
   },
 ];
 function SideNavbar() {
+  const closeBtnRef = useRef<HTMLButtonElement | null>(null);
+
+  const handleSubNavItemClick = () => {
+    if (closeBtnRef) {
+      closeBtnRef?.current?.click();
+    }
+  };
+
   return (
     <div className="space-y-5 w-[250px]">
       {ReactPageNavLinks.map((item) => {
@@ -115,12 +125,16 @@ function SideNavbar() {
                     key={subItems.name}
                     variant={"default"}
                     asChild
-                    className="mx-4 my-2 border hover:bg-purple-900 hover:text-white border-purple-600"
+                    onClick={handleSubNavItemClick}
+                    className="mx-4 my-2 border border-purple-600 hover:bg-purple-900 hover:text-white"
                   >
                     <Link href={subItems.path}>{subItems.name}</Link>
                   </Button>
                 );
               })}
+              <SheetClose className="hidden" ref={closeBtnRef}>
+                Close
+              </SheetClose>
             </SheetContent>
           </Sheet>
         );

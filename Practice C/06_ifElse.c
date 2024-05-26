@@ -5,7 +5,7 @@ int main(int argc, char const *argv[])
 {
     printf("if else... \n\n");
     bool x = true;
-    bool y = false;
+    bool y = false; 
 
     if (x)
     {
