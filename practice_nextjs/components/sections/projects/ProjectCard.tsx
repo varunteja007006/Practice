@@ -36,80 +36,57 @@ async function ProjectCard({ data }: { data: TProjectCardProps }) {
     ...data,
   };
   return (
-    <>
-      <Card className="w-full flex flex-row gap-2 justify-start items-center text-white bg-transparent">
-        {/* <div className="p-3 pb-0 rounded-lg overflow-clip h-64 max-w-64">
-          <Carousel>
-            <CarouselContent>
-              {images.map((item, index) => {
-                return (
-                  <CarouselItem key={index}>
-                    <Image
-                      alt=""
-                      src={item}
-                      width={150}
-                      height={150}
-                      className="w-full h-auto"
-                    />
-                  </CarouselItem>
-                );
-              })}
-            </CarouselContent>
-          </Carousel>
-        </div> */}
-        <div className="flex flex-col justify-between flex-1">
-          <CardHeader>
-            <CardTitle className="text-xl text-center">{title}</CardTitle>
-            <CardDescription className="text-white text-center">
-              {subtitle}
-            </CardDescription>
-            <div className="flex flex-row items-center justify-center gap-2 flex-wrap">
-              {typeof badges === "string" ? (
-                <p>{badges}</p>
-              ) : (
-                badges.map((item, index) => {
-                  return (
-                    <Badge
-                      key={index}
-                      className="bg-black border-b text-base border-purple-800 cursor-pointer hover:bg-purple-800 hover:text-white"
-                    >
-                      {item}
-                    </Badge>
-                  );
-                })
-              )}
-            </div>
-          </CardHeader>
-          <CardContent className=" text-center">
-            {typeof description === "string" ? (
-              <p className="line-clamp-2">{description} </p>
-            ) : (
-              description.map((item, index) => {
-                return (
-                  <p key={index} className="line-clamp-2">
-                    {item}
-                  </p>
-                );
-              })
-            )}
-          </CardContent>
-          <CardFooter className="gap-4 justify-center text-black">
-            {github && (
-              <a href={github} target="blank">
-                <Button variant="outline" size="icon">
-                  <FaGithub className="h-4 w-4" />
-                </Button>
-              </a>
-            )}
-            {link && (
-              <a href={link} target="blank">
-                <Button variant="outline">Demo</Button>
-              </a>
-            )}
-          </CardFooter>
+    <Card className="grid content-between w-full text-white bg-transparent">
+      <CardHeader>
+        <CardTitle className="text-xl text-center">{title}</CardTitle>
+        <CardDescription className="text-center text-white">
+          {subtitle}
+        </CardDescription>
+        <div className="flex flex-row flex-wrap items-center justify-center gap-2">
+          {typeof badges === "string" ? (
+            <p>{badges}</p>
+          ) : (
+            badges.map((item, index) => {
+              return (
+                <Badge
+                  key={index}
+                  className="text-base bg-black border-b border-purple-800 cursor-pointer hover:bg-purple-800 hover:text-white"
+                >
+                  {item}
+                </Badge>
+              );
+            })
+          )}
         </div>
-      </Card>
-    </>
+      </CardHeader>
+      <CardContent className="text-center ">
+        {typeof description === "string" ? (
+          <p className="line-clamp-2">{description} </p>
+        ) : (
+          description.map((item, index) => {
+            return (
+              <p key={index} className="line-clamp-2">
+                {item}
+              </p>
+            );
+          })
+        )}
+      </CardContent>
+      <CardFooter className="justify-center gap-4 text-black">
+        {github && (
+          <a href={github} target="blank">
+            <Button variant="outline" size="icon">
+              <FaGithub className="w-4 h-4" />
+            </Button>
+          </a>
+        )}
+        {link && (
+          <a href={link} target="blank">
+            <Button variant="outline">Demo</Button>
+          </a>
+        )}
+      </CardFooter>
+    </Card>
   );
 }
 

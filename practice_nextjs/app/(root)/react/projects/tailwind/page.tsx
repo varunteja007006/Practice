@@ -1,12 +1,13 @@
 import React from "react";
+import GridSubgrid from "./GridSubgrid";
 
 function TailwindPage() {
   return (
     <div className="px-6 space-y-5">
-      <h1 className="text-2xl mb-3">Tailwind Demo</h1>
+      <h1 className="mb-3 text-2xl">Tailwind Demo</h1>
       <div className="red-box"></div>
-      <div className=" custom-class">Hello</div>
-      <article className="prose lg:prose-xl bg-white mt-3 p-3">
+      <div className="p-3 text-center custom-class">Hello</div>
+      <article className="p-3 mt-3 prose bg-white lg:prose-xl">
         <h1>Garlic bread with cheese: What the science tells us</h1>
         <p>
           For years parents have espoused the health benefits of eating garlic
@@ -19,6 +20,10 @@ function TailwindPage() {
           to a series of rabies cases springing up around the country.
         </p>
       </article>
+
+      <div>
+        <GridSubgrid />
+      </div>
     </div>
   );
 }
