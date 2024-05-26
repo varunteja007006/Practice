@@ -5,9 +5,9 @@ import ProjectCard, { TProjectCardProps } from "./ProjectCard";
 
 function Projects() {
   return (
-    <section>
-      <CustomHeading>Projects</CustomHeading>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 px-6">
+    <section className="mt-16">
+      <CustomHeading className="mb-10">Projects</CustomHeading>
+      <div className="grid grid-cols-1 gap-2 px-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {projectData.map((item) => {
           const data: TProjectCardProps = {
             title: item.project_title,

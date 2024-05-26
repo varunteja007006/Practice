@@ -10,7 +10,7 @@ function IndustrySkills() {
   const settings = reactSlickSettings();
   return (
     <>
-      <CustomSubHeading>Industry Skills</CustomSubHeading>
+      <CustomSubHeading className="mb-10">Industry Skills</CustomSubHeading>
       <div className="px-6 pb-3">
         <Slider {...settings}>
           {industrySkillsData.map((item, index) => {

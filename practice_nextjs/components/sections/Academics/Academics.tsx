@@ -4,9 +4,9 @@ import CustomHeading from "@/components/ui/custom/CustomHeading";
 
 function Academics() {
   return (
-    <section>
-      <CustomHeading>Academics</CustomHeading>
-      <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 px-6 pb-3">
+    <section className="mt-16">
+      <CustomHeading className="mb-10">Academics</CustomHeading>
+      <ul className="grid grid-cols-1 gap-10 px-6 pb-3 md:grid-cols-2 lg:grid-cols-3">
         {academicData.map((item, index) => {
           return (
             item.toShow && (

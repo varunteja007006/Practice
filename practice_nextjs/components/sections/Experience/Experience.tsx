@@ -5,9 +5,9 @@ import { formatDistance, format } from "date-fns";
 
 function Experience() {
   return (
-    <section>
-      <CustomHeading>Experience</CustomHeading>
-      <ul className="grid grid-cols-1 lg:grid-cols-2 gap-10 px-6 pb-3">
+    <section className="mt-16">
+      <CustomHeading className="mb-10">Experience</CustomHeading>
+      <ul className="grid grid-cols-1 gap-10 px-6 pb-3 lg:grid-cols-2">
         {experienceData.map((item, index) => {
           return (
             item.toShow && (
@@ -41,7 +41,7 @@ function Experience() {
                       return (
                         <li
                           key={index}
-                          className="text-sm mb-2  flex items-center justify-start gap-2"
+                          className="flex items-center justify-start gap-2 mb-2 text-sm"
                         >
                           {`-> ${jobItem}`}
                         </li>

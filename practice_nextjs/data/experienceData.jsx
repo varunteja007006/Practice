@@ -1,15 +1,15 @@
 const experienceData = [
   {
-    id: 1,
+    id: 2,
     jobTitle: "Software Engineer",
     company: "Invest4Edu",
     workingFrom: "Dec 2023",
     workingTill: "",
     dateOfJoining: "2023-12-18",
     dateOfResigning: "2023-12-18",
-    jobDescription:
-      "Education and Financial Services.Commodo sint est minim cillum dolore dolor duis enim enim aliqua occaecat quis. Et cillum qui fugiat proident qui qui aliquip culpa exercitation tempor ut aliquip. Dolore irure amet cupidatat quis non in elit cillum nisi ad laborum excepteur cupidatat sunt. Duis ea in sit cupidatat do in in qui dolor.Culpa ex eiusmod ipsum qui ullamco ipsum nulla elit esse duis fugiat dolore deserunt. Ex sit minim anim reprehenderit ipsum ex. Anim occaecat excepteur eiusmod quis aute occaecat. Aliquip magna commodo incididunt ut dolor ullamco velit exercitation.",
-
+    jobDescription: [
+      "Developing Frontend, integrating with backend using Node JS. Building of complex & efficient UI like dashboards, charts, filters, login etc. using Material UI, Highcharts, etc. Revamping the website with new UI and migrating from class to functional components. SEO optimization by migrating the app to NEXT JS to take advantage of SSR.",
+    ],
     toShow: true,
     current: true,
   },

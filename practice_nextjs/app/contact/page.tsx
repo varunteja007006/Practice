@@ -1,12 +1,12 @@
 import React from "react";
 import contactData from "../../data/contactData";
+import CustomHeading from "@/components/ui/custom/CustomHeading";
 
 function ContactPage() {
   return (
     <section id="contact" className="mt-16">
-      {/* <div className="flex items-center justify-center"> */}
-      <h1 className="text-2xl pb-2 mb-5">Contact Me</h1>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+      <CustomHeading className="mb-10">Contact Me</CustomHeading>
+      <div className="grid grid-cols-1 gap-10 px-6 md:grid-cols-3">
         {contactData.map((item) => {
           return (
             <a
@@ -17,7 +17,7 @@ function ContactPage() {
               data-tip={item.contact_type}
               aria-label={item.contact_href}
             >
-              <span className="flex flex-col justify-center items-start gap-3">
+              <span className="flex flex-col items-start justify-center gap-3">
                 <span className="flex flex-row items-center gap-3 capitalize">
                   <span className="text-base">{<item.contact_icon />}</span>
                   {item.contact_type}
@@ -28,8 +28,6 @@ function ContactPage() {
           );
         })}
       </div>
-      {/* </div> */}
-      {/* <FooterTag /> */}
     </section>
   );
 }

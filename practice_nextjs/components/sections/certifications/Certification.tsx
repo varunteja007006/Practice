@@ -4,9 +4,9 @@ import CustomHeading from "@/components/ui/custom/CustomHeading";
 
 function Certification() {
   return (
-    <section className="w-full">
-      <CustomHeading>Certifications</CustomHeading>
-      <ul className="grid grid-cols-1 md:grid-cols-3 gap-5 px-6 pb-3 pt-2">
+    <section className="w-full mt-16">
+      <CustomHeading className="mb-10">Certifications</CustomHeading>
+      <ul className="grid grid-cols-1 gap-5 px-6 pt-2 pb-3 md:grid-cols-3">
         {certificationData.map((item, index) => {
           return (
             item.toShow && (

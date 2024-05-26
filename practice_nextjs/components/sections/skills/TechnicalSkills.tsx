@@ -30,8 +30,9 @@ function TechnicalSkills() {
         } = { ...technicalSkillsData[item] };
         return (
           <div key={index} className="mb-3">
-            <CustomSubHeading>{label}</CustomSubHeading>
+            <CustomSubHeading className="mb-10">{label}</CustomSubHeading>
             {skillList?.length > 5 ? (
+              // if greater than 5 then slider
               <div className="px-6 pb-3">
                 <Slider {...settings}>
                   {skillList.map((item, index) => {
@@ -64,7 +65,7 @@ function TechnicalSkills() {
                     })}
                   </Slider>
                 </div>
-                <div className="hidden lg:grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-5 px-6 pb-3">
+                <div className="hidden grid-cols-1 gap-5 px-6 pb-3 lg:grid md:grid-cols-3 lg:grid-cols-5">
                   {skillList.map((item, index) => {
                     return (
                       item.toShow && (
