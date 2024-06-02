@@ -7,6 +7,15 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import { Card } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+
 type Option = {
   label: string;
   value: string;
@@ -66,20 +75,25 @@ const TableCell = ({
   const onBlur = () => {
     tableMeta?.updateData(row.index, column.id, value);
   };
-  const onSelectChange = (e: ChangeEvent<HTMLSelectElement>) => {
-    setValue(e.target.value);
-    tableMeta?.updateData(row.index, column.id, e.target.value);
+  const onSelectChange = (e: string) => {
+    setValue(e);
+    tableMeta?.updateData(row.index, column.id, e);
   };
   return columnMeta?.type === "select" ? (
-    <select onChange={onSelectChange} value={initialValue}>
-      {columnMeta?.options?.map((option: Option) => (
-        <option key={option.value} value={option.value}>
-          {option.label}
-        </option>
-      ))}
-    </select>
+    <Select onValueChange={onSelectChange} value={initialValue}>
+      <SelectTrigger className="">
+        <SelectValue placeholder="Select" />
+      </SelectTrigger>
+      <SelectContent>
+        {columnMeta?.options?.map((option: Option) => (
+          <SelectItem key={option.value} value={option.value}>
+            {option.label}
+          </SelectItem>
+        ))}
+      </SelectContent>
+    </Select>
   ) : (
-    <input
+    <Input
       value={value}
       onChange={(e) => setValue(e.target.value)}
       onBlur={onBlur}
