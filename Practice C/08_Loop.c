@@ -3,18 +3,20 @@
 int main(int argc, char const *argv[])
 {
     int x = 1;
-    while (x <= 100)
+    while (x <= 12)
     {
         printf("Looping - %d \n", x);
         x += 1;
     }
-
+    printf("\n\n");
     int y = 1;
     do
     {
         printf("Looping do - %d \n", y);
         y += 1;
-    } while (y <= 100);
+    } while (y <= 12);
+
+    printf("\n\n");
 
     int count = 10;
     for (int i = 0; i < count; i++)
@@ -24,6 +26,8 @@ int main(int argc, char const *argv[])
     {
         printf("for loop - %d \n", i);
     }
+
+    printf("\n\n");
 
     // Nested loops
     // The "inner loop" will be executed one time for each iteration of the "outer loop":
@@ -38,6 +42,16 @@ int main(int argc, char const *argv[])
         for (j = 1; j <= 3; ++j)
         {
             printf(" Inner: %d\n", j); // Executes 6 times (2 * 3)
+        }
+    }
+
+    printf("\n\n");
+    for (int i = 0; i < 10; i++)
+    {
+        if (i == 5)
+        {
+            printf("Its 5, time to break");
+            break;
         }
     }
 

@@ -74,6 +74,11 @@ const ProjectNavlinks = [
     name: "Progress on Scroll",
     isActive: true,
   },
+  {
+    path: "/react/projects/react-table",
+    name: "React Table",
+    isActive: true,
+  },
 ];
 
 const ReactPageNavLinks = [
