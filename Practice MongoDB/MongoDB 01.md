@@ -223,7 +223,7 @@ src: https://docs.mongodb.com/manual/reference/method/js-cursor/
 
 ## Sample Data
 
-    NOTE: Just type insert.users.insertMany() in the terminal, now paste the below data and then close it with ).
+    NOTE: Just type db.users.insertMany() in the terminal, now paste the below data and then close it with ).
 
 ```js
 [
