@@ -15,8 +15,15 @@ function maxChar(params) {
       charMap[char] = 1;
     }
   }
-  //   return charMap; // object of chars (keys) & count(values)
-  return Object.entries(charMap); // array of arrays of object key and values
-}
+  let max = 0;
+  let maxChar = null;
 
-console.log(maxChar("abcccd"));
+  for (let key in charMap) {
+    if (charMap[key] > max) {
+      max = charMap[key];
+      maxChar = key;
+    }
+  }
+  return maxChar;
+}
+js_practice_02;
