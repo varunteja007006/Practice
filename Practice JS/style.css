@@ -9,7 +9,6 @@ html {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif, Arial,
     sans-serif;
   color: white;
-  font-family: monospace;
 }
 
 body {
@@ -43,7 +42,6 @@ div {
   border: 0.1rem solid black;
   padding: 1rem;
 }
-
 
 button {
   margin: 1rem;

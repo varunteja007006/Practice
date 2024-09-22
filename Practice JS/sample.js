@@ -28,13 +28,15 @@
 // }
 // console.log(Array.from({ length: 10 }, () => func1(2)));
 
-let map0 = new Map([
-  [1, [10, 11, 12]],
-  [2, 20],
-  [3, [30, 31, 32]],
-  [4, 40],
-]);
+// Example 5: Map
+// let map0 = new Map([
+//   [1, [10, 11, 12]],
+//   [2, 20],
+//   [3, [30, 31, 32]],
+//   [4, 40],
+// ]);
 
+// Output:
 // console.log("map0: ", map0);
 // console.log("entries: ", map0.entries());
 // console.log("arr: ", Array.from(map0.entries()));
