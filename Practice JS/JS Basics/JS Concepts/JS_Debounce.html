@@ -10,24 +10,23 @@
     <script>
       // Debouncing in JS
       // call an API and fetches data
+      let counter = 0;
       const getData = () => {
-        console.log("fetching the data...");
+        console.log(`fetching the data...${counter++}`);
       };
 
       // We need to optimize the above code so that it will not make a API call for every letter typed.
       const debounceFunc = function (func, delay) {
         let timer;
         return function () {
-          if (timer) {
-            clearTimeout(timer);
-          }
+          clearTimeout(timer);
           // It is required to stop and again call this method. To do so we clear the timeout.
-          timer = setTimeout(func(), delay);
+          timer = setTimeout(func, delay);
         };
       };
 
       // Capture the debounce func into optimizedFunc, use optimizedFunc on HTML
-      const optimizedFunc = debounceFunc(getData, 1000);
+      const optimizedFunc = debounceFunc(getData, 2000);
       /*
       Debouncing is a programming technique that limits the number of times a function is called within
       a specific time period.This can be useful for preventing a function from being called too
