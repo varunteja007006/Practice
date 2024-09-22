@@ -6,7 +6,9 @@
   a higher order function
 */
 
-// Method One with bind()
+// --------------------------------------------------------------------
+// * Method One with bind()
+// --------------------------------------------------------------------
 const multiply = function (param1, param2, param3) {
   console.log("Method One Bind: ", param1 * param2 * param3);
 };
@@ -19,7 +21,10 @@ multiplyByTwoAndFour(5);
 
 console.log("\n");
 
-// Method Two with closures()
+// --------------------------------------------------------------------
+// * Method Two with closures()
+// --------------------------------------------------------------------
+
 const multiplyByClosure = function (param1) {
   return function multiplyInnerFunc(param2) {
     console.log("Method Two Closures: ", param1 * param2);
@@ -30,8 +35,10 @@ const multiplyByFour = multiplyByClosure(4);
 multiplyByFour(5);
 
 console.log("\n");
-// Another example of creating a curry function
 
+// --------------------------------------------------------------------
+// * Another example of creating a curry function
+// --------------------------------------------------------------------
 function currying(fn, ...args) {
   return (..._args) => {
     return fn(...args, ..._args);
