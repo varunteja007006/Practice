@@ -4,16 +4,18 @@
  * function from being called too frequently.
  */
 
-const expensiveAPICall = function () {
+const expensiveAPICall = function (...params) {
+  console.log(...params);
   console.log("Making an expensive API call .....");
 };
 
 const throttleFunction = function (expensiveFunc, limit) {
   let throttle = true;
-  return function () {
+  return function (...params) {
     if (throttle) {
-      throttle = setTimeout(() => {
-        expensiveFunc();
+      throttle = false;
+      expensiveFunc(...params);
+      setTimeout(() => {
         throttle = true;
       }, limit);
     }
@@ -22,10 +24,10 @@ const throttleFunction = function (expensiveFunc, limit) {
 
 const handleExpensiveAPICall = throttleFunction(expensiveAPICall, 5000);
 
-handleExpensiveAPICall();
-setTimeout(() => {
-  handleExpensiveAPICall();
-}, 2000);
+setInterval(
+  () => handleExpensiveAPICall("Varun", "Teja", 20, "Hyderabad"),
+  500
+);
 
 /*
  * expensiveAPICall function: This is a placeholder function that simulates an expensive API call. In
