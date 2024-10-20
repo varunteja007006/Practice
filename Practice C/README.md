@@ -2,7 +2,7 @@
 
 I have avoided it at all costs during my initial computer science studies, but now after having a dip
 at high level programming languages it kind of fascinates me to dwell a little into the low level.
-Therefore just giving another shot at C. Also I am learning Rust and I though I might as well check
+Therefore just giving another shot at C. Also I am learning Rust and I thought I might as well check
 it in parallel since Rust is built with memory safety and other features that C does not offer.
 
 ### Official Resources:
