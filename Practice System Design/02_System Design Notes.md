@@ -6,10 +6,10 @@
 
 ### Developers CI/CD flow (sample)
 
-![CI CD](https://github.com/varunteja007006/Practice/blob/main/Practice%20Notes/CI-CD.svg?raw=true)
+![CI CD](https://github.com/varunteja007006/Practice/blob/main/Practice%20System%20Design/assets/CI-CD.svg?raw=true)
 
 More Robust CI CD
-![robust CI CD](https://github.com/varunteja007006/Practice/blob/main/Practice%20Notes/CI_CD_2.svg?raw=true)
+![robust CI CD](https://github.com/varunteja007006/Practice/blob/main/Practice%20System%20Design/assets/CI_CD_2.svg?raw=true)
 
 ##
 
@@ -96,7 +96,7 @@ AMQP
 - Cache Ratio = Cache Hits / (Cache Hits + Cache Miss)
   The better the ratio the effective is the caching
 
-  ![cache hit miss](https://github.com/varunteja007006/Practice/blob/main/Practice%20Notes/cache-hit-miss.svg?raw=true)
+  ![cache hit miss](https://github.com/varunteja007006/Practice/blob/main/Practice%20System%20Design/assets/cache-hit-miss.svg?raw=true)
 
 #### Caching types:
 
@@ -131,7 +131,7 @@ AMQP
 
 How does proxy work
 
-![proxy request](https://github.com/varunteja007006/Practice/blob/main/Practice%20Notes/proxy-request.svg?raw=true)
+![proxy request](https://github.com/varunteja007006/Practice/blob/main/Practice%20System%20Design/assets/proxy-request.svg?raw=true)
 
 #### Proxy server types:
 
@@ -367,7 +367,7 @@ These techniques are often used together to achieve optimal database performance
 
 On a server level how does server accesses the information.
 
-![server accessing information](https://github.com/varunteja007006/Practice/blob/main/Practice%20Notes/Access%20Information%20by%20server.svg?raw=true)
+![server accessing information](https://github.com/varunteja007006/Practice/blob/main/Practice%20System%20Design/assets/Access%20Information%20by%20server.svg?raw=true)
 
 ##
 
