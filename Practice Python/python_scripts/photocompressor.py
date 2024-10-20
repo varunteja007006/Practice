@@ -16,7 +16,10 @@ def skim_files(file_paths):
     else:
         print("No files to scan.....")
 
-def folder_scan(folder_path ='/home/varun/Pictures/assets', image_quality=85):
+
+FOLDER_PATH
+
+def folder_scan(folder_path = FOLDER_PATH, image_quality=85):
     PATH = []
     if folder_path:
         for (root,dirs,files) in os.walk(folder_path, topdown=True):
@@ -86,7 +89,3 @@ if __name__ == "__main__":
             print("Invalid option")
     else:
         print("Invalid option")
-
-
-
-    
