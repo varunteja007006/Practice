@@ -180,7 +180,7 @@ We use the -v flag for mapping the local directory with container directory so t
 local are also shown in the container.
 
 ```sh
-docker run --name my_app_container -p 4000:4000 --rm -v /home/user/Documents/work/demo/api:/app myapp:v1
+docker run --name my_app_container -p 4000:4000 --rm -v /path/to/the/project-root/api:/app myapp:v1
 ```
 
 After `-v` we specify the complete path to the project folder that has to be mapped. Then after colon
@@ -195,6 +195,39 @@ We need to map such folders to anonymous volume.
 ```sh
 docker run --name my_app_container -p 4000:4000 --rm -v /home/user/Documents/work/demo/api:/app
 -v /app/node_modules myapp:v1
+```
+
+<br />
+<br />
+
+## Docker Shell or Bash
+
+#### To check the files in the container
+
+First list out all the docker processes
+
+```sh
+docker ps
+```
+
+To access the container
+
+SHELL
+
+```sh
+docker exec -it <container_id> /bin/sh
+```
+
+BASH
+
+```sh
+docker exec -it <container_id> /bin/bash
+```
+
+List the files
+
+```sh
+ls -a
 ```
 
 <br />
@@ -268,9 +301,9 @@ docker push username/repo_name:tagname
 docker pull username/repo_name:tagname
 ```
 
-https://www.youtube.com/watch?v=YS35VHsbS-0&list=PL4cUxeGkcC9hxjeEtdHFNYMtCpjNBm3h7&index=13
-
 ## References
+
+[Docker video](https://www.youtube.com/watch?v=YS35VHsbS-0&list=PL4cUxeGkcC9hxjeEtdHFNYMtCpjNBm3h7&index=13)
 
 [Docker documentation](https://docs.docker.com/)
 
