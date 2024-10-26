@@ -38,6 +38,8 @@ RUN npm install # install dependencies while the image is built, this command ru
 
 COPY . . # copy rest of the files from local to docker image work dir
 
+ENV PORT 3000 # Environment variables
+
 EXPOSE 3000 # required for docker desktop port mapping
 
 CMD ["npm", "start"] # We do not want to run the app when image is built rather we need it to run after image is built
@@ -174,7 +176,7 @@ latest changes.
 Use nodemon to restart the server on the container. (Nodemon restarts the server whenever a JS file
 is modified).
 
-#### Configuring the volume
+### Configuring the volume
 
 We use the -v flag for mapping the local directory with container directory so that new changes in the
 local are also shown in the container.
@@ -194,6 +196,21 @@ We need to map such folders to anonymous volume.
 
 ```sh
 docker run --name my_app_container -p 4000:4000 --rm -v /home/user/Documents/work/demo/api:/app
+-v /app/node_modules myapp:v1
+```
+
+The line `-v /app/node_modules` is mapping an anonymous local path to container path `/app/node_modules`.
+This makes the docker to sync node_modules on container with something that does not exist in local
+hence any changes in the local for node_modules will not effect the docker container.
+
+#### What if we do not want our docker container to write to our local machine
+
+Firstly this possible by shelling (surely thats not what it is called but you get it right??😅)
+into the container and creating file will sync for local machine by creating the file. How do we do it?
+We have flag `ro` that makes our docker container `read-only`.
+
+```sh
+docker run --name my_app_container -p 4000:4000 --rm -v /home/user/Documents/work/demo/api:/app:ro
 -v /app/node_modules myapp:v1
 ```
 
