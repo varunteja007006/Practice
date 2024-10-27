@@ -38,9 +38,9 @@ RUN npm install # install dependencies while the image is built, this command ru
 
 COPY . . # copy rest of the files from local to docker image work dir
 
-ENV PORT 3000 # Environment variables
+ENV PORT 3000 # Environment variables - makes sense if is only one
 
-EXPOSE 3000 # required for docker desktop port mapping
+EXPOSE 3000 # required for docker desktop port mapping / You could refer the env variable here by `$PORT`
 
 CMD ["npm", "start"] # We do not want to run the app when image is built rather we need it to run after image is built
 ```
