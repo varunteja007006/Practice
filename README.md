@@ -13,3 +13,7 @@ Contains a CSS, HTML, Javascript files. The roots of the web development.
 
 Just a hello world file. Hoping to learn more of C to have some basic understanding
 on memory management and other stuff that could probably help with learning RUST.
+
+// TODO create onkeyup, onmouseover, onmouseout, onchange
+
+// TODO Complete the main Readme file
