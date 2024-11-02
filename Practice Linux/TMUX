@@ -1,0 +1,69 @@
+# Tmux - Terminal multiplexer
+
+It helps you to run multiple terminals and also they can run in background
+
+### Installation:
+
+https://github.com/tmux/tmux/wiki/Installing
+
+I am on linux so i simply have to type this
+
+```sh
+sudo apt install tmux
+```
+
+### Using tmux
+
+```sh
+man i tmux
+```
+
+#### Start new session
+
+```sh
+tmux new -smysession
+```
+
+#### Kill session
+
+`C-b x`
+
+#### Window splitting
+
+`C-b %` Horizontal split
+
+`C-b "` Vertical split
+
+#### Change window
+
+`C-b 0` to change to first window
+
+`C-b 1` to change to second window
+
+`C-b '` Prompts for window index
+
+`C-b n` to change to next window
+
+`C-b p` to change to previous window
+
+`C-b l` to change to last window
+
+#### Changing the panes
+
+`C-b Up`, `C-b Down`, `C-b Left` and `C-b` Right change to the pane above, below, left or right of
+the active pane
+
+#### Prefix keys
+
+You use these for shortcuts
+
+- C - ctrl
+- M - Alt
+- S - shift
+
+#### Help keys
+
+`C-b ?`
+
+For everything else this is the bible
+https://github.com/tmux/tmux/wiki/Getting-Started
