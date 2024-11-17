@@ -24,7 +24,7 @@ exit the prompts
 \q
 ```
 
-If you are switched to postgres user and want to create a user
+If you are switched to postgres user and want to create a role
 
 ```sh
 createuser --interactive
@@ -42,10 +42,16 @@ List the databases in the prompts
 \l
 ```
 
-List the users
+List the roles not users
 
 ```sh
 \du
+```
+
+List of users
+
+```sh
+SELECT * FROM USER;
 ```
 
 Drop the database
@@ -53,4 +59,20 @@ Drop the database
 ```sh
 dropdb 'database name'
 
+```
+
+Create a role using query
+
+```sh
+CREATE ROLE new_user WITH LOGIN PASSWORD 'your_password';
+```
+
+Delete a role
+
+```sh
+DROP ROLE new_user;
+```
+
+```sh
+CREATE ROLE new_user SUPERUSER LOGIN PASSWORD 'password';
 ```
