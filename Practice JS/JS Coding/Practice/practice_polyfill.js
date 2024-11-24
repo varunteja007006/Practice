@@ -173,9 +173,47 @@ Promise.myAll = function (array) {
 };
 
 // Test the new implementation
-const allPromiseNew = Promise.myAll([promise2, promise1]);
-allPromiseNew.then((data) => {
-  console.log(data);
-});
+// const allPromiseNew = Promise.myAll([promise2, promise1]);
+// allPromiseNew.then((data) => {
+//   console.log(data);
+// });
 
 // polyfill for comparing two objects
+const obj1 = { a: 1, b: 2 };
+const obj2 = { a: 1, b: 2 };
+
+console.log(obj1 === obj2); // false
+
+console.log(JSON.stringify(obj1) === JSON.stringify(obj2)); // true // but this is not the same as deep equality
+// because it does not consider the order of the properties
+
+const obj3 = { a: 1, b: 2 };
+const obj4 = { b: 2, a: 1 };
+
+console.log(JSON.stringify(obj3) === JSON.stringify(obj4)); // false
+
+function isObjectSame(obj1, obj2) {
+  const keys1 = Object.keys(obj1);
+  const keys2 = Object.keys(obj2);
+
+  if (keys1.length !== keys2.length) {
+    return false;
+  }
+
+  for (let key of keys1) {
+    const value1 = obj1[key];
+    const value2 = obj2[key];
+
+    if (value1 instanceof Object && value2 instanceof Object) {
+      if (!isObjectSame(value1, value2)) {
+        return false;
+      }
+    }
+
+    if (value1 !== value2) {
+      return false;
+    }
+  }
+
+  return true;
+}
