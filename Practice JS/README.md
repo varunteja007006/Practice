@@ -15,6 +15,6 @@
 9. Debounce/ Throttling
 10. Object
 
-Other Topics
+Other Topics to visit and learn
 
 🔳 object accessor [https://www.w3schools.com/js/js_object_accessors.asp]
