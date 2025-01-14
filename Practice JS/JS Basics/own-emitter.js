@@ -17,10 +17,16 @@ class EventEmitter {
 
   off(event, callback) {
     if (this.event.has(event)) {
+      let callbacks = this.event.get(event);
       // if event exists then remove the callback
-      this.event.get(event) = this.event.get(event).filter(
-        (cb) => cb !== callback
-      );
+      callbacks = callbacks.filter((cb) => cb !== callback);
+      if (callbacks.length === 0) {
+        this.event.delete(event);
+      } else {
+        this.event.set(event, callbacks);
+      }
+    } else {
+      throw new Error("Event does not exist");
     }
   }
 
@@ -34,10 +40,18 @@ class EventEmitter {
   }
 }
 
-
 const emitter = new EventEmitter();
 
-emitter.on("demo", (a, b) => console.log('add result',a + b));
-emitter.on("demo", (a, b) => console.log('multiply result',a * b));
+function addNumbers(a, b) {
+  console.log("add result", a + b);
+}
 
-emitter.emit("demo", 1, 2);
+emitter.on("demo", addNumbers); // add add numbers
+emitter.on("demo", (a, b) => console.log("multiply result", a * b)); // add multiply function
+emitter.emit("demo", 1, 2); // this prints both outputs
+
+// emitter.off("demo1", (a, b) => console.log("multiply result", a * b)); // throws an error
+
+emitter.off("demo", addNumbers); // this gets deleted
+
+emitter.emit("demo", 10, 2); // this prints only multiply output
