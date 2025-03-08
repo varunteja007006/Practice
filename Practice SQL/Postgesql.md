@@ -76,3 +76,31 @@ DROP ROLE new_user;
 ```sh
 CREATE ROLE new_user SUPERUSER LOGIN PASSWORD 'password';
 ```
+
+## Postgresql on Docker
+
+Download the images from docker
+
+```sh
+sudo docker pull postgres
+```
+
+Run the docker image
+
+```sh
+sudo docker run --name postgres -e POSTGRES_PASSWORD=postgres -d postgres
+```
+
+Mounting volumes
+
+```sh
+sudo docker run --name postgres -e POSTGRES_PASSWORD=postgres -v /path/to/local/storage:/var/lib/postgresql/data -d postgres:latest
+```
+
+replace this /path/to/local/storage with your local path
+
+Now to expose the port
+
+```sh
+sudo docker run --name postgres -e POSTGRES_PASSWORD=postgres -v /path/to/local/storage:/var/lib/postgresql/data -p 5432:5432 -d postgres:latest
+```
