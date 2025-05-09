@@ -26,8 +26,9 @@ db.users.find({ hobbies: { $elemMatch: { $eq: "reading" } } });
 ### $eq
 
 ```js
-db.users.find({ "address.city": { $eq: "Any" } });
+db.users.find({ "address.city": { $eq: "Any" } }); 
 ```
+
 
 ### Difference between $elemMatch and $eq
 
