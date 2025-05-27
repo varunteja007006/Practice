@@ -1,0 +1,205 @@
+{
+  "editor.formatOnSave": true,
+  "editor.linkedEditing": true,
+  "editor.minimap.autohide": true,
+
+  // Workbench/ Workspace related
+  "workbench.startupEditor": "none",
+  "workbench.colorTheme": "Monokai",
+  "security.workspace.trust.untrustedFiles": "open",
+  "workbench.tree.indent": 10,
+  "workbench.tree.renderIndentGuides": "always",
+  "workbench.colorCustomizations": {
+    "tree.indentGuidesStroke": "#66ff00",
+    "editorRuler.foreground": "#6eff00"
+  },
+  "workbench.settings.applyToAllProfiles": ["editor.fontFamily"],
+
+  // Editor settings
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.mouseWheelZoom": true,
+  "editor.tabCompletion": "on",
+  "editor.rulers": [100],
+
+  // Terminal related
+  "terminal.integrated.smoothScrolling": true,
+
+  // Git settings
+  "git.autofetch": true,
+  "git.suggestSmartCommit": false,
+
+  // Extension / language related
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  "yaml.schemas": {
+    "file:///home/varun/.vscode/extensions/atlassian.atlascode-3.0.4/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+  },
+
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  "[html]": {
+    "editor.suggest.insertMode": "replace"
+  },
+
+  "[django-html]": {
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": true,
+      "strings": true
+    }
+  },
+
+  "yaml.customTags": [
+    "!And",
+    "!And sequence",
+    "!If",
+    "!If sequence",
+    "!Not",
+    "!Not sequence",
+    "!Equals",
+    "!Equals sequence",
+    "!Or",
+    "!Or sequence",
+    "!FindInMap",
+    "!FindInMap sequence",
+    "!Base64",
+    "!Join",
+    "!Join sequence",
+    "!Cidr",
+    "!Ref",
+    "!Sub",
+    "!Sub sequence",
+    "!GetAtt",
+    "!GetAZs",
+    "!ImportValue",
+    "!ImportValue sequence",
+    "!Select",
+    "!Select sequence",
+    "!Split",
+    "!Split sequence"
+  ],
+
+  "json.schemas": [],
+
+  // Spelling checker settings
+  "cSpell.userWords": [
+    "accordian",
+    "Andhra",
+    "Casbin",
+    "contentful",
+    "corsheaders",
+    "customtkinter",
+    "daisyui",
+    "Dunder",
+    "dunders",
+    "Fieldsets",
+    "firstname",
+    "flipcard",
+    "fullname",
+    "Geeksfor",
+    "IIFE",
+    "instanceof",
+    "Kakinada",
+    "Kanban",
+    "Kruskal's",
+    "lastname",
+    "MERN",
+    "navlinks",
+    "NEXTJS",
+    "OWASP",
+    "pincode",
+    "Pradesh",
+    "pytube",
+    "Qube",
+    "RDBMS",
+    "Restframework",
+    "Schafer",
+    "shadcn",
+    "Sidenavbar",
+    "sonner",
+    "Strassen's",
+    "subcomponents",
+    "tailwindcss",
+    "tanstack",
+    "Teja",
+    "toastify",
+    "tweepy",
+    "Varun",
+    "virtualenv",
+    "Warshall",
+    "Yellowbtn",
+    "Zustand"
+  ],
+  "cSpell.suggestionMenuType": "quickFix",
+  "cSpell.customDictionaries": {},
+  "workbench.editor.enablePreview": false,
+  "files.defaultLanguage": "javascript",
+  "git.openRepositoryInParentFolders": "always",
+  "liveServer.settings.donotShowInfoMsg": true,
+  "mdb.confirmRunAll": false,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "django": "html"
+  },
+  "editor.fontSize": 13.5,
+  "editor.fontFamily": "'Fira Code','Droid Sans Mono', 'monospace', monospace",
+  "editor.fontLigatures": true,
+  "editor.lineHeight": 1.75,
+  "css.styleSheets": ["https://cdn.tailwindcss.com"],
+  "terminal.integrated.fontFamily": "'Fira Code','Droid Sans Mono', 'monospace', monospace",
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "git.confirmSync": false,
+  "headwind.runOnSave": true,
+  "headwind.removeDuplicates": true,
+  "thunder-client.httpLibrary": "axios",
+  "thunder-client.sidebar.layout": "compact",
+  "[rust]": {
+    "editor.defaultFormatter": "jinxdash.prettier-rust"
+  },
+  "files.autoSave": "afterDelay",
+  "terminal.integrated.defaultProfile.linux": "bash",
+  "editor.minimap.enabled": false,
+  "terminal.external.linuxExec": "Linux Exec",
+  "terminal.integrated.env.linux": {},
+  "console-ninja.featureSet": "Community",
+  "git.ignoreRebaseWarning": true,
+  "java.configuration.runtimes": [
+    {
+      "name": "JavaSE-17",
+      "path": "/java/java-17-openjdk-17.0.10.0.7-1",
+      "default": true
+    }
+  ],
+  "terminal.integrated.mouseWheelZoom": true,
+  "terminal.integrated.fontSize": 13,
+  "turboConsoleLog.addSemicolonInTheEnd": true,
+  "turboConsoleLog.includeFileNameAndLineNum": true,
+  "turboConsoleLog.logMessagePrefix": "💣",
+  "console-ninja.warnOnNoToolsDetected": false,
+  "workbench.iconTheme": "material-icon-theme",
+  "material-icon-theme.activeIconPack": "react",
+  "reactSnippets.settings.importReactOnTop": false,
+  "code-runner.runInTerminal": true,
+  "[c]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools"
+  },
+  "files.autoSaveDelay": 20000,
+  "terminal.explorerKind": "both",
+  "codeium.enableConfig": {
+    "*": true,
+    "markdown": true
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  }
+}
