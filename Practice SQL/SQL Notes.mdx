@@ -1,0 +1,22 @@
+# SQL Notes
+
+## Handling timezones
+
+- Always store date and time in UTC.
+- Convert to local time only for display purposes.
+- Store user timezone to convert back to local time.
+- Store the IANA timezone name (e.g., "America/New_York") in the database. A standard full timezone name. 32 characters (as per 2025).
+
+- Don't rely on db server timezone.
+- Don't use server side functions to convert time to local time.
+- Grouping data by day? Convert to one timezone.
+- Watch out for daylight saving time.
+
+
+https://youtu.be/6v6Y7ntKt_U?si=iUNIC4FEdUIT-WVG
+
+
+### Purchase this course later 
+
+https://databasestar.mykajabi.com/lpkj-sql-timezone-cheat-sheet?video=6v6Y7ntKt_U
+
