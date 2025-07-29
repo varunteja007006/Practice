@@ -1,54 +1,40 @@
 {
-  "editor.formatOnSave": true,
+  // file associations
+  "files.associations": {
+    "*.mdx": "markdown"
+  },
+
+  // editor settings
+  "editor.fontFamily": "Fira Code",
+  "editor.fontSize": 14,
+  "editor.lineHeight": 1.75,
+  "editor.fontLigatures": true,
+  "editor.fontWeight": "450",
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.formatOnSave": false,
   "editor.linkedEditing": true,
   "editor.minimap.autohide": true,
-
-  // Workbench/ Workspace related
-  "workbench.startupEditor": "none",
-  "workbench.colorTheme": "Monokai",
-  "security.workspace.trust.untrustedFiles": "open",
-  "workbench.tree.indent": 10,
-  "workbench.tree.renderIndentGuides": "always",
-  "workbench.colorCustomizations": {
-    "tree.indentGuidesStroke": "#66ff00",
-    "editorRuler.foreground": "#6eff00"
-  },
-  "workbench.settings.applyToAllProfiles": ["editor.fontFamily"],
-
-  // Editor settings
-  "explorer.confirmDelete": false,
-  "explorer.confirmDragAndDrop": false,
-  "editor.multiCursorModifier": "ctrlCmd",
   "editor.mouseWheelZoom": true,
   "editor.tabCompletion": "on",
   "editor.rulers": [100],
-
-  // Terminal related
-  "terminal.integrated.smoothScrolling": true,
-
-  // Git settings
-  "git.autofetch": true,
-  "git.suggestSmartCommit": false,
-
-  // Extension / language related
   "editor.defaultFormatter": "esbenp.prettier-vscode",
 
-  "yaml.schemas": {
-    "file:///home/varun/.vscode/extensions/atlassian.atlascode-3.0.4/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+  // formatter
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[javascriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-
   "[html]": {
     "editor.suggest.insertMode": "replace"
   },
-
   "[django-html]": {
     "editor.quickSuggestions": {
       "other": true,
@@ -56,150 +42,178 @@
       "strings": true
     }
   },
-
-  "yaml.customTags": [
-    "!And",
-    "!And sequence",
-    "!If",
-    "!If sequence",
-    "!Not",
-    "!Not sequence",
-    "!Equals",
-    "!Equals sequence",
-    "!Or",
-    "!Or sequence",
-    "!FindInMap",
-    "!FindInMap sequence",
-    "!Base64",
-    "!Join",
-    "!Join sequence",
-    "!Cidr",
-    "!Ref",
-    "!Sub",
-    "!Sub sequence",
-    "!GetAtt",
-    "!GetAZs",
-    "!ImportValue",
-    "!ImportValue sequence",
-    "!Select",
-    "!Select sequence",
-    "!Split",
-    "!Split sequence"
-  ],
-
-  "json.schemas": [],
-
-  // Spelling checker settings
-  "cSpell.userWords": [
-    "accordian",
-    "Andhra",
-    "Casbin",
-    "contentful",
-    "corsheaders",
-    "customtkinter",
-    "daisyui",
-    "Dunder",
-    "dunders",
-    "Fieldsets",
-    "firstname",
-    "flipcard",
-    "fullname",
-    "Geeksfor",
-    "IIFE",
-    "instanceof",
-    "Kakinada",
-    "Kanban",
-    "Kruskal's",
-    "lastname",
-    "MERN",
-    "navlinks",
-    "NEXTJS",
-    "OWASP",
-    "pincode",
-    "Pradesh",
-    "pytube",
-    "Qube",
-    "RDBMS",
-    "Restframework",
-    "Schafer",
-    "shadcn",
-    "Sidenavbar",
-    "sonner",
-    "Strassen's",
-    "subcomponents",
-    "tailwindcss",
-    "tanstack",
-    "Teja",
-    "toastify",
-    "tweepy",
-    "Varun",
-    "virtualenv",
-    "Warshall",
-    "Yellowbtn",
-    "Zustand"
-  ],
-  "cSpell.suggestionMenuType": "quickFix",
-  "cSpell.customDictionaries": {},
-  "workbench.editor.enablePreview": false,
-  "files.defaultLanguage": "javascript",
-  "git.openRepositoryInParentFolders": "always",
-  "liveServer.settings.donotShowInfoMsg": true,
-  "mdb.confirmRunAll": false,
-  "emmet.includeLanguages": {
-    "javascript": "javascriptreact",
-    "django": "html"
-  },
-  "editor.fontSize": 13.5,
-  "editor.fontFamily": "'Fira Code','Droid Sans Mono', 'monospace', monospace",
-  "editor.fontLigatures": true,
-  "editor.lineHeight": 1.75,
-  "css.styleSheets": ["https://cdn.tailwindcss.com"],
-  "terminal.integrated.fontFamily": "'Fira Code','Droid Sans Mono', 'monospace', monospace",
   "[python]": {
-    "editor.defaultFormatter": "ms-python.black-formatter"
+    "editor.defaultFormatter": "charliermarsh.ruff"
   },
-  "git.confirmSync": false,
-  "headwind.runOnSave": true,
-  "headwind.removeDuplicates": true,
-  "thunder-client.httpLibrary": "axios",
-  "thunder-client.sidebar.layout": "compact",
   "[rust]": {
-    "editor.defaultFormatter": "jinxdash.prettier-rust"
+    // "editor.defaultFormatter": "jinxdash.prettier-rust"
   },
-  "files.autoSave": "afterDelay",
-  "terminal.integrated.defaultProfile.linux": "bash",
-  "editor.minimap.enabled": false,
-  "terminal.external.linuxExec": "Linux Exec",
-  "terminal.integrated.env.linux": {},
-  "console-ninja.featureSet": "Community",
-  "git.ignoreRebaseWarning": true,
-  "java.configuration.runtimes": [
-    {
-      "name": "JavaSE-17",
-      "path": "/java/java-17-openjdk-17.0.10.0.7-1",
-      "default": true
-    }
-  ],
-  "terminal.integrated.mouseWheelZoom": true,
-  "terminal.integrated.fontSize": 13,
+  "[c]": {
+    // "editor.defaultFormatter": "ms-vscode.cpptools"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+
   "turboConsoleLog.addSemicolonInTheEnd": true,
   "turboConsoleLog.includeFileNameAndLineNum": true,
   "turboConsoleLog.logMessagePrefix": "💣",
   "console-ninja.warnOnNoToolsDetected": false,
-  "workbench.iconTheme": "material-icon-theme",
+
   "material-icon-theme.activeIconPack": "react",
   "reactSnippets.settings.importReactOnTop": false,
   "code-runner.runInTerminal": true,
-  "[c]": {
-    "editor.defaultFormatter": "ms-vscode.cpptools"
+
+  "headwind.runOnSave": true,
+  "headwind.removeDuplicates": true,
+  "thunder-client.httpLibrary": "axios",
+  "thunder-client.sidebar.layout": "compact",
+
+  "css.styleSheets": ["https://cdn.tailwindcss.com"],
+
+  // emmet
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "django": "html"
   },
-  "files.autoSaveDelay": 20000,
-  "terminal.explorerKind": "both",
-  "codeium.enableConfig": {
-    "*": true,
-    "markdown": true
+
+  // redhat settings
+  "redhat.telemetry.enabled": false,
+
+  // vs-kubernetes settings
+  "vs-kubernetes": {
+    "vscode-kubernetes.helm-path-windows": "C:\\Users\\varun\\.vs-kubernetes\\tools\\helm\\windows-amd64\\helm.exe",
+    "vscode-kubernetes.minikube-path-windows": "C:\\Users\\varun\\.vs-kubernetes\\tools\\minikube\\windows-amd64\\minikube.exe"
+  }, // Retina !! Only works with FiraCode-VF.ttf installed, see below when using separated font files (the normal case).
+
+  // workbench settings
+  "workbench.editor.enablePreview": false,
+  "workbench.colorTheme": "Monokai",
+  "workbench.settings.applyToAllProfiles": ["editor.fontFamily"],
+  "security.workspace.trust.untrustedFiles": "open",
+  "workbench.tree.indent": 10,
+  "workbench.tree.renderIndentGuides": "always",
+  "workbench.iconTheme": "material-icon-theme",
+
+  // Custom colors for pure black
+  "workbench.colorCustomizations": {
+    "tree.indentGuidesStroke": "#66ff00",
+    "editorRuler.foreground": "#6eff00",
+
+    // --- Core UI Backgrounds for Pure Black ---
+    "activityBar.background": "#000000",
+    "sideBar.background": "#000000",
+    "editor.background": "#000000", // This is for the editor's background itself, not code highlighting.
+    // Your chosen theme's token colors will override parts of this for code.
+    "panel.background": "#000000",
+    "statusBar.background": "#000000",
+    "editorGroupHeader.tabsBackground": "#000000",
+    "titleBar.activeBackground": "#000000", // For macOS and custom title bar on Windows/Linux
+    "titleBar.inactiveBackground": "#000000", // For macOS and custom title bar on Windows/Linux
+
+    // --- Foreground/Text Colors (for readability on pure black) ---
+    "foreground": "#F8F8F2", // General text foreground, bright but not pure white to avoid harshness
+    "editor.foreground": "#F8F8F2", // Default editor text, overridden by token colors
+
+    // --- Specific UI Elements for Pure Black (and their contrasting foregrounds) ---
+
+    // Activity Bar
+    "activityBar.foreground": "#F8F8F2",
+    "activityBar.inactiveForeground": "#888888", // Muted for inactive icons
+    "activityBarBadge.background": "#61AFEF", // A nice accent color
+    "activityBarBadge.foreground": "#FFFFFF",
+
+    // Side Bar
+    "sideBar.foreground": "#F8F8F2",
+    "sideBarSectionHeader.background": "#000000", // Keep headers black
+    "sideBarSectionHeader.foreground": "#F8F8F2",
+    "sideBarTitle.foreground": "#F8F8F2",
+    "list.activeSelectionBackground": "#282C34", // Slightly off-black for selection contrast
+    "list.activeSelectionForeground": "#F8F8F2",
+    "list.inactiveSelectionBackground": "#1A1A1A", // Even more subtle for inactive selection
+    "list.hoverBackground": "#1A1A1A", // Hover background
+
+    // Editor Group Tabs
+    "tab.activeBackground": "#000000", // Active tab is also black
+    "tab.inactiveBackground": "#000000", // Inactive tab
+    "tab.activeForeground": "#F8F8F2",
+    "tab.inactiveForeground": "#888888",
+    "tab.border": "#1A1A1A", // Very subtle border between tabs
+
+    // Status Bar
+    "statusBar.foreground": "#F8F8F2",
+    "statusBar.debuggingBackground": "#900000", // Deep red for debugging
+    "statusBar.debuggingForeground": "#FFFFFF",
+    "statusBar.noFolderBackground": "#000000", // No folder open
+    "statusBar.noFolderForeground": "#F8F8F2",
+
+    // Panel (Terminal, Output, Problems)
+    "panel.border": "#1A1A1A",
+    "panelTitle.activeForeground": "#E06C75", // Accent for active panel
+    "panelTitle.inactiveForeground": "#888888",
+
+    // Buttons (for consistency)
+    "button.background": "#282C34",
+    "button.foreground": "#F8F8F2",
+    "button.hoverBackground": "#3A3F4B",
+
+    // Scrollbars
+    "scrollbar.shadow": "#000000", // Hide shadows for pure black
+    "scrollbarSlider.background": "#3A3F4B", // Slider color
+    "scrollbarSlider.hoverBackground": "#4B5263",
+    "scrollbarSlider.activeBackground": "#5C6370",
+
+    // Input Fields (Search, Command Palette)
+    "input.background": "#1A1A1A", // Dark, but not pure black to differentiate
+    "input.foreground": "#F8F8F2",
+    "input.border": "#000000", // No border or black border
+    "input.placeholderForeground": "#5C6370",
+
+    // Dropdowns
+    "dropdown.background": "#1A1A1A",
+    "dropdown.border": "#000000",
+    "dropdown.foreground": "#F8F8F2",
+
+    // Peek View (e.g., Go to Definition)
+    "peekView.border": "#61AFEF",
+    "peekViewEditor.background": "#000000",
+    "peekViewResult.background": "#000000",
+    "peekViewTitle.background": "#000000",
+    "peekViewTitleDescription.foreground": "#888888",
+    "peekViewTitleLabel.foreground": "#F8F8F2"
+
+    // For more, see the official VS Code Theme Color Reference:
+    // https://code.visualstudio.com/api/references/theme-color
   },
-  "[json]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
-  }
+
+  // terminal settings
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "terminal.integrated.smoothScrolling": true,
+  "terminal.integrated.fontSize": 14,
+  // terminal profiles
+  "terminal.integrated.profiles.windows": {
+    "PowerShell": {
+      "source": "PowerShell",
+      "icon": "terminal-powershell"
+    },
+    "Command Prompt": {
+      "path": [
+        "${env:windir}\\Sysnative\\cmd.exe",
+        "${env:windir}\\System32\\cmd.exe"
+      ],
+      "args": [],
+      "icon": "terminal-cmd"
+    },
+    "Git Bash": {
+      "source": "Git Bash"
+    },
+    "Ubuntu-24.04 (WSL)": {
+      "path": "C:\\WINDOWS\\System32\\wsl.exe",
+      "args": ["-d", "Ubuntu-24.04"]
+    }
+  },
+
+  // cSpell settings
+  "cSpell.suggestionMenuType": "quickFix",
+  "cSpell.customDictionaries": {}
 }
