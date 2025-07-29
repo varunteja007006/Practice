@@ -55,10 +55,16 @@
     "editor.defaultFormatter": "vscode.json-language-features"
   },
 
+  // turboConsoleLog settings
   "turboConsoleLog.addSemicolonInTheEnd": true,
-  "turboConsoleLog.includeFileNameAndLineNum": true,
+  "turboConsoleLog.includeLineNum": true,
+  "turboConsoleLog.includeFilename": true,
   "turboConsoleLog.logMessagePrefix": "💣",
+
+  // console-ninja settings
   "console-ninja.warnOnNoToolsDetected": false,
+  "console-ninja.featureSet": "Community",
+
 
   "material-icon-theme.activeIconPack": "react",
   "reactSnippets.settings.importReactOnTop": false,
@@ -215,5 +221,6 @@
 
   // cSpell settings
   "cSpell.suggestionMenuType": "quickFix",
-  "cSpell.customDictionaries": {}
+  "cSpell.customDictionaries": {},
+  "terminal.integrated.env.windows": {},
 }
