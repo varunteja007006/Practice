@@ -18,6 +18,8 @@
   "editor.tabCompletion": "on",
   "editor.rulers": [100],
   "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.foldingHighlight": true,
+  "editor.colorDecorators": true,
 
   // formatter
   "[typescript]": {
@@ -155,7 +157,7 @@
 
     // Panel (Terminal, Output, Problems)
     "panel.border": "#1A1A1A",
-    "panelTitle.activeForeground": "#E06C75", // Accent for active panel
+    "panelTitle.activeForeground": "#66ff00", // Accent for active panel
     "panelTitle.inactiveForeground": "#888888",
 
     // Buttons (for consistency)
@@ -196,6 +198,10 @@
   "terminal.integrated.defaultProfile.windows": "PowerShell",
   "terminal.integrated.smoothScrolling": true,
   "terminal.integrated.fontSize": 14,
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.tabs.defaultColor": "terminal.ansiGreen",
+  "terminal.integrated.tabs.enableAnimation": true,
+
   // terminal profiles
   "terminal.integrated.profiles.windows": {
     "PowerShell": {
@@ -223,4 +229,7 @@
   "cSpell.suggestionMenuType": "quickFix",
   "cSpell.customDictionaries": {},
   "terminal.integrated.env.windows": {},
+
+  // git settings
+  "git.autofetch": true,
 }
