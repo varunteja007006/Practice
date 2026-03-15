@@ -1,3 +1,4 @@
+// ! Promise memoization
 
 // The trick is reusing the same Promise instance.
 // A Promise is like a sealed envelope. Once the result is inside, everyone who opens it sees the same letter.
@@ -33,3 +34,5 @@ console.timeLog("TWO: ");
 console.timeEnd("TWO: ");
 
 
+// fetch() called once
+// Both awaits receive the same resolved value.
