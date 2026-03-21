@@ -1,5 +1,0 @@
-{
-	"dependencies": {
-		"@supercharge/promise-pool": "^3.3.0"
-	}
-}
