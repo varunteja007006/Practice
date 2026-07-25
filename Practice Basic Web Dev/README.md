@@ -179,7 +179,7 @@ Sample Code:
 
 Common use cases:
 
-- When opening Models or Menus.
+- When opening Modals or Menus.
 - After completing actions like form submissions.
 - To maintain a logical flow of navigation.
 
