@@ -1,16 +1,13 @@
-FROM node:17-alpine
-
-RUN npm install -g nodemon
+FROM node:22-alpine
 
 WORKDIR /app
 
-COPY package.json .
+COPY package.json pnpm-lock.yaml ./
 
-RUN npm install
+RUN corepack enable && pnpm install
 
 COPY . .
 
 EXPOSE 4000
-# required for docker desktop port mapping
 
-CMD ["npm", "run", "dev"]
+CMD ["pnpm", "dev"]
