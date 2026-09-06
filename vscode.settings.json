@@ -21,79 +21,6 @@
   "editor.foldingHighlight": true,
   "editor.colorDecorators": true,
 
-  // formatter
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[html]": {
-    "editor.suggest.insertMode": "replace"
-  },
-  "[django-html]": {
-    "editor.quickSuggestions": {
-      "other": true,
-      "comments": true,
-      "strings": true
-    }
-  },
-  "[python]": {
-    "editor.defaultFormatter": "charliermarsh.ruff"
-  },
-  "[rust]": {
-    // "editor.defaultFormatter": "jinxdash.prettier-rust"
-  },
-  "[c]": {
-    // "editor.defaultFormatter": "ms-vscode.cpptools"
-  },
-  "[json]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
-  },
-
-  // turboConsoleLog settings
-  "turboConsoleLog.addSemicolonInTheEnd": true,
-  "turboConsoleLog.includeLineNum": true,
-  "turboConsoleLog.includeFilename": true,
-  "turboConsoleLog.logMessagePrefix": "💣",
-
-  // console-ninja settings
-  "console-ninja.warnOnNoToolsDetected": false,
-  "console-ninja.featureSet": "Community",
-
-
-  "material-icon-theme.activeIconPack": "react",
-  "reactSnippets.settings.importReactOnTop": false,
-  "code-runner.runInTerminal": true,
-
-  "headwind.runOnSave": true,
-  "headwind.removeDuplicates": true,
-  "thunder-client.httpLibrary": "axios",
-  "thunder-client.sidebar.layout": "compact",
-
-  "css.styleSheets": ["https://cdn.tailwindcss.com"],
-
-  // emmet
-  "emmet.includeLanguages": {
-    "javascript": "javascriptreact",
-    "django": "html"
-  },
-
-  // redhat settings
-  "redhat.telemetry.enabled": false,
-
-  // vs-kubernetes settings
-  "vs-kubernetes": {
-    "vscode-kubernetes.helm-path-windows": "C:\\Users\\varun\\.vs-kubernetes\\tools\\helm\\windows-amd64\\helm.exe",
-    "vscode-kubernetes.minikube-path-windows": "C:\\Users\\varun\\.vs-kubernetes\\tools\\minikube\\windows-amd64\\minikube.exe"
-  }, // Retina !! Only works with FiraCode-VF.ttf installed, see below when using separated font files (the normal case).
-
   // workbench settings
   "workbench.editor.enablePreview": false,
   "workbench.colorTheme": "Monokai",
@@ -195,41 +122,12 @@
   },
 
   // terminal settings
-  "terminal.integrated.defaultProfile.windows": "PowerShell",
   "terminal.integrated.smoothScrolling": true,
   "terminal.integrated.fontSize": 14,
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.tabs.defaultColor": "terminal.ansiGreen",
   "terminal.integrated.tabs.enableAnimation": true,
 
-  // terminal profiles
-  "terminal.integrated.profiles.windows": {
-    "PowerShell": {
-      "source": "PowerShell",
-      "icon": "terminal-powershell"
-    },
-    "Command Prompt": {
-      "path": [
-        "${env:windir}\\Sysnative\\cmd.exe",
-        "${env:windir}\\System32\\cmd.exe"
-      ],
-      "args": [],
-      "icon": "terminal-cmd"
-    },
-    "Git Bash": {
-      "source": "Git Bash"
-    },
-    "Ubuntu-24.04 (WSL)": {
-      "path": "C:\\WINDOWS\\System32\\wsl.exe",
-      "args": ["-d", "Ubuntu-24.04"]
-    }
-  },
-
-  // cSpell settings
-  "cSpell.suggestionMenuType": "quickFix",
-  "cSpell.customDictionaries": {},
-  "terminal.integrated.env.windows": {},
-
   // git settings
-  "git.autofetch": true,
+  "git.autofetch": true
 }

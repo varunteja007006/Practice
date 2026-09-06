@@ -3,6 +3,7 @@
 ## BEFORE: Both Ports Exposed
 
 ### docker-compose.yaml
+
 ```yaml
 api:
   ports:
@@ -14,12 +15,14 @@ myblog:
 ```
 
 ### Frontend fetch
+
 ```js
 fetch("http://localhost:4000/")
 ```
 
 ### How it worked
-```
+
+```mdx
                     Browser (on host machine)
                     ┌──────────────────────────┐
                     │  localhost:3000  (UI)     │
@@ -37,6 +40,7 @@ fetch("http://localhost:4000/")
 ```
 
 ### Key points
+
 - The **browser** directly calls both `localhost:3000` and `localhost:4000`
 - The `fetch` runs in client-side JavaScript — the browser makes a separate HTTP request to the backend
 - CORS (`cors()` middleware) is **required** because the browser sees two different origins (`localhost:3000` → `localhost:4000`)
@@ -47,6 +51,7 @@ fetch("http://localhost:4000/")
 ## AFTER: Only Frontend Exposed (Vite Proxy)
 
 ### docker-compose.yaml
+
 ```yaml
 api:
   expose:
@@ -58,6 +63,7 @@ myblog:
 ```
 
 ### Vite proxy config (vite.config.js)
+
 ```js
 server: {
   proxy: {
@@ -71,11 +77,13 @@ server: {
 ```
 
 ### Frontend fetch
+
 ```js
 fetch("/api")   // No hostname — relative URL, stays on localhost:3000
 ```
 
 ### How it works
+
 ```
 Browser (on host machine)
 ┌──────────────────────────┐
@@ -103,6 +111,7 @@ Browser (on host machine)
 ```
 
 ### Key points
+
 - The **browser** only talks to `localhost:3000` — one single entry point
 - The fetch URL is **relative** (`/api`) — the browser sends it to the same origin (`localhost:3000`)
 - **Vite** intercepts requests matching `/api`, strips the prefix, and **proxies** them to `http://api:4000` over Docker's internal network
@@ -115,7 +124,7 @@ Browser (on host machine)
 ## Side-by-Side Comparison
 
 | Aspect | Before | After |
-|--------|--------|-------|
+| -------- | -------- | ------- |
 | Backend accessible from host? | Yes (`localhost:4000`) | **No** |
 | Frontend accessible from host? | Yes (`localhost:3000`) | Yes (`localhost:3000`) |
 | Browser calls backend directly? | Yes (`fetch("http://localhost:4000")`) | **No** — Vite proxies it |

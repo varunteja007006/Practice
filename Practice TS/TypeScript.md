@@ -29,13 +29,15 @@ Here are some examples of how TypeScript can be used:
 To use TypeScript we need to install Node and then install TypeScript Compiler. The TypeScript Compiler
 allows use to compile TypeScript files
 
-```
+```bash
 npm install -g typescript
 ```
 
 Compile the TypeScript files as follows
 
-    tsc FILENAME.ts
+```bash
+tsc FILENAME.ts
+```
 
 ## TypeScript Notes
 
@@ -60,7 +62,7 @@ Other important TypeScript types
 - never
 - object literal - eg { property: Type }
 - void - for functions with no documented return value
-- T[] - mutable arrays, also written Array<T>
+- T[] - mutable arrays, also written `Array<T>`
 - [T, T] tuples, which are fixed-length but mutable
 - (t: T) => U functions
 
