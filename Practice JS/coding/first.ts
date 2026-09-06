@@ -82,3 +82,55 @@ function isAnagramWithMap(s: string, t: string): boolean {
 console.log(isAnagram("racecar", "carrace")); // true
 console.log(isAnagram("racecar", "carraces")); // false
 console.log(isAnagram("jar", "jam")); // false
+
+
+// Group anagrams together
+
+function groupAnagrams(strs: string[]): string[][] {
+    if (strs.length === 1) return [strs]
+    const res: string[][] = []
+    const resMap = new Map<string, string[]>()
+    for (let x = 0; x < strs.length; x++) {
+        const curr = strs[x]
+        const sortedCurr = [...curr].sort().join('')
+        if (resMap.has(sortedCurr)) {
+            resMap.set(sortedCurr, resMap.get(sortedCurr)!.concat([curr]))
+        } else {
+            resMap.set(sortedCurr, [curr])
+        }
+    }
+    resMap.forEach((val) => res.push(val))
+    return res
+}
+
+// output [["hat"],["act", "cat"],["stop", "pots", "tops"]]
+
+console.log(groupAnagrams(["act", "pots", "tops", "cat", "stop", "hat"]))
+
+console.log(groupAnagrams(["x"])) // output [["x"]]
+
+console.log(groupAnagrams([""])) // output [[""]]
+
+
+// Two sums
+function twoSum(nums: number[], target: number): number[] {
+    const x = new Map()
+
+    for (let i = 0 ; i < nums.length; i++) {
+        const diff = target - nums[i]
+
+        if(x.has(diff)){
+            return [x.get(diff), i]
+        }
+
+        x.set(nums[i], i)
+    }
+
+    return []
+}
+
+console.log(twoSum([4, 5, 6], 10))
+
+console.log(twoSum([5, 5], 10))
+
+console.log(twoSum([-1,-2,-3,-4,-5], -8))
