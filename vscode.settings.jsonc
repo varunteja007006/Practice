@@ -1,36 +1,29 @@
 {
-  // file associations
-  "files.associations": {
-    "*.mdx": "markdown"
-  },
-
-  // editor settings
-  "editor.fontFamily": "Fira Code",
-  "editor.fontSize": 14,
-  "editor.lineHeight": 1.75,
-  "editor.fontLigatures": true,
-  "editor.fontWeight": "450",
+  "extensions.autoCheckUpdates": false,
+  "extensions.autoUpdate": "on",
+  "update.mode": "none",
   "editor.multiCursorModifier": "ctrlCmd",
-  "editor.formatOnSave": false,
-  "editor.linkedEditing": true,
-  "editor.minimap.autohide": true,
-  "editor.mouseWheelZoom": true,
-  "editor.tabCompletion": "on",
-  "editor.rulers": [100],
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.foldingHighlight": true,
-  "editor.colorDecorators": true,
+  "git.autofetch": true,
+  "js/ts.experimental.useTsgo": true,
+  "gradle.showStoppedDaemons": true,
 
   // workbench settings
   "workbench.editor.enablePreview": false,
   "workbench.colorTheme": "Monokai",
   "workbench.settings.applyToAllProfiles": ["editor.fontFamily"],
   "security.workspace.trust.untrustedFiles": "open",
-  "workbench.tree.indent": 10,
+  "workbench.tree.indent": 12,
   "workbench.tree.renderIndentGuides": "always",
-  "workbench.iconTheme": "material-icon-theme",
 
-  // Custom colors for pure black
+  // terminal settings
+  "terminal.integrated.smoothScrolling": true,
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.tabs.defaultColor": "terminal.ansiGreen",
+  "terminal.integrated.tabs.enableAnimation": true,
+
+
+    // Custom colors for pure black
   "workbench.colorCustomizations": {
     "tree.indentGuidesStroke": "#66ff00",
     "editorRuler.foreground": "#6eff00",
@@ -115,19 +108,21 @@
     "peekViewResult.background": "#000000",
     "peekViewTitle.background": "#000000",
     "peekViewTitleDescription.foreground": "#888888",
-    "peekViewTitleLabel.foreground": "#F8F8F2"
+    "peekViewTitleLabel.foreground": "#F8F8F2",
+
+    // --- OLED extras ---
+    "minimap.background": "#000000",
+    "editorGutter.background": "#000000",
+    "quickInput.background": "#000000",
+    "quickInputList.focusBackground": "#282C34",
+    "notifications.background": "#1A1A1A",
+    "editorWidget.background": "#1A1A1A",
+    "menu.background": "#1A1A1A",
+    "breadcrumb.background": "#000000",
+    "editorLineNumber.foreground": "#555555",
+    "editorLineNumber.activeForeground": "#F8F8F2"
 
     // For more, see the official VS Code Theme Color Reference:
     // https://code.visualstudio.com/api/references/theme-color
   },
-
-  // terminal settings
-  "terminal.integrated.smoothScrolling": true,
-  "terminal.integrated.fontSize": 14,
-  "terminal.integrated.cursorBlinking": true,
-  "terminal.integrated.tabs.defaultColor": "terminal.ansiGreen",
-  "terminal.integrated.tabs.enableAnimation": true,
-
-  // git settings
-  "git.autofetch": true
 }
