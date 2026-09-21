@@ -107,4 +107,4 @@ An alternate key can be a set of one or more attributes that uniquely identify a
 
 ## ER Diagrams
 
-![ER Diagrams](https://github.com/varunteja007006/Practice/blob/main/Practice%20SQL/assets/Basic%20of%20ER%20in%20SQL.svg)
+![ER Diagrams](assets/basic-of-er-in-sql.svg)

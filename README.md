@@ -29,6 +29,26 @@ sample code snippets and concept definitions when I need them.
 
 ## Conventions
 
-- One folder per topic, lowercase kebab-case names.
-- Notes, sample code, and assets for a topic live together in its folder.
-- Build artifacts (`dist/`, compiled binaries, lockfile churn) are not committed.
+### Naming
+
+- Folders: lowercase kebab-case (`js-basics/`, `system-design/`, `linked-list/`).
+- Files: lowercase kebab-case (`mysql-setup.md`, `js-is-weird.md`). No spaces, no ALL-CAPS.
+- Sequential notes use zero-padded numeric prefixes (`01-`, `02-`, ...), e.g. `notes/05-kafka.md`.
+- Assets live in an `assets/` subfolder next to the notes that reference them.
+- Sub-projects named after their own topic only when the parent already gives context
+  (`rust/basics/`, not `rust/rust_basics/`).
+- Never rename files inside cloned third-party repos — it breaks their internals.
+
+### Structure
+
+- One top-level folder per topic; notes, code, and assets for a topic live together.
+- Cross-cutting topics (security, practices) go in `notes/`.
+- Editor setup and machine config go in `config/`, shared images in `assets/`.
+
+### Hygiene
+
+- Build artifacts are not committed: `dist/`, `build/`, compiled binaries, `coverage/`.
+- One lockfile per project (pnpm preferred), don't commit `node_modules/`.
+- Markdown must pass `markdownlint` (see `.markdownlint.jsonc`): no inline HTML
+  (`<br />`), no bare URLs, blank lines around headings/lists/fences.
+- Don't commit secrets — `.env*` is gitignored.

@@ -155,30 +155,30 @@ You can find a url as shown below,
 
 or something similar. Keep a copy of this string which is a url that will be used later.
 
-![MongoDB Shell URL](https://github.com/varunteja007006/Practice/blob/main/Practice%20MongoDB/assets/mongodb_shell_url.png?raw=true)
+![MongoDB Shell URL](assets/mongodb-shell-url.png)
 
 #### Install the MongoDB for VS Code extension
 
 Install the MongoDB for VS Code extension. To proceed further.
 
-![MongoDB Extension for VS Code](https://github.com/varunteja007006/Practice/blob/main/Practice%20MongoDB/assets/mongodb_extensionForVSCode.png?raw=true)
+![MongoDB Extension for VS Code](assets/mongodb-extension-vscode.png)
 
 #### Access MongoDB extension in VS Code
 
 Access the extension from the VS Code side menu.
-![Access MongoDB Extension for VS Code](https://github.com/varunteja007006/Practice/blob/main/Practice%20MongoDB/assets/mongodb_accessExtension.png?raw=true)
+![Access MongoDB Extension for VS Code](assets/mongodb-access-extension.png)
 
 Click `Add Connection` button in the `connections`
-![Add Connection in MongoDB](https://github.com/varunteja007006/Practice/blob/main/Practice%20MongoDB/assets/mongodb_addConnection.png?raw=true)
+![Add Connection in MongoDB](assets/mongodb-add-connection.png)
 
 Now you can see that it shows `🔴 Not connected` and a `Connect` button below with text - "Connect with
 Connection String"
 
 Click on the `Connect` button and it will ask you for the url (the one generated when we run the mongodb shell). Paste it and press enter.
-![Add url in MongoDB](https://github.com/varunteja007006/Practice/blob/main/Practice%20MongoDB/assets/mongodb_connectionURL.png?raw=true)
+![Add url in MongoDB](assets/mongodb-connection-url.png)
 
 Once successful you can see that you are connected to MongoDB on local server.
-![Connection successful](https://github.com/varunteja007006/Practice/blob/main/Practice%20MongoDB/assets/mongodb_connectionSuccess.png?raw=true)
+![Connection successful](assets/mongodb-connection-success.png)
 
 #### MongoDB playground
 
