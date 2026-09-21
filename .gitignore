@@ -1,30 +1,30 @@
-practice_git
-node_modules
+# Secrets / env
 .env
-venv
-env
 .env.local
-Practice JS/rough.js
-Practice.code-workspace
-Practice JS/rough.js
-.gitignore
-Practice React Testing/html/bg.png
-Practice React Testing/html/favicon.svg
-Practice React Testing/html/html.meta.json.gz
-Practice React Testing/html/index.html
-Practice React Testing/html/assets/index-iB8sbShH.css
-Practice React Testing/html/assets/index-ZV5L9hGb.js
-Practice React Testing/coverage/App.tsx.html
-Practice React Testing/coverage/base.css
-Practice React Testing/coverage/block-navigation.js
-Practice React Testing/coverage/favicon.png
-Practice React Testing/coverage/index.html
-Practice React Testing/coverage/prettify.css
-Practice React Testing/coverage/prettify.js
-Practice React Testing/coverage/sort-arrow-sprite.png
-Practice React Testing/coverage/sorter.js
-Practice React Testing/coverage/.tmp/coverage-27.json
-Practice MongoDB/playground-sample.mongodb.js
-Practice MongoDB/sample.mongodb.js
+.env.*
 
-.next
+# Dependency dirs
+node_modules/
+venv/
+env/
+.venv/
+
+# Build output
+dist/
+build/
+.next/
+coverage/
+out/
+
+# Compiled binaries (keep C sources only)
+*.out
+c/*
+!c/*.c
+!c/README.md
+go/hello
+target/
+
+# Logs / OS junk
+*.log
+.DS_Store
+Thumbs.db
