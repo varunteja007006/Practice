@@ -1,9 +1,11 @@
 # JS is weird
 
+```
 [] + {} -> '[object Object]'
 {} + [] -> 0
 {} + {} -> '[object Object][object Object]'
 [] + [] -> ''
+```
 
 0 == [] // true
 0 == "0" // true
@@ -32,7 +34,7 @@ typeof null -> 'object'
 
 parseInt(null, 24) -> 23
 
-(![]+[])[+[]]+([][]]+[])[+[]]+([][]]+[])[+!![]] -> fun
+[![]+[]](+[)]+[[][]]+[]](+[)]+[[][]]+[]](+!![)] -> fun
 
 parseInt(0.0000005) -> 5
 

@@ -1,8 +1,7 @@
 # CRON JOBS
 
 Refer the article for understanding the Cron Jobs -
-https://www.freecodecamp.org/news/cron-jobs-in-linux/
-<br />
+<https://www.freecodecamp.org/news/cron-jobs-in-linux/>
 
 Practice the cron jobs at [crontab.guru](https://crontab.guru/)
 
@@ -37,19 +36,19 @@ Use following flags for adding and deleting the tasks/jobs
 crontab -e
 ```
 
-2. List all cron jobs for the current user.
+1. List all cron jobs for the current user.
 
 ```sh
 crontab -l
 ```
 
-3. List another user's cron.
+1. List another user's cron.
 
 ```sh
 crontab -u username -l # username example - John
 ```
 
-4. Edit another user's cron jobs.
+1. Edit another user's cron jobs.
 
 ```sh
 crontab -u username -e # username example - John
@@ -62,7 +61,8 @@ crontab -u username -e # username example - John
 * * * * * sh /path/to/script.sh
 ```
 
-Explanation: <br />
+Explanation:
+
 `* *  * * *` represents minutes, hours, days, months and weekdays respectively.
 
 - Minutes (0 - 59): Command can be executed at any specific minute.
@@ -93,7 +93,8 @@ The following are commands and the meaning.
 
 1. Check the schedule.
 
-2. Check cron logs. The log file can be found at `var/log/cron` location. In some distros `/var/log/syslog`. <br />
+2. Check cron logs. The log file can be found at `var/log/cron` location. In some distros `/var/log/syslog`.
+
    if there is an entry in these logs at the correct time, it means the cron has run according to the schedule you set.
 
 3. Redirect cron output to a file.

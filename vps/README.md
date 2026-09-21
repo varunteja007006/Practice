@@ -13,11 +13,11 @@ A simple todo for setting up a Production ready VPS
 
 ### How to setup a production ready VPS
 
-https://youtu.be/F-9KWQByeU0?si=dbQG-EbcG8crGOnq
+<https://youtu.be/F-9KWQByeU0?si=dbQG-EbcG8crGOnq>
 
 ### Railway hosting
 
-https://docs.railway.com/guides/public-networking#custom-domains
+<https://docs.railway.com/guides/public-networking#custom-domains>
 
 ### Domain
 
@@ -27,6 +27,6 @@ cloudflare
 
 ### For certification
 
-https://certbot.eff.org/
+<https://certbot.eff.org/>
 
 Some hosting providers generate the certificate for you via Let's Encrypt.

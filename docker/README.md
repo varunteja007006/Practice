@@ -20,9 +20,6 @@ node_modules #this folder is ignored
 `*.txt` This matches any file that ends with the .txt extension.
 `**/` This pattern matches any file or directory at any depth within the build context.
 
-<br />
-<br />
-
 ## Dockerfile
 
 This file tells the docker to how to create an image.
@@ -156,9 +153,6 @@ Delete a docker container once stopped using --rm flag
 docker run --name my_app_container -p 4000:4000 --rm myapp:v1
 ```
 
-<br />
-<br />
-
 ## Volumes
 
 Docker images are read-only. Once an image is built you cannot change any files and any new changes
@@ -214,9 +208,6 @@ docker run --name my_app_container -p 4000:4000 --rm -v /home/user/Documents/wor
 -v /app/node_modules myapp:v1
 ```
 
-<br />
-<br />
-
 ## Docker Shell or Bash
 
 #### To check the files in the container
@@ -246,9 +237,6 @@ List the files
 ```sh
 ls -a
 ```
-
-<br />
-<br />
 
 ## Docker Compose
 
@@ -312,7 +300,7 @@ docker-compose down --rmi all -v
 docker push username/repo_name:tagname
 ```
 
-4. To pull down the image.
+1. To pull down the image.
 
 ```sh
 docker pull username/repo_name:tagname

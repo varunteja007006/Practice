@@ -69,7 +69,7 @@ cargo build --release
 
 ### Community crates (dependency libs)
 
-check crates.io ---> https://crates.io/
+check crates.io ---> <https://crates.io/>
 
 ### Cargo documentation
 

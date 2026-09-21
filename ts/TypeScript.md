@@ -41,9 +41,9 @@ tsc FILENAME.ts
 
 ## TypeScript Notes
 
-Learn TypeScript using documentation https://www.typescriptlang.org/docs/handbook/2/basic-types.html
+Learn TypeScript using documentation <https://www.typescriptlang.org/docs/handbook/2/basic-types.html>
 
-### TypeScript Types:
+### TypeScript Types
 
 TypeScript has corresponding primitive types for the built-in types:
 
@@ -661,12 +661,6 @@ let adminData: Admin = {
 
 ###
 
-<br>
-<br>
-<br>
-<br>
-<br>
-
 # Advance Concepts in TypeScript
 
 ## 'class' in TypeScript
@@ -1234,7 +1228,7 @@ function getArea(shape: Shape) {
 ###
 
 Check the TypeSCript Documentation for more information on Narrowing in TypeScript
-https://www.typescriptlang.org/docs/handbook/2/narrowing.html
+<https://www.typescriptlang.org/docs/handbook/2/narrowing.html>
 
 ###
 

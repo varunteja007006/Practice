@@ -35,12 +35,12 @@ console.log(juiceMaker.makeJuice()); // Output: Here is your juice!
 
 #### Explanation (AI generated)
 
-#### SandwichMaker Class:
+#### SandwichMaker Class
 
 This class has one job: to make sandwiches.
 The makeSandwich method returns a message saying a sandwich is made.
 
-#### JuiceMaker Class:
+#### JuiceMaker Class
 
 This class has one job: to make juice.
 The makeJuice method returns a message saying juice is made.

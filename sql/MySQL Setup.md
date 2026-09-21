@@ -1,6 +1,6 @@
 # MySQL setup on linux
 
-MySQL Documentation [👉 Link ](https://dev.mysql.com/doc/mysql-shell/8.0/en/mysql-shell-install-linux-quick.html)
+MySQL Documentation [MySQL Shell install docs](https://dev.mysql.com/doc/mysql-shell/8.0/en/mysql-shell-install-linux-quick.html)
 
 To start the mysql service
 
@@ -30,15 +30,13 @@ Still confused ?? open your terminal and type the below command to know the user
 whoami
 ```
 
- <br />
-
 1. Access mysql shell
 
 ```sh
 sudo mysql
 ```
 
-2. Run the following commands
+1. Run the following commands
 
 ```sh
 USE mysql;
@@ -74,7 +72,7 @@ FLUSH PRIVILEGES;
 ALTER USER 'root'@'localhost' IDENTIFIED BY 'new_password';
 ```
 
-3. Exit and restart
+1. Exit and restart
 
 ```sh
 EXIT;
@@ -84,7 +82,7 @@ EXIT;
 sudo systemctl restart mysql
 ```
 
-4. Test with new password
+1. Test with new password
 
 ```sh
 mysql -u root -p
@@ -111,12 +109,10 @@ To make new connection, use the below keyboard shortcut
 ctrl+shift+N
 ```
 
-Now from all the available options pick `MySQL`. <br />
-<br />
+Now from all the available options pick `MySQL`.
 ![Add New Connection](https://github.com/varunteja007006/Practice/blob/main/Practice%20SQL/assets/Add%20New%20Connection.png)
 
-Keep all the settings as default and now provide the user and password that you use to login into mysql connection. <br/>
-<br />
+Keep all the settings as default and now provide the user and password that you use to login into mysql connection.
 ![Test Connection](https://github.com/varunteja007006/Practice/blob/main/Practice%20SQL/assets/Test%20Connection.png)
 
 Test the connection (You can find a button Test Connection ...)

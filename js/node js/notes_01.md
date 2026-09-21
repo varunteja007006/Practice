@@ -25,7 +25,7 @@
     - Caching.
     - Using a reverse proxy.
 
-#### Q. The time required to run the following code in Google Chrome is considerably more than the time required to run it in Node.js Explain why this is so, even though both use the v8 JavaScript Engine.
+#### Q. The time required to run the following code in Google Chrome is considerably more than the time required to run it in Node.js Explain why this is so, even though both use the v8 JavaScript Engine
 
 ```js
 {
@@ -126,7 +126,7 @@ console.log(config.email);
 
     In Node.js, NODE_ENV is an environment variable used to define the current environment in which the Node.js application is running. It plays a crucial role in configuring the behavior of the application based on different environments such as development, staging, and production.
 
-https://www.geeksforgeeks.org/what-is-node_env-in-node-js/
+<https://www.geeksforgeeks.org/what-is-node_env-in-node-js/>
 
 #### Q. What are the timing features of Node.js?
 
@@ -175,7 +175,7 @@ process.on("SIGINT", function () {
     * Traefik
     * Caddy
 
-https://www.geeksforgeeks.org/how-to-listen-on-port-80-with-node-js/
+<https://www.geeksforgeeks.org/how-to-listen-on-port-80-with-node-js/>
 
 #### Q. What is the purpose of \_\_filename variable?
 
@@ -206,7 +206,7 @@ https://www.geeksforgeeks.org/how-to-listen-on-port-80-with-node-js/
 
 ## Medium
 
-#### Q. Name some of the events fired by streams.
+#### Q. Name some of the events fired by streams
 
     A stream is an abstract interface for working with streaming data in Node.js.
 
@@ -239,7 +239,7 @@ https://www.geeksforgeeks.org/how-to-listen-on-port-80-with-node-js/
     readable:
     Emitted by readable streams when there is data available to be read or when the stream has reached its end.
 
-#### Q. What's a stub? Name a use case.
+#### Q. What's a stub? Name a use case
 
     A stub, in this context, means a mock implementation. Stubs provide canned answers to function calls made during test cases.
 
@@ -429,14 +429,8 @@ if (cluster.isMaster) {
 }
 ```
 
-https://stackoverflow.com/questions/2387724/node-js-on-multi-core-machines
-
-<br />
-
-<br />
-
-<br />
+<https://stackoverflow.com/questions/2387724/node-js-on-multi-core-machines>
 
 #### References
 
-https://gist.github.com/paulfranco/9f88a2879b7b7d88de5d1921aef2093b
+<https://gist.github.com/paulfranco/9f88a2879b7b7d88de5d1921aef2093b>

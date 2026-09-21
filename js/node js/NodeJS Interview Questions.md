@@ -8,33 +8,37 @@
 All APIs of Node.js library are aynchronous that is non-blocking. It essentially means a Node.js based server never waits for a API to return data. Server moves to next API after calling it and a notification mechanism of Events of Node.js helps server to get response from the previous API call.
 
 **Source:** _tutorialspoint.com_
+
 ### Q2: What are the benefits of using Node.js? ☆☆
 
 **Answer:**
 Following are main benefits of using Node.js
 
-*   **Aynchronous and Event Driven** - All APIs of Node.js library are aynchronous that is non-blocking. It essentially means a Node.js based server never waits for a API to return data. Server moves to next API after calling it and a notification mechanism of Events of Node.js helps server to get response from the previous API call.
-*   **Very Fast** - Being built on Google Chrome's V8 JavaScript Engine, Node.js library is very fast in code execution.
-*   **Single Threaded but highly Scalable** - Node.js uses a single threaded model with event looping. Event mechanism helps server to respond in a non-bloking ways and makes server highly scalable as opposed to traditional servers which create limited threads to handle requests. Node.js uses a single threaded program and same program can services much larger number of requests than traditional server like Apache HTTP Server.
-*   **No Buffering** \- Node.js applications never buffer any data. These applications simply output the data in chunks.
+* **Aynchronous and Event Driven** - All APIs of Node.js library are aynchronous that is non-blocking. It essentially means a Node.js based server never waits for a API to return data. Server moves to next API after calling it and a notification mechanism of Events of Node.js helps server to get response from the previous API call.
+* **Very Fast** - Being built on Google Chrome's V8 JavaScript Engine, Node.js library is very fast in code execution.
+* **Single Threaded but highly Scalable** - Node.js uses a single threaded model with event looping. Event mechanism helps server to respond in a non-bloking ways and makes server highly scalable as opposed to traditional servers which create limited threads to handle requests. Node.js uses a single threaded program and same program can services much larger number of requests than traditional server like Apache HTTP Server.
+* **No Buffering** \- Node.js applications never buffer any data. These applications simply output the data in chunks.
 
 **Source:** _tutorialspoint.com_
+
 ### Q3: Is Node a single threaded application? ☆☆
 
 **Answer:**
 Yes! Node uses a single threaded model with event looping.
 
 **Source:** _tutorialspoint.com_
+
 ### Q4: What is global installation of dependencies? ☆☆
 
 **Answer:**
-Globally installed packages/dependencies are stored in **<user-directory>**/npm directory. Such dependencies can be used in CLI (Command Line Interface) function of any node.js but can not be imported using require() in Node application directly. To install a Node project globally use -g flag.
+Globally installed packages/dependencies are stored in **`<user-directory>`**/npm directory. Such dependencies can be used in CLI (Command Line Interface) function of any node.js but can not be imported using require() in Node application directly. To install a Node project globally use -g flag.
 
 **Source:** _tutorialspoint.com_
+
 ### Q5: What is an error-first callback? ☆☆
 
 **Answer:**
-*Error-first callbacks* are used to pass errors and data. The first argument is always an error object that the programmer has to check if something went wrong. Additional arguments are used to pass data.
+_Error-first callbacks_ are used to pass errors and data. The first argument is always an error object that the programmer has to check if something went wrong. Additional arguments are used to pass data.
 
 ```js
 fs.readFile(filePath, function(err, data) {
@@ -46,12 +50,14 @@ fs.readFile(filePath, function(err, data) {
 ```
 
 **Source:** _tutorialspoint.com_
+
 ### Q6: What's the difference between operational and programmer errors? ☆☆
 
 **Answer:**
 Operation errors are not bugs, but problems with the system, like _request timeout_ or _hardware failure_. On the other hand programmer errors are actual bugs.
 
 **Source:** _blog.risingstack.com_
+
 ### Q7: What is the difference between Nodejs, AJAX, and jQuery? ☆☆
 
 **Answer:**
@@ -64,6 +70,7 @@ The one common trait between Node.js, AJAX, and jQuery is that all of them are t
 * jQuery –It is a famous JavaScript module which complements AJAX, DOM traversal, looping and so on. This library provides many useful functions to help in JavaScript development. However, it’s not mandatory to use it but as it also manages cross-browser compatibility, so can help you produce highly maintainable web applications.
 
 **Source:** _techbeamers.com_
+
 ### Q8: How to make Post request in Node.js? ☆☆
 
 **Answer:**
@@ -83,25 +90,28 @@ request.post('http://www.example.com/action', {
 ```
 
 **Source:** _techbeamers.com_
+
 ### Q9: What are the key features of Node.js? ☆☆
 
 **Answer:**
 Let’s look at some of the key features of Node.js.
 
-*   **Asynchronous event driven IO helps concurrent request handling –** All APIs of Node.js are asynchronous. This feature means that if a Node receives a request for some Input/Output operation, it will execute that operation in the background and continue with the processing of other requests. Thus it will not wait for the response from the previous requests.
-*   **Fast in Code execution –** Node.js uses the V8 JavaScript Runtime engine, the one which is used by Google Chrome. Node has a wrapper over the JavaScript engine which makes the runtime engine much faster and hence processing of requests within Node.js also become faster.
-*   **Single Threaded but Highly Scalable –** Node.js uses a single thread model for event looping. The response from these events may or may not reach the server immediately. However, this does not block other operations. Thus making Node.js highly scalable. Traditional servers create limited threads to handle requests while Node.js creates a single thread that provides service to much larger numbers of such requests.
-*   **Node.js library uses JavaScript –** This is another important aspect of Node.js from the developer’s point of view. The majority of developers are already well-versed in JavaScript. Hence, development in Node.js becomes easier for a developer who knows JavaScript.
-*   **There is an Active and vibrant community for the Node.js framework –** The active community always keeps the framework updated with the latest trends in the web development.
-*   **No Buffering –** Node.js applications never buffer any data. They simply output the data in chunks.
+* **Asynchronous event driven IO helps concurrent request handling –** All APIs of Node.js are asynchronous. This feature means that if a Node receives a request for some Input/Output operation, it will execute that operation in the background and continue with the processing of other requests. Thus it will not wait for the response from the previous requests.
+* **Fast in Code execution –** Node.js uses the V8 JavaScript Runtime engine, the one which is used by Google Chrome. Node has a wrapper over the JavaScript engine which makes the runtime engine much faster and hence processing of requests within Node.js also become faster.
+* **Single Threaded but Highly Scalable –** Node.js uses a single thread model for event looping. The response from these events may or may not reach the server immediately. However, this does not block other operations. Thus making Node.js highly scalable. Traditional servers create limited threads to handle requests while Node.js creates a single thread that provides service to much larger numbers of such requests.
+* **Node.js library uses JavaScript –** This is another important aspect of Node.js from the developer’s point of view. The majority of developers are already well-versed in JavaScript. Hence, development in Node.js becomes easier for a developer who knows JavaScript.
+* **There is an Active and vibrant community for the Node.js framework –** The active community always keeps the framework updated with the latest trends in the web development.
+* **No Buffering –** Node.js applications never buffer any data. They simply output the data in chunks.
 
 **Source:** _techbeamers.com_
+
 ### Q10: What is control flow function?   ☆☆
 
 **Answer:**
 It is a generic piece of code which runs in between several asynchronous function calls is known as control flow function.
 
 **Source:** _lazyquestion.com_
+
 ### Q11: What are Event Listeners?   ☆☆
 
 **Answer:**
@@ -110,6 +120,7 @@ It is a generic piece of code which runs in between several asynchronous functio
 Node.js has built in event's and built in event listeners. Node.js also provides functionality to create Custom events and Custom Event listeners.
 
 **Source:** _lazyquestion.com_
+
 ### Q12: If Node.js is single threaded then how it handles concurrency? ☆☆
 
 **Answer:**
@@ -120,16 +131,18 @@ When Node gets I/O request it creates or uses a thread to perform that I/O opera
 This is how Node manages concurrency.
 
 **Source:** _codeforgeek.com_
+
 ### Q13: What is Callback Hell? ☆☆
 
 **Answer:**
-The asynchronous function requires callbacks as a return parameter. When multiple asynchronous functions are chained together then callback hell situation comes up. 
+The asynchronous function requires callbacks as a return parameter. When multiple asynchronous functions are chained together then callback hell situation comes up.
 
 **Source:** _codeforgeek.com_
+
 ### Q14: Could we run an external process with Node.js? ☆☆
 
 **Answer:**
-Yes. *Child process module* enables us to access operating system functionaries or other apps. Scalability is baked into Node and child processes are the key factors to scale our application. You can use child process to run system commands, read large files without blocking event loop,  decompose the application into various “nodes” (That’s why it’s called Node).
+Yes. _Child process module_ enables us to access operating system functionaries or other apps. Scalability is baked into Node and child processes are the key factors to scale our application. You can use child process to run system commands, read large files without blocking event loop,  decompose the application into various “nodes” (That’s why it’s called Node).
 
 Child process module has following three major ways to create child processes –
 
@@ -138,21 +151,25 @@ Child process module has following three major ways to create child processes �
 * fork - The child_process.fork method is a special case of the spawn() to create child processes.
 
 **Source:** _codeforgeek.com_
+
 ### Q15:  List out the differences between AngularJS and NodeJS? ☆☆
 
 **Answer:**
 AngularJS is a web application development framework. It’s a JavaScript and it is different from other web app frameworks written in JavaScript like jQuery. NodeJS is a runtime environment used for building server-side applications while AngularJS is a JavaScript framework mainly useful in building/developing client-side part of applications which run inside a web browser.
 
 **Source:** _a4academics.com_
+
 ### Q16:  How you can monitor a file for modifications in Node.js ? ☆☆
 
 **Answer:**
 We can take advantage of File System `watch()` function which watches the changes of the file.
 
 **Source:** _codingdefined.com_
+
 ### Q17: What are the core modules of Node,js? ☆☆
 
 **Answer:**
+
 * EventEmitter
 * Stream
 * FS
@@ -160,6 +177,7 @@ We can take advantage of File System `watch()` function which watches the change
 * Global Objects
 
 **Source:** _github.com/jimuyouyou_
+
 ### Q18: What is V8? ☆☆
 
 **Answer:**
@@ -171,18 +189,19 @@ The Chrome V8 engine :
 * It implements ECMAScript as specified in ECMA-262.
 * The V8 engine can run standalone we can embed it with our own C++ program.
 
-
-
 **Source:** _nodejs.org_
+
 ### Q19: What is libuv? ☆☆
 
 **Answer:**
 **libuv** is a C library that is used to abstract non-blocking I/O operations to a consistent interface across all supported platforms. It provides mechanisms to handle file system, DNS, network, child processes, pipes, signal handling, polling and streaming. It also includes a thread pool for offloading work for some things that can't be done asynchronously at the operating system level.
 
 **Source:** _nodejs.org_
+
 ### Q20: What is the difference between returning a callback and just calling a callback? ☆☆
 
 **Answer:**
+
 ```js
 return callback();
 //some more lines of code; -  won't be executed
@@ -192,6 +211,7 @@ callback();
 ```
 
 Of course returning will help the context calling async function get the value returned by callback.
+
 ```js
 function do2(callback) {
     log.trace('Execute function: do2');
@@ -205,7 +225,9 @@ var do2Result = do2((param) => {
 
 log.trace(`print ${do2Result}`);
 ```
+
 Output:
+
 ```sh
 C:\Work\Node>node --use-strict main.js
 [0] Execute function: do2
@@ -220,47 +242,51 @@ C:\Work\Node>node --use-strict main.js
 **Answer:**
 **REPL** stands for Read Eval Print Loop and it represents a computer environment like a window console or unix/linux shell where a command is entered and system responds with an output. Node.js or Node comes bundled with a REPL environment. It performs the following desired tasks.
 
-*   **Read** \- Reads user's input, parse the input into JavaScript data-structure and stores in memory.
-*   **Eval** \- Takes and evaluates the data structure
-*   **Print** \- Prints the result
-*   **Loop** \- Loops the above command until user press ctrl-c twice.
+* **Read** \- Reads user's input, parse the input into JavaScript data-structure and stores in memory.
+* **Eval** \- Takes and evaluates the data structure
+* **Print** \- Prints the result
+* **Loop** \- Loops the above command until user press ctrl-c twice.
 
 **Source:** _tutorialspoint.com_
+
 ### Q22: What is Callback? ☆☆☆
 
 **Answer:**
-**Callback** is an asynchronous equivalent for a function. A callback function is called at the completion of a given task. Node makes heavy use of callbacks. All APIs of Node are written is such a way that they supports callbacks. 
+**Callback** is an asynchronous equivalent for a function. A callback function is called at the completion of a given task. Node makes heavy use of callbacks. All APIs of Node are written is such a way that they supports callbacks.
 
-For example, a function to read a file may start reading file and return the control to execution environment immediately so that next instruction can be executed. Once file I/O is complete, it will call the callback function while passing the callback function, the content of the file as parameter. So there is no blocking or wait for File I/O. 
+For example, a function to read a file may start reading file and return the control to execution environment immediately so that next instruction can be executed. Once file I/O is complete, it will call the callback function while passing the callback function, the content of the file as parameter. So there is no blocking or wait for File I/O.
 
 This makes Node.js highly scalable, as it can process high number of request without waiting for any function to return result.
 
 **Source:** _tutorialspoint.com_
+
 ### Q23: What is a blocking code? ☆☆☆
 
 **Answer:**
 If application has to wait for some I/O operation in order to complete its execution any further then the code responsible for waiting is known as blocking code.
 
 **Source:** _tutorialspoint.com_
+
 ### Q24: How Node prevents blocking code? ☆☆☆
 
 **Answer:**
 By providing callback function. Callback function gets called whenever corresponding event triggered.
 
-
 **Source:** _tutorialspoint.com_
+
 ### Q25: What is Event Loop? ☆☆☆
 
 **Answer:**
 Node.js is a single threaded application but it support concurrency via concept of event and callbacks. As every API of Node js are asynchronous and being a single thread, it uses async function calls to maintain the concurrency. Node uses observer pattern. Node thread keeps an event loop and whenever any task get completed, it fires the corresponding event which signals the event listener function to get executed.
 
 **Source:** _tutorialspoint.com_
+
 ### Q26: What is Event Emmitter? ☆☆☆
 
 **Answer:**
 All objects that emit events are members of EventEmitter class. These objects expose an `eventEmitter.on()` function that allows one or more functions to be attached to named events emitted by the object.
 
-When the EventEmitter object emits an event, all of the functions attached to that specific event are called synchronously. 
+When the EventEmitter object emits an event, all of the functions attached to that specific event are called synchronously.
 
 ```js
 const EventEmitter = require('events');
@@ -275,12 +301,14 @@ myEmitter.emit('event');
 ```
 
 **Source:** _tutorialspoint.com_
+
 ### Q27: What is purpose of Buffer class in Node? ☆☆☆
 
 **Answer:**
 **Buffer** class is a global class and can be accessed in application without importing buffer module. A Buffer is a kind of an array of integers and corresponds to a raw memory allocation outside the V8 heap. A Buffer cannot be resized.
 
 **Source:** _tutorialspoint.com_
+
 ### Q28: What is difference between synchronous and asynchronous method of fs module? ☆☆☆
 
 **Answer:**
@@ -288,57 +316,61 @@ myEmitter.emit('event');
 Every method in `fs` module has synchronous as well as asynchronous form. Asynchronous methods takes a last parameter as completion function callback and first parameter of the callback function is error. It is preferred to use asynchronous method instead of synchronous method as former never block the program execution where the latter one does.
 
 **Source:** _tutorialspoint.com_
+
 ### Q29: What are streams? ☆☆☆
 
 **Answer:**
 Streams are objects that let you read data from a source or write data to a destination in continuous fashion. In Node.js, there are four types of streams.
 
-*   **Readable** \- Stream which is used for read operation.
-*   **Writable** \- Stream which is used for write operation.
-*   **Duplex** \- Stream which can be used for both read and write operation.
-*   **Transform** \- A type of duplex stream where the output is computed based on input.
+* **Readable** \- Stream which is used for read operation.
+* **Writable** \- Stream which is used for write operation.
+* **Duplex** \- Stream which can be used for both read and write operation.
+* **Transform** \- A type of duplex stream where the output is computed based on input.
 
 **Source:** _tutorialspoint.com_
+
 ### Q30: What is Chaining in Node? ☆☆☆
 
 **Answer:**
 **Chanining** is a mechanism to connect output of one stream to another stream and create a chain of multiple stream operations. It is normally used with piping operations.
 
 **Source:** _tutorialspoint.com_
+
 ### Q31: What is the purpose of setTimeout function? ☆☆☆
 
 **Answer:**
 The `setTimeout(cb, ms)` global function is used to run callback `cb` after at least `ms` milliseconds. The actual delay depends on external factors like OS timer granularity and system load. A timer cannot span more than 24.8 days.
 
 **Source:** _tutorialspoint.com_
+
 ### Q32: How can you avoid callback hells? ☆☆☆
 
 **Answer:**
 To do so you have more options:
 
-*   **modularization**: break callbacks into independent functions
-*   use _Promises_
-*   use `yield` with _Generators_ and/or _Promises_
+* **modularization**: break callbacks into independent functions
+* use _Promises_
+* use `yield` with _Generators_ and/or _Promises_
 
 **Source:** _tutorialspoint.com_
+
 ### Q33: What's the event loop? ☆☆☆
 
 **Answer:**
 **The event loop** is what allows Node.js to perform non-blocking I/O operations — despite the fact that JavaScript is single-threaded — by offloading operations to the system kernel whenever possible.
 
-<div class="text-center">
-<img src="https://i.stack.imgur.com/Lbs9z.png" class="img-fluid">
-</div>
+![Node.js event loop diagram](https://i.stack.imgur.com/Lbs9z.png)
 
 Every I/O requires a callback - once they are done they are pushed onto the event loop for execution. Since most modern kernels are multi-threaded, they can handle multiple operations executing in the background. When one of these operations completes, the kernel tells Node.js so that the appropriate callback may be added to the poll queue to eventually be executed.
 
 **Source:** _blog.risingstack.com_
+
 ### Q34: How to avoid callback hell in Node.js? ☆☆☆
 
 **Answer:**
 Node.js internally uses a single-threaded event loop to process queued events. But this approach may lead to blocking the entire process if there is a task running longer than expected.
 
-Node.js addresses this problem by incorporating callbacks also known as higher-order functions. So whenever a long-running process finishes its execution, it triggers the callback associated. 
+Node.js addresses this problem by incorporating callbacks also known as higher-order functions. So whenever a long-running process finishes its execution, it triggers the callback associated.
 
 sometimes, it could lead to complex and unreadable code. More the no. of callbacks, longer the chain of returning callbacks would be.
 
@@ -364,9 +396,10 @@ Promises give an alternate way to write async code. They either return the resul
 
 **Use generators**
 
-Generators are lightweight routines, they make a function wait and resume via the yield keyword. Generator functions uses a special syntax <function* ()>. They can also suspend and resume asynchronous operations using constructs such as promises or <thunks> and turn a synchronous code into asynchronous.
+Generators are lightweight routines, they make a function wait and resume via the yield keyword. Generator functions uses a special syntax `<function* ()>`. They can also suspend and resume asynchronous operations using constructs such as promises or `<thunks>` and turn a synchronous code into asynchronous.
 
 **Source:** _techbeamers.com_
+
 ### Q35: Explain how does Node.js work? ☆☆☆
 
 **Answer:**
@@ -374,19 +407,19 @@ A Node.js application creates a single thread on its invocation. Whenever Node.j
 
 Node.js works asynchronously by using the event loop and callback functions, to handle multiple requests coming in parallel. An Event Loop is a functionality which handles and processes all your external events and just converts them to a callback function. It invokes all the event handlers at a proper time. Thus, lots of work is done on the back-end, while processing a single request, so that the new incoming request doesn’t have to wait if the processing is not complete.
 
-<div class="text-center"/>
-<img src="https://csharpcorner-mindcrackerinc.netdna-ssl.com/article/node-js-event-loop/Images/1.png" class="img-fluid" style="max-width: 800px" />
-</div>
+![Node.js event loop diagram](https://csharpcorner-mindcrackerinc.netdna-ssl.com/article/node-js-event-loop/Images/1.png)
 
 While processing a request, Node.js attaches a callback function to it and moves it to the back-end. Now, whenever its response is ready, an event is called which triggers the associated callback function to send this response.
 
 **Source:** _techbeamers.com_
+
 ### Q16: When should we use Node.js? ☆☆☆
 
 **Answer:**
 **Node.js** is well suited for applications that have a lot of concurrent connections and each _request only needs very few CPU cycles_, because the event loop (with all the other clients) is blocked during execution of a function. I believe Node.js is best suited for real-time applications: online games, collaboration tools, chat rooms, or anything where what one user (or robot? or sensor?) does with the application needs to be seen by other users immediately, without a page refresh.
 
 **Source:** _techbeamers.com_
+
 ### Q17: How does Node.js handle child threads? ☆☆☆
 
 **Answer:**
@@ -395,6 +428,7 @@ Node.js, in its essence, is a single thread process. It does not expose child th
 If threading support is desired in a Node.js application, there are tools available to enable it, such as the ChildProcess module.
 
 **Source:** _lazyquestion.com_
+
 ### Q18: What is the preferred method of resolving unhandled exceptions in Node.js? ☆☆☆
 
 **Answer:**
@@ -405,6 +439,7 @@ process.on('uncaughtException', function(err) {
   console.log('Caught exception: ' + err);
 });
 ```
+
 However, `uncaughtException` is a very crude mechanism for exception handling and may be removed from Node.js in the future. An exception that has bubbled all the way up to the `Process` level means that your application, and Node.js may be in an undefined state, and the only sensible approach would be to restart everything.
 
 The preferred way is to add another layer between your application and the Node.js process which is called the [domain](http://nodejs.org/api/domain.html).
@@ -412,6 +447,7 @@ The preferred way is to add another layer between your application and the Node.
 Domains provide a way to handle multiple different I/O operations as a single group. So, by having your application, or part of it, running in a separate domain, you can safely handle exceptions at the domain level, before they reach the `Process` level.
 
 **Source:** _lazyquestion.com_
+
 ### Q19: What is stream and what are types of streams available in Node.js? ☆☆☆
 
 **Answer:**
@@ -429,13 +465,15 @@ Readable streams as the name suggest used in reading a large chunk of data from 
 Duplex streams are both readable and writable ( Eg socket). Transform stream is the duplex stream which is used in modifying the data (eg zip creation).
 
 **Source:** _codeforgeek.com_
+
 ### Q20: What are the global objects of Node.js? ☆☆☆
 
 **Answer:**
 These objects are available in all modules:
-* **process** - The process object is a global that provides information about, and control over, the current Node.js process. 
-* **console** - Used to print to stdout and stderr. 
-* **buffer** - Used to handle binary data. 
+
+* **process** - The process object is a global that provides information about, and control over, the current Node.js process.
+* **console** - Used to print to stdout and stderr.
+* **buffer** - Used to handle binary data.
 
 **Source:** _github.com/jimuyouyou_
 
@@ -445,42 +483,47 @@ These objects are available in all modules:
 **Piping** is a mechanism to connect output of one stream to another stream. It is normally used to get data from one stream and to pass output of that stream to another stream. There is no limit on piping operations.
 
 **Source:** _tutorialspoint.com_
+
 ### Q2: Name some of the events fired by streams. ☆☆☆☆
 
 **Answer:**
 Each type of Stream is an **EventEmitter** instance and throws several events at different instance of times. For example, some of the commonly used events are:
 
-*   **data** \- This event is fired when there is data is available to read.
-*   **end** \- This event is fired when there is no more data to read.
-*   **error** \- This event is fired when there is any error receiving or writing data.
-*   **finish** \- This event is fired when all data has been flushed to underlying system
+* **data** \- This event is fired when there is data is available to read.
+* **end** \- This event is fired when there is no more data to read.
+* **error** \- This event is fired when there is any error receiving or writing data.
+* **finish** \- This event is fired when all data has been flushed to underlying system
 
 **Source:** _tutorialspoint.com_
+
 ### Q3: What is the purpose of __filename variable? ☆☆☆☆
 
 **Answer:**
 The `__filename` represents the filename of the code being executed. This is the resolved absolute path of this code file. For a main program this is not necessarily the same filename used in the command line. The value inside a module is the path to that module file.
 
 **Source:** _tutorialspoint.com_
+
 ### Q4: How can you listen on port 80 with Node? ☆☆☆☆
 
 **Answer:**
 Run the application on any port above 1024, then put a reverse proxy like [nginx](http://nginx.org/) in front of it.
 
 **Source:** _blog.risingstack.com_
+
 ### Q5: What tools can be used to assure consistent code style? ☆☆☆☆
 
 **Answer:**
 You have plenty of options to do so:
 
-*   [JSLint](http://jslint.com/) by Douglas Crockford
-*   [JSHint](http://jshint.com/)
-*   [ESLint](http://eslint.org/)
-*   [JSCS](http://jscs.info/)
+* [JSLint](http://jslint.com/) by Douglas Crockford
+* [JSHint](http://jshint.com/)
+* [ESLint](http://eslint.org/)
+* [JSCS](http://jscs.info/)
 
 These tools are really helpful when developing code in teams, to enforce a given style guide and to catch common errors using static analysis.
 
 **Source:** _blog.risingstack.com_
+
 ### Q6: What's a stub? Name a use case. ☆☆☆☆
 
 **Answer:**
@@ -500,6 +543,7 @@ readFileStub.restore();
 ```
 
 **Source:** _blog.risingstack.com_
+
 ### Q7: Does Node.js support multi-core platforms? And is it capable of utilizing all the cores? ☆☆☆☆
 
 **Answer:**
@@ -508,6 +552,7 @@ Yes, Node.js would run on a multi-core system without any issue. But it is by de
 However, Node.js can facilitate deployment on multi-core systems where it does use the additional hardware. It packages with a Cluster module which is capable of starting multiple Node.js worker processes that will share the same port.
 
 **Source:** _techbeamers.com_
+
 ### Q8: Is Node.js entirely based on a single-thread? ☆☆☆☆
 
 **Answer:**
@@ -518,6 +563,7 @@ Moreover, Node.js has an optimized design which utilizes both JavaScript and C++
 To explain it practically, let’s assume there are 100s of requests lined up in Node.js queue. As per design, the main thread of Node.js event loop will receive all of them and forwards to background workers for execution. Once the workers finish processing requests, the registered callbacks get notified on event loop thread to pass the result back to the user.
 
 **Source:** _techbeamers.com_
+
 ### Q9: Is Node.js entirely based on a single-thread? ☆☆☆☆
 
 **Answer:**
@@ -528,30 +574,35 @@ Moreover, Node.js has an optimized design which utilizes both JavaScript and C++
 To explain it practically, let’s assume there are 100s of requests lined up in Node.js queue. As per design, the main thread of Node.js event loop will receive all of them and forwards to background workers for execution. Once the workers finish processing requests, the registered callbacks get notified on event loop thread to pass the result back to the user.
 
 **Source:** _techbeamers.com_
+
 ### Q10: When to not use Node.js? ☆☆☆☆
 
 **Answer:**
 We can use Node.js for a variety of applications. But it is a single threaded framework, so we should not use it for cases where the application requires long processing time. If the server is doing some calculation, it won’t be able to process any other requests. Hence, Node.js is best when processing needs less dedicated CPU time.
 
 **Source:** _techbeamers.com_
+
 ### Q11: Why to use Buffers instead of binary strings to handle binary data ? ☆☆☆☆
 
 **Answer:**
 Pure JavaScript does not able to handle straight binary data very well. Since Node.js servers have to deal with TCP streams for reading and writing of data, binary strings will become problematic to work with as it is very slow and has a tendency to break. That's why it is always advisable to use Buffers instead of binary strings to handle binary data.
 
 **Source:** _codingdefined.com_
+
 ### Q12: How to use Buffer in Node.js? ☆☆☆
 
 **Answer:**
 Buffer is used to process binary data, such as pictures, mp3, database files, etc. Buffer supports a variety of encoding and decoding, binary string conversion.
 
 **Source:** _github.com/jimuyouyou_
+
 ### Q13: When should I use EventEmitter? ☆☆☆
 
 **Answer:**
-Whenever it makes sense for code to *subscribe* to something rather than get a callback from something. The typical use case would be that there's multiple blocks of code in your application that may need to do something when an event happens.
+Whenever it makes sense for code to _subscribe_ to something rather than get a callback from something. The typical use case would be that there's multiple blocks of code in your application that may need to do something when an event happens.
 
 **Source:** _stackoverflow.com/_
+
 ### Q14: How do you debug Node.js applications? ☆☆☆
 
 **Answer:**
@@ -562,18 +613,21 @@ node --inspect server.js
 ```
 
 Some other options for debugging are:
-- [Joyent's Guide](http://www.joyent.com/developers/node/debug)
-- [Debugger](https://nodejs.org/api/debugger.html)
-- [Node Inspector](https://github.com/node-inspector/node-inspector)
-- [Visual Studio Code](https://code.visualstudio.com/docs/runtimes/nodejs#_debugging-your-node-application)
-- [Cloud9](https://docs.c9.io/running_and_debugging_code.html)
-- [Brackets](https://github.com/adobe-research/theseus)
+
+* [Joyent's Guide](http://www.joyent.com/developers/node/debug)
+* [Debugger](https://nodejs.org/api/debugger.html)
+* [Node Inspector](https://github.com/node-inspector/node-inspector)
+* [Visual Studio Code](https://code.visualstudio.com/docs/runtimes/nodejs#_debugging-your-node-application)
+* [Cloud9](https://docs.c9.io/running_and_debugging_code.html)
+* [Brackets](https://github.com/adobe-research/theseus)
 
 **Source:** _stackoverflow.com_
+
 ### Q15: Rewrite promise-based Node.js applications to Async/Await ☆☆☆
 
 **Details:**
 Rewrite this code to Async/Await:
+
 ```js
 function asyncTask() {
     return functionA()
@@ -584,8 +638,8 @@ function asyncTask() {
 }
 ```
 
-
 **Answer:**
+
 ```js
 async function asyncTask() {
     try {
@@ -600,18 +654,21 @@ async function asyncTask() {
 ```
 
 **Source:** _stackoverflow.com_
+
 ### Q16: What is the relationship between Node.js and V8? ☆☆☆
 
 **Answer:**
 V8 is the Javascript engine inside of node.js that parses and runs your Javascript. The same V8 engine is used inside of Chrome to run javascript in the Chrome browser. Google open-sourced the V8 engine and the builders of node.js used it to run Javascript in node.js.
 
 **Source:** _stackoverflow.com_
+
 ### Q17: What is N-API in Node.js? ☆☆☆
 
 **Answer:**
 **N-API** (pronounced N as in the letter, followed by API) is an API for building native Addons. It is independent from the underlying JavaScript runtime (ex V8) and is maintained as part of Node.js itself. This API will be Application Binary Interface (ABI) stable across versions of Node.js. It is intended to insulate Addons from changes in the underlying JavaScript engine and allow modules compiled for one version to run on later versions of Node.js without recompilation.
 
 **Source:** _medium.com_
+
 ### Q18: Explain the concept of Domain in Node.js ☆☆☆
 
 **Answer:**
@@ -638,6 +695,7 @@ d.run(function() {
 ```
 
 **Source:** _nodejs.org_
+
 ### Q19: Are you familiar with differences between Node.js nodules and ES6 nodules? ☆☆☆
 
 **Answer:**
@@ -646,6 +704,7 @@ The modules used in Node.js follow a module specification known as the **CommonJ
 Now ES6 modules are incompatible with Node.js modules. This has to do with the way modules are loaded differently between the two formats. If you use a compiler like Babel, you can mix and match module formats.
 
 **Source:** _stackoverflow.com_
+
 ### Q20: What are the use cases for the Node.js "vm" core module? ☆☆☆
 
 **Answer:**
@@ -659,42 +718,47 @@ It can be used to safely execute a piece of code contained in a string or file. 
 **Piping** is a mechanism to connect output of one stream to another stream. It is normally used to get data from one stream and to pass output of that stream to another stream. There is no limit on piping operations.
 
 **Source:** _tutorialspoint.com_
+
 ### Q2: Name some of the events fired by streams. ☆☆☆☆
 
 **Answer:**
 Each type of Stream is an **EventEmitter** instance and throws several events at different instance of times. For example, some of the commonly used events are:
 
-*   **data** \- This event is fired when there is data is available to read.
-*   **end** \- This event is fired when there is no more data to read.
-*   **error** \- This event is fired when there is any error receiving or writing data.
-*   **finish** \- This event is fired when all data has been flushed to underlying system
+* **data** \- This event is fired when there is data is available to read.
+* **end** \- This event is fired when there is no more data to read.
+* **error** \- This event is fired when there is any error receiving or writing data.
+* **finish** \- This event is fired when all data has been flushed to underlying system
 
 **Source:** _tutorialspoint.com_
+
 ### Q3: What is the purpose of __filename variable? ☆☆☆☆
 
 **Answer:**
 The `__filename` represents the filename of the code being executed. This is the resolved absolute path of this code file. For a main program this is not necessarily the same filename used in the command line. The value inside a module is the path to that module file.
 
 **Source:** _tutorialspoint.com_
+
 ### Q4: How can you listen on port 80 with Node? ☆☆☆☆
 
 **Answer:**
 Run the application on any port above 1024, then put a reverse proxy like [nginx](http://nginx.org/) in front of it.
 
 **Source:** _blog.risingstack.com_
+
 ### Q5: What tools can be used to assure consistent code style? ☆☆☆☆
 
 **Answer:**
 You have plenty of options to do so:
 
-*   [JSLint](http://jslint.com/) by Douglas Crockford
-*   [JSHint](http://jshint.com/)
-*   [ESLint](http://eslint.org/)
-*   [JSCS](http://jscs.info/)
+* [JSLint](http://jslint.com/) by Douglas Crockford
+* [JSHint](http://jshint.com/)
+* [ESLint](http://eslint.org/)
+* [JSCS](http://jscs.info/)
 
 These tools are really helpful when developing code in teams, to enforce a given style guide and to catch common errors using static analysis.
 
 **Source:** _blog.risingstack.com_
+
 ### Q6: What's a stub? Name a use case. ☆☆☆☆
 
 **Answer:**
@@ -714,6 +778,7 @@ readFileStub.restore();
 ```
 
 **Source:** _blog.risingstack.com_
+
 ### Q7: Does Node.js support multi-core platforms? And is it capable of utilizing all the cores? ☆☆☆☆
 
 **Answer:**
@@ -722,6 +787,7 @@ Yes, Node.js would run on a multi-core system without any issue. But it is by de
 However, Node.js can facilitate deployment on multi-core systems where it does use the additional hardware. It packages with a Cluster module which is capable of starting multiple Node.js worker processes that will share the same port.
 
 **Source:** _techbeamers.com_
+
 ### Q8: Is Node.js entirely based on a single-thread? ☆☆☆☆
 
 **Answer:**
@@ -732,6 +798,7 @@ Moreover, Node.js has an optimized design which utilizes both JavaScript and C++
 To explain it practically, let’s assume there are 100s of requests lined up in Node.js queue. As per design, the main thread of Node.js event loop will receive all of them and forwards to background workers for execution. Once the workers finish processing requests, the registered callbacks get notified on event loop thread to pass the result back to the user.
 
 **Source:** _techbeamers.com_
+
 ### Q9: Is Node.js entirely based on a single-thread? ☆☆☆☆
 
 **Answer:**
@@ -742,31 +809,35 @@ Moreover, Node.js has an optimized design which utilizes both JavaScript and C++
 To explain it practically, let’s assume there are 100s of requests lined up in Node.js queue. As per design, the main thread of Node.js event loop will receive all of them and forwards to background workers for execution. Once the workers finish processing requests, the registered callbacks get notified on event loop thread to pass the result back to the user.
 
 **Source:** _techbeamers.com_
+
 ### Q10: When to not use Node.js? ☆☆☆☆
 
 **Answer:**
 We can use Node.js for a variety of applications. But it is a single threaded framework, so we should not use it for cases where the application requires long processing time. If the server is doing some calculation, it won’t be able to process any other requests. Hence, Node.js is best when processing needs less dedicated CPU time.
 
 **Source:** _techbeamers.com_
+
 ### Q11: Why to use Buffers instead of binary strings to handle binary data ? ☆☆☆☆
 
 **Answer:**
 Pure JavaScript does not able to handle straight binary data very well. Since Node.js servers have to deal with TCP streams for reading and writing of data, binary strings will become problematic to work with as it is very slow and has a tendency to break. That's why it is always advisable to use Buffers instead of binary strings to handle binary data.
 
 **Source:** _codingdefined.com_
+
 ### Q12: How to gracefully Shutdown Node.js Server? ☆☆☆☆
 
 **Answer:**
 We can gracefully shutdown Node.js server by using the generic signal called SIGTERM or SIGINT which is used for program termination. We need to call SIGTERM or SIGINT which will terminate the program and clean up the resources utilized by the program.
 
 **Source:** _codingdefined.com_
+
 ### Q13: What are the timing features of Node.js? ☆☆☆☆
 
 **Answer:**
-The Timers module in Node.js contains functions that execute code after a set period of time. 
+The Timers module in Node.js contains functions that execute code after a set period of time.
 
 * **setTimeout/clearTimeout** - can be used to schedule code execution after a designated amount of milliseconds
-* **setInterval/clearInterval** - can be used to execute a block of code multiple times 
+* **setInterval/clearInterval** - can be used to execute a block of code multiple times
 * **setImmediate/clearImmediate** - will execute code at the end of the current event loop cycle
 * **process.nextTick** - used to schedule a callback function to be invoked in the next iteration of the Event Loop
 
@@ -786,6 +857,7 @@ Processed in next iteration
 ```
 
 **Source:** _github.com/jimuyouyou_
+
 ### Q14: Explain usage of NODE_ENV ☆☆☆☆
 
 **Answer:**
@@ -802,18 +874,21 @@ if (process.env.NODE_ENV === “production”)
 ```
 
 **Source:** _github.com/i0natan/nodebestpractices_
+
 ### Q15: What is LTS releases of Node.js why should you care? ☆☆☆☆
 
 **Answer:**
-An **LTS(Long Term Support)** version of Node.js receives all the critical bug fixes, security updates and performance improvements. 
+An **LTS(Long Term Support)** version of Node.js receives all the critical bug fixes, security updates and performance improvements.
 
-LTS versions of Node.js are supported for at least 18 months and are indicated by even version numbers (e.g. 4, 6, 8). They're best for production since the LTS release line is focussed on stability and security, whereas the *Current* release line has a shorter lifespan and more frequent updates to the code. Changes to LTS versions are limited to bug fixes for stability, security updates, possible npm updates, documentation updates and certain performance improvements that can be demonstrated to not break existing applications.
+LTS versions of Node.js are supported for at least 18 months and are indicated by even version numbers (e.g. 4, 6, 8). They're best for production since the LTS release line is focussed on stability and security, whereas the _Current_ release line has a shorter lifespan and more frequent updates to the code. Changes to LTS versions are limited to bug fixes for stability, security updates, possible npm updates, documentation updates and certain performance improvements that can be demonstrated to not break existing applications.
 
 **Source:** _github.com/i0natan/nodebestpractices_
+
 ### Q16: Provide some example of config file separation for dev and prod environments ☆☆☆☆
 
 **Answer:**
 A perfect and flawless configuration setup should ensure:
+
 * keys can be read from file AND from environment variable
 * secrets are kept outside committed code
 * config is hierarchical for easier findability
@@ -838,19 +913,23 @@ exports.get = function get(env) {
   return config[env] || config.default;
 }
 ```
+
 And it's usage:
+
 ```js
 const config = require('./config/config.js').get(process.env.NODE_ENV);
 const dbconn = mongoose.createConnection(config.mongo.billing);
 ```
 
 **Source:** _github.com/i0natan/nodebestpractices_
+
 ### Q17: How would you handle errors for async code in Node.js? ☆☆☆☆
 
 **Answer:**
 Handling async errors in callback style (error-first approach) is probably the fastest way to hell (a.k.a the pyramid of doom). It's better to use a reputable promise library or async-await instead which enables a much more compact and familiar code syntax like try-catch.
 
 Consider promises to catch errors:
+
 ```js
 doWork()
  .then(doWork)
@@ -859,7 +938,9 @@ doWork()
  .catch((error) => {throw error;})
  .then(verify);
 ```
+
 or using async/await:
+
 ```js
 async function check(req, res) {
     try {
@@ -873,19 +954,23 @@ async function check(req, res) {
 ```
 
 **Source:** _github.com/i0natan/nodebestpractices_
+
 ### Q18: What's the difference between dependencies, devDependencies and peerDependencies in npm package.json file? ☆☆☆☆
 
 **Answer:**
+
 * **dependencies** - Dependencies that your project needs to run, like a library that provides functions that you call from your code. They are installed transitively (if A depends on B depends on C, npm install on A will install B and C).
 
 * **devDependencies** - Dependencies you only need during development or releasing, like compilers that take your code and compile it into javascript, test frameworks or documentation generators. They are not installed transitively (if A depends on B dev-depends on C, npm install on A will install B only).
 * **peerDependencies** - Dependencies that your project hooks into, or modifies, in the parent project, usually a plugin for some other library or tool. It is just intended to be a check, making sure that the parent project (project that will depend on your project) has a dependency on the project you hook into. So if you make a plugin C that adds functionality to library B, then someone making a project A will need to have a dependency on B if they have a dependency on C. They are not installed (unless npm < 3), they are only checked for.
 
 **Source:** _stackoverflow.com_
+
 ### Q19: How do you convert an existing callback API to promises? ☆☆☆☆
 
 **Details:**
 How to convert this callback code to Promise? Provide some examples.
+
 ```js
 function divisionAPI (number, divider, successCallback, errorCallback) {
     if (divider == 0) {
@@ -896,6 +981,7 @@ function divisionAPI (number, divider, successCallback, errorCallback) {
 ```
 
 **Answer:**
+
 ```js
 function divisionAPI(number, divider) {
     return new Promise(function(fulfilled, rejected) {
@@ -917,7 +1003,8 @@ divisionAPI(1, 2).then(function(result) {
     console.log(result)
 })
 ```
-Node.js 8.0.0 includes a new `util.promisify()` API that allows standard Node.js callback style APIs to be wrapped in a function that returns a Promise. 
+
+Node.js 8.0.0 includes a new `util.promisify()` API that allows standard Node.js callback style APIs to be wrapped in a function that returns a Promise.
 
 ```js
 const fs = require('fs');
@@ -934,14 +1021,15 @@ readfile('/some/file')
     });
 ```
 
-
 **Source:** _stackoverflow.com_
+
 ### Q20: What are async functions in Node? Provide some examples. ☆☆☆☆
 
 **Answer:**
 With the release of Node.js 8, the long awaited async functions have landed in Node.js as well. ES 2017 introduced Asynchronous functions. Async functions are essentially a cleaner way to work with asynchronous code in JavaScript.
 
 Async/Await is:
+
 * The newest way to write asynchronous code in JavaScript.
 * It is non blocking (just like promises and callbacks).
 * Async/Await was created to simplify the process of working with and writing chained promises.
@@ -972,27 +1060,31 @@ Within a web browser such as Chrome, declaring the variable `i` outside of any f
 In Node.js, however, declaring any variable outside of any function’s scope binds it only to the module’s own scope (not the `window` object) which therefore makes it much easier and faster to resolve.
 
 **Source:** _toptal.com_
+
 ### Q2: Can Node.js use other engines than V8? ☆☆☆☆☆
 
 **Answer:**
 Yes. Microsoft Chakra is another JavaScript engine which can be used with Node.js. It’s not officially declared yet.
 
 **Source:** _codeforgeek.com_
+
 ### Q3: How would you scale Node application? ☆☆☆☆☆
 
 **Answer:**
 We can scale Node application in following ways:
 
-* cloning using *Cluster* module.
+* cloning using _Cluster_ module.
 * decomposing the application into smaller services – i.e micro services.
 
 **Source:** _codeforgeek.com_
+
 ### Q4: What is the difference between process.nextTick() and setImmediate() ? ☆☆☆☆☆
 
 **Answer:**
 The difference between `process.nextTick()` and `setImmediate()` is that `process.nextTick()` defers the execution of an action till the next pass around the event loop or it simply calls the callback function once the ongoing execution of the event loop is finished whereas `setImmediate()` executes a callback on the next cycle of the event loop and it gives back to the event loop for executing any I/O operations.
 
 **Source:** _codingdefined.com_
+
 ### Q5: How to solve "Process out of Memory Exception" in Node.js ? ☆☆☆☆☆
 
 **Answer:**
@@ -1003,16 +1095,18 @@ node --max-old-space-size=1024 file.js
 ```
 
 **Source:** _codingdefined.com_
+
 ### Q6: Explain what is Reactor Pattern in Node.js? ☆☆☆☆☆
 
 **Answer:**
-**Reactor Pattern** is an idea of non-blocking I/O operations in Node.js. This pattern provides a handler(in case of Node.js, a *callback function*) that is associated with each I/O operation. When an I/O request is generated, it is submitted to a *demultiplexer*.
+**Reactor Pattern** is an idea of non-blocking I/O operations in Node.js. This pattern provides a handler(in case of Node.js, a _callback function_) that is associated with each I/O operation. When an I/O request is generated, it is submitted to a _demultiplexer_.
 
-This *demultiplexer* is a notification interface that is used to handle concurrency in non-blocking I/O mode and collects every request in form of an event and queues each event in a queue. Thus, the demultiplexer provides the *Event Queue*. 
+This _demultiplexer_ is a notification interface that is used to handle concurrency in non-blocking I/O mode and collects every request in form of an event and queues each event in a queue. Thus, the demultiplexer provides the _Event Queue_.
 
 At the same time, there is an Event Loop which iterates over the items in the Event Queue. Every event has a callback function associated with it, and that callback function is invoked when the Event Loop iterates.
 
 **Source:** _hackernoon.com_
+
 ### Q7: Explain some Error Handling approaches in Node.js you know about. Which one will you use? ☆☆☆☆☆
 
 **Answer:**
@@ -1027,7 +1121,8 @@ var validateObject = function (obj) {
     }
 };
 ```
-* **Error throwing** - well-establish pattern, in which a function does its thing and if an error situation arises, it simply bails out throwing an error. Can leave you in an unstable state. It requires extra work to catch them. Also wrapping the async calls in try/catch won't help because the errors happen asynchronously. To fix this, we need *domains*. Domains provide an asynchronous try...catch.
+
+* **Error throwing** - well-establish pattern, in which a function does its thing and if an error situation arises, it simply bails out throwing an error. Can leave you in an unstable state. It requires extra work to catch them. Also wrapping the async calls in try/catch won't help because the errors happen asynchronously. To fix this, we need _domains_. Domains provide an asynchronous try...catch.
 
 ```js
 var validateObject = function (obj) {
@@ -1043,6 +1138,7 @@ catch (err) {
     console.log('Thrown: ' + err.message);
 }
 ```
+
 * **Error callback** - returning an error via a callback is the most common error handling pattern in Node.js. Handling error callbacks can become a mess (callback hell or the pyramid of doom).
 
 ```js
@@ -1057,6 +1153,7 @@ validateObject('123', function (err) {
     console.log('Callback: ' + err.message);
 });
 ```
+
 * **Error emitting** - when emitting errors, the errors are broadcast to any interested subscribers and handled within the same process tick, in the order subscribed.
 
 ```js
@@ -1075,6 +1172,7 @@ emitter.on('error', function (err) {
 
 validateObject('123');
 ```
+
 * **Promises** for async error handling
 
 ```js
@@ -1085,6 +1183,7 @@ doWork()
 .catch(errorHandler)
 .then(verify);
 ```
+
 * **Try...catch with async/await** - ES7 Async/await allows us as developers to write asynchronous JS code that look synchronous.
 
 ```js
@@ -1116,6 +1215,7 @@ async function main(callback) {
 ```
 
 **Source:** _gist.github.com_
+
 ### Q8: Why should you separate Express 'app' and 'server'? ☆☆☆☆☆
 
 **Answer:**
@@ -1129,6 +1229,7 @@ app.use(bodyParser.json());
 app.use("/api/events", events.API);
 app.use("/api/forms", forms);
 ```
+
 Server network declaration, should reside in /bin/www:
 
 ```js
@@ -1150,10 +1251,12 @@ var server = http.createServer(app);
 ```
 
 **Source:** _github.com/i0natan/nodebestpractices_
+
 ### Q9: Rewrite the code sample without try/catch block ☆☆☆☆☆
 
 **Details:**
 Consider the code:
+
 ```js
 async function check(req, res) {
   try {
@@ -1165,9 +1268,11 @@ async function check(req, res) {
   }
 }
 ```
+
 Rewrite the code sample without try/catch block.
 
 **Answer:**
+
 ```js
 async function getData(){
   const a = await someFunction().catch((error)=>console.log(error));
@@ -1175,7 +1280,9 @@ async function getData(){
   if (a && b) console.log("some result")
 }
 ```
+
 or if you wish to know which specific function caused error:
+
 ```js
 async function loginController() {
   try {
@@ -1206,12 +1313,14 @@ async function loginController() {
 ```
 
 **Source:** _medium.com_
+
 ### Q10: How many threads does Node actually create? ☆☆☆☆☆
 
 **Answer:**
 **4 extra threads** are for use by V8. V8 uses these threads to perform various tasks, such as GC-related background tasks and optimizing compiler tasks.
 
 **Source:** _stackoverflow.com_
+
 ### Q11: Can Node.js work without V8? ☆☆☆☆
 
 **Answer:**
@@ -1220,6 +1329,7 @@ No. The current node.js binary cannot work without V8. It would have no Javascri
 There is an effort by Microsoft to allow the Chakra Javascript engine (that's the engine in Edge) to be used with node.js. Node.js can actually function to some extent without V8, through use of the node-chakracore project. There is ongoing work to reduce the tight coupling between V8 and Node, so that different JavaScript engines can be used in-place.
 
 **Source:** _stackoverflow.com_
+
 ### Q12: How the V8 engine works? ☆☆☆☆
 
 **Answer:**
@@ -1228,14 +1338,16 @@ There is an effort by Microsoft to allow the Chakra Javascript engine (that's th
 V8 was first designed to increase the performance of the JavaScript execution inside web browsers. In order to obtain speed, V8 translates JavaScript code into more efficient machine code instead of using an interpreter. It compiles JavaScript code into machine code at execution by implementing a **JIT (Just-In-Time)** compiler like a lot of modern JavaScript engines such as SpiderMonkey or Rhino (Mozilla) are doing. The main difference with V8 is that it doesn’t produce bytecode or any intermediate code.
 
 **Source:** _nodejs.org_
+
 ### Q13: What is the purpose of using hidden classes in V8? ☆☆☆☆☆
 
 **Answer:**
-JavaScript is a prototype-based language: there are no classes and objects are created by using a cloning process. JavaScript is also dynamically typed: types and type informations are not explicit and properties can be added to and deleted from objects on the fly. 
+JavaScript is a prototype-based language: there are no classes and objects are created by using a cloning process. JavaScript is also dynamically typed: types and type informations are not explicit and properties can be added to and deleted from objects on the fly.
 
-Accessing types and properties effectively makes a first big challenge for V8. Instead of using a dictionary-like data structure for storing object properties and doing a dynamic lookup to resolve the property location (like most JavaScript engines do), V8 creates** hidden classes**, at runtime, in order to have an internal representation of the type system and to improve the property access time.
+Accessing types and properties effectively makes a first big challenge for V8. Instead of using a dictionary-like data structure for storing object properties and doing a dynamic lookup to resolve the property location (like most JavaScript engines do), V8 creates**hidden classes**, at runtime, in order to have an internal representation of the type system and to improve the property access time.
 
 **Source:** _thibaultlaurens.github.io_
+
 ### Q14: How V8 compiles JavaScript code? ☆☆☆☆☆
 
 **Answer:**
@@ -1248,6 +1360,7 @@ V8 has two compilers:
 V8 also supports **de-optimization**: the optimizing compiler makes optimistic assumptions from the Inline Cache about the different types, de-optimization comes if these assumptions are invalid. For example, if a hidden class generated was not the one expected, V8 throws away the optimized code and comes back to the Full Compiler to get types again from the Inline Cache. This process is slow and should be avoided by trying to not change functions after they are optimized.
 
 **Source:** _thibaultlaurens.github.io_
+
 ### Q15: How does libuv work under the hood? ☆☆☆☆☆
 
 **Answer:**
@@ -1258,19 +1371,17 @@ Whenever possible, libuv will use those asynchronous interfaces, avoiding usage 
 
 The event loop as a process is a set of phases with specific tasks that are processed in a round-robin manner. Each phase has a FIFO queue of callbacks to execute. While each phase is special in its own way, generally, when the event loop enters a given phase, it will perform any operations specific to that phase, then execute callbacks in that phase's queue until the queue has been exhausted or the maximum number of callbacks has executed. When the queue has been exhausted or the callback limit is reached, the event loop will move to the next phase, and so on.
 
-*   **timers**: this phase executes callbacks scheduled by `setTimeout()` and `setInterval()`.
-*   **pending callbacks**: executes I/O callbacks deferred to the next loop iteration.
-*   **idle, prepare**: only used internally.
-*   **poll**: retrieve new I/O events; execute I/O related callbacks (almost all with the exception of close callbacks, the ones scheduled by timers, and `setImmediate()`); node will block here when appropriate.
-*   **check**: `setImmediate()` callbacks are invoked here.
-*   **close callbacks**: some close callbacks, e.g. `socket.on('close', ...)`.
+* **timers**: this phase executes callbacks scheduled by `setTimeout()` and `setInterval()`.
+* **pending callbacks**: executes I/O callbacks deferred to the next loop iteration.
+* **idle, prepare**: only used internally.
+* **poll**: retrieve new I/O events; execute I/O related callbacks (almost all with the exception of close callbacks, the ones scheduled by timers, and `setImmediate()`); node will block here when appropriate.
+* **check**: `setImmediate()` callbacks are invoked here.
+* **close callbacks**: some close callbacks, e.g. `socket.on('close', ...)`.
 
-<div class="text-center"/>
-<img src="https://cdn-images-1.medium.com/max/800/1*ROxiavz7LeRpIfcgRDE7CA.png" class="img-fluid" style="max-width: 500px" />
-</div>
-
+![Node.js event loop diagram](https://cdn-images-1.medium.com/max/800/1*ROxiavz7LeRpIfcgRDE7CA.png)
 
 **Source:** _nodejs.org_
+
 ### Q16: How does the cluster module work? What’s the difference between it and a load balancer? ☆☆☆☆
 
 **Answer:**
@@ -1283,6 +1394,7 @@ The cluster module performs fork from your server (at that moment it is already 
 The difference between a cluster module and a load balancer is that instead of distributing load between processes, the balancer distributes requests.
 
 **Source:** _imasters.com_
+
 ### Q17: What is V8 Templates? ☆☆☆☆☆
 
 **Answer:**
@@ -1293,12 +1405,14 @@ A template is a blueprint for JavaScript functions and objects. You can use a te
 * **Object Template** is used to configure objects created with function template as their constructor. You can associate two types of C++ callbacks with object templates: accessor callback and interceptor callback. Accessor callback is invoked when a specific object property is accessed by a script. Interceptor callback is invoked when any object property is accessed by a script. In a nutshell, you can wrap C++ objects\structures within JavaScript objects.
 
 **Source:** _blog.ghaiklor.com_
+
 ### Q18: Why do we need C++ Addons in Node.js? ☆☆☆☆☆
 
 **Answer:**
 **Node.js Addons** are dynamically-linked shared objects, written in C++, that can be loaded into Node.js using the require() function, and used just as if they were an ordinary Node.js module. They are used primarily to provide an interface between JavaScript running in Node.js and C/C++ libraries.
 
 There can be many reasons to write nodejs addons:
+
 1. You may want to access some native apis that is difficult using JS alone.
 2. You may want to integrate a third party library written in C/C++ and use it directly in Node.js.
 3. You may want to rewrite some of the modules in C++ for performance reasons.
@@ -1306,6 +1420,7 @@ There can be many reasons to write nodejs addons:
 N-API (pronounced N as in the letter, followed by API) is an API for building native Addons.
 
 **Source:** _nodejs.org_
+
 ### Q19: Is it possible to use "Class" in Node.js? ☆☆☆☆
 
 **Answer:**
@@ -1323,13 +1438,17 @@ class Animal {
     }
 }
 ```
+
 You can export a class just like anything else:
+
 ```js
 module.exports = class Animal {
 
 };
 ```
+
 Once imported into another module, then you can treat it as if it were defined in that file:
+
 ```js
 var Animal = require('./Animal');
 
@@ -1339,6 +1458,7 @@ class Cat extends Animal {
 ```
 
 **Source:** _stackoverflow.com_
+
 ### Q20: Why Node.js devs tend to lean towards the Module Requiring vs Dependency Injection? ☆☆☆☆☆
 
 **Answer:**
@@ -1383,6 +1503,7 @@ crazy.emit('event1');
 You’ll get an exception that basically says the call stack has exploded. Why? Every emit will invoke synchronous code. Because all callbacks are executed in a synchronous manner it’ll just recursive call itself to infinity and beyond.
 
 Output:
+
 ```sh
 console.js:165
     if (isStackOverflowError(e))
@@ -1402,10 +1523,12 @@ RangeError: Maximum call stack size exceeded
 ```
 
 **Source:** _codementor.io_
+
 ### Q2: Explain the result of this code execution ☆☆☆☆☆
 
 **Details:**
 Explain the result of this code execution
+
 ```js
 var EventEmitter = require('events');
 
@@ -1440,11 +1563,13 @@ crazy.emit('event1');
 Shortly - the app will be run infinitely. Any function passed as the setImmediate() argument is a callback that's executed in the _next iteration_ of the event loop. Without `setImmidiate` all callbacks are executed in a synchronous manner. With `setImmidiate` each call back executed as a part of next event loop iteration so no recursion/stuck occurs.
 
 **Source:** _codementor.io_
+
 ### Q3: What will happen when that code will be executed? ☆☆☆☆☆
 
 **Details:**
 
 What will happen when that code will be executed?
+
 ```js
 var EventEmitter = require('events');
 
@@ -1476,9 +1601,10 @@ crazy.emit('event1');
 ```
 
 **Answer:**
-It’ll get stuck! And if you wait long enough, about 30 seconds, it’ll eventually give you a “process out of memory” exception. Now, the problem is not stack overflow, it’s GC not being able to reclaim memory. Every handler has its own closure to access the crazy on the outer layer. This cost comes out of the heap. Though you might not be 100% why GC can't successfully get the memory back, you can probably guess that the program got stuck in some even loop phase because there’s always another `process.nextTick` callback to be processed. So essentially, the event loop is blocked completely. 
+It’ll get stuck! And if you wait long enough, about 30 seconds, it’ll eventually give you a “process out of memory” exception. Now, the problem is not stack overflow, it’s GC not being able to reclaim memory. Every handler has its own closure to access the crazy on the outer layer. This cost comes out of the heap. Though you might not be 100% why GC can't successfully get the memory back, you can probably guess that the program got stuck in some even loop phase because there’s always another `process.nextTick` callback to be processed. So essentially, the event loop is blocked completely.
 
 **Source:** _codementor.io_Consider the code:
+
 ```js
 function doubleAfter2Seconds(x) {
     return new Promise(resolve => {
@@ -1488,9 +1614,11 @@ function doubleAfter2Seconds(x) {
     });
 }
 ```
+
 What if we want to run a few different values through our function and add the result?
 
 Promise-based solution will be:
+
 ```js
 function addPromise(x) {
     return new Promise(resolve => {
@@ -1508,7 +1636,9 @@ addPromise(10).then((sum) => {
   console.log(sum);
 });
 ```
+
 Async/Await solution will look like:
+
 ```js
 async function addAsync(x) {
     const a = await doubleAfter2Seconds(10);

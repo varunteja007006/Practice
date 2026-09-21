@@ -24,6 +24,6 @@
 
 10. Not considering the failure scenarios
 
-#### Sources:
+#### Sources
 
-https://systemdesignschool.io/problems
+<https://systemdesignschool.io/problems>

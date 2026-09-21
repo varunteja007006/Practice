@@ -1,0 +1,17 @@
+{
+  // Personal-notes friendly config: relax opinionated rules, keep real hygiene.
+  "MD013": false, // line-length: long lines are fine in notes
+  "MD024": false, // duplicate headings: notes legitimately repeat "Example", "Output" etc.
+  "MD036": false, // emphasis-as-heading is an accepted style here
+  "MD040": false, // don't force languages on scratch code fences
+  "MD041": false, // notes files may start at h2/h3
+  "MD025": false, // notes files may use multiple h1s
+  "MD014": false, // shell blocks often show output, not just commands
+  "MD001": false, // heading level jumps: common in hand-written notes, harmless
+  "MD046": false, // mixed fenced/indented code blocks: not worth churning notes
+  "MD060": false, // table column style: cosmetic
+  "MD033": true, // no inline HTML (no <br />)
+  "MD034": true, // no bare URLs
+  "MD011": true, // no reversed links
+  "MD059": true // link text should be descriptive
+}

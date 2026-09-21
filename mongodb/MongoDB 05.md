@@ -191,9 +191,6 @@ Mongo has `_id` as default index since it is unique. Let us say we have collecti
 db.users.createIndex({ email: 1 }, { unique: true });
 ```
 
-<br />
-<br />
-
 ### Creating COMPOUND INDEXES
 
 This is used to create indexes using two fields in your collection:
@@ -225,14 +222,10 @@ db.users.find({ alive: true });
 ```
 
 You always have to start indexing the properties from left to right and you cannot index from any other order.
-<br />
-<br />
 
 ### Sorting using Indexes
 
 In case you need large amount of data to be sorted using a specific field in the document on a regular basis, you should use indexing for that particular field because it helps the response time by a lot as the db wouldn't have to sort the returned data for you. This is because indexes are already sorted.
-<br />
-<br />
 
 ### Partial Filters
 
@@ -286,9 +279,6 @@ The best way to use the index would be:
 ```js
 db.users.find({ "db.age": 60, gender: "male" });
 ```
-
-<br />
-<br />
 
 ### Text Indexes (Used for search functionality)
 

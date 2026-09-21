@@ -4,7 +4,7 @@
 
 Crypto
 
-https://developer.mozilla.org/en-US/docs/Web/API/Crypto
+<https://developer.mozilla.org/en-US/docs/Web/API/Crypto>
 
 The Crypto interface represents basic cryptography features available in the current context. It
 allows access to a cryptographically strong random number generator and to cryptographic primitives.
@@ -15,12 +15,12 @@ allows access to a cryptographically strong random number generator and to crypt
 
 ### Clerk
 
-https://clerk.com/
+<https://clerk.com/>
 
 Authenticator and user management for Next JS websites.
 
 ### GetStream
 
-https://getstream.io/video/
+<https://getstream.io/video/>
 
 For your video calls and live streams.

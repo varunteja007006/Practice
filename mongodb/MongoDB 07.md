@@ -14,7 +14,7 @@ It works with STAGES:
 
 If you are still having the users collection created in `MongoDB 01.md` or `MongoDB 02.md`
 
-### Query 1:
+### Query 1
 
 ```js
 // Run the code in MongoDB vscode
@@ -26,7 +26,7 @@ db.users.aggregate([
 ]);
 ```
 
-### Query 2: Find all the alive users and group them based on the city and keep a count of them.
+### Query 2: Find all the alive users and group them based on the city and keep a count of them
 
 ```js
 // Run the code in MongoDB vscode
@@ -39,7 +39,7 @@ db.users.aggregate([
 ]);
 ```
 
-### Query 3: Count the hobbies that all the users have.
+### Query 3: Count the hobbies that all the users have
 
 ```js
 // Run the code in MongoDB vscode

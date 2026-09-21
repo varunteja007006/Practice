@@ -73,12 +73,10 @@ db.users.updateMany(
 ### Update multiple elements in an array using ==> $[el] <==
 
 Find all the people who's hobbies frequency are greater than 2 . Now update all their hobbies frequencies who's frequency is greater than 3 to +10.
-<br />
 
 **NOTE: it may also return docs/people who have some hobbies who's frequency is less than 2**
 
 **The idea is to find docs with frequencies > 2 and update only those elements.**
-<br />
 You can neither use `$` because it only updates first matched element nor `$[]` as it updates all.
 
 ```js
@@ -94,11 +92,9 @@ db.users.updateMany(
 ### Update multiple elements in an array using ==> $[el] <==
 
 Find all the people who's hobbies frequency are greater than 2. Now update all their hobbies frequencies who's frequency is greater than 3 to +10.
-<br />
 **NOTE: it may also return docs/people who have some hobbies who's frequency is less than 2**
 
 **The idea is to find docs with frequencies > 2 and update only those elements.**
-<br />
 You can neither use `$` because it only updates first matched element nor `$[]` as it updates all.
 
 **This will take 3 arguments**

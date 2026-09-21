@@ -29,7 +29,6 @@ db.users.find({ hobbies: { $elemMatch: { $eq: "reading" } } });
 db.users.find({ "address.city": { $eq: "Any" } }); 
 ```
 
-
 ### Difference between $elemMatch and $eq
 
 The $elemMatch and $eq operators in MongoDB are both used to match documents based on the values of their fields. However, there are some key differences between the two operators.

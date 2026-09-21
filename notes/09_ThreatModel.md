@@ -40,6 +40,6 @@ Threat model is a living document and needs to be constantly reviewed and update
 wide threat model has been performed it can be valuable to perform mini threat models as a secure
 engineering design requirement.
 
-#### Reference:
+#### Reference
 
-https://www.softwaresecured.com/post/stride-threat-modeling
+<https://www.softwaresecured.com/post/stride-threat-modeling>

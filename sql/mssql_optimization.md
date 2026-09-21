@@ -90,7 +90,7 @@ OFFSET @offset ROWS FETCH NEXT @limit ROWS ONLY;  -- Paginated data
 
 If fetching the data in one go is not necessary and you can process data in batches, you can consider breaking the large query into smaller chunks and fetching them incrementally. This will reduce memory usage and could speed up response times.
 
-### Example of Optimized Query with Pagination and Count:
+### Example of Optimized Query with Pagination and Count
 
 ```sql
 -- Query to get the total count of records
@@ -106,7 +106,7 @@ ORDER BY id
 OFFSET @offset ROWS FETCH NEXT @limit ROWS ONLY;
 ```
 
-### Conclusion:
+### Conclusion
 
 - Focus on reducing the number of queries and temp table usage.
 - Use indexing on relevant columns.

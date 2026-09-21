@@ -5,7 +5,7 @@ at high level programming languages it kind of fascinates me to dwell a little i
 Therefore just giving another shot at C. Also I am learning Rust and I thought I might as well check
 it in parallel since Rust is built with memory safety and other features that C does not offer.
 
-### Official Resources:
+### Official Resources
 
 1. **The C Programming Language (K&R):** This classic book by Brian Kernighan and Dennis Ritchie is
    considered the definitive guide to C and is a must-read for any serious C programmer.
@@ -15,7 +15,7 @@ it in parallel since Rust is built with memory safety and other features that C 
 3. **C Standard (ISO/IEC 9899):** While not exactly a tutorial, the official C standard defines the
    language's syntax and semantics, making it a valuable reference.
 
-### Interactive Tutorials and Courses:
+### Interactive Tutorials and Courses
 
 1. C Programming Tutorial on Learn-c.org: This free, interactive tutorial covers the basics of C
    programming in a browser-based environment.

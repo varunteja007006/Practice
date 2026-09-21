@@ -84,9 +84,6 @@ docker-compose -f docker-compose.yml -f docker-compose.dev.yml up -d --build
 
 ###
 
-<br />
-<br />
-
 ###
 
 ## How do I not install dev dependencies in the production

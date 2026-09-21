@@ -47,7 +47,7 @@ Who this helps?
 
 ### Links
 
-- Should use <a> tag.
+- Should use `<a>` tag.
 - Should be recognizable as links.
 - Should have non-ambiguous text.
 

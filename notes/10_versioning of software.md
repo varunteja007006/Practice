@@ -10,4 +10,4 @@ Given a version number MAJOR.MINOR.PATCH, increment the:
     MINOR version when you add functionality in a backward compatible manner
     PATCH version when you make backward compatible bug fixes
 
-https://semver.org/
+<https://semver.org/>

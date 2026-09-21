@@ -9,7 +9,7 @@ Let us first understand the MongoDB language.
 
 ### Documentation
 
-https://www.mongodb.com/docs/manual/installation/
+<https://www.mongodb.com/docs/manual/installation/>
 
 # Run Mongodb (Linux Terminal)
 
@@ -44,11 +44,11 @@ above section `Run MongoDB (Linux Terminal)`.
 
 ### Documentation
 
-https://www.mongodb.com/docs/mongodb-shell/run-commands/
+<https://www.mongodb.com/docs/mongodb-shell/run-commands/>
 
 To refer more methods
 
-https://www.mongodb.com/docs/manual/reference/method/
+<https://www.mongodb.com/docs/manual/reference/method/>
 
 Start the mongodb shell:
 
@@ -149,28 +149,24 @@ You can also use your VSCode extension to learn MongoDB.
 
 After starting the MongoDB shell using `mongosh`
 
-You can find a url as shown below,<br />
-`Connection to: mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.1.1` <br />
+You can find a url as shown below,
+
+`Connection to: mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.1.1`
+
 or something similar. Keep a copy of this string which is a url that will be used later.
 
 ![MongoDB Shell URL](https://github.com/varunteja007006/Practice/blob/main/Practice%20MongoDB/assets/mongodb_shell_url.png?raw=true)
 
-<br>
-
-#### Install the MongoDB for VS Code extension.
+#### Install the MongoDB for VS Code extension
 
 Install the MongoDB for VS Code extension. To proceed further.
 
 ![MongoDB Extension for VS Code](https://github.com/varunteja007006/Practice/blob/main/Practice%20MongoDB/assets/mongodb_extensionForVSCode.png?raw=true)
 
-<br>
-
-#### Access MongoDB extension in VS Code.
+#### Access MongoDB extension in VS Code
 
 Access the extension from the VS Code side menu.
 ![Access MongoDB Extension for VS Code](https://github.com/varunteja007006/Practice/blob/main/Practice%20MongoDB/assets/mongodb_accessExtension.png?raw=true)
-
-<br>
 
 Click `Add Connection` button in the `connections`
 ![Add Connection in MongoDB](https://github.com/varunteja007006/Practice/blob/main/Practice%20MongoDB/assets/mongodb_addConnection.png?raw=true)
@@ -178,17 +174,11 @@ Click `Add Connection` button in the `connections`
 Now you can see that it shows `🔴 Not connected` and a `Connect` button below with text - "Connect with
 Connection String"
 
-<br>
-
 Click on the `Connect` button and it will ask you for the url (the one generated when we run the mongodb shell). Paste it and press enter.
 ![Add url in MongoDB](https://github.com/varunteja007006/Practice/blob/main/Practice%20MongoDB/assets/mongodb_connectionURL.png?raw=true)
 
-<br>
-
 Once successful you can see that you are connected to MongoDB on local server.
 ![Connection successful](https://github.com/varunteja007006/Practice/blob/main/Practice%20MongoDB/assets/mongodb_connectionSuccess.png?raw=true)
-
-<br>
 
 #### MongoDB playground
 
@@ -207,11 +197,7 @@ use("accounts");
 db.getCollection("users").find({ personID: 1 }); // this queries document who's personID is 1
 ```
 
-<br>
 There you go, now you can create as many playground files as needed to test and learn MongoDB. 😁
-<br>
-
-<br>
 
 ### More Concepts in MongoDB
 
@@ -219,7 +205,7 @@ There you go, now you can create as many playground files as needed to test and 
 
 When the db. collection. find () function is used to search for documents in the collection, the result returns a pointer to the collection of documents returned which is called a cursor. By default, the cursor will be iterated automatically when the result of the query is returned
 
-src: https://docs.mongodb.com/manual/reference/method/js-cursor/
+src: <https://docs.mongodb.com/manual/reference/method/js-cursor/>
 
 ## Sample Data
 

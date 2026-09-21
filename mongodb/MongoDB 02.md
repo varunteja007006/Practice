@@ -4,7 +4,7 @@ This is a continuation for the MongoDB 01.md
 
 We discuss CRUD operations in mongodb
 
-## C R U D Operations:
+## C R U D Operations
 
     - C means Create
 
@@ -60,8 +60,7 @@ db.users.find();
 
 To show only required keys of a document. Pass two arguments in find().
 
-**First argument** is 'query to fetch' condition. <br />
-<br />
+**First argument** is 'query to fetch' condition.
 **Second argument** is the condition to specify which keys have to be shown by mentioning '1', rest of the keys will not be shown.  
 Similarly, to specify which keys should not to be shown mention '0', rest of the keys will be shown.
 

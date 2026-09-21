@@ -1,4 +1,4 @@
-# Build a "mini cloud" on your laptop.
+# Build a "mini cloud" on your laptop
 
 Here are some excellent open-source tools to experiment with.
 

@@ -46,3 +46,4 @@ vscjava.vscode-java-test
 vscjava.vscode-maven
 xabikos.javascriptsnippets
 yoavbls.pretty-ts-errors
+DavidAnson.vscode-markdownlint
