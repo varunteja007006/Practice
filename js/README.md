@@ -1,6 +1,6 @@
 # Practice JavaScript
 
-### Do while you learn - This is how you will learn any programming concept
+#### _Do while you learn - This is how you will learn any programming concept_
 
 ### Topics
 
@@ -18,3 +18,17 @@
 Other Topics to visit and learn
 
 🔳 object accessor [https://www.w3schools.com/js/js_object_accessors.asp]
+
+### Intro
+
+Javascript can be run both:
+
+- Client side - Browsers
+
+- Server side - Node JS
+
+Refer: https://www.geeksforgeeks.org/javascript/javascript-tutorial/
+
+Fundamentals
+
+- Introduction

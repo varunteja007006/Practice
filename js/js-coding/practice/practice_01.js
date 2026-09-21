@@ -26,4 +26,3 @@ function maxChar(params) {
   }
   return maxChar;
 }
-js_practice_02;
