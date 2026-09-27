@@ -101,33 +101,35 @@
 
 41. What is asynchronous programming in JS?
 
-
-# Node JS
-
-## Basic
-
-#### Q. Are you familiar with differences between Node.js nodules and ES6 nodules?
+42. Are you familiar with differences between Node.js nodules and ES6 nodules?
 
     The modules used in Node.js follow a module specification known as the CommonJS specification.
     ES6 module, we'd use the ES6 import functionality.
     Now ES6 modules are incompatible with Node.js modules. This has to do with the way modules are loaded differently between the two formats.If you use a compiler like Babel, you can mix and match module formats.
 
-#### Q. Is Node.js entirely based on a single-thread?
+43. Is Node.js entirely based on a single-thread?
 
     Node.js is often described as single-threaded, but this isn't entirely accurate. While the JavaScript code execution within Node.js operates on a single thread, Node.js leverages other threads behind the scenes to handle certain tasks.
+
     Node.js uses an event loop to manage asynchronous operations. The event loop itself runs on a single thread, which is responsible for executing JavaScript code and handling events. However, for I/O operations (like reading files or making network requests) and some CPU-intensive tasks, Node.js relies on a thread pool provided by libuv, its underlying library. This thread pool allows Node.js to perform these operations concurrently without blocking the main thread.
+
     Additionally, Node.js provides the worker_threads module, which enables developers to create and manage multiple threads explicitly. This can be useful for CPU-bound tasks that would otherwise block the main thread.
+
     In summary, while JavaScript code in Node.js executes on a single thread, Node.js is not entirely single-threaded. It uses a thread pool for I/O and some CPU-bound tasks, and it also allows the creation of worker threads for parallel processing.
 
-#### Q. Explain some Error Handling approaches in Node.js you know about. Which one will you use?
-
-#### Q. How would you scale Node application?
+44. How would you scale Node application?
 
     - Cloning using Cluster module.
     - Decomposing the application into smaller services – i.e micro services.
     - Load Balancing.
     - Caching.
     - Using a reverse proxy.
+
+45. Explain some Error Handling approaches in Node.js you know about. Which one will you use?
+
+# Node JS
+
+## Basic
 
 #### Q. The time required to run the following code in Google Chrome is considerably more than the time required to run it in Node.js Explain why this is so, even though both use the v8 JavaScript Engine
 
